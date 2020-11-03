@@ -51,10 +51,11 @@ int main()
         }
 
         if (guesses > 6)
-        {
-            not_guessed_yet = false;
-            cout << "I FAILED HARD" << endl;
-        }
+            b
+            {
+                not_guessed_yet = false;
+                cout << "I FAILED HARD" << endl;
+            }
     };
 
     cout << "i needed " << guesses << " guesses to get that right" << endl;
