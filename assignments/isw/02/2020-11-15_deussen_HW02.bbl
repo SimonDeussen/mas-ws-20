@@ -1,0 +1,27 @@
+\begin{thebibliography}{1}
+
+\bibitem{GMP}
+Y.~K. Hwang and N.~Ahuja, ``Gross motion planning—a survey,'' {\em ACM
+  Comput. Surv.}, vol.~24, p.~219–291, Sept. 1992.
+
+\bibitem{wn_glos:1}
+Wordnik, ``Definition glossary.'' https://www.wordnik.com/words/glossary,
+  November 2020.
+\newblock Accessed on 15.11.20.
+
+\bibitem{wn_tax:1}
+Wordnik, ``Definition taxonomy.'' https://www.wordnik.com/words/taxonomy,
+  November 2020.
+\newblock Accessed on 15.11.20.
+
+\bibitem{wn_onto:1}
+Wordnik, ``Definition ontology.'' https://www.wordnik.com/words/ontology,
+  November 2020.
+\newblock Accessed on 15.11.20.
+
+\bibitem{gnu_onto:1}
+PJC, ``Definition ontology.''
+  https://gcide.gnu.org.ua/?q=Ontology\&db=gcide\&define=1, November 2020.
+\newblock Accessed on 16.11.20.
+
+\end{thebibliography}
