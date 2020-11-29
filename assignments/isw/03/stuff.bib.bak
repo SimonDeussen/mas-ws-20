@@ -1,0 +1,56 @@
+@article{GMP,
+author = {Hwang, Yong K. and Ahuja, Narendra},
+title = {Gross Motion Planning—a Survey},
+year = {1992},
+issue_date = {Sept. 1992},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {24},
+number = {3},
+issn = {0360-0300},
+url = {https://doi.org/10.1145/136035.136037},
+doi = {10.1145/136035.136037},
+abstract = {Motion planning is one of the most important areas of robotics research. The complexity of the motion-planning problem has hindered the development of practical algorithms. This paper surveys the work on gross-motion planning, including motion planners for point robots, rigid robots, and manipulators in stationary, time-varying, constrained, and movable-object environments. The general issues in motion planning are explained. Recent approaches and their performances are briefly described, and possible future research directions are discussed.},
+journal = {ACM Comput. Surv.},
+month = sep,
+pages = {219–291},
+numpages = {73},
+keywords = {computational geometry, obstacle avoidance, spatial representation, path planning, collision detection, implementation, motion planning}
+}
+
+
+@misc{wn_tax:1,
+  howpublished = {https://www.wordnik.com/words/taxonomy},
+  author       = {Wordnik},
+  title        = {Definition Taxonomy},
+  month        = {November},
+  year         = {2020},
+  note         = {Accessed on 15.11.20}
+}
+
+@misc{wn_onto:1,
+  howpublished = {https://www.wordnik.com/words/ontology},
+  author       = {Wordnik},
+  title        = {Definition Ontology},
+  month        = {November},
+  year         = {2020},
+  note         = {Accessed on 15.11.20}
+}
+
+@misc{wn_glos:1,
+  howpublished = {https://www.wordnik.com/words/glossary},
+  author       = {Wordnik},
+  title        = {Definition Glossary},
+  month        = {November},
+  year         = {2020},
+  note         = {Accessed on 15.11.20}
+}
+
+@misc{gnu_onto:1,
+  howpublished = {https://gcide.gnu.org.ua/?q=Ontology\&db=gcide\&define=1},
+  author       = {PJC},
+  title        = {Definition Ontology},
+  month        = {November},
+  year         = {2020},
+  note         = {Accessed on 16.11.20}
+}

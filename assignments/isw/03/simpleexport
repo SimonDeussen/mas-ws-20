@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>JabRef references</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css">
+body { font-size: 12px; font-family: Arial, sans-serif; }
+dt { margin-top: 1em; font-weight: bold; }
+@media print {
+	dt { page-break-after: avoid; }
+	dd { page-break-before: avoid; }
+}
+</style>
+</head>
+<body>
+<dl>
+<dt>inproceedings <a name="10.1007/978-3-642-30976-2_68">(10.1007/978-3-642-30976-2_68)</a></dt>
+<dd>Shi, Z., Tu, J., Zhang, Q., Liu, L. and Wei, J.</dd>
+<dd><i>A Survey of Swarm Robotics System</i></dd>
+<dd>Tan, Y., Shi, Y. &amp; Ji, Z. <i>(ed.)</i></dd>
+<dd>Advances in Swarm Intelligence</dd>
+<dd>Springer Berlin Heidelberg, <b>2012</b>, pp. 564-572</dd>
+
+<dt>article <a name="10.1371/journal.pone.0111542">(10.1371/journal.pone.0111542)</a></dt>
+<dd>Vigelius, M., Meyer, B. and Pascoe, G.</dd>
+<dd><i>Multiscale Modelling and Analysis of Collective Decision Making in Swarm Robotics</i></dd>
+<dd>PLOS ONE, Public Library of Science, <b>2014</b>, Vol. 9(11), pp. 1-19</dd>
+
+<dt>article <a name="8424838">(8424838)</a></dt>
+<dd>Chung, S., Paranjape, A. A., Dames, P., Shen, S. and Kumar, V.</dd>
+<dd><i>A Survey on Aerial Swarm Robotics</i></dd>
+<dd>IEEE Transactions on Robotics, <b>2018</b>, Vol. 34(4), pp. 837-855</dd>
+
+<dt>article <a name="Alshawi2017">(Alshawi2017)</a></dt>
+<dd>Alshawi, M. A. and Shalan, M. B.</dd>
+<dd><i>Minimal Time Dynamic Task Allocation for a Swarm of Robots</i></dd>
+<dd>International Journal of Mechanical Engineering and Robotics Research, <b>2017</b></dd>
+
+<dt>article <a name="DERRAC20113">(DERRAC20113)</a></dt>
+<dd>Derrac, J., García, S., Molina, D. and Herrera, F.</dd>
+<dd><i>A practical tutorial on the use of nonparametric statistical tests as a methodology for comparing evolutionary and swarm intelligence algorithms</i></dd>
+<dd>Swarm and Evolutionary Computation, <b>2011</b>, Vol. 1(1), pp. 3 - 18</dd>
+
+<dt>article <a name="DIN201853">(DIN201853)</a></dt>
+<dd>Din, A., Jabeen, M., Zia, K., Khalid, A. and Saini, D. K.</dd>
+<dd><i>Behavior-based swarm robotic search and rescue using fuzzy controller</i></dd>
+<dd>Computers &amp; Electrical Engineering, <b>2018</b>, Vol. 70, pp. 53 - 65</dd>
+
+<dt>article <a name="INNOCENTE201980">(INNOCENTE201980)</a></dt>
+<dd>Innocente, M. S. and Grasso, P.</dd>
+<dd><i>Self-organising swarms of firefighting drones: Harnessing the power of collective intelligence in decentralised multi-robot systems</i></dd>
+<dd>Journal of Computational Science, <b>2019</b>, Vol. 34, pp. 80 - 101</dd>
+
+<dt>article <a name="KHAN2020100715">(KHAN2020100715)</a></dt>
+<dd>Khan, M. M., Kasmarik, K. and Barlow, M.</dd>
+<dd><i>Autonomous detection of collective behaviours in swarms</i></dd>
+<dd>Swarm and Evolutionary Computation, <b>2020</b>, Vol. 57, pp. 100715</dd>
+
+<dt>article <a name="KONUR2012199">(KONUR2012199)</a></dt>
+<dd>Konur, S., Dixon, C. and Fisher, M.</dd>
+<dd><i>Analysing robot swarm behaviour via probabilistic model checking</i></dd>
+<dd>Robotics and Autonomous Systems, <b>2012</b>, Vol. 60(2), pp. 199 - 213</dd>
+
+<dt>article <a name="LYNN201511">(LYNN201511)</a></dt>
+<dd>Lynn, N. and Suganthan, P. N.</dd>
+<dd><i>Heterogeneous comprehensive learning particle swarm optimization with enhanced exploration and exploitation</i></dd>
+<dd>Swarm and Evolutionary Computation, <b>2015</b>, Vol. 24, pp. 11 - 24</dd>
+
+<dt>article <a name="MAVROVOUNIOTIS20171">(MAVROVOUNIOTIS20171)</a></dt>
+<dd>Mavrovouniotis, M., Li, C. and Yang, S.</dd>
+<dd><i>A survey of swarm intelligence for dynamic optimization: Algorithms and applications</i></dd>
+<dd>Swarm and Evolutionary Computation, <b>2017</b>, Vol. 33, pp. 1 - 17</dd>
+
+<dt>article <a name="miner2007swarm">(miner2007swarm)</a></dt>
+<dd>Miner, D.</dd>
+<dd><i>Swarm robotics algorithms: A survey</i></dd>
+<dd>Report, MAPLE lab, University of Maryland, Citeseer, <b>2007</b></dd>
+
+<dt>article <a name="Mirzaei_2020">(Mirzaei_2020)</a></dt>
+<dd>Mirzaei, F., Pouyan, A. A. and Biglari, M.</dd>
+<dd><i>Automatic Controller Code Generation for Swarm Robotics Using Probabilistic Timed Supervisory Control Theory (ptSCT)</i></dd>
+<dd>Journal of Intelligent &amp; Robotic Systems, Springer Science and Business Media LLC, <b>2020</b>, Vol. 100(2), pp. 729-750</dd>
+
+<dt>article <a name="OSABA2020101049">(OSABA2020101049)</a></dt>
+<dd>Osaba, E., Del Ser, J., Iglesias, A. and Yang, X.-S.</dd>
+<dd><i>Soft Computing for Swarm Robotics: New Trends and Applications</i></dd>
+<dd>Journal of Computational Science, <b>2020</b>, Vol. 39, pp. 101049</dd>
+
+<dt>article <a name="Wang2020">(Wang2020)</a></dt>
+<dd>Wang, Q. and Mao, X.</dd>
+<dd><i>Dynamic Task Allocation Method of Swarm RobotsBased on Optimal Mass Transport Theory</i></dd>
+<dd>Symmetry, <b>2020</b></dd>
+
+<dt>article <a name="Winfield_2008">(Winfield_2008)</a></dt>
+<dd>Winfield, A. F. T., Liu, W., Nembrini, J. and Martinoli, A.</dd>
+<dd><i>Modelling a wireless connected swarm of mobile robots</i></dd>
+<dd>Swarm Intelligence, Springer Science and Business Media LLC, <b>2008</b>, Vol. 2(2-4), pp. 241-266</dd>
+
+</dl>
+</body>
+</html>

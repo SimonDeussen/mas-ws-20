@@ -1,0 +1,822 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>JabRef references</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+<!--
+// QuickSearch script for JabRef HTML export 
+// Version: 3.0
+//
+// Copyright (c) 2006-2011, Mark Schenk
+//
+// This software is distributed under a Creative Commons Attribution 3.0 License
+// http://creativecommons.org/licenses/by/3.0/
+//
+// Features:
+// - intuitive find-as-you-type searching
+//    ~ case insensitive
+//    ~ ignore diacritics (optional)
+//
+// - search with/without Regular Expressions
+// - match BibTeX key
+//
+
+// Search settings
+var searchAbstract = true;	// search in abstract
+var searchComment = true;	// search in comment
+
+var noSquiggles = true; 	// ignore diacritics when searching
+var searchRegExp = false; 	// enable RegExp searches
+
+
+if (window.addEventListener) {
+	window.addEventListener("load",initSearch,false); }
+else if (window.attachEvent) {
+	window.attachEvent("onload", initSearch); }
+
+function initSearch() {
+	// check for quick search table and searchfield
+	if (!document.getElementById('qs_table')||!document.getElementById('quicksearch')) { return; }
+
+	// load all the rows and sort into arrays
+	loadTableData();
+	
+	//find the query field
+	qsfield = document.getElementById('qs_field');
+
+	// previous search term; used for speed optimisation
+	prevSearch = '';
+
+	//find statistics location
+	stats = document.getElementById('stat');
+	setStatistics(-1);
+	
+	// set up preferences
+	initPreferences();
+
+	// shows the searchfield
+	document.getElementById('quicksearch').style.display = 'block';
+	document.getElementById('qs_field').onkeyup = quickSearch;
+}
+
+function loadTableData() {
+	// find table and appropriate rows
+	searchTable = document.getElementById('qs_table');
+	var allRows = searchTable.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+
+	// split all rows into entryRows and infoRows (e.g. abstract, comment, bibtex)
+	entryRows = new Array(); infoRows = new Array(); absRows = new Array(); revRows = new Array();
+
+	// get data from each row
+	entryRowsData = new Array(); absRowsData = new Array(); revRowsData = new Array(); 
+	
+	BibTeXKeys = new Array();
+	
+	for (var i=0, k=0, j=0; i<allRows.length;i++) {
+		if (allRows[i].className.match(/entry/)) {
+			entryRows[j] = allRows[i];
+			entryRowsData[j] = stripDiacritics(getTextContent(allRows[i]));
+			allRows[i].id ? BibTeXKeys[j] = allRows[i].id : allRows[i].id = 'autokey_'+j;
+			j ++;
+		} else {
+			infoRows[k++] = allRows[i];
+			// check for abstract/comment
+			if (allRows[i].className.match(/abstract/)) {
+				absRows.push(allRows[i]);
+				absRowsData[j-1] = stripDiacritics(getTextContent(allRows[i]));
+			} else if (allRows[i].className.match(/comment/)) {
+				revRows.push(allRows[i]);
+				revRowsData[j-1] = stripDiacritics(getTextContent(allRows[i]));
+			}
+		}
+	}
+	//number of entries and rows
+	numEntries = entryRows.length;
+	numInfo = infoRows.length;
+	numAbs = absRows.length;
+	numRev = revRows.length;
+}
+
+function quickSearch(){
+	
+	tInput = qsfield;
+
+	if (tInput.value.length == 0) {
+		showAll();
+		setStatistics(-1);
+		qsfield.className = '';
+		return;
+	} else {
+		t = stripDiacritics(tInput.value);
+
+		if(!searchRegExp) { t = escapeRegExp(t); }
+			
+		// only search for valid RegExp
+		try {
+			textRegExp = new RegExp(t,"i");
+			closeAllInfo();
+			qsfield.className = '';
+		}
+			catch(err) {
+			prevSearch = tInput.value;
+			qsfield.className = 'invalidsearch';
+			return;
+		}
+	}
+	
+	// count number of hits
+	var hits = 0;
+
+	// start looping through all entry rows
+	for (var i = 0; cRow = entryRows[i]; i++){
+
+		// only show search the cells if it isn't already hidden OR if the search term is getting shorter, then search all
+		if(cRow.className.indexOf('noshow')==-1 || tInput.value.length <= prevSearch.length){
+			var found = false; 
+
+			if (entryRowsData[i].search(textRegExp) != -1 || BibTeXKeys[i].search(textRegExp) != -1){ 
+				found = true;
+			} else {
+				if(searchAbstract && absRowsData[i]!=undefined) {
+					if (absRowsData[i].search(textRegExp) != -1){ found=true; } 
+				}
+				if(searchComment && revRowsData[i]!=undefined) {
+					if (revRowsData[i].search(textRegExp) != -1){ found=true; } 
+				}
+			}
+			
+			if (found){
+				cRow.className = 'entry show';
+				hits++;
+			} else {
+				cRow.className = 'entry noshow';
+			}
+		}
+	}
+
+	// update statistics
+	setStatistics(hits)
+	
+	// set previous search value
+	prevSearch = tInput.value;
+}
+
+
+// Strip Diacritics from text
+// http://stackoverflow.com/questions/990904/javascript-remove-accents-in-strings
+
+// String containing replacement characters for stripping accents 
+var stripstring = 
+    'AAAAAAACEEEEIIII'+
+    'DNOOOOO.OUUUUY..'+
+    'aaaaaaaceeeeiiii'+
+    'dnooooo.ouuuuy.y'+
+    'AaAaAaCcCcCcCcDd'+
+    'DdEeEeEeEeEeGgGg'+
+    'GgGgHhHhIiIiIiIi'+
+    'IiIiJjKkkLlLlLlL'+
+    'lJlNnNnNnnNnOoOo'+
+    'OoOoRrRrRrSsSsSs'+
+    'SsTtTtTtUuUuUuUu'+
+    'UuUuWwYyYZzZzZz.';
+
+function stripDiacritics(str){
+
+    if(noSquiggles==false){
+        return str;
+    }
+
+    var answer='';
+    for(var i=0;i<str.length;i++){
+        var ch=str[i];
+        var chindex=ch.charCodeAt(0)-192;   // Index of character code in the strip string
+        if(chindex>=0 && chindex<stripstring.length){
+            // Character is within our table, so we can strip the accent...
+            var outch=stripstring.charAt(chindex);
+            // ...unless it was shown as a '.'
+            if(outch!='.')ch=outch;
+        }
+        answer+=ch;
+    }
+    return answer;
+}
+
+// http://stackoverflow.com/questions/3446170/escape-string-for-use-in-javascript-regex
+// NOTE: must escape every \ in the export code because of the JabRef Export...
+function escapeRegExp(str) {
+  return str.replace(/[-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+}
+
+function toggleInfo(articleid,info) {
+
+	var entry = document.getElementById(articleid);
+	var abs = document.getElementById('abs_'+articleid);
+	var rev = document.getElementById('rev_'+articleid);
+	var bib = document.getElementById('bib_'+articleid);
+	
+	if (abs && info == 'abstract') {
+		abs.className.indexOf('noshow') == -1?abs.className = 'abstract noshow':abs.className = 'abstract show';
+	} else if (rev && info == 'comment') {
+		rev.className.indexOf('noshow') == -1?rev.className = 'comment noshow':rev.className = 'comment show';
+	} else if (bib && info == 'bibtex') {
+		bib.className.indexOf('noshow') == -1?bib.className = 'bibtex noshow':bib.className = 'bibtex show';
+	} else { 
+		return;
+	}
+
+	// check if one or the other is available
+	var revshow; var absshow; var bibshow;
+	(abs && abs.className.indexOf('noshow') == -1)? absshow = true: absshow = false;
+	(rev && rev.className.indexOf('noshow') == -1)? revshow = true: revshow = false;	
+	(bib && bib.className.indexOf('noshow') == -1)? bibshow = true: bibshow = false;
+	
+	// highlight original entry
+	if(entry) {
+		if (revshow || absshow || bibshow) {
+		entry.className = 'entry highlight show';
+		} else {
+		entry.className = 'entry show';
+		}
+	}
+	
+	// When there's a combination of abstract/comment/bibtex showing, need to add class for correct styling
+	if(absshow) {
+		(revshow||bibshow)?abs.className = 'abstract nextshow':abs.className = 'abstract';
+	} 
+	if (revshow) {
+		bibshow?rev.className = 'comment nextshow': rev.className = 'comment';
+	}	
+	
+}
+
+function setStatistics (hits) {
+	if(hits < 0) { hits=numEntries; }
+	if(stats) { stats.firstChild.data = hits + '/' + numEntries}
+}
+
+function getTextContent(node) {
+	// Function written by Arve Bersvendsen
+	// http://www.virtuelvis.com
+	
+	if (node.nodeType == 3) {
+	return node.nodeValue;
+	} // text node
+	if (node.nodeType == 1 && node.className != "infolinks") { // element node
+	var text = [];
+	for (var chld = node.firstChild;chld;chld=chld.nextSibling) {
+		text.push(getTextContent(chld));
+	}
+	return text.join("");
+	} return ""; // some other node, won't contain text nodes.
+}
+
+function showAll(){
+	closeAllInfo();
+	for (var i = 0; i < numEntries; i++){ entryRows[i].className = 'entry show'; }
+}
+
+function closeAllInfo(){
+	for (var i=0; i < numInfo; i++){
+		if (infoRows[i].className.indexOf('noshow') ==-1) {
+			infoRows[i].className = infoRows[i].className + ' noshow';
+		}
+	}
+}
+
+function clearQS() {
+	qsfield.value = '';
+	showAll();
+}
+
+function redoQS(){
+	showAll();
+	quickSearch(qsfield);
+}
+
+function updateSetting(obj){
+	var option = obj.id;
+	var checked = obj.value;
+
+	switch(option)
+	 {
+	 case "opt_searchAbs":
+	   searchAbstract=!searchAbstract;
+	   redoQS();
+	   break;
+	 case "opt_searchRev":
+	   searchComment=!searchComment;
+	   redoQS();
+	   break;
+	 case "opt_useRegExp":
+	   searchRegExp=!searchRegExp;
+	   redoQS();
+	   break;
+	 case "opt_noAccents":
+	   noSquiggles=!noSquiggles;
+	   loadTableData();
+	   redoQS();
+	   break;
+	 }
+}
+
+function initPreferences(){
+	if(searchAbstract){document.getElementById("opt_searchAbs").checked = true;}
+	if(searchComment){document.getElementById("opt_searchRev").checked = true;}
+	if(noSquiggles){document.getElementById("opt_noAccents").checked = true;}
+	if(searchRegExp){document.getElementById("opt_useRegExp").checked = true;}
+	
+	if(numAbs==0) {document.getElementById("opt_searchAbs").parentNode.style.display = 'none';}
+	if(numRev==0) {document.getElementById("opt_searchRev").parentNode.style.display = 'none';}
+}
+
+function toggleSettings(){
+	var togglebutton = document.getElementById('showsettings');
+	var settings = document.getElementById('settings');
+	
+	if(settings.className == "hidden"){
+		settings.className = "show";
+		togglebutton.innerText = "close settings";
+		togglebutton.textContent = "close settings";
+	}else{
+		settings.className = "hidden";
+		togglebutton.innerText = "settings...";		
+		togglebutton.textContent = "settings...";
+	}
+}
+
+-->
+</script>
+<style type="text/css">
+body { background-color: white; font-family: Arial, sans-serif; font-size: 13px; line-height: 1.2; padding: 1em; color: #2E2E2E; margin: auto 2em; }
+
+form#quicksearch { width: auto; border-style: solid; border-color: gray; border-width: 1px 0px; padding: 0.7em 0.5em; display:none; position:relative; }
+span#searchstat {padding-left: 1em;}
+
+div#settings { margin-top:0.7em; /* border-bottom: 1px transparent solid; background-color: #efefef; border: 1px grey solid; */ }
+div#settings ul {margin: 0; padding: 0; }
+div#settings li {margin: 0; padding: 0 1em 0 0; display: inline; list-style: none; }
+div#settings li + li { border-left: 2px #efefef solid; padding-left: 0.5em;}
+div#settings input { margin-bottom: 0px;}
+
+div#settings.hidden {display:none;}
+
+#showsettings { border: 1px grey solid; padding: 0 0.5em; float:right; line-height: 1.6em; text-align: right; }
+#showsettings:hover { cursor: pointer; }
+
+.invalidsearch { background-color: red; }
+input[type="button"] { background-color: #efefef; border: 1px #2E2E2E solid;}
+
+table { width: 100%; empty-cells: show; border-spacing: 0em 0.2em; margin: 1em 0em; border-style: none; }
+th, td { border: 1px gray solid; border-width: 1px 1px; padding: 0.5em; vertical-align: top; text-align: left; }
+th { background-color: #efefef; }
+td + td, th + th { border-left: none; }
+
+td a { color: navy; text-decoration: none; }
+td a:hover  { text-decoration: underline; }
+
+tr.noshow { display: none;}
+tr.highlight td { background-color: #EFEFEF; border-top: 2px #2E2E2E solid; font-weight: bold; }
+tr.abstract td, tr.comment td, tr.bibtex td { background-color: #EFEFEF; text-align: justify; border-bottom: 2px #2E2E2E solid; }
+tr.nextshow td { border-bottom: 1px gray solid; }
+
+tr.bibtex pre { width: 100%; overflow: auto; white-space: pre-wrap;}
+p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
+
+@media print {
+	p.infolinks, #qs_settings, #quicksearch, t.bibtex { display: none !important; }
+	tr { page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<form action="" id="quicksearch">
+<input type="text" id="qs_field" autocomplete="off" placeholder="Type to search..." /> <input type="button" onclick="clearQS()" value="clear" />
+<span id="searchstat">Matching entries: <span id="stat">0</span></span>
+<div id="showsettings" onclick="toggleSettings()">settings...</div>
+<div id="settings" class="hidden">
+<ul>
+<li><input type="checkbox" class="search_setting" id="opt_searchAbs" onchange="updateSetting(this)"><label for="opt_searchAbs"> include abstract</label></li>
+<li><input type="checkbox" class="search_setting" id="opt_searchRev" onchange="updateSetting(this)"><label for="opt_searchRev"> include comment</label></li>
+<li><input type="checkbox" class="search_setting" id="opt_useRegExp" onchange="updateSetting(this)"><label for="opt_useRegExp"> use RegExp</label></li>
+<li><input type="checkbox" class="search_setting" id="opt_noAccents" onchange="updateSetting(this)"><label for="opt_noAccents"> ignore accents</label></li>
+</ul>
+</div>
+</form>
+<table id="qs_table" border="1">
+<thead><tr><th width="20%">Author</th><th width="30%">Title</th><th width="5%">Year</th><th width="30%">Journal/Proceedings</th><th width="10%">Reftype</th><th width="5%">DOI/URL</th></tr></thead>
+<tbody><tr id="10.1007/978-3-642-30976-2_68" class="entry">
+	<td>Shi, Z., Tu, J., Zhang, Q., Liu, L. and Wei, J.</td>
+	<td>A Survey of Swarm Robotics System <p class="infolinks">[<a href="javascript:toggleInfo('10.1007/978-3-642-30976-2_68','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('10.1007/978-3-642-30976-2_68','bibtex')">BibTeX</a>]</p></td>
+	<td>2012</td>
+	<td>Advances in Swarm Intelligence, pp. 564-572&nbsp;</td>
+	<td>inproceedings</td>
+	<td>&nbsp;</td>
+</tr>
+<tr id="abs_10.1007/978-3-642-30976-2_68" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Swarm robotics system has been a particularly active topic of robotics in recent years due to the increasing deepening of research on robotics technology and application. This paper gives a survey of swarm robotics system research from such aspects as theoretical basis and physical research, simulation platform, distributed control information fusion and communications system. Some problems that need to be solved about swarm robotics system research in IOT (Internet of Things) environment are also raised, such as co-adaptation, distributed control and self-organization, resource scheduling management. Finally, the ant colony algorithm and particle swarm optimization are applied to the swarm robotics system.</td>
+</tr>
+<tr id="bib_10.1007/978-3-642-30976-2_68" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inproceedings{10.1007/978-3-642-30976-2_68,
+  author = {Shi, Zhiguo and Tu, Jun and Zhang, Qiao and Liu, Lei and Wei, Junming},
+  title = {A Survey of Swarm Robotics System},
+  booktitle = {Advances in Swarm Intelligence},
+  publisher = {Springer Berlin Heidelberg},
+  year = {2012},
+  pages = {564--572}
+}
+</pre></td>
+</tr>
+<tr id="10.1371/journal.pone.0111542" class="entry">
+	<td>Vigelius, M., Meyer, B. and Pascoe, G.</td>
+	<td>Multiscale Modelling and Analysis of Collective Decision Making in Swarm Robotics <p class="infolinks">[<a href="javascript:toggleInfo('10.1371/journal.pone.0111542','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('10.1371/journal.pone.0111542','bibtex')">BibTeX</a>]</p></td>
+	<td>2014</td>
+	<td>PLOS ONE<br/>Vol. 9(11), pp. 1-19&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1371/journal.pone.0111542">DOI</a> <a href="https://doi.org/10.1371/journal.pone.0111542">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_10.1371/journal.pone.0111542" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: We present a unified approach to describing certain types of collective decision making in swarm robotics that bridges from a microscopic individual-based description to aggregate properties. Our approach encompasses robot swarm experiments, microscopic and probabilistic macroscopic-discrete simulations as well as an analytic mathematical model. Following up on previous work, we identify the symmetry parameter, a measure of the progress of the swarm towards a decision, as a fundamental integrated swarm property and formulate its time evolution as a continuous-time Markov process. Contrary to previous work, which justified this approach only empirically and a posteriori, we justify it from first principles and derive hard limits on the parameter regime in which it is applicable.</td>
+</tr>
+<tr id="bib_10.1371/journal.pone.0111542" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{10.1371/journal.pone.0111542,
+  author = {Vigelius, Matthias AND Meyer, Bernd AND Pascoe, Geoffrey},
+  title = {Multiscale Modelling and Analysis of Collective Decision Making in Swarm Robotics},
+  journal = {PLOS ONE},
+  publisher = {Public Library of Science},
+  year = {2014},
+  volume = {9},
+  number = {11},
+  pages = {1-19},
+  url = {https://doi.org/10.1371/journal.pone.0111542},
+  doi = {https://doi.org/10.1371/journal.pone.0111542}
+}
+</pre></td>
+</tr>
+<tr id="8424838" class="entry">
+	<td>Chung, S., Paranjape, A.A., Dames, P., Shen, S. and Kumar, V.</td>
+	<td>A Survey on Aerial Swarm Robotics <p class="infolinks">[<a href="javascript:toggleInfo('8424838','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('8424838','bibtex')">BibTeX</a>]</p></td>
+	<td>2018</td>
+	<td>IEEE Transactions on Robotics<br/>Vol. 34(4), pp. 837-855&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1109/TRO.2018.2857475">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_8424838" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: The use of aerial swarms to solve real-world problems has been increasing steadily, accompanied by falling prices and improving performance of communication, sensing, and processing hardware. The commoditization of hardware has reduced unit costs, thereby lowering the barriers to entry to the field of aerial swarm robotics. A key enabling technology for swarms is the family of algorithms that allow the individual members of the swarm to communicate and allocate tasks amongst themselves, plan their trajectories, and coordinate their flight in such a way that the overall objectives of the swarm are achieved efficiently. These algorithms, often organized in a hierarchical fashion, endow the swarm with autonomy at every level, and the role of a human operator can be reduced, in principle, to interactions at a higher level without direct intervention. This technology depends on the clever and innovative application of theoretical tools from control and estimation. This paper reviews the state of the art of these theoretical tools, specifically focusing on how they have been developed for, and applied to, aerial swarms. Aerial swarms differ from swarms of ground-based vehicles in two respects: they operate in a three-dimensional space and the dynamics of individual vehicles adds an extra layer of complexity. We review dynamic modeling and conditions for stability and controllability that are essential in order to achieve cooperative flight and distributed sensing. The main sections of this paper focus on major results covering trajectory generation, task allocation, adversarial control, distributed sensing, monitoring, and mapping. Wherever possible, we indicate how the physics and subsystem technologies of aerial robots are brought to bear on these individual areas.</td>
+</tr>
+<tr id="bib_8424838" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{8424838,
+  author = {S. Chung and A. A. Paranjape and P. Dames and S. Shen and V. Kumar},
+  title = {A Survey on Aerial Swarm Robotics},
+  journal = {IEEE Transactions on Robotics},
+  year = {2018},
+  volume = {34},
+  number = {4},
+  pages = {837-855},
+  doi = {https://doi.org/10.1109/TRO.2018.2857475}
+}
+</pre></td>
+</tr>
+<tr id="Alshawi2017" class="entry">
+	<td>Alshawi, M.A. and Shalan, M.B.</td>
+	<td>Minimal Time Dynamic Task Allocation for a Swarm of Robots <p class="infolinks">[<a href="javascript:toggleInfo('Alshawi2017','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Alshawi2017','bibtex')">BibTeX</a>]</p></td>
+	<td>2017</td>
+	<td>International Journal of Mechanical Engineering and Robotics Research&nbsp;</td>
+	<td>article</td>
+	<td>&nbsp;</td>
+</tr>
+<tr id="abs_Alshawi2017" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: This  paper  discusses  a  solution  to  one  of  the  key issues in the swarm robotics field which is the dynamic task allocation  problem  in  which  a group  of  robots  needs  to  be allocated to a set of tasks scattered in the environment in an efficient  and  decentralized  way.  The  application  considered in  this  context  is  the  foraging  application  which  can  be addressed  as  a  searching  job  followed  by  a  transportation job. The  near-optimal  allocation  scheme  is  found  by  using the  Particle  swarm  optimization  (PSO)  technique  to  handle the whole task execution in a minimal time. Two case studies have  been  considered using  different  swarm  sizes  and  the implemented   code   has   been   executed   for   a   distinctive number   of   iterations.   A   stability   proof   for   the   PSO technique’s  parameters  choices  is  presented.  Simulation results  were  verified  by  comparing  the  proposed  algorithm with   the   simulated   annealing   optimization   technique   in terms  of  computational  time,  number  of  iterations  needed and  quality  of  solution  to  demonstrate  the  robustness  and efficiency of the algorithm.</td>
+</tr>
+<tr id="bib_Alshawi2017" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Alshawi2017,
+  author = {Maha A. Alshawi and Mohamed B. Shalan},
+  title = {Minimal Time Dynamic Task Allocation for a Swarm of Robots},
+  journal = {International Journal of Mechanical Engineering and Robotics Research},
+  year = {2017}
+}
+</pre></td>
+</tr>
+<tr id="DERRAC20113" class="entry">
+	<td>Derrac, J., García, S., Molina, D. and Herrera, F.</td>
+	<td>A practical tutorial on the use of nonparametric statistical tests as a methodology for comparing evolutionary and swarm intelligence algorithms <p class="infolinks">[<a href="javascript:toggleInfo('DERRAC20113','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('DERRAC20113','bibtex')">BibTeX</a>]</p></td>
+	<td>2011</td>
+	<td>Swarm and Evolutionary Computation<br/>Vol. 1(1), pp. 3 - 18&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1016/j.swevo.2011.02.002">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S2210650211000034">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_DERRAC20113" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: The interest in nonparametric statistical analysis has grown recently in the field of computational intelligence. In many experimental studies, the lack of the required properties for a proper application of parametric procedures–independence, normality, and homoscedasticity–yields to nonparametric ones the task of performing a rigorous comparison among algorithms. In this paper, we will discuss the basics and give a survey of a complete set of nonparametric procedures developed to perform both pairwise and multiple comparisons, for multi-problem analysis. The test problems of the CEC’2005 special session on real parameter optimization will help to illustrate the use of the tests throughout this tutorial, analyzing the results of a set of well-known evolutionary and swarm intelligence algorithms. This tutorial is concluded with a compilation of considerations and recommendations, which will guide practitioners when using these tests to contrast their experimental results.</td>
+</tr>
+<tr id="bib_DERRAC20113" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{DERRAC20113,
+  author = {Joaquín Derrac and Salvador García and Daniel Molina and Francisco Herrera},
+  title = {A practical tutorial on the use of nonparametric statistical tests as a methodology for comparing evolutionary and swarm intelligence algorithms},
+  journal = {Swarm and Evolutionary Computation},
+  year = {2011},
+  volume = {1},
+  number = {1},
+  pages = {3 - 18},
+  url = {http://www.sciencedirect.com/science/article/pii/S2210650211000034},
+  doi = {https://doi.org/10.1016/j.swevo.2011.02.002}
+}
+</pre></td>
+</tr>
+<tr id="DIN201853" class="entry">
+	<td>Din, A., Jabeen, M., Zia, K., Khalid, A. and Saini, D.K.</td>
+	<td>Behavior-based swarm robotic search and rescue using fuzzy controller <p class="infolinks">[<a href="javascript:toggleInfo('DIN201853','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('DIN201853','comment')">Comment</a>] [<a href="javascript:toggleInfo('DIN201853','bibtex')">BibTeX</a>]</p></td>
+	<td>2018</td>
+	<td>Computers &amp; Electrical Engineering<br/>Vol. 70, pp. 53 - 65&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1016/j.compeleceng.2018.06.003">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S0045790618314216">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_DIN201853" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Search and rescue (SAR) is one of the foremost issues in disaster management. A robust SAR mechanism can significantly reduce the number of causalities. This paper presents a behavior-based model for a swarm of small robots to perform an efficient SAR operation in an unknown environment. The swarm is guided by a dynamically selected virtual leader (VL). A self-contained dynamic goal-seeking mechanism, using behavior-based approach, is designed to search targets (victims). Under the leadership of VL, the proposed model retains the integrity of the swarm while driving it from its current position to referenced goals. Fuzzy logic has been used to design constituent behavioral modules, namely obstacle avoidance, alignment, and inter-robot cohesion. The model has been simulated to validate its efficiency and the findings reveal that robots moving as a swarm are more effective in the SAR process as compared to multiple single robots.</td>
+</tr>
+<tr id="rev_DIN201853" class="comment noshow">
+	<td colspan="6"><b>Comment</b>: Search Terms: robotics modelling and prediction system behaviour</td>
+</tr>
+<tr id="bib_DIN201853" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{DIN201853,
+  author = {Ahmad Din and Meh Jabeen and Kashif Zia and Abbas Khalid and Dinesh Kumar Saini},
+  title = {Behavior-based swarm robotic search and rescue using fuzzy controller},
+  journal = {Computers &amp; Electrical Engineering},
+  year = {2018},
+  volume = {70},
+  pages = {53 - 65},
+  url = {http://www.sciencedirect.com/science/article/pii/S0045790618314216},
+  doi = {https://doi.org/10.1016/j.compeleceng.2018.06.003}
+}
+</pre></td>
+</tr>
+<tr id="INNOCENTE201980" class="entry">
+	<td>Innocente, M.S. and Grasso, P.</td>
+	<td>Self-organising swarms of firefighting drones: Harnessing the power of collective intelligence in decentralised multi-robot systems <p class="infolinks">[<a href="javascript:toggleInfo('INNOCENTE201980','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('INNOCENTE201980','comment')">Comment</a>] [<a href="javascript:toggleInfo('INNOCENTE201980','bibtex')">BibTeX</a>]</p></td>
+	<td>2019</td>
+	<td>Journal of Computational Science<br/>Vol. 34, pp. 80 - 101&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1016/j.jocs.2019.04.009">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S1877750318310238">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_INNOCENTE201980" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Swarm intelligence (SI) is concerned with the collective behaviour that emerges from decentralised self-organising systems, whilst swarm robotics (SR) is an approach to the self-coordination of large numbers of simple robots which emerged as the application of SI to multi-robot systems. Given the increasing severity and frequency of occurrence of wildfires and the hazardous nature of fighting their propagation, the use of disposable inexpensive robots in place of humans is of special interest. This paper demonstrates the feasibility and potential of employing SR to fight fires autonomously, with a focus on the self-coordination mechanisms for the desired firefighting behaviour to emerge. Thus, an efficient physics-based model of fire propagation and a self-organisation algorithm for swarms of firefighting drones are developed and coupled, with the collaborative behaviour based on a particle swarm algorithm adapted to individuals operating within physical dynamic environments of high severity and frequency of change. Numerical experiments demonstrate that the proposed self-organising system is effective, scalable and fault-tolerant, comprising a promising approach to dealing with the suppression of wildfires – one of the world's most pressing challenges of our time.</td>
+</tr>
+<tr id="rev_INNOCENTE201980" class="comment noshow">
+	<td colspan="6"><b>Comment</b>: Search Terms: robotics modelling and prediction system behaviour</td>
+</tr>
+<tr id="bib_INNOCENTE201980" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{INNOCENTE201980,
+  author = {Mauro S. Innocente and Paolo Grasso},
+  title = {Self-organising swarms of firefighting drones: Harnessing the power of collective intelligence in decentralised multi-robot systems},
+  journal = {Journal of Computational Science},
+  year = {2019},
+  volume = {34},
+  pages = {80 - 101},
+  url = {http://www.sciencedirect.com/science/article/pii/S1877750318310238},
+  doi = {https://doi.org/10.1016/j.jocs.2019.04.009}
+}
+</pre></td>
+</tr>
+<tr id="KHAN2020100715" class="entry">
+	<td>Khan, M.M., Kasmarik, K. and Barlow, M.</td>
+	<td>Autonomous detection of collective behaviours in swarms <p class="infolinks">[<a href="javascript:toggleInfo('KHAN2020100715','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('KHAN2020100715','bibtex')">BibTeX</a>]</p></td>
+	<td>2020</td>
+	<td>Swarm and Evolutionary Computation<br/>Vol. 57, pp. 100715&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1016/j.swevo.2020.100715">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S2210650220303680">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_KHAN2020100715" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Collective behaviours such as swarm formations of autonomous agents offer the advantages of efficient movement, redundancy, and potential for human guidance of a single swarm organism. This paper proposes a developmental approach to evolving collective behaviours whereby the evolutionary process is guided by a novel value system. A self-organising map is used at the core of this value system and motion properties of the swarm entities are used as input. Unlike traditional approaches, this value system does not need in advance the precise characteristics of the intended behaviours. We examine the performance of this value system in a series of controlled experiments. Our results demonstrate that the value system can recognise multiple “interesting” structured collective behaviours and distinguish them from random movement patterns. Results show that our value system is most effective distinguishing structured behaviours from random behaviours when using motion properties of individual agents as input. Further variations and modifications to input data such as normalisation and aggregation were also investigated, and it was shown that certain configurations provide better results in distinguishing collective behaviours from random ones.</td>
+</tr>
+<tr id="bib_KHAN2020100715" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{KHAN2020100715,
+  author = {Md Mohiuddin Khan and Kathryn Kasmarik and Michael Barlow},
+  title = {Autonomous detection of collective behaviours in swarms},
+  journal = {Swarm and Evolutionary Computation},
+  year = {2020},
+  volume = {57},
+  pages = {100715},
+  url = {http://www.sciencedirect.com/science/article/pii/S2210650220303680},
+  doi = {https://doi.org/10.1016/j.swevo.2020.100715}
+}
+</pre></td>
+</tr>
+<tr id="KONUR2012199" class="entry">
+	<td>Konur, S., Dixon, C. and Fisher, M.</td>
+	<td>Analysing robot swarm behaviour via probabilistic model checking <p class="infolinks">[<a href="javascript:toggleInfo('KONUR2012199','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('KONUR2012199','bibtex')">BibTeX</a>]</p></td>
+	<td>2012</td>
+	<td>Robotics and Autonomous Systems<br/>Vol. 60(2), pp. 199 - 213&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1016/j.robot.2011.10.005">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S0921889011001916">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_KONUR2012199" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: An alternative to deploying a single robot of high complexity can be to utilise robot swarms comprising large numbers of identical, and much simpler, robots. Such swarms have been shown to be adaptable, fault-tolerant and widely applicable. However, designing individual robot algorithms to ensure effective and correct overall swarm behaviour is actually very difficult. While mechanisms for assessing the effectiveness of any swarm algorithm before deployment are essential, such mechanisms have traditionally involved either computational simulations of swarm behaviour, or experiments with robot swarms themselves. However, such simulations or experiments cannot, by their nature, analyse all possible swarm behaviours. In this paper, we will develop and apply the use of automated probabilistic formal verification techniques to robot swarms, involving an exhaustive mathematical analysis, in order to assess whether swarms will indeed behave as required. In particular we consider a foraging robot scenario to which we apply probabilistic model checking.</td>
+</tr>
+<tr id="bib_KONUR2012199" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{KONUR2012199,
+  author = {Savas Konur and Clare Dixon and Michael Fisher},
+  title = {Analysing robot swarm behaviour via probabilistic model checking},
+  journal = {Robotics and Autonomous Systems},
+  year = {2012},
+  volume = {60},
+  number = {2},
+  pages = {199 - 213},
+  url = {http://www.sciencedirect.com/science/article/pii/S0921889011001916},
+  doi = {https://doi.org/10.1016/j.robot.2011.10.005}
+}
+</pre></td>
+</tr>
+<tr id="LYNN201511" class="entry">
+	<td>Lynn, N. and Suganthan, P.N.</td>
+	<td>Heterogeneous comprehensive learning particle swarm optimization with enhanced exploration and exploitation <p class="infolinks">[<a href="javascript:toggleInfo('LYNN201511','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('LYNN201511','bibtex')">BibTeX</a>]</p></td>
+	<td>2015</td>
+	<td>Swarm and Evolutionary Computation<br/>Vol. 24, pp. 11 - 24&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1016/j.swevo.2015.05.002">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S2210650215000401">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_LYNN201511" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: This paper presents a comprehensive learning particle swarm optimization algorithm with enhanced exploration and exploitation, named as “heterogeneous comprehensive learning particle swarm optimization” (HCLPSO). In this algorithm, the swarm population is divided into two subpopulations. Each subpopulation is assigned to focus solely on either exploration or exploitation. Comprehensive learning (CL) strategy is used to generate the exemplars for both subpopulations. In the exploration-subpopulation, the exemplars are generated by using personal best experiences of the particles in the exploration-subpopulation itself. In the exploitation-subpopulation, the personal best experiences of the entire swarm population are used to generate the exemplars. As the exploration-subpopulation does not learn from any particles in the exploitation-subpopulation, the diversity in the exploration-subpopulation can be retained even if the exploitation-subpopulation converges prematurely. The heterogeneous comprehensive learning particle swarm optimization algorithm is tested on shifted and rotated benchmark problems and compared with other recent particle swarm optimization algorithms to demonstrate superior performance of the proposed algorithm over other particle swarm optimization variants.</td>
+</tr>
+<tr id="bib_LYNN201511" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{LYNN201511,
+  author = {Nandar Lynn and Ponnuthurai Nagaratnam Suganthan},
+  title = {Heterogeneous comprehensive learning particle swarm optimization with enhanced exploration and exploitation},
+  journal = {Swarm and Evolutionary Computation},
+  year = {2015},
+  volume = {24},
+  pages = {11 - 24},
+  url = {http://www.sciencedirect.com/science/article/pii/S2210650215000401},
+  doi = {https://doi.org/10.1016/j.swevo.2015.05.002}
+}
+</pre></td>
+</tr>
+<tr id="MAVROVOUNIOTIS20171" class="entry">
+	<td>Mavrovouniotis, M., Li, C. and Yang, S.</td>
+	<td>A survey of swarm intelligence for dynamic optimization: Algorithms and applications <p class="infolinks">[<a href="javascript:toggleInfo('MAVROVOUNIOTIS20171','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('MAVROVOUNIOTIS20171','bibtex')">BibTeX</a>]</p></td>
+	<td>2017</td>
+	<td>Swarm and Evolutionary Computation<br/>Vol. 33, pp. 1 - 17&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1016/j.swevo.2016.12.005">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S2210650216302541">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_MAVROVOUNIOTIS20171" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Swarm intelligence (SI) algorithms, including ant colony optimization, particle swarm optimization, bee-inspired algorithms, bacterial foraging optimization, firefly algorithms, fish swarm optimization and many more, have been proven to be good methods to address difficult optimization problems under stationary environments. Most SI algorithms have been developed to address stationary optimization problems and hence, they can converge on the (near-) optimum solution efficiently. However, many real-world problems have a dynamic environment that changes over time. For such dynamic optimization problems (DOPs), it is difficult for a conventional SI algorithm to track the changing optimum once the algorithm has converged on a solution. In the last two decades, there has been a growing interest of addressing DOPs using SI algorithms due to their adaptation capabilities. This paper presents a broad review on SI dynamic optimization (SIDO) focused on several classes of problems, such as discrete, continuous, constrained, multi-objective and classification problems, and real-world applications. In addition, this paper focuses on the enhancement strategies integrated in SI algorithms to address dynamic changes, the performance measurements and benchmark generators used in SIDO. Finally, some considerations about future directions in the subject are given.</td>
+</tr>
+<tr id="bib_MAVROVOUNIOTIS20171" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{MAVROVOUNIOTIS20171,
+  author = {Michalis Mavrovouniotis and Changhe Li and Shengxiang Yang},
+  title = {A survey of swarm intelligence for dynamic optimization: Algorithms and applications},
+  journal = {Swarm and Evolutionary Computation},
+  year = {2017},
+  volume = {33},
+  pages = {1 - 17},
+  url = {http://www.sciencedirect.com/science/article/pii/S2210650216302541},
+  doi = {https://doi.org/10.1016/j.swevo.2016.12.005}
+}
+</pre></td>
+</tr>
+<tr id="miner2007swarm" class="entry">
+	<td>Miner, D.</td>
+	<td>Swarm robotics algorithms: A survey <p class="infolinks">[<a href="javascript:toggleInfo('miner2007swarm','bibtex')">BibTeX</a>]</p></td>
+	<td>2007</td>
+	<td>Report, MAPLE lab, University of Maryland&nbsp;</td>
+	<td>article</td>
+	<td>&nbsp;</td>
+</tr>
+<tr id="bib_miner2007swarm" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{miner2007swarm,
+  author = {Miner, Don},
+  title = {Swarm robotics algorithms: A survey},
+  journal = {Report, MAPLE lab, University of Maryland},
+  publisher = {Citeseer},
+  year = {2007}
+}
+</pre></td>
+</tr>
+<tr id="Mirzaei_2020" class="entry">
+	<td>Mirzaei, F., Pouyan, A.A. and Biglari, M.</td>
+	<td>Automatic Controller Code Generation for Swarm Robotics Using Probabilistic Timed Supervisory Control Theory (ptSCT) <p class="infolinks">[<a href="javascript:toggleInfo('Mirzaei_2020','bibtex')">BibTeX</a>]</p></td>
+	<td>2020</td>
+	<td>Journal of Intelligent &amp; Robotic Systems<br/>Vol. 100(2), pp. 729-750&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1007/s10846-020-01201-4">DOI</a> &nbsp;</td>
+</tr>
+<tr id="bib_Mirzaei_2020" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Mirzaei_2020,
+  author = {Faezeh Mirzaei and Ali Akbar Pouyan and Mohsen Biglari},
+  title = {Automatic Controller Code Generation for Swarm Robotics Using Probabilistic Timed Supervisory Control Theory (ptSCT)},
+  journal = {Journal of Intelligent &amp; Robotic Systems},
+  publisher = {Springer Science and Business Media LLC},
+  year = {2020},
+  volume = {100},
+  number = {2},
+  pages = {729--750},
+  doi = {https://doi.org/10.1007/s10846-020-01201-4}
+}
+</pre></td>
+</tr>
+<tr id="OSABA2020101049" class="entry">
+	<td>Osaba, E., Del Ser, J., Iglesias, A. and Yang, X.-S.</td>
+	<td>Soft Computing for Swarm Robotics: New Trends and Applications <p class="infolinks">[<a href="javascript:toggleInfo('OSABA2020101049','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('OSABA2020101049','bibtex')">BibTeX</a>]</p></td>
+	<td>2020</td>
+	<td>Journal of Computational Science<br/>Vol. 39, pp. 101049&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1016/j.jocs.2019.101049">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S187775031931172X">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_OSABA2020101049" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Robotics have experienced a meteoric growth over the last decades, reaching unprecedented levels of distributed intelligence and self-autonomy. Today, a myriad of real-world scenarios can benefit from the application of robots, such as structural health monitoring, complex manufacturing, efficient logistics or disaster management. Related to this topic, there is a paradigm connected to Swarm Intelligence which is grasping significant interest from the Computational Intelligence community. This branch of knowledge is known as Swarm Robotics, which refers to the development of tools and techniques to ease the coordination of multiple small-sized robots towards the accomplishment of difficult tasks or missions in a collaborative fashion. The success of Swarm Robotics applications comes from the efficient use of smart sensing, communication and organization functionalities endowed to these small robots, which allow for collaborative information sensing, operation and knowledge inference from the environment. The numerous industrial and social applications that can be addressed efficiently by virtue of swarm robotics unleashes a vibrant research area focused on distributing intelligence among autonomous agents with simple behavioral rules and communication schedules, yet potentially capable of realizing the most complex tasks. In this context, we present and overview recent contributions reported around this paradigm, which serves as an exemplary excerpt of the potential of Swarm Robotics to become a major research catalyst of the Computational Intelligence arena in years to come.</td>
+</tr>
+<tr id="bib_OSABA2020101049" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{OSABA2020101049,
+  author = {Eneko Osaba and Javier Del Ser and Andres Iglesias and Xin-She Yang},
+  title = {Soft Computing for Swarm Robotics: New Trends and Applications},
+  journal = {Journal of Computational Science},
+  year = {2020},
+  volume = {39},
+  pages = {101049},
+  url = {http://www.sciencedirect.com/science/article/pii/S187775031931172X},
+  doi = {https://doi.org/10.1016/j.jocs.2019.101049}
+}
+</pre></td>
+</tr>
+<tr id="Wang2020" class="entry">
+	<td>Wang, Q. and Mao, X.</td>
+	<td>Dynamic Task Allocation Method of Swarm RobotsBased on Optimal Mass Transport Theory <p class="infolinks">[<a href="javascript:toggleInfo('Wang2020','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Wang2020','bibtex')">BibTeX</a>]</p></td>
+	<td>2020</td>
+	<td>Symmetry&nbsp;</td>
+	<td>article</td>
+	<td>&nbsp;</td>
+</tr>
+<tr id="abs_Wang2020" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: It is difficult for swarm robots to allocate tasks efficiently by self-organization in a dynamicunknown environment. The computational cost of swarm robots will be significantly increased forlarge-scale tasks, and the unbalanced task allocation of robots will also lead to a decrease in systemefficiency. To address these issues, we propose a dynamic task allocation method of swarm robotsbased on optimal mass transport theory.  The problem of large-scale tasks is solved by groupingswarm robots to complete regional tasks.  The task reallocation mechanism realizes the balancedtask allocation of individual robots.  This paper solves the symmetric assignment between robotand task and between the robot groups and the regional tasks.  Our simulation and experimentalresults demonstrate that the proposed method can make the swarm robots self-organize to allocatelarge-scale dynamic tasks effectively. The tasks can also be balanced allocated to each robot in theswarm of robots.</td>
+</tr>
+<tr id="bib_Wang2020" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Wang2020,
+  author = {Qiuzhen Wang and Xinjun Mao},
+  title = {Dynamic Task Allocation Method of Swarm RobotsBased on Optimal Mass Transport Theory},
+  journal = {Symmetry},
+  year = {2020}
+}
+</pre></td>
+</tr>
+<tr id="Winfield_2008" class="entry">
+	<td>Winfield, A.F.T., Liu, W., Nembrini, J. and Martinoli, A.</td>
+	<td>Modelling a wireless connected swarm of mobile robots <p class="infolinks">[<a href="javascript:toggleInfo('Winfield_2008','bibtex')">BibTeX</a>]</p></td>
+	<td>2008</td>
+	<td>Swarm Intelligence<br/>Vol. 2(2-4), pp. 241-266&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1007/s11721-008-0018-0">DOI</a> &nbsp;</td>
+</tr>
+<tr id="bib_Winfield_2008" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Winfield_2008,
+  author = {Alan F. T. Winfield and Wenguo Liu and Julien Nembrini and Alcherio Martinoli},
+  title = {Modelling a wireless connected swarm of mobile robots},
+  journal = {Swarm Intelligence},
+  publisher = {Springer Science and Business Media LLC},
+  year = {2008},
+  volume = {2},
+  number = {2-4},
+  pages = {241--266},
+  doi = {https://doi.org/10.1007/s11721-008-0018-0}
+}
+</pre></td>
+</tr>
+</tbody>
+</table>
+<footer>
+ <small>Created by <a href="http://jabref.sourceforge.net">JabRef</a> on 23/11/2020.</small>
+</footer>
+<!-- file generated by JabRef -->
+</body>
+</html>

@@ -1,0 +1,271 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+{Chung}%
+, {Paranjape}%
+, {Dames}%
+, {Shen}%
+\BCBL {}\ \BBA {} {Kumar}%
+}{%
+{Chung}%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
+}]{%
+8424838}
+\APACinsertmetastar {%
+8424838}%
+\begin{APACrefauthors}%
+{Chung}, S.%
+, {Paranjape}, A\BPBI A.%
+, {Dames}, P.%
+, {Shen}, S.%
+\BCBL {}\ \BBA {} {Kumar}, V.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{Aug}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A Survey on Aerial Swarm Robotics} {A survey on aerial
+  swarm robotics}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{IEEE Transactions on Robotics}{34}{4}{837-855}.
+\newblock
+\begin{APACrefDOI} \doi{10.1109/TRO.2018.2857475} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Innocente%
+\ \BBA {} Grasso%
+}{%
+Innocente%
+\ \BBA {} Grasso%
+}{%
+{\protect \APACyear {2019}}%
+}]{%
+INNOCENTE201980}
+\APACinsertmetastar {%
+INNOCENTE201980}%
+\begin{APACrefauthors}%
+Innocente, M\BPBI S.%
+\BCBT {}\ \BBA {} Grasso, P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Self-organising swarms of firefighting drones:
+  Harnessing the power of collective intelligence in decentralised multi-robot
+  systems} {Self-organising swarms of firefighting drones: Harnessing the power
+  of collective intelligence in decentralised multi-robot systems}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Computational Science}{34}{}{80 - 101}.
+\newblock
+\begin{APACrefURL}
+  \url{http://www.sciencedirect.com/science/article/pii/S1877750318310238}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.jocs.2019.04.009}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Khan%
+, Kasmarik%
+\BCBL {}\ \BBA {} Barlow%
+}{%
+Khan%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+KHAN2020100715}
+\APACinsertmetastar {%
+KHAN2020100715}%
+\begin{APACrefauthors}%
+Khan, M\BPBI M.%
+, Kasmarik, K.%
+\BCBL {}\ \BBA {} Barlow, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Autonomous detection of collective behaviours in swarms}
+  {Autonomous detection of collective behaviours in swarms}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Swarm and Evolutionary Computation}{57}{}{100715}.
+\newblock
+\begin{APACrefURL}
+  \url{http://www.sciencedirect.com/science/article/pii/S2210650220303680}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.swevo.2020.100715}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Konur%
+, Dixon%
+\BCBL {}\ \BBA {} Fisher%
+}{%
+Konur%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2012}}%
+}]{%
+KONUR2012199}
+\APACinsertmetastar {%
+KONUR2012199}%
+\begin{APACrefauthors}%
+Konur, S.%
+, Dixon, C.%
+\BCBL {}\ \BBA {} Fisher, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2012}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Analysing robot swarm behaviour via probabilistic model
+  checking} {Analysing robot swarm behaviour via probabilistic model
+  checking}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Robotics and Autonomous Systems}{60}{2}{199 - 213}.
+\newblock
+\begin{APACrefURL}
+  \url{http://www.sciencedirect.com/science/article/pii/S0921889011001916}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.robot.2011.10.005}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Lynn%
+\ \BBA {} Suganthan%
+}{%
+Lynn%
+\ \BBA {} Suganthan%
+}{%
+{\protect \APACyear {2015}}%
+}]{%
+LYNN201511}
+\APACinsertmetastar {%
+LYNN201511}%
+\begin{APACrefauthors}%
+Lynn, N.%
+\BCBT {}\ \BBA {} Suganthan, P\BPBI N.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Heterogeneous comprehensive learning particle swarm
+  optimization with enhanced exploration and exploitation} {Heterogeneous
+  comprehensive learning particle swarm optimization with enhanced exploration
+  and exploitation}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Swarm and Evolutionary Computation}{24}{}{11 - 24}.
+\newblock
+\begin{APACrefURL}
+  \url{http://www.sciencedirect.com/science/article/pii/S2210650215000401}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.swevo.2015.05.002}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Osaba%
+, {Del Ser}%
+, Iglesias%
+\BCBL {}\ \BBA {} Yang%
+}{%
+Osaba%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+OSABA2020101049}
+\APACinsertmetastar {%
+OSABA2020101049}%
+\begin{APACrefauthors}%
+Osaba, E.%
+, {Del Ser}, J.%
+, Iglesias, A.%
+\BCBL {}\ \BBA {} Yang, X\BHBI S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Soft Computing for Swarm Robotics: New Trends and
+  Applications} {Soft computing for swarm robotics: New trends and
+  applications}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Computational Science}{39}{}{101049}.
+\newblock
+\begin{APACrefURL}
+  \url{http://www.sciencedirect.com/science/article/pii/S187775031931172X}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.jocs.2019.101049}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Wang%
+\ \BBA {} Mao%
+}{%
+Wang%
+\ \BBA {} Mao%
+}{%
+{\protect \APACyear {2020}}%
+}]{%
+WANG2020}
+\APACinsertmetastar {%
+WANG2020}%
+\begin{APACrefauthors}%
+Wang, Q.%
+\BCBT {}\ \BBA {} Mao, X.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Dynamic Task Allocation Method of Swarm RobotsBased on
+  Optimal Mass Transport Theory} {Dynamic task allocation method of swarm
+  robotsbased on optimal mass transport theory}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Symmetry}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Winfield%
+, Liu%
+, Nembrini%
+\BCBL {}\ \BBA {} Martinoli%
+}{%
+Winfield%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2008}}%
+}]{%
+Winfield_2008}
+\APACinsertmetastar {%
+Winfield_2008}%
+\begin{APACrefauthors}%
+Winfield, A\BPBI F\BPBI T.%
+, Liu, W.%
+, Nembrini, J.%
+\BCBL {}\ \BBA {} Martinoli, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2008}{sep}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Modelling a wireless connected swarm of mobile robots}
+  {Modelling a wireless connected swarm of mobile robots}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Swarm Intelligence}{2}{2-4}{241--266}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1007/s11721-008-0018-0}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

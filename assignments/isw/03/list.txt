@@ -1,0 +1,53 @@
+Swarm robotics \cite{INNOCENTE201980} \cite{OSABA2020101049} \cite{WANG2020} \cite{KONUR2012199} \cite{Winfield_2008}
+Self-organization \cite{INNOCENTE201980}
+Particle swarm \cite{INNOCENTE201980}
+Fire spread modelling \cite{INNOCENTE201980}
+    Autonomous unmanned aerial vehicles \cite{INNOCENTE201980} \cite{8424838}
+    Collective behaviour \cite{KHAN2020100715}
+     \cite{KHAN2020100715}
+     \cite{KHAN2020100715}
+     \cite{KHAN2020100715}
+    Computational value systems \cite{KHAN2020100715}
+    Robotics \cite{OSABA2020101049}
+    Swarm Intelligence \cite{OSABA2020101049}
+    Bio-inspired computation \cite{OSABA2020101049}
+    Distributed Computing \cite{OSABA2020101049}
+Metaheuristics \cite{OSABA2020101049}
+    Optimal mass transport (OMT) theory \cite{WANG2020}
+    Dynamic task allocation \cite{WANG2020} \cite{8424838}
+    Task allocation \cite{WANG2020} \cite{8424838}
+    Balanced allocation \cite{WANG2020}
+Modelling \cite{Winfield_2008}
+    Wireless ad hoc network \cite{Winfield_2008}
+    Controllability \cite{8424838}
+    Cooperative systems \cite{8424838}
+    Distributed sensors \cite{8424838}
+Mobile robots \cite{8424838}
+Multi-robot systems \cite{8424838}
+    Stability \cite{8424838}
+    Trajectory control \cite{8424838}
+Human operator \cite{8424838}
+    Ground-based vehicles \cite{8424838}
+Three-dimensional space \cite{8424838}
+    Individual vehicles dynamics \cite{8424838}
+    Cooperative flight \cite{8424838}
+    Trajectory generation \cite{8424838}
+    Adversarial control \cite{8424838}
+    Distributed monitoring \cite{8424838}
+    Distributed mapping \cite{8424838}
+Theoretical tools \cite{8424838}
+    Aerial swarm robotics \cite{8424838}
+    Robot kinematics \cite{8424838}
+    Robot sensing systems \cite{8424838}
+    Vehicle dynamics \cite{8424838}
+    Mathematical model \cite{8424838}
+    Planning \cite{8424838}
+    Distributed robot systems \cite{8424838}
+Comprehensive learning (CL)
+Exploration \cite{LYNN201511}
+Exploitation \cite{LYNN201511}
+Particle swarm optimization (PSO) \cite{LYNN201511}
+Heterogeneous \cite{LYNN201511}
+Swarm algorithms \cite{KONUR2012199}
+Formal verification \cite{KONUR2012199}
+Probabilistic model-checking \cite{KONUR2012199}
