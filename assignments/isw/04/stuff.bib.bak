@@ -1,4 +1,15 @@
-% Encoding: UTF-8
+@misc{griswold2009read,
+  title={How to read an engineering research paper},
+  author={Griswold, William},
+  url = {http://weibel.ucsd.edu/download/cse118/How_to_Read_an_Engineering_Research_Paper.pdf},
+  year={2001}
+}
+@misc{Huang,
+  title={How to read a research paper},
+  author={Huang, Wes},
+  url = {https://www.cs.cmu.edu/~motionplanning/reading/howtoread.pdf},
+  year={2000}
+}
 
 @Article{INNOCENTE201980,
   author   = {Mauro S. Innocente and Paolo Grasso},
@@ -142,7 +153,7 @@
   publisher = {Springer Science and Business Media {LLC}},
 }
 
-@Article{8424838,
+@Article{Chung2018,
   author   = {S. {Chung} and A. A. {Paranjape} and P. {Dames} and S. {Shen} and V. {Kumar}},
   journal  = {IEEE Transactions on Robotics},
   title    = {A Survey on Aerial Swarm Robotics},
@@ -204,7 +215,7 @@
   url      = {http://www.sciencedirect.com/science/article/pii/S2210650215000401},
 }
 
-@InProceedings{10.1007/978-3-642-30976-2_68,
+@InProceedings{Shi2012,
   author    = {Shi, Zhiguo and Tu, Jun and Zhang, Qiao and Liu, Lei and Wei, Junming},
   booktitle = {Advances in Swarm Intelligence},
   title     = {A Survey of Swarm Robotics System},
@@ -571,20 +582,3 @@
   publisher = {Elsevier {BV}},
 }
 
-@Misc{griswold2009read,
-  author = {Griswold, William},
-  title  = {How to read an engineering research paper},
-  year   = {2009},
-  file   = {:/home/sd/Documents/papers/How_to_Read_an_Engineering_Research_Paper.pdf:PDF},
-  url    = {http://weibel.ucsd.edu/download/cse118/How_to_Read_an_Engineering_Research_Paper.pdf},
-}
-
-@Misc{Huang,
-  author = {Huang, Wes},
-  title  = {How to read a research paper},
-  year   = {2000},
-  file   = {:/home/sd/Documents/papers/howtoread.pdf:PDF},
-  url    = {https://www.cs.cmu.edu/~motionplanning/reading/howtoread.pdf},
-}
-
-@Comment{jabref-meta: databaseType:bibtex;}

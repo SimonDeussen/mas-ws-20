@@ -1,0 +1,1337 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Alshawi%
+\ \BBA {} Shalan%
+}{%
+Alshawi%
+\ \BBA {} Shalan%
+}{%
+{\protect \APACyear {2017}}%
+}]{%
+Alshawi2017}
+\APACinsertmetastar {%
+Alshawi2017}%
+\begin{APACrefauthors}%
+Alshawi, M\BPBI A.%
+\BCBT {}\ \BBA {} Shalan, M\BPBI B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Minimal Time Dynamic Task Allocation for a Swarm of
+  Robots} {Minimal time dynamic task allocation for a swarm of robots}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{International Journal of Mechanical Engineering and
+  Robotics Research}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Ball%
+\ \protect \BOthers {.}}{%
+Ball%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2015}}%
+}]{%
+Ball2015}
+\APACinsertmetastar {%
+Ball2015}%
+\begin{APACrefauthors}%
+Ball, D.%
+, Ross, P.%
+, English, A.%
+, Patten, T.%
+, Upcroft, B.%
+, Fitch, R.%
+\BDBL {}Corke, P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Robotics for Sustainable Broad-Acre Agriculture}
+  {Robotics for sustainable broad-acre agriculture}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{}{}{}{439--453}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1007/978-3-319-07488-7_30}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Bechar%
+\ \BBA {} Vigneault%
+}{%
+Bechar%
+\ \BBA {} Vigneault%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+Bechar2016}
+\APACinsertmetastar {%
+Bechar2016}%
+\begin{APACrefauthors}%
+Bechar, A.%
+\BCBT {}\ \BBA {} Vigneault, C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Agricultural robots for field operations: Concepts and
+  components} {Agricultural robots for field operations: Concepts and
+  components}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Biosystems Engineering}{149}{}{94 - 111}.
+\newblock
+\begin{APACrefURL}
+  \url{http://www.sciencedirect.com/science/article/pii/S1537511015301914}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.biosystemseng.2016.06.014}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Chen%
+, Li%
+, Liu%
+, Bao%
+\BCBL {}\ \BBA {} Ren%
+}{%
+Chen%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+Chen2020}
+\APACinsertmetastar {%
+Chen2020}%
+\begin{APACrefauthors}%
+Chen, C.%
+, Li, B.%
+, Liu, J.%
+, Bao, T.%
+\BCBL {}\ \BBA {} Ren, N.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{aug}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Monocular positioning of sweet peppers: An instance
+  segmentation approach for harvest robots} {Monocular positioning of sweet
+  peppers: An instance segmentation approach for harvest robots}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Biosystems Engineering}{196}{}{15--28}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.biosystemseng.2020.05.005}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{Chung}%
+, {Paranjape}%
+, {Dames}%
+, {Shen}%
+\BCBL {}\ \BBA {} {Kumar}%
+}{%
+{Chung}%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
+}]{%
+Chung2018}
+\APACinsertmetastar {%
+Chung2018}%
+\begin{APACrefauthors}%
+{Chung}, S.%
+, {Paranjape}, A\BPBI A.%
+, {Dames}, P.%
+, {Shen}, S.%
+\BCBL {}\ \BBA {} {Kumar}, V.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{Aug}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A Survey on Aerial Swarm Robotics} {A survey on aerial
+  swarm robotics}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{IEEE Transactions on Robotics}{34}{4}{837-855}.
+\newblock
+\begin{APACrefDOI} \doi{10.1109/TRO.2018.2857475} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+CORT{\'{E}}S%
+\ \BBA {} EGERSTEDT%
+}{%
+CORT{\'{E}}S%
+\ \BBA {} EGERSTEDT%
+}{%
+{\protect \APACyear {2017}}%
+}]{%
+CORTES2017}
+\APACinsertmetastar {%
+CORTES2017}%
+\begin{APACrefauthors}%
+CORT{\'{E}}S, J.%
+\BCBT {}\ \BBA {} EGERSTEDT, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Coordinated Control of Multi-Robot Systems: A Survey}
+  {Coordinated control of multi-robot systems: A survey}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{{SICE} Journal of Control, Measurement, and System
+  Integration}{10}{6}{495--503}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.9746/jcmsi.10.495} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Derrac%
+, García%
+, Molina%
+\BCBL {}\ \BBA {} Herrera%
+}{%
+Derrac%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2011}}%
+}]{%
+Derrac2011}
+\APACinsertmetastar {%
+Derrac2011}%
+\begin{APACrefauthors}%
+Derrac, J.%
+, García, S.%
+, Molina, D.%
+\BCBL {}\ \BBA {} Herrera, F.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A practical tutorial on the use of nonparametric
+  statistical tests as a methodology for comparing evolutionary and swarm
+  intelligence algorithms} {A practical tutorial on the use of nonparametric
+  statistical tests as a methodology for comparing evolutionary and swarm
+  intelligence algorithms}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Swarm and Evolutionary Computation}{1}{1}{3 - 18}.
+\newblock
+\begin{APACrefURL}
+  \url{http://www.sciencedirect.com/science/article/pii/S2210650211000034}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.swevo.2011.02.002}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Din%
+, Jabeen%
+, Zia%
+, Khalid%
+\BCBL {}\ \BBA {} Saini%
+}{%
+Din%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
+}]{%
+Din2018}
+\APACinsertmetastar {%
+Din2018}%
+\begin{APACrefauthors}%
+Din, A.%
+, Jabeen, M.%
+, Zia, K.%
+, Khalid, A.%
+\BCBL {}\ \BBA {} Saini, D\BPBI K.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Behavior-based swarm robotic search and rescue using
+  fuzzy controller} {Behavior-based swarm robotic search and rescue using fuzzy
+  controller}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Computers \& Electrical Engineering}{70}{}{53 - 65}.
+\newblock
+\begin{APACrefURL}
+  \url{http://www.sciencedirect.com/science/article/pii/S0045790618314216}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.compeleceng.2018.06.003}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Fu%
+, Majeed%
+, Zhang%
+, Karkee%
+\BCBL {}\ \BBA {} Zhang%
+}{%
+Fu%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+Fu2020}
+\APACinsertmetastar {%
+Fu2020}%
+\begin{APACrefauthors}%
+Fu, L.%
+, Majeed, Y.%
+, Zhang, X.%
+, Karkee, M.%
+\BCBL {}\ \BBA {} Zhang, Q.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{sep}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Faster R{\textendash}{CNN}{\textendash}based apple
+  detection in dense-foliage fruiting-wall trees using {RGB} and depth features
+  for robotic harvesting} {Faster r{\textendash}{CNN}{\textendash}based apple
+  detection in dense-foliage fruiting-wall trees using {RGB} and depth features
+  for robotic harvesting}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Biosystems Engineering}{197}{}{245--256}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.biosystemseng.2020.07.007}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Gao%
+\ \protect \BOthers {.}}{%
+Gao%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
+}]{%
+Gao2018}
+\APACinsertmetastar {%
+Gao2018}%
+\begin{APACrefauthors}%
+Gao, T.%
+, Emadi, H.%
+, Saha, H.%
+, Zhang, J.%
+, Lofquist, A.%
+, Singh, A.%
+\BDBL {}Bhattacharya, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{sep}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A Novel Multirobot System for Plant Phenotyping} {A
+  novel multirobot system for plant phenotyping}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Robotics}{7}{4}{61}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.3390/robotics7040061}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Ge%
+, Xiong%
+\BCBL {}\ \BBA {} From%
+}{%
+Ge%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+Ge2020}
+\APACinsertmetastar {%
+Ge2020}%
+\begin{APACrefauthors}%
+Ge, Y.%
+, Xiong, Y.%
+\BCBL {}\ \BBA {} From, P\BPBI J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{sep}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Symmetry-based 3D shape completion for fruit
+  localisation for harvesting robots} {Symmetry-based 3d shape completion for
+  fruit localisation for harvesting robots}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Biosystems Engineering}{197}{}{188--202}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.biosystemseng.2020.07.003}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Griswold%
+}{%
+Griswold%
+}{%
+{\protect \APACyear {2009}}%
+}]{%
+Griswold2009}
+\APACinsertmetastar {%
+Griswold2009}%
+\begin{APACrefauthors}%
+Griswold, W.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2009}{}{}.
+\newblock
+\APACrefbtitle {How to read an engineering research paper.} {How to read an
+  engineering research paper.}
+\newblock
+\begin{APACrefURL}
+  \url{http://weibel.ucsd.edu/download/cse118/How_to_Read_an_Engineering_Research_Paper.pdf}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{Hameed}%
+}{%
+{Hameed}%
+}{%
+{\protect \APACyear {2018}}%
+}]{%
+Hameed2018}
+\APACinsertmetastar {%
+Hameed2018}%
+\begin{APACrefauthors}%
+{Hameed}, I\BPBI A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{Aug}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A Coverage Planner for Multi-Robot Systems in
+  Agriculture} {A coverage planner for multi-robot systems in
+  agriculture}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {2018 IEEE International Conference on Real-time
+  Computing and Robotics (RCAR)} {2018 ieee international conference on
+  real-time computing and robotics (rcar)}\ (\BPG~698-704).
+\newblock
+\begin{APACrefDOI} \doi{10.1109/RCAR.2018.8621801} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+W.~Huang%
+}{%
+W.~Huang%
+}{%
+{\protect \APACyear {2000}}%
+}]{%
+Huang2000}
+\APACinsertmetastar {%
+Huang2000}%
+\begin{APACrefauthors}%
+Huang, W.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2000}{}{}.
+\newblock
+\APACrefbtitle {How to read a research paper.} {How to read a research paper.}
+\newblock
+\begin{APACrefURL}
+  \url{https://www.cs.cmu.edu/~motionplanning/reading/howtoread.pdf}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Z.~Huang%
+\ \protect \BOthers {.}}{%
+Z.~Huang%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+Huang2020}
+\APACinsertmetastar {%
+Huang2020}%
+\begin{APACrefauthors}%
+Huang, Z.%
+, Jacky, T\BPBI L.%
+, Zhao, X.%
+, Fukuda, H.%
+, Shiigi, T.%
+, Nakanishi, H.%
+\BDBL {}Kondo, N.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Position and orientation measurement system using spread
+  spectrum sound for greenhouse robots} {Position and orientation measurement
+  system using spread spectrum sound for greenhouse robots}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Biosystems Engineering}{198}{}{50 - 62}.
+\newblock
+\begin{APACrefURL}
+  \url{http://www.sciencedirect.com/science/article/pii/S1537511020301999}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.biosystemseng.2020.07.006}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Innocente%
+\ \BBA {} Grasso%
+}{%
+Innocente%
+\ \BBA {} Grasso%
+}{%
+{\protect \APACyear {2019}}%
+}]{%
+Innocente2019}
+\APACinsertmetastar {%
+Innocente2019}%
+\begin{APACrefauthors}%
+Innocente, M\BPBI S.%
+\BCBT {}\ \BBA {} Grasso, P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Self-organising swarms of firefighting drones:
+  Harnessing the power of collective intelligence in decentralised multi-robot
+  systems} {Self-organising swarms of firefighting drones: Harnessing the power
+  of collective intelligence in decentralised multi-robot systems}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Computational Science}{34}{}{80 - 101}.
+\newblock
+\begin{APACrefURL}
+  \url{http://www.sciencedirect.com/science/article/pii/S1877750318310238}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.jocs.2019.04.009}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Jones%
+\ \protect \BOthers {.}}{%
+Jones%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2019}}%
+}]{%
+Jones2019}
+\APACinsertmetastar {%
+Jones2019}%
+\begin{APACrefauthors}%
+Jones, M\BPBI H.%
+, Bell, J.%
+, Dredge, D.%
+, Seabright, M.%
+, Scarfe, A.%
+, Duke, M.%
+\BCBL {}\ \BBA {} MacDonald, B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{nov}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Design and testing of a heavy-duty platform for
+  autonomous navigation in kiwifruit orchards} {Design and testing of a
+  heavy-duty platform for autonomous navigation in kiwifruit orchards}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Biosystems Engineering}{187}{}{129--146}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.biosystemseng.2019.08.019}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Khan%
+, Kasmarik%
+\BCBL {}\ \BBA {} Barlow%
+}{%
+Khan%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+Khan2020}
+\APACinsertmetastar {%
+Khan2020}%
+\begin{APACrefauthors}%
+Khan, M\BPBI M.%
+, Kasmarik, K.%
+\BCBL {}\ \BBA {} Barlow, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Autonomous detection of collective behaviours in swarms}
+  {Autonomous detection of collective behaviours in swarms}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Swarm and Evolutionary Computation}{57}{}{100715}.
+\newblock
+\begin{APACrefURL}
+  \url{http://www.sciencedirect.com/science/article/pii/S2210650220303680}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.swevo.2020.100715}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Konur%
+, Dixon%
+\BCBL {}\ \BBA {} Fisher%
+}{%
+Konur%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2012}}%
+}]{%
+Konur2012}
+\APACinsertmetastar {%
+Konur2012}%
+\begin{APACrefauthors}%
+Konur, S.%
+, Dixon, C.%
+\BCBL {}\ \BBA {} Fisher, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2012}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Analysing robot swarm behaviour via probabilistic model
+  checking} {Analysing robot swarm behaviour via probabilistic model
+  checking}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Robotics and Autonomous Systems}{60}{2}{199 - 213}.
+\newblock
+\begin{APACrefURL}
+  \url{http://www.sciencedirect.com/science/article/pii/S0921889011001916}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.robot.2011.10.005}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{Liang}%
+\ \BBA {} {Lee}%
+}{%
+{Liang}%
+\ \BBA {} {Lee}%
+}{%
+{\protect \APACyear {2014}}%
+}]{%
+Liang2014}
+\APACinsertmetastar {%
+Liang2014}%
+\begin{APACrefauthors}%
+{Liang}, J.%
+\BCBT {}\ \BBA {} {Lee}, C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{June}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Self-navigation of multi-robot system using artificial
+  bee colony algorithm} {Self-navigation of multi-robot system using artificial
+  bee colony algorithm}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {11th IEEE International Conference on Control Automation
+  (ICCA)} {11th ieee international conference on control automation (icca)}\
+  (\BPG~243-248).
+\newblock
+\begin{APACrefDOI} \doi{10.1109/ICCA.2014.6870927} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{Liu}%
+, {Mao}%
+\BCBL {}\ \BBA {} {Yu}%
+}{%
+{Liu}%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2006}}%
+}]{%
+Liu2006}
+\APACinsertmetastar {%
+Liu2006}%
+\begin{APACrefauthors}%
+{Liu}, S.%
+, {Mao}, L.%
+\BCBL {}\ \BBA {} {Yu}, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2006}{June}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Path Planning Based on Ant Colony Algorithm and
+  Distributed Local Navigation for Multi-Robot Systems} {Path planning based on
+  ant colony algorithm and distributed local navigation for multi-robot
+  systems}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {2006 International Conference on Mechatronics and
+  Automation} {2006 international conference on mechatronics and automation}\
+  (\BPG~1733-1738).
+\newblock
+\begin{APACrefDOI} \doi{10.1109/ICMA.2006.257476} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Lynn%
+\ \BBA {} Suganthan%
+}{%
+Lynn%
+\ \BBA {} Suganthan%
+}{%
+{\protect \APACyear {2015}}%
+}]{%
+Lynn2015}
+\APACinsertmetastar {%
+Lynn2015}%
+\begin{APACrefauthors}%
+Lynn, N.%
+\BCBT {}\ \BBA {} Suganthan, P\BPBI N.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Heterogeneous comprehensive learning particle swarm
+  optimization with enhanced exploration and exploitation} {Heterogeneous
+  comprehensive learning particle swarm optimization with enhanced exploration
+  and exploitation}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Swarm and Evolutionary Computation}{24}{}{11 - 24}.
+\newblock
+\begin{APACrefURL}
+  \url{http://www.sciencedirect.com/science/article/pii/S2210650215000401}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.swevo.2015.05.002}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Mavrovouniotis%
+, Li%
+\BCBL {}\ \BBA {} Yang%
+}{%
+Mavrovouniotis%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2017}}%
+}]{%
+Mavrovouniotis2017}
+\APACinsertmetastar {%
+Mavrovouniotis2017}%
+\begin{APACrefauthors}%
+Mavrovouniotis, M.%
+, Li, C.%
+\BCBL {}\ \BBA {} Yang, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A survey of swarm intelligence for dynamic optimization:
+  Algorithms and applications} {A survey of swarm intelligence for dynamic
+  optimization: Algorithms and applications}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Swarm and Evolutionary Computation}{33}{}{1 - 17}.
+\newblock
+\begin{APACrefURL}
+  \url{http://www.sciencedirect.com/science/article/pii/S2210650216302541}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.swevo.2016.12.005}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Miner%
+}{%
+Miner%
+}{%
+{\protect \APACyear {2007}}%
+}]{%
+Miner2007}
+\APACinsertmetastar {%
+Miner2007}%
+\begin{APACrefauthors}%
+Miner, D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2007}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Swarm robotics algorithms: A survey} {Swarm robotics
+  algorithms: A survey}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Report, MAPLE lab, University of Maryland}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Mirzaei%
+, Pouyan%
+\BCBL {}\ \BBA {} Biglari%
+}{%
+Mirzaei%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+Mirzaei2020}
+\APACinsertmetastar {%
+Mirzaei2020}%
+\begin{APACrefauthors}%
+Mirzaei, F.%
+, Pouyan, A\BPBI A.%
+\BCBL {}\ \BBA {} Biglari, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{sep}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Automatic Controller Code Generation for Swarm Robotics
+  Using Probabilistic Timed Supervisory Control Theory ({ptSCT})} {Automatic
+  controller code generation for swarm robotics using probabilistic timed
+  supervisory control theory ({ptSCT})}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Intelligent {\&} Robotic
+  Systems}{100}{2}{729--750}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1007/s10846-020-01201-4}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{Ni}%
+\ \protect \BOthers {.}}{%
+{Ni}%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+Ni2020}
+\APACinsertmetastar {%
+Ni2020}%
+\begin{APACrefauthors}%
+{Ni}, J.%
+, {Wang}, X.%
+, {Tang}, M.%
+, {Cao}, W.%
+, {Shi}, P.%
+\BCBL {}\ \BBA {} {Yang}, S\BPBI X.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {An Improved Real-Time Path Planning Method Based on
+  Dragonfly Algorithm for Heterogeneous Multi-Robot System} {An improved
+  real-time path planning method based on dragonfly algorithm for heterogeneous
+  multi-robot system}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{IEEE Access}{8}{}{140558-140568}.
+\newblock
+\begin{APACrefDOI} \doi{10.1109/ACCESS.2020.3012886} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Oberti%
+\ \BBA {} Shapiro%
+}{%
+Oberti%
+\ \BBA {} Shapiro%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+Oberti2016}
+\APACinsertmetastar {%
+Oberti2016}%
+\begin{APACrefauthors}%
+Oberti, R.%
+\BCBT {}\ \BBA {} Shapiro, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{jun}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Advances in robotic agriculture for crops} {Advances in
+  robotic agriculture for crops}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Biosystems Engineering}{146}{}{1--2}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.biosystemseng.2016.05.010}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Osaba%
+, {Del Ser}%
+, Iglesias%
+\BCBL {}\ \BBA {} Yang%
+}{%
+Osaba%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+Osaba2020}
+\APACinsertmetastar {%
+Osaba2020}%
+\begin{APACrefauthors}%
+Osaba, E.%
+, {Del Ser}, J.%
+, Iglesias, A.%
+\BCBL {}\ \BBA {} Yang, X\BHBI S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Soft Computing for Swarm Robotics: New Trends and
+  Applications} {Soft computing for swarm robotics: New trends and
+  applications}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Computational Science}{39}{}{101049}.
+\newblock
+\begin{APACrefURL}
+  \url{http://www.sciencedirect.com/science/article/pii/S187775031931172X}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.jocs.2019.101049}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Pedersen%
+, Fountas%
+, Have%
+\BCBL {}\ \BBA {} Blackmore%
+}{%
+Pedersen%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2006}}%
+}]{%
+Pedersen2006}
+\APACinsertmetastar {%
+Pedersen2006}%
+\begin{APACrefauthors}%
+Pedersen, S\BPBI M.%
+, Fountas, S.%
+, Have, H.%
+\BCBL {}\ \BBA {} Blackmore, B\BPBI S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2006}{jul}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Agricultural robots{\textemdash}system analysis and
+  economic feasibility} {Agricultural robots{\textemdash}system analysis and
+  economic feasibility}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Precision Agriculture}{7}{4}{295--308}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1007/s11119-006-9014-9}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Raja%
+, Nguyen%
+, Vuong%
+, Slaughter%
+\BCBL {}\ \BBA {} Fennimore%
+}{%
+Raja%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+Raja2020}
+\APACinsertmetastar {%
+Raja2020}%
+\begin{APACrefauthors}%
+Raja, R.%
+, Nguyen, T\BPBI T.%
+, Vuong, V\BPBI L.%
+, Slaughter, D\BPBI C.%
+\BCBL {}\ \BBA {} Fennimore, S\BPBI A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{jul}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{RTD}-{SEPs}: Real-time detection of stem emerging
+  points and classification of crop-weed for robotic weed control in producing
+  tomato} {{RTD}-{SEPs}: Real-time detection of stem emerging points and
+  classification of crop-weed for robotic weed control in producing
+  tomato}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Biosystems Engineering}{195}{}{152--171}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.biosystemseng.2020.05.004}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Rold{\'{a}}n%
+\ \protect \BOthers {.}}{%
+Rold{\'{a}}n%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2016}}%
+}]{%
+Roldan2016}
+\APACinsertmetastar {%
+Roldan2016}%
+\begin{APACrefauthors}%
+Rold{\'{a}}n, J.%
+, Garcia-Aunon, P.%
+, Garz{\'{o}}n, M.%
+, de Le{\'{o}}n, J.%
+, del Cerro, J.%
+\BCBL {}\ \BBA {} Barrientos, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{jul}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Heterogeneous Multi-Robot System for Mapping
+  Environmental Variables of Greenhouses} {Heterogeneous multi-robot system for
+  mapping environmental variables of greenhouses}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Sensors}{16}{7}{1018}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.3390/s16071018} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{Schneider}%
+\ \BBA {} {Wildermuth}%
+}{%
+{Schneider}%
+\ \BBA {} {Wildermuth}%
+}{%
+{\protect \APACyear {2003}}%
+}]{%
+Schneider2003}
+\APACinsertmetastar {%
+Schneider2003}%
+\begin{APACrefauthors}%
+{Schneider}, F\BPBI E.%
+\BCBT {}\ \BBA {} {Wildermuth}, D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2003}{Oct}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A potential field based approach to multi robot
+  formation navigation} {A potential field based approach to multi robot
+  formation navigation}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {IEEE International Conference on Robotics, Intelligent
+  Systems and Signal Processing, 2003. Proceedings. 2003} {Ieee international
+  conference on robotics, intelligent systems and signal processing, 2003.
+  proceedings. 2003}\ (\BVOL~1, \BPG~680-685 vol.1).
+\newblock
+\begin{APACrefDOI} \doi{10.1109/RISSP.2003.1285656} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Shi%
+, Tu%
+, Zhang%
+, Liu%
+\BCBL {}\ \BBA {} Wei%
+}{%
+Shi%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2012}}%
+}]{%
+Shi2012}
+\APACinsertmetastar {%
+Shi2012}%
+\begin{APACrefauthors}%
+Shi, Z.%
+, Tu, J.%
+, Zhang, Q.%
+, Liu, L.%
+\BCBL {}\ \BBA {} Wei, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2012}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A Survey of Swarm Robotics System} {A survey of swarm
+  robotics system}.{\BBCQ}
+\newblock
+\BIn{} Y.~Tan, Y.~Shi\BCBL {}\ \BBA {} Z.~Ji\ (\BEDS), \APACrefbtitle {Advances
+  in Swarm Intelligence} {Advances in swarm intelligence}\ (\BPGS\ 564--572).
+\newblock
+\APACaddressPublisher{Berlin, Heidelberg}{Springer Berlin Heidelberg}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Tiwari%
+, Silver%
+\BCBL {}\ \BBA {} Karnieli%
+}{%
+Tiwari%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+Tiwari2020}
+\APACinsertmetastar {%
+Tiwari2020}%
+\begin{APACrefauthors}%
+Tiwari, A.%
+, Silver, M.%
+\BCBL {}\ \BBA {} Karnieli, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{oct}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Developing object-based image procedures for classifying
+  and characterising different protected agriculture structures using {LiDAR}
+  and orthophoto} {Developing object-based image procedures for classifying and
+  characterising different protected agriculture structures using {LiDAR} and
+  orthophoto}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Biosystems Engineering}{198}{}{91--104}.
+\newblock
+\begin{APACrefDOI} \doi{10.1016/j.biosystemseng.2020.07.017} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+van Herck%
+, Kurtser%
+, Wittemans%
+\BCBL {}\ \BBA {} Edan%
+}{%
+van Herck%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+Herck2020}
+\APACinsertmetastar {%
+Herck2020}%
+\begin{APACrefauthors}%
+van Herck, L.%
+, Kurtser, P.%
+, Wittemans, L.%
+\BCBL {}\ \BBA {} Edan, Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{apr}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Crop design for improved robotic harvesting: A case
+  study of sweet pepper harvesting} {Crop design for improved robotic
+  harvesting: A case study of sweet pepper harvesting}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Biosystems Engineering}{192}{}{294--308}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.biosystemseng.2020.01.021}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Vasconez%
+, Kantor%
+\BCBL {}\ \BBA {} Cheein%
+}{%
+Vasconez%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2019}}%
+}]{%
+Vasconez2019}
+\APACinsertmetastar {%
+Vasconez2019}%
+\begin{APACrefauthors}%
+Vasconez, J\BPBI P.%
+, Kantor, G\BPBI A.%
+\BCBL {}\ \BBA {} Cheein, F\BPBI A\BPBI A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{mar}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Human{\textendash}robot interaction in agriculture: A
+  survey and current challenges} {Human{\textendash}robot interaction in
+  agriculture: A survey and current challenges}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Biosystems Engineering}{179}{}{35--48}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.biosystemseng.2018.12.005}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Villa-Henriksen%
+, Edwards%
+, Pesonen%
+, Green%
+\BCBL {}\ \BBA {} S{\o}rensen%
+}{%
+Villa-Henriksen%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+VillaHenriksen2020}
+\APACinsertmetastar {%
+VillaHenriksen2020}%
+\begin{APACrefauthors}%
+Villa-Henriksen, A.%
+, Edwards, G\BPBI T.%
+, Pesonen, L\BPBI A.%
+, Green, O.%
+\BCBL {}\ \BBA {} S{\o}rensen, C\BPBI A\BPBI G.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{mar}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Internet of Things in arable farming: Implementation,
+  applications, challenges and potential} {Internet of things in arable
+  farming: Implementation, applications, challenges and potential}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Biosystems Engineering}{191}{}{60--84}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.biosystemseng.2019.12.013}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{Wang}%
+, {Liu}%
+, {Li}%
+\BCBL {}\ \BBA {} {Prorok}%
+}{%
+{Wang}%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+Wang2020a}
+\APACinsertmetastar {%
+Wang2020a}%
+\begin{APACrefauthors}%
+{Wang}, B.%
+, {Liu}, Z.%
+, {Li}, Q.%
+\BCBL {}\ \BBA {} {Prorok}, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{Oct}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Mobile Robot Path Planning in Dynamic Environments
+  Through Globally Guided Reinforcement Learning} {Mobile robot path planning
+  in dynamic environments through globally guided reinforcement
+  learning}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{IEEE Robotics and Automation Letters}{5}{4}{6932-6939}.
+\newblock
+\begin{APACrefDOI} \doi{10.1109/LRA.2020.3026638} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Weiss%
+\ \BBA {} Biber%
+}{%
+Weiss%
+\ \BBA {} Biber%
+}{%
+{\protect \APACyear {2011}}%
+}]{%
+Weiss2011}
+\APACinsertmetastar {%
+Weiss2011}%
+\begin{APACrefauthors}%
+Weiss, U.%
+\BCBT {}\ \BBA {} Biber, P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{may}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Plant detection and mapping for agricultural robots
+  using a 3D {LIDAR} sensor} {Plant detection and mapping for agricultural
+  robots using a 3d {LIDAR} sensor}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Robotics and Autonomous Systems}{59}{5}{265--273}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.robot.2011.02.011}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Winfield%
+, Liu%
+, Nembrini%
+\BCBL {}\ \BBA {} Martinoli%
+}{%
+Winfield%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2008}}%
+}]{%
+Winfield2008}
+\APACinsertmetastar {%
+Winfield2008}%
+\begin{APACrefauthors}%
+Winfield, A\BPBI F\BPBI T.%
+, Liu, W.%
+, Nembrini, J.%
+\BCBL {}\ \BBA {} Martinoli, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2008}{sep}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Modelling a wireless connected swarm of mobile robots}
+  {Modelling a wireless connected swarm of mobile robots}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Swarm Intelligence}{2}{2-4}{241--266}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1007/s11721-008-0018-0}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{Wu}%
+, {Zeng}%
+, {Pan}%
+, {Wang}%
+\BCBL {}\ \BBA {} {Liu}%
+}{%
+{Wu}%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2019}}%
+}]{%
+Wu2019}
+\APACinsertmetastar {%
+Wu2019}%
+\begin{APACrefauthors}%
+{Wu}, C.%
+, {Zeng}, R.%
+, {Pan}, J.%
+, {Wang}, C\BPBI C\BPBI L.%
+\BCBL {}\ \BBA {} {Liu}, Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{Oct}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Plant Phenotyping by Deep-Learning-Based Planner for
+  Multi-Robots} {Plant phenotyping by deep-learning-based planner for
+  multi-robots}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{IEEE Robotics and Automation Letters}{4}{4}{3113-3120}.
+\newblock
+\begin{APACrefDOI} \doi{10.1109/LRA.2019.2924125} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}
