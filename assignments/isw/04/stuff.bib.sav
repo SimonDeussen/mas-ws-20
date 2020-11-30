@@ -1,0 +1,15 @@
+% Encoding: UTF-8
+@misc{griswold2009read,
+  title={How to read an engineering research paper},
+  author={Griswold, William},
+  url = {http://weibel.ucsd.edu/download/cse118/How_to_Read_an_Engineering_Research_Paper.pdf},
+  year={2001}
+}
+@misc{Huang,
+  title={How to read a research paper},
+  author={Huang, Wes},
+  url = {https://www.cs.cmu.edu/~motionplanning/reading/howtoread.pdf},
+  year={2000}
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}
