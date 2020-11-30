@@ -14,45 +14,45 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: stuff.bib
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
 Warning--No journal in Ball2015
-You've used 41 entries,
+You've used 42 entries,
             6951 wiz_defined-function locations,
-            1587 strings with 21087 characters,
-and the built_in function-call counts, 93021 in all, are:
-= -- 11080
-> -- 878
-< -- 4811
-+ -- 5009
-- -- 82
-* -- 6390
-:= -- 17479
-add.period$ -- 171
-call.type$ -- 41
-change.case$ -- 748
+            1598 strings with 21360 characters,
+and the built_in function-call counts, 95192 in all, are:
+= -- 11330
+> -- 897
+< -- 4931
++ -- 5123
+- -- 84
+* -- 6549
+:= -- 17904
+add.period$ -- 175
+call.type$ -- 42
+change.case$ -- 767
 chr.to.int$ -- 0
-cite$ -- 83
-duplicate$ -- 2646
-empty$ -- 3420
-format.name$ -- 1531
-if$ -- 16995
+cite$ -- 85
+duplicate$ -- 2703
+empty$ -- 3504
+format.name$ -- 1563
+if$ -- 17386
 int.to.chr$ -- 0
-int.to.str$ -- 123
+int.to.str$ -- 126
 missing$ -- 0
-newline$ -- 1192
-num.names$ -- 330
-pop$ -- 1399
+newline$ -- 1222
+num.names$ -- 338
+pop$ -- 1424
 preamble$ -- 1
-purify$ -- 210
+purify$ -- 216
 quote$ -- 0
-skip$ -- 5522
+skip$ -- 5648
 stack$ -- 0
-substring$ -- 5445
-swap$ -- 1537
-text.length$ -- 172
+substring$ -- 5565
+swap$ -- 1574
+text.length$ -- 176
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 3600
+type$ -- 3680
 warning$ -- 1
-while$ -- 568
+while$ -- 582
 width$ -- 0
-write$ -- 1556
+write$ -- 1595
 (There was 1 warning)

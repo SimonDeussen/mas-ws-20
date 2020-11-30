@@ -13,6 +13,7 @@
   doi      = {https://doi.org/10.1016/j.jocs.2019.04.009},
   file     = {:/home/sd/Documents/papers/innocente2019.pdf:PDF},
   keywords = {Self-organisation, Particle swarm, Fire spread modelling, Swarm robotics, Autonomous unmanned aerial vehicles},
+  priority = {9},
   url      = {http://www.sciencedirect.com/science/article/pii/S1877750318310238},
 }
 
@@ -29,6 +30,7 @@
   doi      = {https://doi.org/10.1016/j.compeleceng.2018.06.003},
   file     = {:/home/sd/Documents/papers/din2018.pdf:PDF},
   keywords = {Behavior-based robotics, Swarm robotics, Search and rescue, Fuzzy controller, Virtual leader, Distributed search},
+  priority = {6},
   url      = {http://www.sciencedirect.com/science/article/pii/S0045790618314216},
 }
 
@@ -44,6 +46,7 @@
   doi      = {https://doi.org/10.1016/j.swevo.2020.100715},
   file     = {:/home/sd/Documents/papers/khan2020.pdf:PDF},
   keywords = {Collective behaviour, Artificial swarming, Evolutionary framework, Boids model, Computational value systems},
+  priority = {0},
   url      = {http://www.sciencedirect.com/science/article/pii/S2210650220303680},
 }
 
@@ -59,6 +62,7 @@
   doi      = {https://doi.org/10.1016/j.jocs.2019.101049},
   file     = {:/home/sd/Documents/papers/osaba2019.pdf:PDF},
   keywords = {Swarm Robotics, Swarm Intelligence, Bio-inspired computation, Distributed Computing, Metaheuristics, Robotics},
+  priority = {1},
   url      = {http://www.sciencedirect.com/science/article/pii/S187775031931172X},
 }
 
@@ -68,8 +72,10 @@
   title    = {Dynamic Task Allocation Method of Swarm RobotsBased on Optimal Mass Transport Theory},
   year     = {2020},
   abstract = {It is difficult for swarm robots to allocate tasks efficiently by self-organization in a dynamicunknown environment. The computational cost of swarm robots will be significantly increased forlarge-scale tasks, and the unbalanced task allocation of robots will also lead to a decrease in systemefficiency. To address these issues, we propose a dynamic task allocation method of swarm robotsbased on optimal mass transport theory.  The problem of large-scale tasks is solved by groupingswarm robots to complete regional tasks.  The task reallocation mechanism realizes the balancedtask allocation of individual robots.  This paper solves the symmetric assignment between robotand task and between the robot groups and the regional tasks.  Our simulation and experimentalresults demonstrate that the proposed method can make the swarm robots self-organize to allocatelarge-scale dynamic tasks effectively. The tasks can also be balanced allocated to each robot in theswarm of robots.},
+  doi      = {https://doi.org/10.3390/sym12101682},
   file     = {:/home/sd/Documents/papers/symmetry-12-01682.pdf:PDF},
   keywords = {swarm robots; optimal mass transport (OMT) theory; dynamic task allocation;task reallocation; balanced allocation},
+  priority = {0},
 }
 
 @Article{Alshawi2017,
@@ -78,8 +84,10 @@
   title    = {Minimal Time Dynamic Task Allocation for a Swarm of Robots},
   year     = {2017},
   abstract = {This  paper  discusses  a  solution  to  one  of  the  key issues in the swarm robotics field which is the dynamic task allocation  problem  in  which  a group  of  robots  needs  to  be allocated to a set of tasks scattered in the environment in an efficient  and  decentralized  way.  The  application  considered in  this  context  is  the  foraging  application  which  can  be addressed  as  a  searching  job  followed  by  a  transportation job. The  near-optimal  allocation  scheme  is  found  by  using the  Particle  swarm  optimization  (PSO)  technique  to  handle the whole task execution in a minimal time. Two case studies have  been  considered using  different  swarm  sizes  and  the implemented   code   has   been   executed   for   a   distinctive number   of   iterations.   A   stability   proof   for   the   PSO technique’s  parameters  choices  is  presented.  Simulation results  were  verified  by  comparing  the  proposed  algorithm with   the   simulated   annealing   optimization   technique   in terms  of  computational  time,  number  of  iterations  needed and  quality  of  solution  to  demonstrate  the  robustness  and efficiency of the algorithm.},
+  doi      = {10.18178/ijmerr.6.6.481-487},
   file     = {:/home/sd/Documents/papers/20171115061216427.pdf:PDF},
   keywords = {dynamic task allocation, swarm robotics, particle swarm optimization, simulated annealing, swarm optimization, homogeneous robots},
+  priority = {0},
 }
 
 @Article{Winfield2008,
@@ -93,6 +101,7 @@
   volume    = {2},
   doi       = {https://doi.org/10.1007/s11721-008-0018-0},
   file      = {:/home/sd/Documents/papers/Winfield2008_Article_ModellingAWirelessConnectedSwa.pdf:PDF},
+  priority  = {39},
   publisher = {Springer Science and Business Media {LLC}},
 }
 
@@ -108,6 +117,7 @@
   abstract  = {We present a unified approach to describing certain types of collective decision making in swarm robotics that bridges from a microscopic individual-based description to aggregate properties. Our approach encompasses robot swarm experiments, microscopic and probabilistic macroscopic-discrete simulations as well as an analytic mathematical model. Following up on previous work, we identify the symmetry parameter, a measure of the progress of the swarm towards a decision, as a fundamental integrated swarm property and formulate its time evolution as a continuous-time Markov process. Contrary to previous work, which justified this approach only empirically and a posteriori, we justify it from first principles and derive hard limits on the parameter regime in which it is applicable.},
   doi       = {10.1371/journal.pone.0111542},
   file      = {:/home/sd/Documents/papers/journal.pone.0111542.PDF:PDF},
+  priority  = {16},
   publisher = {Public Library of Science},
   url       = {https://doi.org/10.1371/journal.pone.0111542},
 }
@@ -125,6 +135,7 @@
   doi      = {https://doi.org/10.1016/j.robot.2011.10.005},
   file     = {:/home/sd/Documents/papers/1-s2.0-S0921889011001916-main.pdf:PDF},
   keywords = {Robot swarms, Swarm algorithms, Formal verification, Probabilistic model-checking},
+  priority = {62},
   url      = {http://www.sciencedirect.com/science/article/pii/S0921889011001916},
 }
 
@@ -139,6 +150,7 @@
   volume    = {100},
   doi       = {https://doi.org/10.1007/s10846-020-01201-4},
   file      = {:/home/sd/Documents/papers/Mirzaei2020_Article_AutomaticControllerCodeGenerat.pdf:PDF},
+  priority  = {0},
   publisher = {Springer Science and Business Media {LLC}},
 }
 
@@ -156,6 +168,7 @@
   doi      = {10.1109/TRO.2018.2857475},
   file     = {:/home/sd/Documents/papers/08424838.pdf:PDF},
   keywords = {autonomous aerial vehicles;controllability;cooperative systems;distributed sensors;mobile robots;multi-robot systems;stability;trajectory control;human operator;clever application;innovative application;ground-based vehicles;three-dimensional space;individual vehicles dynamics;cooperative flight;trajectory generation;distributed sensing;task allocation;adversarial control;distributed monitoring;distributed mapping;stability;controllability;theoretical tools;aerial swarm robotics;Robot kinematics;Robot sensing systems;Unmanned aerial vehicles;Vehicle dynamics;Mathematical model;Planning;Aerial robotics;distributed robot systems;networked robots},
+  priority = {33},
 }
 
 @Article{Mavrovouniotis2017,
@@ -170,6 +183,7 @@
   doi      = {https://doi.org/10.1016/j.swevo.2016.12.005},
   file     = {:/home/sd/Documents/papers/mavrovouniotis2017.pdf:PDF},
   keywords = {Swarm intelligence, Dynamic optimization, Ant colony optimization, Particle swarm optimization},
+  priority = {189},
   url      = {http://www.sciencedirect.com/science/article/pii/S2210650216302541},
 }
 
@@ -186,6 +200,7 @@
   doi      = {https://doi.org/10.1016/j.swevo.2011.02.002},
   file     = {:/home/sd/Documents/papers/1-s2.0-S2210650211000034-main.pdf:PDF},
   keywords = {Statistical analysis, Nonparametric statistics, Pairwise comparisons, Multiple comparisons, Evolutionary algorithms, Swarm intelligence algorithms},
+  priority = {2132},
   url      = {http://www.sciencedirect.com/science/article/pii/S2210650211000034},
 }
 
@@ -201,10 +216,10 @@
   doi      = {https://doi.org/10.1016/j.swevo.2015.05.002},
   file     = {:/home/sd/Documents/papers/1-s2.0-S2210650215000401-main.pdf:PDF},
   keywords = {Comprehensive learning (CL), Exploration, Exploitation, Particle swarm optimization (PSO), Heterogeneous},
+  printed  = {171},
   url      = {http://www.sciencedirect.com/science/article/pii/S2210650215000401},
 }
-
-@InProceedings{Shi2012,
+{Shi2012,
   author    = {Shi, Zhiguo and Tu, Jun and Zhang, Qiao and Liu, Lei and Wei, Junming},
   booktitle = {Advances in Swarm Intelligence},
   title     = {A Survey of Swarm Robotics System},
@@ -214,8 +229,10 @@
   pages     = {564--572},
   publisher = {Springer Berlin Heidelberg},
   abstract  = {Swarm robotics system has been a particularly active topic of robotics in recent years due to the increasing deepening of research on robotics technology and application. This paper gives a survey of swarm robotics system research from such aspects as theoretical basis and physical research, simulation platform, distributed control information fusion and communications system. Some problems that need to be solved about swarm robotics system research in IOT (Internet of Things) environment are also raised, such as co-adaptation, distributed control and self-organization, resource scheduling management. Finally, the ant colony algorithm and particle swarm optimization are applied to the swarm robotics system.},
+  doi       = {https://doi.org/10.1007/978-3-642-30976-2_68\},
   file      = {:/home/sd/Documents/papers/2012_Book_AdvancesInSwarmIntelligence.pdf:PDF},
   isbn      = {978-3-642-30976-2},
+  priority  = {16},
 }
 
 @Article{Miner2007,
@@ -223,7 +240,9 @@
   journal   = {Report, MAPLE lab, University of Maryland},
   title     = {Swarm robotics algorithms: A survey},
   year      = {2007},
+  doi       = {10.1.1.99.4450},
   file      = {:/home/sd/Documents/papers/10.1.1.99.4450.pdf:PDF},
+  priority  = {2},
   publisher = {Citeseer},
 }
 
@@ -239,6 +258,7 @@
   doi       = {10.1109/RISSP.2003.1285656},
   file      = {:/home/sd/Documents/papers/01285656.pdf:PDF},
   keywords  = {multi-robot systems;mobile robots;navigation;collision avoidance;multirobot formation navigation;multirobot-systems;directed potential field;motion coordination;obstacle avoidance;Navigation;Shape;Robot sensing systems;Orbital robotics;Mobile robots;Communication networks;Decontamination;Waste management;Agriculture;Surveillance},
+  priority  = {46},
 }
 
 @InProceedings{Liang2014,
@@ -253,6 +273,7 @@
   file      = {:/home/sd/Documents/papers/06870927.pdf:PDF},
   issn      = {1948-3457},
   keywords  = {collision avoidance;control system synthesis;evolutionary computation;mobile robots;multi-robot systems;navigation;three-term control;tracking;self-navigation;multirobot system;artificial bee colony algorithm;ABC algorithm;on-line path planning;hybrid objective functions;robot collision avoidance;tracking control;planned neighborhood target;PID controllers;Collision avoidance;Sociology;Statistics;Mobile robots;Linear programming;Multi-robot systems},
+  priority  = {0},
 }
 
 @InProceedings{Liu2006,
@@ -267,6 +288,7 @@
   file      = {:/home/sd/Documents/papers/04026354.pdf:PDF},
   issn      = {2152-744X},
   keywords  = {collision avoidance;cooperative systems;mobile robots;multi-robot systems;ant colony algorithm;distributed local navigation;multi-robot systems;collision avoidance;collision-free path;mobile robot;decoupled path planning;path searching;Path planning;Navigation;Multirobot systems;Robot kinematics;Mobile robots;Collision avoidance;Robotics and automation;Robot sensing systems;Orbital robotics;Motion planning;Multiple mobile robots;ant colony algorithm;path planning;distributed navigation},
+  priority  = {22},
 }
 
 @Article{Roldan2016,
@@ -280,6 +302,7 @@
   volume    = {16},
   doi       = {https://doi.org/10.3390/s16071018},
   file      = {:/home/sd/Documents/papers/sensors-16-01018.pdf:PDF},
+  priority  = {24},
   publisher = {{MDPI} {AG}},
 }
 
@@ -291,6 +314,7 @@
   booktitle = {Springer Tracts in Advanced Robotics},
   doi       = {https://doi.org/10.1007/978-3-319-07488-7_30},
   file      = {:/home/sd/Documents/papers/2015_Book_FieldAndServiceRobotics.pdf:PDF},
+  priority  = {16},
   publisher = {Springer International Publishing},
 }
 
@@ -305,6 +329,7 @@
   volume    = {7},
   doi       = {https://doi.org/10.3390/robotics7040061},
   file      = {:/home/sd/Documents/papers/robotics-07-00061.pdf:PDF},
+  priority  = {6},
   publisher = {{MDPI} {AG}},
 }
 
@@ -319,6 +344,7 @@
   doi       = {10.1109/RCAR.2018.8621801},
   file      = {:/home/sd/Documents/papers/08621801.pdf:PDF},
   keywords  = {agricultural machinery;crops;fertilisers;industrial robots;mobile robots;multi-robot systems;path planning;soil;autonomous vehicles;automated vehicles;Intelligent Coverage Path Planning algorithms;multirobot systems;heavy tractors;agricultural machinery;soil fertility;soil compaction problem;Robots;Soil;Agriculture;Interpolation;Task analysis;Agricultural machinery;Surface topography;multi-robot planning;cooperative navigation;optimization;agriculture},
+  priority  = {0},
 }
 
 @Article{CORTES2017,
@@ -331,39 +357,8 @@
   volume    = {10},
   doi       = {https://doi.org/10.9746/jcmsi.10.495},
   file      = {:/home/sd/Documents/papers/10_495.pdf:PDF},
+  priority  = {12},
   publisher = {The Society of Instrument and Control Engineers},
-}
-
-@Article{Wu2019,
-  author   = {C. {Wu} and R. {Zeng} and J. {Pan} and C. C. L. {Wang} and Y. {Liu}},
-  journal  = {IEEE Robotics and Automation Letters},
-  title    = {Plant Phenotyping by Deep-Learning-Based Planner for Multi-Robots},
-  year     = {2019},
-  issn     = {2377-3766},
-  month    = {Oct},
-  number   = {4},
-  pages    = {3113-3120},
-  volume   = {4},
-  abstract = {Manual plant phenotyping is slow, error prone, and labor intensive. In this letter, we present an automated robotic system for fast, precise, and noninvasive measurements using a new deep-learning-based next-best view planning pipeline. Specifically, we first use a deep neural network to estimate a set of candidate voxels for the next scanning. Next, we cast rays from these voxels to determine the optimal viewpoints. We empirically evaluate our method in simulations and real-world robotic experiments with up to three robotic arms to demonstrate its efficiency and effectiveness. One advantage of our new pipeline is that it can be easily extended to a multi-robot system where multiple robots move simultaneously according to the planned motions. Our system significantly outperforms the single robot in flexibility and planning time. High-throughput phenotyping can be made practically.},
-  doi      = {10.1109/LRA.2019.2924125},
-  file     = {:/home/sd/Documents/papers/08743431.pdf:PDF},
-  keywords = {agriculture;industrial manipulators;learning (artificial intelligence);mobile robots;multi-robot systems;neural nets;path planning;planning (artificial intelligence);service robots;precise measurements;high-throughput phenotyping;planning time;single robot;planned motions;multiple robots;multirobot system;robotic arms;real-world robotic experiments;optimal viewpoints;candidate voxels;deep neural network;view planning pipeline;noninvasive measurements;fast measurements;automated robotic system;manual plant phenotyping;multirobots;deep-learning-based planner;Planning;Robot sensing systems;Manipulators;Multi-robot systems;Three-dimensional displays;Agricultural automation;multi-robot systems;computer vision for automation},
-}
-
-@Article{Wang2020a,
-  author   = {B. {Wang} and Z. {Liu} and Q. {Li} and A. {Prorok}},
-  journal  = {IEEE Robotics and Automation Letters},
-  title    = {Mobile Robot Path Planning in Dynamic Environments Through Globally Guided Reinforcement Learning},
-  year     = {2020},
-  issn     = {2377-3766},
-  month    = {Oct},
-  number   = {4},
-  pages    = {6932-6939},
-  volume   = {5},
-  abstract = {Path planning for mobile robots in large dynamic environments is a challenging problem, as the robots are required to efficiently reach their given goals while simultaneously avoiding potential conflicts with other robots or dynamic objects. In the presence of dynamic obstacles, traditional solutions usually employ re-planning strategies, which re-call a planning algorithm to search for an alternative path whenever the robot encounters a conflict. However, such re-planning strategies often cause unnecessary detours. To address this issue, we propose a learning-based technique that exploits environmental spatio-temporal information. Different from existing learning-based methods, we introduce a globally guided reinforcement learning approach (G2RL), which incorporates a novel reward structure that generalizes to arbitrary environments. We apply G2RL to solve the multi-robot path planning problem in a fully distributed reactive manner. We evaluate our method across different map types, obstacle densities, and the number of robots. Experimental results show that G2RL generalizes well, outperforming existing distributed methods, and performing very similarly to fully centralized state-of-the-art benchmarks.},
-  doi      = {10.1109/LRA.2020.3026638},
-  file     = {:/home/sd/Documents/papers/09205217.pdf:PDF},
-  keywords = {collision avoidance;learning (artificial intelligence);mobile robots;multi-robot systems;mobile robot path planning;dynamic obstacles;re-planning strategies;planning algorithm;learning-based technique;environmental spatio-temporal information;learning-based methods;globally guided reinforcement learning approach;multirobot path;G2RL approach;Mobile robots;Path planning;Reinforcement learning;Learning (artificial intelligence);Scalability;Hierarchical path planning;mobile robots;reinforcement learning;scalability},
 }
 
 @Article{Ni2020,
@@ -378,6 +373,7 @@
   doi      = {10.1109/ACCESS.2020.3012886},
   file     = {:/home/sd/Documents/papers/09152817.pdf:PDF},
   keywords = {autonomous aerial vehicles;mobile robots;multi-robot systems;neurocontrollers;path planning;UAV/UGV system;bio-inspired neural network;grid method;neuron topology map;3D environment;dragonfly algorithm;real-time path planning method;heterogeneous multirobot system;multirobots;unmanned ground vehicles;Path planning;Real-time systems;Three-dimensional displays;Robots;Multi-robot systems;Neurons;Task analysis;Heterogeneous multi-robot system;path planning;dragonfly algorithm;bio-inspired neural network},
+  priority = {0},
 }
 
 @Article{Bechar2016,
@@ -392,6 +388,7 @@
   doi      = {https://doi.org/10.1016/j.biosystemseng.2016.06.014},
   file     = {:/home/sd/Documents/papers/1-s2.0-S1537511015301914-main.pdf:PDF},
   keywords = {Agricultural robots, Robotics, Field operations, Autonomous, rank5},
+  priority = {146},
   ranking  = {rank5},
   url      = {http://www.sciencedirect.com/science/article/pii/S1537511015301914},
 }
@@ -408,6 +405,7 @@
   doi      = {https://doi.org/10.1016/j.biosystemseng.2020.07.006},
   file     = {:/home/sd/Documents/papers/huang2020.pdf:PDF},
   keywords = {Spread Spectrum Sound, Positioning System, Orientation measurement},
+  priority = {0},
   url      = {http://www.sciencedirect.com/science/article/pii/S1537511020301999},
 }
 
@@ -421,6 +419,7 @@
   volume    = {198},
   doi       = {10.1016/j.biosystemseng.2020.07.017},
   file      = {:/home/sd/Documents/papers/tiwari2020.pdf:PDF},
+  priority  = {0},
   publisher = {Elsevier {BV}},
 }
 
@@ -434,6 +433,7 @@
   volume    = {197},
   doi       = {https://doi.org/10.1016/j.biosystemseng.2020.07.003},
   file      = {:/home/sd/Documents/papers/ge2020.pdf:PDF},
+  priority  = {0},
   publisher = {Elsevier {BV}},
 }
 
@@ -447,6 +447,7 @@
   volume    = {197},
   doi       = {https://doi.org/10.1016/j.biosystemseng.2020.07.007},
   file      = {:/home/sd/Documents/papers/10.1016@j.biosystemseng.2020.07.007.pdf:PDF},
+  priority  = {5},
   publisher = {Elsevier {BV}},
 }
 
@@ -460,6 +461,7 @@
   volume    = {196},
   doi       = {https://doi.org/10.1016/j.biosystemseng.2020.05.005},
   file      = {:/home/sd/Documents/papers/chen2020.pdf:PDF},
+  priority  = {0},
   publisher = {Elsevier {BV}},
 }
 
@@ -473,6 +475,7 @@
   volume    = {195},
   doi       = {https://doi.org/10.1016/j.biosystemseng.2020.05.004},
   file      = {:/home/sd/Documents/papers/raja2020.pdf:PDF},
+  priority  = {0},
   publisher = {Elsevier {BV}},
 }
 
@@ -487,6 +490,7 @@
   doi       = {https://doi.org/10.1016/j.biosystemseng.2020.01.021},
   file      = {:/home/sd/Documents/papers/vanherck2020.pdf:PDF},
   keywords  = {rank5},
+  priority  = {1},
   publisher = {Elsevier {BV}},
   ranking   = {rank5},
 }
@@ -501,6 +505,7 @@
   volume    = {191},
   doi       = {https://doi.org/10.1016/j.biosystemseng.2019.12.013},
   file      = {:/home/sd/Documents/papers/villa-henriksen2020.pdf:PDF},
+  priority  = {13},
   publisher = {Elsevier {BV}},
 }
 
@@ -514,6 +519,7 @@
   volume    = {146},
   doi       = {https://doi.org/10.1016/j.biosystemseng.2016.05.010},
   file      = {:/home/sd/Documents/papers/oberti2016.pdf:PDF},
+  priority  = {12},
   publisher = {Elsevier {BV}},
 }
 
@@ -528,6 +534,7 @@
   volume    = {7},
   doi       = {https://doi.org/10.1007/s11119-006-9014-9},
   file      = {:/home/sd/Documents/papers/Pedersen2006_Article_AgriculturalRobotsSystemAnalys.pdf:PDF},
+  priority  = {90},
   publisher = {Springer Science and Business Media {LLC}},
 }
 
@@ -542,6 +549,7 @@
   volume    = {59},
   doi       = {https://doi.org/10.1016/j.robot.2011.02.011},
   file      = {:/home/sd/Documents/papers/1-s2.0-S0921889011000315-main.pdf:PDF},
+  priority  = {117},
   publisher = {Elsevier {BV}},
 }
 
@@ -555,6 +563,7 @@
   volume    = {179},
   doi       = {https://doi.org/10.1016/j.biosystemseng.2018.12.005},
   file      = {:/home/sd/Documents/papers/vasconez2019.pdf:PDF},
+  priority  = {31},
   publisher = {Elsevier {BV}},
 }
 
@@ -568,6 +577,7 @@
   volume    = {187},
   doi       = {https://doi.org/10.1016/j.biosystemseng.2019.08.019},
   file      = {:/home/sd/Documents/papers/jones2019.pdf:PDF},
+  priority  = {5},
   publisher = {Elsevier {BV}},
 }
 

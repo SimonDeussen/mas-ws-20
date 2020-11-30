@@ -1171,6 +1171,39 @@ Vasconez, J\BPBI P.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Vigelius%
+, Meyer%
+\BCBL {}\ \BBA {} Pascoe%
+}{%
+Vigelius%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2014}}%
+}]{%
+Vigelius2014}
+\APACinsertmetastar {%
+Vigelius2014}%
+\begin{APACrefauthors}%
+Vigelius, M.%
+, Meyer, B.%
+\BCBL {}\ \BBA {} Pascoe, G.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{11}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Multiscale Modelling and Analysis of Collective Decision
+  Making in Swarm Robotics} {Multiscale modelling and analysis of collective
+  decision making in swarm robotics}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{PLOS ONE}{9}{11}{1-19}.
+\newblock
+\begin{APACrefURL} \url{https://doi.org/10.1371/journal.pone.0111542}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1371/journal.pone.0111542} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Villa-Henriksen%
 , Edwards%
 , Pesonen%
