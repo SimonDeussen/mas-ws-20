@@ -1,0 +1,90 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{apacite}
+
+\title{MAS ISW Assignment 4}
+\date{30.11.2020}
+\author{Simon Deussen}
+
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+\pagenumbering{arabic}
+
+% ================= TEMPLATE =================
+% \section{Reading Report: \emph{TITLE\cite{}}}
+
+% \subsection*{Abstract}
+
+% \subsection*{Keywords}
+
+% \subsection*{Questions}
+
+% \subsubsection{What are the motivations for this work?}
+% \subsubsection{What is the proposed solution?}
+% \subsubsection{What is the work`s evaluation of the solution?}
+% \subsubsection{What is my analysis of the identified problem, idea  and evaluation?}
+% \subsubsection{What are the contributions?}
+% \subsubsection{What are the future directions of the research?}
+% \subsubsection{What questions have I left?}
+% \subsubsection{What is my main take away from this paper?}
+
+% \subsection*{Summary}
+
+% \subsection*{Rating}
+
+% ================= TEMPLATE =================
+
+\section{Reading Report: \emph{Agricultural robots—system analysis and economic feasibility}}
+Paper: \cite{Pedersen2006}
+
+\subsection*{Abstract}
+This  paper focuses  on  the  economic  feasibility of  applying  autonomous robotic  vehicles  compared  to  conventional  systems  in  three  different  applications: robotic weeding in high value crops (particularly sugar beet), crop scouting in cereals and grass cutting on golf courses. The comparison was based on a systems analysis and an individual economic feasibility study for each of the three applications. The results  showed  that  in  all  three  scenarios,  the  robotic  applications  are  more  economically feasible than the conventional systems. The high cost of real time kinematics Global Positioning System (RTK-GPS) and the small capacity of the vehicles are the main parameters that increase the cost of the robotic systems.
+
+\subsection*{Keywords}
+Agricultural robots, Grass cutter, Autonomous vehicles, Economics, Feasibility study, Robotic weeding, Crop scouting
+
+\subsection*{Questions}
+
+\subsubsection{What are the motivations for this work?}
+The papers main focus lies on displaying the cost reduction possible by utilizing 
+autonomous system for agriculture tasks. Most agricultural task can not use individual-plant-based solutions with
+conventional methods. By using robots and big data processing it will be possible to care for each plant individually.
+Taking care of an identified weed patch for example will need much less herbicides than spaying the whole field preemptively.
+\subsubsection{What is the proposed solution?}
+The authors propose solutions for using autonomous robots for field scouting - the identification and localisation 
+of growing weeds -, intra-row and near-crop weeding and automated grass cutting. 
+\subsubsection{What is the work`s evaluation of the solution?}
+In all scenarios the authors showcase a reduction in primary and secondary costs in comparison to conventional methods.
+\begin{description}
+    \item[Field scouting] 20\% cost reduction in labor and secondary benefits of the data because it is now possible to only deploy herbicides where needed.
+    \item[Weeding] Only by reducing the cost of the navigation system by half it is possible to save 12-21\% or manuel costs. and reduction of herbicide use of 90\%   
+    \item[Grass cutting] Reduction of cost of 52\% (but only when paying the gardener 27 Euro per hour, lol) 
+\end{description}
+\subsubsection{What is my analysis of the identified problem, idea  and evaluation?}
+The usage of automated systems for growing crops is one of the key points in reducing the environmental footprint
+of large scale agriculture. The three analyzed areas are great entry points for deploying such systems. Especially 
+the field scouting and the automated weeding are very interesting. For the evaluation the authors compared 
+the costs of the components with average conventional costs witch is mostly reasonable, expect the estimated
+labor cost of the gardener of 27 Euros per hour for grass cutting.
+\subsubsection{What are the contributions?}
+The ideas of the authors in breaking down the cost of the robots into several components are very helpful to estimate economic costs of different system for
+this usage. The main contribution is this economic analysis which helped to spark more research in this direction.
+\subsubsection{What are the future directions of the research?}
+There will always be economic analyses for newer technology.  
+\subsubsection{What questions have I left?}
+Because this paper is from 2006 I am eager to find a similar, more current breakdown.
+\subsubsection{What is my main take away from this paper?}
+That it is feasible to automate many agricultural tasks with almost existing technology.
+
+\subsection*{Summary}
+Great in depth analysis but dated (2006), has good numbers for conventional cost estimates.
+\subsection*{Rating}
+3/5
+
+\bibliography{isw_research}
+\bibliographystyle{apacite}
+
+\end{document}

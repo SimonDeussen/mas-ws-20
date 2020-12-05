@@ -1,0 +1,36 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Pedersen%
+, Fountas%
+, Have%
+\BCBL {}\ \BBA {} Blackmore%
+}{%
+Pedersen%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2006}}%
+}]{%
+Pedersen2006}
+\APACinsertmetastar {%
+Pedersen2006}%
+\begin{APACrefauthors}%
+Pedersen, S\BPBI M.%
+, Fountas, S.%
+, Have, H.%
+\BCBL {}\ \BBA {} Blackmore, B\BPBI S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2006}{jul}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Agricultural robots{\textemdash}system analysis and
+  economic feasibility} {Agricultural robots{\textemdash}system analysis and
+  economic feasibility}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Precision Agriculture}{7}{4}{295--308}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1007/s11119-006-9014-9}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

@@ -200,7 +200,7 @@
   doi      = {https://doi.org/10.1016/j.swevo.2011.02.002},
   file     = {:/home/sd/Documents/papers/1-s2.0-S2210650211000034-main.pdf:PDF},
   keywords = {Statistical analysis, Nonparametric statistics, Pairwise comparisons, Multiple comparisons, Evolutionary algorithms, Swarm intelligence algorithms},
-  priority = {2132},
+  priority = {21},
   url      = {http://www.sciencedirect.com/science/article/pii/S2210650211000034},
 }
 
@@ -534,8 +534,10 @@
   volume    = {7},
   doi       = {https://doi.org/10.1007/s11119-006-9014-9},
   file      = {:/home/sd/Documents/papers/Pedersen2006_Article_AgriculturalRobotsSystemAnalys.pdf:PDF},
+  keywords  = {rank3},
   priority  = {90},
   publisher = {Springer Science and Business Media {LLC}},
+  ranking   = {rank3},
 }
 
 @Article{Weiss2011,
@@ -595,6 +597,18 @@
   year   = {2000},
   file   = {:/home/sd/Documents/papers/howtoread.pdf:PDF},
   url    = {https://www.cs.cmu.edu/~motionplanning/reading/howtoread.pdf},
+}
+
+@Article{Choi_2020,
+  author    = {Sang Hyun Choi and Vikyath D. Rao and Tim Gernat and Adam R. Hamilton and Gene E. Robinson and Nigel Goldenfeld},
+  journal   = {Proceedings of the National Academy of Sciences},
+  title     = {Individual variations lead to universal and cross-species patterns of social behavior},
+  year      = {2020},
+  month     = {nov},
+  pages     = {202002013},
+  doi       = {https://doi.org/10.1073/pnas.2002013117},
+  publisher = {Proceedings of the National Academy of Sciences},
+  url       = {https://www.igb.illinois.edu/article/unexpected-similarity-between-honey-bee-and-human-social-life},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
