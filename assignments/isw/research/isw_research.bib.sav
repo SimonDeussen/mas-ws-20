@@ -532,6 +532,20 @@
   number    = {4},
   pages     = {295--308},
   volume    = {7},
+  abstract  = {This paper focuses on the economic feasibility of applying autonomous roboticvehicles compared to conventional systems in three different applications: roboticweeding in high value crops (particularly sugar beet), crop scouting in cerealsand  grass  cutting  on  golf  courses.   The  comparison  was  based  on  a  systemsanalysis and an individual economic feasibility study for each of the three appli-cations.  The results showed that in all three scenarios, the robotic applicationsare more economically feasible than the conventional systems.  The high costof real time kinematics Global Positioning System (RTK-GPS) and the smallcapacity of the vehicles are the main parameters that increase the cost of therobotic systems.},
+  comment   = {The papers main focus lies on displaying the cost reduction possible by utilizingautonomous system for agriculture tasks.  Most agricultural task can not useindividual-plant-based  solutions  with  conventional  methods.   By  using  robotsand big data processing it will be possible to care for each plant individually.Taking care of an identified weed patch for example will need much less herbi-cides than spaying the whole field preemptively.
+The authors propose solutions for using autonomous robots for field scouting -the identification and localisation of growing weeds -, intra-row and near-cropweeding and automated grass cutting.
+In all scenarios the authors showcase a reduction in primary and secondary costsin comparison to conventional methods.
+
+Field scouting:20% cost reduction in labor and secondary benefits of the databecause it is now possible to only deploy herbicides where needed.
+Weeding:Only  by  reducing  the  cost  of  the  navigation  system  by  half  it  ispossible to save 12-21% or manuel costs.  and reduction of herbicide useof 90%.
+Grass cutting:Reduction of cost of 52% (but only when paying the gardener27 Euro per hour, lol)
+
+The usage of automated systems for growing crops is one of the key points inreducing the environmental footprint of large scale agriculture.  The three ana-lyzed areas are great entry points for deploying such systems. Especially the fieldscouting and the automated weeding are very interesting.  For the evaluationthe authors compared the costs of the components with average conventionalcosts witch is mostly reasonable, expect the estimated labor cost of the gardenerof 27 Euros per hour for grass cutting.
+
+The ideas of the authors in breaking down the cost of the robots into severalcomponents are very helpful to estimate economic costs of different system forthis  usage.   The  main  contribution  is  this  economic  analysis  which  helped  tospark more research in this direction.
+
+There will always be economic analyses for newer technology. Because  this  paper  is  from  2006  I  am  eager  to  find  a  similar,  more  current breakdown.},
   doi       = {https://doi.org/10.1007/s11119-006-9014-9},
   file      = {:/home/sd/Documents/papers/Pedersen2006_Article_AgriculturalRobotsSystemAnalys.pdf:PDF},
   keywords  = {rank3},
