@@ -1,0 +1,598 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>JabRef references</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+<!--
+// QuickSearch script for JabRef HTML export 
+// Version: 3.0
+//
+// Copyright (c) 2006-2011, Mark Schenk
+//
+// This software is distributed under a Creative Commons Attribution 3.0 License
+// http://creativecommons.org/licenses/by/3.0/
+//
+// Features:
+// - intuitive find-as-you-type searching
+//    ~ case insensitive
+//    ~ ignore diacritics (optional)
+//
+// - search with/without Regular Expressions
+// - match BibTeX key
+//
+
+// Search settings
+var searchAbstract = true;	// search in abstract
+var searchComment = true;	// search in comment
+
+var noSquiggles = true; 	// ignore diacritics when searching
+var searchRegExp = false; 	// enable RegExp searches
+
+
+if (window.addEventListener) {
+	window.addEventListener("load",initSearch,false); }
+else if (window.attachEvent) {
+	window.attachEvent("onload", initSearch); }
+
+function initSearch() {
+	// check for quick search table and searchfield
+	if (!document.getElementById('qs_table')||!document.getElementById('quicksearch')) { return; }
+
+	// load all the rows and sort into arrays
+	loadTableData();
+	
+	//find the query field
+	qsfield = document.getElementById('qs_field');
+
+	// previous search term; used for speed optimisation
+	prevSearch = '';
+
+	//find statistics location
+	stats = document.getElementById('stat');
+	setStatistics(-1);
+	
+	// set up preferences
+	initPreferences();
+
+	// shows the searchfield
+	document.getElementById('quicksearch').style.display = 'block';
+	document.getElementById('qs_field').onkeyup = quickSearch;
+}
+
+function loadTableData() {
+	// find table and appropriate rows
+	searchTable = document.getElementById('qs_table');
+	var allRows = searchTable.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+
+	// split all rows into entryRows and infoRows (e.g. abstract, comment, bibtex)
+	entryRows = new Array(); infoRows = new Array(); absRows = new Array(); revRows = new Array();
+
+	// get data from each row
+	entryRowsData = new Array(); absRowsData = new Array(); revRowsData = new Array(); 
+	
+	BibTeXKeys = new Array();
+	
+	for (var i=0, k=0, j=0; i<allRows.length;i++) {
+		if (allRows[i].className.match(/entry/)) {
+			entryRows[j] = allRows[i];
+			entryRowsData[j] = stripDiacritics(getTextContent(allRows[i]));
+			allRows[i].id ? BibTeXKeys[j] = allRows[i].id : allRows[i].id = 'autokey_'+j;
+			j ++;
+		} else {
+			infoRows[k++] = allRows[i];
+			// check for abstract/comment
+			if (allRows[i].className.match(/abstract/)) {
+				absRows.push(allRows[i]);
+				absRowsData[j-1] = stripDiacritics(getTextContent(allRows[i]));
+			} else if (allRows[i].className.match(/comment/)) {
+				revRows.push(allRows[i]);
+				revRowsData[j-1] = stripDiacritics(getTextContent(allRows[i]));
+			}
+		}
+	}
+	//number of entries and rows
+	numEntries = entryRows.length;
+	numInfo = infoRows.length;
+	numAbs = absRows.length;
+	numRev = revRows.length;
+}
+
+function quickSearch(){
+	
+	tInput = qsfield;
+
+	if (tInput.value.length == 0) {
+		showAll();
+		setStatistics(-1);
+		qsfield.className = '';
+		return;
+	} else {
+		t = stripDiacritics(tInput.value);
+
+		if(!searchRegExp) { t = escapeRegExp(t); }
+			
+		// only search for valid RegExp
+		try {
+			textRegExp = new RegExp(t,"i");
+			closeAllInfo();
+			qsfield.className = '';
+		}
+			catch(err) {
+			prevSearch = tInput.value;
+			qsfield.className = 'invalidsearch';
+			return;
+		}
+	}
+	
+	// count number of hits
+	var hits = 0;
+
+	// start looping through all entry rows
+	for (var i = 0; cRow = entryRows[i]; i++){
+
+		// only show search the cells if it isn't already hidden OR if the search term is getting shorter, then search all
+		if(cRow.className.indexOf('noshow')==-1 || tInput.value.length <= prevSearch.length){
+			var found = false; 
+
+			if (entryRowsData[i].search(textRegExp) != -1 || BibTeXKeys[i].search(textRegExp) != -1){ 
+				found = true;
+			} else {
+				if(searchAbstract && absRowsData[i]!=undefined) {
+					if (absRowsData[i].search(textRegExp) != -1){ found=true; } 
+				}
+				if(searchComment && revRowsData[i]!=undefined) {
+					if (revRowsData[i].search(textRegExp) != -1){ found=true; } 
+				}
+			}
+			
+			if (found){
+				cRow.className = 'entry show';
+				hits++;
+			} else {
+				cRow.className = 'entry noshow';
+			}
+		}
+	}
+
+	// update statistics
+	setStatistics(hits)
+	
+	// set previous search value
+	prevSearch = tInput.value;
+}
+
+
+// Strip Diacritics from text
+// http://stackoverflow.com/questions/990904/javascript-remove-accents-in-strings
+
+// String containing replacement characters for stripping accents 
+var stripstring = 
+    'AAAAAAACEEEEIIII'+
+    'DNOOOOO.OUUUUY..'+
+    'aaaaaaaceeeeiiii'+
+    'dnooooo.ouuuuy.y'+
+    'AaAaAaCcCcCcCcDd'+
+    'DdEeEeEeEeEeGgGg'+
+    'GgGgHhHhIiIiIiIi'+
+    'IiIiJjKkkLlLlLlL'+
+    'lJlNnNnNnnNnOoOo'+
+    'OoOoRrRrRrSsSsSs'+
+    'SsTtTtTtUuUuUuUu'+
+    'UuUuWwYyYZzZzZz.';
+
+function stripDiacritics(str){
+
+    if(noSquiggles==false){
+        return str;
+    }
+
+    var answer='';
+    for(var i=0;i<str.length;i++){
+        var ch=str[i];
+        var chindex=ch.charCodeAt(0)-192;   // Index of character code in the strip string
+        if(chindex>=0 && chindex<stripstring.length){
+            // Character is within our table, so we can strip the accent...
+            var outch=stripstring.charAt(chindex);
+            // ...unless it was shown as a '.'
+            if(outch!='.')ch=outch;
+        }
+        answer+=ch;
+    }
+    return answer;
+}
+
+// http://stackoverflow.com/questions/3446170/escape-string-for-use-in-javascript-regex
+// NOTE: must escape every \ in the export code because of the JabRef Export...
+function escapeRegExp(str) {
+  return str.replace(/[-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+}
+
+function toggleInfo(articleid,info) {
+
+	var entry = document.getElementById(articleid);
+	var abs = document.getElementById('abs_'+articleid);
+	var rev = document.getElementById('rev_'+articleid);
+	var bib = document.getElementById('bib_'+articleid);
+	
+	if (abs && info == 'abstract') {
+		abs.className.indexOf('noshow') == -1?abs.className = 'abstract noshow':abs.className = 'abstract show';
+	} else if (rev && info == 'comment') {
+		rev.className.indexOf('noshow') == -1?rev.className = 'comment noshow':rev.className = 'comment show';
+	} else if (bib && info == 'bibtex') {
+		bib.className.indexOf('noshow') == -1?bib.className = 'bibtex noshow':bib.className = 'bibtex show';
+	} else { 
+		return;
+	}
+
+	// check if one or the other is available
+	var revshow; var absshow; var bibshow;
+	(abs && abs.className.indexOf('noshow') == -1)? absshow = true: absshow = false;
+	(rev && rev.className.indexOf('noshow') == -1)? revshow = true: revshow = false;	
+	(bib && bib.className.indexOf('noshow') == -1)? bibshow = true: bibshow = false;
+	
+	// highlight original entry
+	if(entry) {
+		if (revshow || absshow || bibshow) {
+		entry.className = 'entry highlight show';
+		} else {
+		entry.className = 'entry show';
+		}
+	}
+	
+	// When there's a combination of abstract/comment/bibtex showing, need to add class for correct styling
+	if(absshow) {
+		(revshow||bibshow)?abs.className = 'abstract nextshow':abs.className = 'abstract';
+	} 
+	if (revshow) {
+		bibshow?rev.className = 'comment nextshow': rev.className = 'comment';
+	}	
+	
+}
+
+function setStatistics (hits) {
+	if(hits < 0) { hits=numEntries; }
+	if(stats) { stats.firstChild.data = hits + '/' + numEntries}
+}
+
+function getTextContent(node) {
+	// Function written by Arve Bersvendsen
+	// http://www.virtuelvis.com
+	
+	if (node.nodeType == 3) {
+	return node.nodeValue;
+	} // text node
+	if (node.nodeType == 1 && node.className != "infolinks") { // element node
+	var text = [];
+	for (var chld = node.firstChild;chld;chld=chld.nextSibling) {
+		text.push(getTextContent(chld));
+	}
+	return text.join("");
+	} return ""; // some other node, won't contain text nodes.
+}
+
+function showAll(){
+	closeAllInfo();
+	for (var i = 0; i < numEntries; i++){ entryRows[i].className = 'entry show'; }
+}
+
+function closeAllInfo(){
+	for (var i=0; i < numInfo; i++){
+		if (infoRows[i].className.indexOf('noshow') ==-1) {
+			infoRows[i].className = infoRows[i].className + ' noshow';
+		}
+	}
+}
+
+function clearQS() {
+	qsfield.value = '';
+	showAll();
+}
+
+function redoQS(){
+	showAll();
+	quickSearch(qsfield);
+}
+
+function updateSetting(obj){
+	var option = obj.id;
+	var checked = obj.value;
+
+	switch(option)
+	 {
+	 case "opt_searchAbs":
+	   searchAbstract=!searchAbstract;
+	   redoQS();
+	   break;
+	 case "opt_searchRev":
+	   searchComment=!searchComment;
+	   redoQS();
+	   break;
+	 case "opt_useRegExp":
+	   searchRegExp=!searchRegExp;
+	   redoQS();
+	   break;
+	 case "opt_noAccents":
+	   noSquiggles=!noSquiggles;
+	   loadTableData();
+	   redoQS();
+	   break;
+	 }
+}
+
+function initPreferences(){
+	if(searchAbstract){document.getElementById("opt_searchAbs").checked = true;}
+	if(searchComment){document.getElementById("opt_searchRev").checked = true;}
+	if(noSquiggles){document.getElementById("opt_noAccents").checked = true;}
+	if(searchRegExp){document.getElementById("opt_useRegExp").checked = true;}
+	
+	if(numAbs==0) {document.getElementById("opt_searchAbs").parentNode.style.display = 'none';}
+	if(numRev==0) {document.getElementById("opt_searchRev").parentNode.style.display = 'none';}
+}
+
+function toggleSettings(){
+	var togglebutton = document.getElementById('showsettings');
+	var settings = document.getElementById('settings');
+	
+	if(settings.className == "hidden"){
+		settings.className = "show";
+		togglebutton.innerText = "close settings";
+		togglebutton.textContent = "close settings";
+	}else{
+		settings.className = "hidden";
+		togglebutton.innerText = "settings...";		
+		togglebutton.textContent = "settings...";
+	}
+}
+
+-->
+</script>
+<style type="text/css">
+body { background-color: white; font-family: Arial, sans-serif; font-size: 13px; line-height: 1.2; padding: 1em; color: #2E2E2E; margin: auto 2em; }
+
+form#quicksearch { width: auto; border-style: solid; border-color: gray; border-width: 1px 0px; padding: 0.7em 0.5em; display:none; position:relative; }
+span#searchstat {padding-left: 1em;}
+
+div#settings { margin-top:0.7em; /* border-bottom: 1px transparent solid; background-color: #efefef; border: 1px grey solid; */ }
+div#settings ul {margin: 0; padding: 0; }
+div#settings li {margin: 0; padding: 0 1em 0 0; display: inline; list-style: none; }
+div#settings li + li { border-left: 2px #efefef solid; padding-left: 0.5em;}
+div#settings input { margin-bottom: 0px;}
+
+div#settings.hidden {display:none;}
+
+#showsettings { border: 1px grey solid; padding: 0 0.5em; float:right; line-height: 1.6em; text-align: right; }
+#showsettings:hover { cursor: pointer; }
+
+.invalidsearch { background-color: red; }
+input[type="button"] { background-color: #efefef; border: 1px #2E2E2E solid;}
+
+table { width: 100%; empty-cells: show; border-spacing: 0em 0.2em; margin: 1em 0em; border-style: none; }
+th, td { border: 1px gray solid; border-width: 1px 1px; padding: 0.5em; vertical-align: top; text-align: left; }
+th { background-color: #efefef; }
+td + td, th + th { border-left: none; }
+
+td a { color: navy; text-decoration: none; }
+td a:hover  { text-decoration: underline; }
+
+tr.noshow { display: none;}
+tr.highlight td { background-color: #EFEFEF; border-top: 2px #2E2E2E solid; font-weight: bold; }
+tr.abstract td, tr.comment td, tr.bibtex td { background-color: #EFEFEF; text-align: justify; border-bottom: 2px #2E2E2E solid; }
+tr.nextshow td { border-bottom: 1px gray solid; }
+
+tr.bibtex pre { width: 100%; overflow: auto; white-space: pre-wrap;}
+p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
+
+@media print {
+	p.infolinks, #qs_settings, #quicksearch, t.bibtex { display: none !important; }
+	tr { page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<form action="" id="quicksearch">
+<input type="text" id="qs_field" autocomplete="off" placeholder="Type to search..." /> <input type="button" onclick="clearQS()" value="clear" />
+<span id="searchstat">Matching entries: <span id="stat">0</span></span>
+<div id="showsettings" onclick="toggleSettings()">settings...</div>
+<div id="settings" class="hidden">
+<ul>
+<li><input type="checkbox" class="search_setting" id="opt_searchAbs" onchange="updateSetting(this)"><label for="opt_searchAbs"> include abstract</label></li>
+<li><input type="checkbox" class="search_setting" id="opt_searchRev" onchange="updateSetting(this)"><label for="opt_searchRev"> include comment</label></li>
+<li><input type="checkbox" class="search_setting" id="opt_useRegExp" onchange="updateSetting(this)"><label for="opt_useRegExp"> use RegExp</label></li>
+<li><input type="checkbox" class="search_setting" id="opt_noAccents" onchange="updateSetting(this)"><label for="opt_noAccents"> ignore accents</label></li>
+</ul>
+</div>
+</form>
+<table id="qs_table" border="1">
+<thead><tr><th width="20%">Author</th><th width="30%">Title</th><th width="5%">Year</th><th width="30%">Journal/Proceedings</th><th width="10%">Reftype</th><th width="5%">DOI/URL</th></tr></thead>
+<tbody><tr id="Hameed2018" class="entry">
+	<td>Hameed, I.A.</td>
+	<td>A Coverage Planner for Multi-Robot Systems in Agriculture <p class="infolinks">[<a href="javascript:toggleInfo('Hameed2018','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Hameed2018','bibtex')">BibTeX</a>]</p></td>
+	<td>2018</td>
+	<td>2018 IEEE International Conference on Real-time Computing and Robotics (RCAR), pp. 698-704&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="https://doi.org/10.1109/RCAR.2018.8621801">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Hameed2018" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Driving heavy tractors and agricultural machinery on soil for growing plants causes more permanent damage to the soil than was previously believed. Compacting the soil severely deteriorates soil fertility leading to poor crop yields and increased population from agricultural lands. In addition, compacted soils require many years of expensive treatment to recover their fertility. Soil compaction problem can be solved by replacing heavy tractors and machinery with a number of smaller and lighter vehicles that is capable of treating crop fields as well as heavy ones without compacting the soil. However, this scenario is impractical because of the high operating cost to secure a human operator/driver for each vehicle. A practical solution is to replace heavy tractors and machinery by a set of autonomous vehicles that require minimum or no human intervention. In this paper, the technology required to enable a single farmer to supervise and operate a team of automated vehicles, is proposed. This will include the development of a Mission Control Center and Intelligent Coverage Path Planning algorithms to enable team/swarm of autonomous vehicles to communicate and cooperate and solve a range of agricultural tasks in a safe and efficient way.</td>
+</tr>
+<tr id="bib_Hameed2018" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inproceedings{Hameed2018,
+  author = {I. A. Hameed},
+  title = {A Coverage Planner for Multi-Robot Systems in Agriculture},
+  booktitle = {2018 IEEE International Conference on Real-time Computing and Robotics (RCAR)},
+  year = {2018},
+  pages = {698-704},
+  doi = {https://doi.org/10.1109/RCAR.2018.8621801}
+}
+</pre></td>
+</tr>
+<tr id="Khan2020" class="entry">
+	<td>Khan, M.M., Kasmarik, K. and Barlow, M.</td>
+	<td>Autonomous detection of collective behaviours in swarms <p class="infolinks">[<a href="javascript:toggleInfo('Khan2020','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Khan2020','bibtex')">BibTeX</a>]</p></td>
+	<td>2020</td>
+	<td>Swarm and Evolutionary Computation<br/>Vol. 57, pp. 100715&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1016/j.swevo.2020.100715">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S2210650220303680">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_Khan2020" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Collective behaviours such as swarm formations of autonomous agents offer the advantages of efficient movement, redundancy, and potential for human guidance of a single swarm organism. This paper proposes a developmental approach to evolving collective behaviours whereby the evolutionary process is guided by a novel value system. A self-organising map is used at the core of this value system and motion properties of the swarm entities are used as input. Unlike traditional approaches, this value system does not need in advance the precise characteristics of the intended behaviours. We examine the performance of this value system in a series of controlled experiments. Our results demonstrate that the value system can recognise multiple “interesting” structured collective behaviours and distinguish them from random movement patterns. Results show that our value system is most effective distinguishing structured behaviours from random behaviours when using motion properties of individual agents as input. Further variations and modifications to input data such as normalisation and aggregation were also investigated, and it was shown that certain configurations provide better results in distinguishing collective behaviours from random ones.</td>
+</tr>
+<tr id="bib_Khan2020" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Khan2020,
+  author = {Md Mohiuddin Khan and Kathryn Kasmarik and Michael Barlow},
+  title = {Autonomous detection of collective behaviours in swarms},
+  journal = {Swarm and Evolutionary Computation},
+  year = {2020},
+  volume = {57},
+  pages = {100715},
+  url = {http://www.sciencedirect.com/science/article/pii/S2210650220303680},
+  doi = {https://doi.org/10.1016/j.swevo.2020.100715}
+}
+</pre></td>
+</tr>
+<tr id="Osaba2020" class="entry">
+	<td>Osaba, E., Del Ser, J., Iglesias, A. and Yang, X.-S.</td>
+	<td>Soft Computing for Swarm Robotics: New Trends and Applications <p class="infolinks">[<a href="javascript:toggleInfo('Osaba2020','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Osaba2020','bibtex')">BibTeX</a>]</p></td>
+	<td>2020</td>
+	<td>Journal of Computational Science<br/>Vol. 39, pp. 101049&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1016/j.jocs.2019.101049">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S187775031931172X">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_Osaba2020" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Robotics have experienced a meteoric growth over the last decades, reaching unprecedented levels of distributed intelligence and self-autonomy. Today, a myriad of real-world scenarios can benefit from the application of robots, such as structural health monitoring, complex manufacturing, efficient logistics or disaster management. Related to this topic, there is a paradigm connected to Swarm Intelligence which is grasping significant interest from the Computational Intelligence community. This branch of knowledge is known as Swarm Robotics, which refers to the development of tools and techniques to ease the coordination of multiple small-sized robots towards the accomplishment of difficult tasks or missions in a collaborative fashion. The success of Swarm Robotics applications comes from the efficient use of smart sensing, communication and organization functionalities endowed to these small robots, which allow for collaborative information sensing, operation and knowledge inference from the environment. The numerous industrial and social applications that can be addressed efficiently by virtue of swarm robotics unleashes a vibrant research area focused on distributing intelligence among autonomous agents with simple behavioral rules and communication schedules, yet potentially capable of realizing the most complex tasks. In this context, we present and overview recent contributions reported around this paradigm, which serves as an exemplary excerpt of the potential of Swarm Robotics to become a major research catalyst of the Computational Intelligence arena in years to come.</td>
+</tr>
+<tr id="bib_Osaba2020" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Osaba2020,
+  author = {Eneko Osaba and Javier Del Ser and Andres Iglesias and Xin-She Yang},
+  title = {Soft Computing for Swarm Robotics: New Trends and Applications},
+  journal = {Journal of Computational Science},
+  year = {2020},
+  volume = {39},
+  pages = {101049},
+  url = {http://www.sciencedirect.com/science/article/pii/S187775031931172X},
+  doi = {https://doi.org/10.1016/j.jocs.2019.101049}
+}
+</pre></td>
+</tr>
+<tr id="Derrac2011" class="entry">
+	<td>Derrac, J., García, S., Molina, D. and Herrera, F.</td>
+	<td>A practical tutorial on the use of nonparametric statistical tests as a methodology for comparing evolutionary and swarm intelligence algorithms <p class="infolinks">[<a href="javascript:toggleInfo('Derrac2011','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Derrac2011','bibtex')">BibTeX</a>]</p></td>
+	<td>2011</td>
+	<td>Swarm and Evolutionary Computation<br/>Vol. 1(1), pp. 3 - 18&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1016/j.swevo.2011.02.002">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S2210650211000034">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_Derrac2011" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: The interest in nonparametric statistical analysis has grown recently in the field of computational intelligence. In many experimental studies, the lack of the required properties for a proper application of parametric procedures–independence, normality, and homoscedasticity–yields to nonparametric ones the task of performing a rigorous comparison among algorithms. In this paper, we will discuss the basics and give a survey of a complete set of nonparametric procedures developed to perform both pairwise and multiple comparisons, for multi-problem analysis. The test problems of the CEC’2005 special session on real parameter optimization will help to illustrate the use of the tests throughout this tutorial, analyzing the results of a set of well-known evolutionary and swarm intelligence algorithms. This tutorial is concluded with a compilation of considerations and recommendations, which will guide practitioners when using these tests to contrast their experimental results.</td>
+</tr>
+<tr id="bib_Derrac2011" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Derrac2011,
+  author = {Joaquín Derrac and Salvador García and Daniel Molina and Francisco Herrera},
+  title = {A practical tutorial on the use of nonparametric statistical tests as a methodology for comparing evolutionary and swarm intelligence algorithms},
+  journal = {Swarm and Evolutionary Computation},
+  year = {2011},
+  volume = {1},
+  number = {1},
+  pages = {3 - 18},
+  url = {http://www.sciencedirect.com/science/article/pii/S2210650211000034},
+  doi = {https://doi.org/10.1016/j.swevo.2011.02.002}
+}
+</pre></td>
+</tr>
+<tr id="Liu2006" class="entry">
+	<td>Liu, S., Mao, L. and Yu, J.</td>
+	<td>Path Planning Based on Ant Colony Algorithm and Distributed Local Navigation for Multi-Robot Systems <p class="infolinks">[<a href="javascript:toggleInfo('Liu2006','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Liu2006','bibtex')">BibTeX</a>]</p></td>
+	<td>2006</td>
+	<td>2006 International Conference on Mechatronics and Automation, pp. 1733-1738&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="https://doi.org/10.1109/ICMA.2006.257476">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Liu2006" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: This paper presents a decoupled path planning based on ant colony algorithm and distributed navigation with collision avoidance for multi-robot systems. An improved ant colony algorithm is proposed to plan a reasonable collision-free path for each mobile robot of multi-robot system in the decoupled path planning scheme in complicated static environment. The special functions are added into the regular ant colony algorithm to improve the selective strategy. When an ant explores a dead-corner in path searching, a dead-corner table is established and a penalty function is used for the trail intensity updated in order to avoid the path deadlock of mobile robot. A behavior strategy on "first come and first service" is adopted to solve the conflict between moving robots in distributed local navigation. Simulation results show that the proposed method can effectively improve the performance of the planned path, and the individual robots with collision-free can achieve to reach their goal locations by the simple local navigation strategies</td>
+</tr>
+<tr id="bib_Liu2006" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inproceedings{Liu2006,
+  author = {S. Liu and L. Mao and J. Yu},
+  title = {Path Planning Based on Ant Colony Algorithm and Distributed Local Navigation for Multi-Robot Systems},
+  booktitle = {2006 International Conference on Mechatronics and Automation},
+  year = {2006},
+  pages = {1733-1738},
+  doi = {https://doi.org/10.1109/ICMA.2006.257476}
+}
+</pre></td>
+</tr>
+<tr id="Schneider2003" class="entry">
+	<td>Schneider, F.E. and Wildermuth, D.</td>
+	<td>A potential field based approach to multi robot formation navigation <p class="infolinks">[<a href="javascript:toggleInfo('Schneider2003','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Schneider2003','bibtex')">BibTeX</a>]</p></td>
+	<td>2003</td>
+	<td><br/>Vol. 1IEEE International Conference on Robotics, Intelligent Systems and Signal Processing, 2003. Proceedings. 2003, pp. 680-685 vol.1&nbsp;</td>
+	<td>inproceedings</td>
+	<td><a href="https://doi.org/10.1109/RISSP.2003.1285656">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Schneider2003" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: This paper presents a directed potential field approach for motion co-ordination in formations of multi-robot-systems. First a short introduction to the application of MRS formation navigation is given. The approach is briefly compared to related work. For the sub-task of moving in formation, a solution based on a potential field approach is presented. Different forces belonging to other robots, obstacles and the aspired shape of formation are combined and used to move each robot to its desired position inside the formation. While moving in formation, the group is able to avoid obstacles and approach towards a specified target. First results in simulation and with real robots in the presence of obstacles are presented.</td>
+</tr>
+<tr id="bib_Schneider2003" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@inproceedings{Schneider2003,
+  author = {F. E. Schneider and D. Wildermuth},
+  title = {A potential field based approach to multi robot formation navigation},
+  booktitle = {IEEE International Conference on Robotics, Intelligent Systems and Signal Processing, 2003. Proceedings. 2003},
+  year = {2003},
+  volume = {1},
+  pages = {680-685 vol.1},
+  doi = {https://doi.org/10.1109/RISSP.2003.1285656}
+}
+</pre></td>
+</tr>
+<tr id="Pedersen2006" class="entry">
+	<td>Pedersen, S.M., Fountas, S., Have, H. and Blackmore, B.S.</td>
+	<td>Agricultural robots&mdash;system analysis and economic feasibility <p class="infolinks">[<a href="javascript:toggleInfo('Pedersen2006','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Pedersen2006','comment')">Comment</a>] [<a href="javascript:toggleInfo('Pedersen2006','bibtex')">BibTeX</a>]</p></td>
+	<td>2006</td>
+	<td>Precision Agriculture<br/>Vol. 7(4), pp. 295-308&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1007/s11119-006-9014-9">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Pedersen2006" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: This paper focuses on the economic feasibility of applying autonomous roboticvehicles compared to conventional systems in three different applications: roboticweeding in high value crops (particularly sugar beet), crop scouting in cerealsand  grass  cutting  on  golf  courses.   The  comparison  was  based  on  a  systemsanalysis and an individual economic feasibility study for each of the three appli-cations.  The results showed that in all three scenarios, the robotic applicationsare more economically feasible than the conventional systems.  The high costof real time kinematics Global Positioning System (RTK-GPS) and the smallcapacity of the vehicles are the main parameters that increase the cost of therobotic systems.</td>
+</tr>
+<tr id="rev_Pedersen2006" class="comment noshow">
+	<td colspan="6"><b>Comment</b>: The papers main focus lies on displaying the cost reduction possible by utilizingautonomous system for agriculture tasks.  Most agricultural task can not useindividual-plant-based  solutions  with  conventional  methods.   By  using  robotsand big data processing it will be possible to care for each plant individually.Taking care of an identified weed patch for example will need much less herbi-cides than spaying the whole field preemptively.<br>The authors propose solutions for using autonomous robots for field scouting -the identification and localisation of growing weeds -, intra-row and near-cropweeding and automated grass cutting.<br>In all scenarios the authors showcase a reduction in primary and secondary costsin comparison to conventional methods.<p>Field scouting:20% cost reduction in labor and secondary benefits of the databecause it is now possible to only deploy herbicides where needed.<br>Weeding:Only  by  reducing  the  cost  of  the  navigation  system  by  half  it  ispossible to save 12-21% or manuel costs.  and reduction of herbicide useof 90%.<br>Grass cutting:Reduction of cost of 52% (but only when paying the gardener27 Euro per hour, lol)<p>The usage of automated systems for growing crops is one of the key points inreducing the environmental footprint of large scale agriculture.  The three ana-lyzed areas are great entry points for deploying such systems. Especially the fieldscouting and the automated weeding are very interesting.  For the evaluationthe authors compared the costs of the components with average conventionalcosts witch is mostly reasonable, expect the estimated labor cost of the gardenerof 27 Euros per hour for grass cutting.<p>The ideas of the authors in breaking down the cost of the robots into severalcomponents are very helpful to estimate economic costs of different system forthis  usage.   The  main  contribution  is  this  economic  analysis  which  helped  tospark more research in this direction.<p>There will always be economic analyses for newer technology. Because  this  paper  is  from  2006  I  am  eager  to  find  a  similar,  more  current breakdown.</td>
+</tr>
+<tr id="bib_Pedersen2006" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Pedersen2006,
+  author = {S. M. Pedersen and S. Fountas and H. Have and B. S. Blackmore},
+  title = {Agricultural robots&mdash;system analysis and economic feasibility},
+  journal = {Precision Agriculture},
+  publisher = {Springer Science and Business Media LLC},
+  year = {2006},
+  volume = {7},
+  number = {4},
+  pages = {295--308},
+  doi = {https://doi.org/10.1007/s11119-006-9014-9}
+}
+</pre></td>
+</tr>
+</tbody>
+</table>
+<footer>
+ <small>Created by <a href="http://jabref.sourceforge.net">JabRef</a> on 05/12/2020.</small>
+</footer>
+<!-- file generated by JabRef -->
+</body>
+</html>
