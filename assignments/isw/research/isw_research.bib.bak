@@ -66,18 +66,6 @@
   url      = {http://www.sciencedirect.com/science/article/pii/S187775031931172X},
 }
 
-@Article{Wang2020,
-  author   = {Qiuzhen Wang and Xinjun Mao},
-  journal  = {Symmetry},
-  title    = {Dynamic Task Allocation Method of Swarm RobotsBased on Optimal Mass Transport Theory},
-  year     = {2020},
-  abstract = {It is difficult for swarm robots to allocate tasks efficiently by self-organization in a dynamicunknown environment. The computational cost of swarm robots will be significantly increased forlarge-scale tasks, and the unbalanced task allocation of robots will also lead to a decrease in systemefficiency. To address these issues, we propose a dynamic task allocation method of swarm robotsbased on optimal mass transport theory.  The problem of large-scale tasks is solved by groupingswarm robots to complete regional tasks.  The task reallocation mechanism realizes the balancedtask allocation of individual robots.  This paper solves the symmetric assignment between robotand task and between the robot groups and the regional tasks.  Our simulation and experimentalresults demonstrate that the proposed method can make the swarm robots self-organize to allocatelarge-scale dynamic tasks effectively. The tasks can also be balanced allocated to each robot in theswarm of robots.},
-  doi      = {https://doi.org/10.3390/sym12101682},
-  file     = {:/home/sd/Documents/papers/symmetry-12-01682.pdf:PDF},
-  keywords = {swarm robots; optimal mass transport (OMT) theory; dynamic task allocation;task reallocation; balanced allocation},
-  priority = {0},
-}
-
 @Article{Alshawi2017,
   author   = {Maha A. Alshawi and Mohamed B. Shalan},
   journal  = {International Journal of Mechanical Engineering and Robotics Research},
@@ -532,10 +520,26 @@
   number    = {4},
   pages     = {295--308},
   volume    = {7},
+  abstract  = {This paper focuses on the economic feasibility of applying autonomous roboticvehicles compared to conventional systems in three different applications: roboticweeding in high value crops (particularly sugar beet), crop scouting in cerealsand  grass  cutting  on  golf  courses.   The  comparison  was  based  on  a  systemsanalysis and an individual economic feasibility study for each of the three appli-cations.  The results showed that in all three scenarios, the robotic applicationsare more economically feasible than the conventional systems.  The high costof real time kinematics Global Positioning System (RTK-GPS) and the smallcapacity of the vehicles are the main parameters that increase the cost of therobotic systems.},
+  comment   = {The papers main focus lies on displaying the cost reduction possible by utilizingautonomous system for agriculture tasks.  Most agricultural task can not useindividual-plant-based  solutions  with  conventional  methods.   By  using  robotsand big data processing it will be possible to care for each plant individually.Taking care of an identified weed patch for example will need much less herbi-cides than spaying the whole field preemptively.
+The authors propose solutions for using autonomous robots for field scouting -the identification and localisation of growing weeds -, intra-row and near-cropweeding and automated grass cutting.
+In all scenarios the authors showcase a reduction in primary and secondary costsin comparison to conventional methods.
+
+Field scouting:20% cost reduction in labor and secondary benefits of the databecause it is now possible to only deploy herbicides where needed.
+Weeding:Only  by  reducing  the  cost  of  the  navigation  system  by  half  it  ispossible to save 12-21% or manuel costs.  and reduction of herbicide useof 90%.
+Grass cutting:Reduction of cost of 52% (but only when paying the gardener27 Euro per hour, lol)
+
+The usage of automated systems for growing crops is one of the key points inreducing the environmental footprint of large scale agriculture.  The three ana-lyzed areas are great entry points for deploying such systems. Especially the fieldscouting and the automated weeding are very interesting.  For the evaluationthe authors compared the costs of the components with average conventionalcosts witch is mostly reasonable, expect the estimated labor cost of the gardenerof 27 Euros per hour for grass cutting.
+
+The ideas of the authors in breaking down the cost of the robots into severalcomponents are very helpful to estimate economic costs of different system forthis  usage.   The  main  contribution  is  this  economic  analysis  which  helped  tospark more research in this direction.
+
+There will always be economic analyses for newer technology. Because  this  paper  is  from  2006  I  am  eager  to  find  a  similar,  more  current breakdown.},
   doi       = {https://doi.org/10.1007/s11119-006-9014-9},
   file      = {:/home/sd/Documents/papers/Pedersen2006_Article_AgriculturalRobotsSystemAnalys.pdf:PDF},
+  keywords  = {rank3},
   priority  = {90},
   publisher = {Springer Science and Business Media {LLC}},
+  ranking   = {rank3},
 }
 
 @Article{Weiss2011,
@@ -549,8 +553,10 @@
   volume    = {59},
   doi       = {https://doi.org/10.1016/j.robot.2011.02.011},
   file      = {:/home/sd/Documents/papers/1-s2.0-S0921889011000315-main.pdf:PDF},
+  keywords  = {rank5},
   priority  = {117},
   publisher = {Elsevier {BV}},
+  ranking   = {rank5},
 }
 
 @Article{Vasconez2019,

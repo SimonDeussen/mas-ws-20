@@ -1,6 +1,40 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
+Bechar%
+\ \BBA {} Vigneault%
+}{%
+Bechar%
+\ \BBA {} Vigneault%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+Bechar2016}
+\APACinsertmetastar {%
+Bechar2016}%
+\begin{APACrefauthors}%
+Bechar, A.%
+\BCBT {}\ \BBA {} Vigneault, C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Agricultural robots for field operations: Concepts and
+  components} {Agricultural robots for field operations: Concepts and
+  components}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Biosystems Engineering}{149}{}{94 - 111}.
+\newblock
+\begin{APACrefURL}
+  \url{http://www.sciencedirect.com/science/article/pii/S1537511015301914}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.biosystemseng.2016.06.014}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Pedersen%
 , Fountas%
 , Have%

@@ -66,18 +66,6 @@
   url      = {http://www.sciencedirect.com/science/article/pii/S187775031931172X},
 }
 
-@Article{Wang2020,
-  author   = {Qiuzhen Wang and Xinjun Mao},
-  journal  = {Symmetry},
-  title    = {Dynamic Task Allocation Method of Swarm RobotsBased on Optimal Mass Transport Theory},
-  year     = {2020},
-  abstract = {It is difficult for swarm robots to allocate tasks efficiently by self-organization in a dynamicunknown environment. The computational cost of swarm robots will be significantly increased forlarge-scale tasks, and the unbalanced task allocation of robots will also lead to a decrease in systemefficiency. To address these issues, we propose a dynamic task allocation method of swarm robotsbased on optimal mass transport theory.  The problem of large-scale tasks is solved by groupingswarm robots to complete regional tasks.  The task reallocation mechanism realizes the balancedtask allocation of individual robots.  This paper solves the symmetric assignment between robotand task and between the robot groups and the regional tasks.  Our simulation and experimentalresults demonstrate that the proposed method can make the swarm robots self-organize to allocatelarge-scale dynamic tasks effectively. The tasks can also be balanced allocated to each robot in theswarm of robots.},
-  doi      = {https://doi.org/10.3390/sym12101682},
-  file     = {:/home/sd/Documents/papers/symmetry-12-01682.pdf:PDF},
-  keywords = {swarm robots; optimal mass transport (OMT) theory; dynamic task allocation;task reallocation; balanced allocation},
-  priority = {0},
-}
-
 @Article{Alshawi2017,
   author   = {Maha A. Alshawi and Mohamed B. Shalan},
   journal  = {International Journal of Mechanical Engineering and Robotics Research},
@@ -565,8 +553,10 @@ There will always be economic analyses for newer technology. Because  this  pape
   volume    = {59},
   doi       = {https://doi.org/10.1016/j.robot.2011.02.011},
   file      = {:/home/sd/Documents/papers/1-s2.0-S0921889011000315-main.pdf:PDF},
+  keywords  = {rank5},
   priority  = {117},
   publisher = {Elsevier {BV}},
+  ranking   = {rank5},
 }
 
 @Article{Vasconez2019,

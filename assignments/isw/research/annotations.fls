@@ -397,13 +397,14 @@ INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /home/sd/Documents/code/mas-ws-20/assignments/isw/research/annotations.bbl
 INPUT /home/sd/Documents/code/mas-ws-20/assignments/isw/research/annotations.bbl
 INPUT /home/sd/Documents/code/mas-ws-20/assignments/isw/research/annotations.bbl
 INPUT /home/sd/Documents/code/mas-ws-20/assignments/isw/research/annotations.bbl
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT /home/sd/Documents/code/mas-ws-20/assignments/isw/research/annotations.aux
 INPUT /home/sd/Documents/code/mas-ws-20/assignments/isw/research/annotations.out
 INPUT /home/sd/Documents/code/mas-ws-20/assignments/isw/research/annotations.out
@@ -414,3 +415,4 @@ INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pf
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
