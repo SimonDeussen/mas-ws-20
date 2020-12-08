@@ -1,0 +1,4 @@
+\contentsline {section}{\numberline {1}Reading Report: \emph {Plant detection and mapping for agricultural robots using a 3D LIDAR sensor}}{2}{section.1}%
+\contentsline {section}{\numberline {2}Reading Report: \emph {Agricultural robots for field operations: Concepts and components}}{4}{section.2}%
+\contentsline {section}{\numberline {3}Reading Report: \emph {Agricultural robots—system analysis and economic feasibility}}{6}{section.3}%
+\contentsline {section}{References}{9}{section*.41}%

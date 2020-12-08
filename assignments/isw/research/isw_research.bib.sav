@@ -373,10 +373,41 @@
   pages    = {94 - 111},
   volume   = {149},
   abstract = {This review investigates the research effort, developments and innovation in agricultural robots for field operations, and the associated concepts, principles, limitations and gaps. Robots are highly complex, consisting of different sub-systems that need to be integrated and correctly synchronised to perform tasks perfectly as a whole and successfully transfer the required information. Extensive research has been conducted on the application of robots and automation to a variety of field operations, and technical feasibility has been widely demonstrated. Agricultural robots for field operations must be able to operate in unstructured agricultural environments with the same quality of work achieved by current methods and means. To assimilate robotic systems, technologies must be developed to overcome continuously changing conditions and variability in produce and environments. Intelligent systems are needed for successful task performance in such environments. The robotic system must be cost-effective, while being inherently safe and reliable—human safety, and preservation of the environment, the crop and the machinery are mandatory. Despite much progress in recent years, in most cases the technology is not yet commercially available. Information-acquisition systems, including sensors, fusion algorithms and data analysis, need to be adjusted to the dynamic conditions of unstructured agricultural environments. Intensive research is needed on integrating human operators into the system control loop for increased system performance and reliability. System sizes should be reduced while improving the integration of all parts and components. For robots to perform in agricultural environments and execute agricultural tasks, research must focus on: fusing complementary sensors for adequate localisation and sensing abilities, developing simple manipulators for each agricultural task, developing path planning, navigation and guidance algorithms suited to environments besides open fields and known a-priori, and integrating human operators in this complex and highly dynamic situation.},
+  comment  = {The main subject of this paper is to show the current development, ideas and problems in the field of agricultural 
+robotics. This review paper explains first the background, then the economic feasibility and furthers goes into 
+concepts, principles and components.
+
+The paper concludes, that with current technologies the broad usage in commercial farming is not possible yet and 
+proposes to focus research on a number of fields. Those fields include sensor fusion for better localisation, 
+engineering of better simple manipulators and the development of specific path planning, navigation and guidance algorithms
+for agriculture.
+
+The authors make a great job in displaying the current technologies and their limitations. With this knowledge it is 
+easy to identify a subproblem to work on.
+Several points come to the mind. Firstly they create an in-depth background needed to understand the need of automated
+systems in agriculture, but also explain why it is so hard to create such systems. 
+They propose a categorization of robotic system after the structure of their environment and object of interest. Both 
+can be either structured or unstructured. This categorization creates four different categories. First, a structured 
+environment and a structured object: This is the industrial domain. Second, a strucutred environment and a unstructured
+object: the medial domain. Further there is the unstructured enviroment with a structured object: the military, space, underwater
+and mining domains. The last domain, unstructured in environment and object of interest is the agricultural domain.
+
+The next contribution are guidelines under which circumstances a robot can be commercially successful. These guideline conclude
+that it is possible to start using robots even if the costs are the same as conventional methods if the work of
+the robots create more steady and predictable processes.
+
+A big part of the review are categorization concepts, components and principles. These include Human-Robot-Systems versus
+Autonomous Robot Systems. In the component section the authors underline following topics: steering and mobility, 
+sensing and self-localization, path planning and guidance and last but not least, manipulators and effectors.
+
+One of the main problems is the highly dynamic environment and the need to react fast to unprecedented situations.
+This creates the question on how to define behavior in such a way to allow and strengthen the capabilities of 
+improvisation.
+
+Summary: In-depth review paper with some self citations but besides that it gives many new points to deepen my reseach.},
   doi      = {https://doi.org/10.1016/j.biosystemseng.2016.06.014},
   file     = {:/home/sd/Documents/papers/1-s2.0-S1537511015301914-main.pdf:PDF},
   keywords = {Agricultural robots, Robotics, Field operations, Autonomous, rank5},
-  priority = {146},
   ranking  = {rank5},
   url      = {http://www.sciencedirect.com/science/article/pii/S1537511015301914},
 }
@@ -507,8 +538,10 @@
   volume    = {146},
   doi       = {https://doi.org/10.1016/j.biosystemseng.2016.05.010},
   file      = {:/home/sd/Documents/papers/oberti2016.pdf:PDF},
+  keywords  = {rank5},
   priority  = {12},
   publisher = {Elsevier {BV}},
+  ranking   = {rank5},
 }
 
 @Article{Pedersen2006,
@@ -551,12 +584,41 @@ There will always be economic analyses for newer technology. Because  this  pape
   number    = {5},
   pages     = {265--273},
   volume    = {59},
+  comment   = {A key problem in agricultural robots is to detect and map individual plants for several reasons, including 
+navigation, individual reports and individual care. For a robust plant mapping it is needed to use reliable
+sensors and algorithms. Much research is done in solving this problem 
+using 2D and 3D cameras but this paper on the other hand, works on detecting plants using low cost and low resolution
+3D Lidar sensors. The solution contains an algorithm for detecting individual plant in a row using a FX6 3D Lidar sensor. 
+This sensor is still in development, the current version has a resolution of 29 by 59 pixel creating 15 frames per second.
+To detect the plant from the resulting point cloud, the algorithm first detects the ground plane and second  
+creates cluster for each plants using a k,d tree and decides for each cluster only using the bounding box dimensions.
+The proposed algorithm works seemingly fast, and manages to identify in a single frame 60\% of the plants
+and using multiple frames with tracking it scores an average detection accuracy of 80-90\%. Further the average accuracy 
+of the position detection is 3 centimeters. One problem occurring repeatedly is that the algorithm fails to differentiate
+between the next plants if they grow into each other and the cluster connect. The idea to use a low cost 3D sensor is quite good because, as mentioned in the paper, it works independent from 
+existing lighting and is robust against fog and dust - conditions which occur frequently in the real world.
+The algorithm uses only a bounding box of a cluster to determine the position of the plant. This approach works okay 
+when every plant grows neatly far away from their neighbours but fails in messy real world conditions.
+Some aspects are great on the other hand, it has a fast runtime, for example. I think this given approach would work 
+better on a row basis and maybe use offline compute power to identify the individual plants? 
+Because measuring these plants is a repeated operation, one could leverage the result of a computational more expensive
+offline algorithm and map the online point cloud directly onto an existing map.
+This main contribution is an evaluation of a low-cost 3D lidar scanner with an basic point clustering algorithm in real time. besides
+that they also showcase other approaches for the same problem using traditional 2D camera systems and different scanners.
+The future research will include using stronger machine learning algorithms for clustering and plant separation. They also
+want to work on a row detection basis.
+My main concern was the quite simple simulation model on gazebo and i hope that they improve this.
+It is possible to detect plants in real time using point clouds in the agricultural sector even with 
+simple mathematical methods. The difference between a classical and those FX6 laser scanner is also interesting.
+I think plant detection like this is the way to go, by improving only the algorithm it should be possible
+soon to deploy at least field scouting robots in real world scenarios. 
+In depth paper for clustering point clouds into individual plants using a bounding box approach.
+Maths is explained nicely, can be used to build something similar.},
   doi       = {https://doi.org/10.1016/j.robot.2011.02.011},
   file      = {:/home/sd/Documents/papers/1-s2.0-S0921889011000315-main.pdf:PDF},
-  keywords  = {rank5},
-  priority  = {117},
+  keywords  = {rank4},
   publisher = {Elsevier {BV}},
-  ranking   = {rank5},
+  ranking   = {rank4},
 }
 
 @Article{Vasconez2019,

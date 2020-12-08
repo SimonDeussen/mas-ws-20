@@ -551,12 +551,41 @@ There will always be economic analyses for newer technology. Because  this  pape
   number    = {5},
   pages     = {265--273},
   volume    = {59},
+  comment   = {A key problem in agricultural robots is to detect and map individual plants for several reasons, including 
+navigation, individual reports and individual care. For a robust plant mapping it is needed to use reliable
+sensors and algorithms. Much research is done in solving this problem 
+using 2D and 3D cameras but this paper on the other hand, works on detecting plants using low cost and low resolution
+3D Lidar sensors. The solution contains an algorithm for detecting individual plant in a row using a FX6 3D Lidar sensor. 
+This sensor is still in development, the current version has a resolution of 29 by 59 pixel creating 15 frames per second.
+To detect the plant from the resulting point cloud, the algorithm first detects the ground plane and second  
+creates cluster for each plants using a k,d tree and decides for each cluster only using the bounding box dimensions.
+The proposed algorithm works seemingly fast, and manages to identify in a single frame 60\% of the plants
+and using multiple frames with tracking it scores an average detection accuracy of 80-90\%. Further the average accuracy 
+of the position detection is 3 centimeters. One problem occurring repeatedly is that the algorithm fails to differentiate
+between the next plants if they grow into each other and the cluster connect. The idea to use a low cost 3D sensor is quite good because, as mentioned in the paper, it works independent from 
+existing lighting and is robust against fog and dust - conditions which occur frequently in the real world.
+The algorithm uses only a bounding box of a cluster to determine the position of the plant. This approach works okay 
+when every plant grows neatly far away from their neighbours but fails in messy real world conditions.
+Some aspects are great on the other hand, it has a fast runtime, for example. I think this given approach would work 
+better on a row basis and maybe use offline compute power to identify the individual plants? 
+Because measuring these plants is a repeated operation, one could leverage the result of a computational more expensive
+offline algorithm and map the online point cloud directly onto an existing map.
+This main contribution is an evaluation of a low-cost 3D lidar scanner with an basic point clustering algorithm in real time. besides
+that they also showcase other approaches for the same problem using traditional 2D camera systems and different scanners.
+The future research will include using stronger machine learning algorithms for clustering and plant separation. They also
+want to work on a row detection basis.
+My main concern was the quite simple simulation model on gazebo and i hope that they improve this.
+It is possible to detect plants in real time using point clouds in the agricultural sector even with 
+simple mathematical methods. The difference between a classical and those FX6 laser scanner is also interesting.
+I think plant detection like this is the way to go, by improving only the algorithm it should be possible
+soon to deploy at least field scouting robots in real world scenarios. 
+In depth paper for clustering point clouds into individual plants using a bounding box approach.
+Maths is explained nicely, can be used to build something similar.},
   doi       = {https://doi.org/10.1016/j.robot.2011.02.011},
   file      = {:/home/sd/Documents/papers/1-s2.0-S0921889011000315-main.pdf:PDF},
-  keywords  = {rank5},
-  priority  = {117},
+  keywords  = {rank4},
   publisher = {Elsevier {BV}},
-  ranking   = {rank5},
+  ranking   = {rank4},
 }
 
 @Article{Vasconez2019,

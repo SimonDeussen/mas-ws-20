@@ -12,6 +12,8 @@
 \pagenumbering{gobble}
 \maketitle
 \pagenumbering{arabic}
+\tableofcontents
+\newpage
 
 % ================= TEMPLATE =================
 % \section{Reading Report: \emph{TITLE}}
@@ -37,6 +39,77 @@
 % \subsection*{Rating}
 
 % ================= TEMPLATE =================
+
+\section{Reading Report: \emph{Plant detection and mapping for agricultural robots using a 3D LIDAR sensor}}
+\cite{Weiss2011}
+
+\subsection*{Abstract}
+
+In this article, we discuss the advantages of MEMS based 3D LIDAR sensors over traditional approaches
+like vision or stereo vision in the domain of agricultural robotics and compare these kinds of sensors
+with typical 3D sensors used on mobile robots. Further, we present an application for such sensors. This
+application deals with the detection and segmentation of plants and ground, which is one important
+prerequisite to perform localization, mapping and navigation for autonomous agricultural robots. We
+show the discrimination of ground and plants as well as the mapping of the plants. Experiments conducted
+using the FX6 LIDAR by Nippon Signal were carried out in the simulation environment Gazebo, with
+artificial maize plants in the laboratory and on a small maize field. Our results show that the tested plants
+can be reliably detected and segmented from ground, despite the use of the low resolution FX6 sensor.
+Further, the plants can be localized with high accuracy.
+
+
+\subsection*{Keywords}
+Individual plant detection, Plant mapping, 3D LIDAR sensor, Agricultural robotics
+
+
+\subsection*{Questions}
+
+\subsubsection*{What are the motivations for this work?} 
+A key problem in agricultural robots is to detect and map individual plants for several reasons, including 
+navigation, individual reports and individual care. For a robust plant mapping it is needed to use reliable
+sensors and algorithms. Much research is done in solving this problem 
+using 2D and 3D cameras but this paper on the other hand, works on detecting plants using low cost and low resolution
+3D Lidar sensors. 
+\subsubsection*{What is the proposed solution?}
+The solution contains an algorithm for detecting individual plant in a row using a FX6 3D Lidar sensor. 
+This sensor is still in development, the current version has a resolution of 29 by 59 pixel creating 15 frames per second.
+To detect the plant from the resulting point cloud, the algorithm first detects the ground plane and second  
+creates cluster for each plants using a k,d tree and decides for each cluster only using the bounding box dimensions.
+\subsubsection*{What is the work`s evaluation of the solution?}
+The proposed algorithm works seemingly fast, and manages to identify in a single frame 60\% of the plants
+and using multiple frames with tracking it scores an average detection accuracy of 80-90\%. Further the average accuracy 
+of the position detection is 3 centimeters. One problem occurring repeatedly is that the algorithm fails to differentiate
+between the next plants if they grow into each other and the cluster connect. 
+
+\subsubsection*{What is my analysis of the identified problem, idea  and evaluation?}
+The idea to use a low cost 3D sensor is quite good because, as mentioned in the paper, it works independent from 
+existing lighting and is robust against fog and dust - conditions which occur frequently in the real world.
+The algorithm uses only a bounding box of a cluster to determine the position of the plant. This approach works okay 
+when every plant grows neatly far away from their neighbours but fails in messy real world conditions.
+Some aspects are great on the other hand, it has a fast runtime, for example. I think this given approach would work 
+better on a row basis and maybe use offline compute power to identify the individual plants? 
+Because measuring these plants is a repeated operation, one could leverage the result of a computational more expensive
+offline algorithm and map the online point cloud directly onto an existing map.
+\subsubsection*{What are the contributions?}
+This main contribution is an evaluation of a low-cost 3D lidar scanner with an basic point clustering algorithm in real time. besides
+that they also showcase other approaches for the same problem using traditional 2D camera systems and different scanners.
+
+\subsubsection*{What are the future directions of the research?}
+The future research will include using stronger machine learning algorithms for clustering and plant separation. They also
+want to work on a row detection basis.
+\subsubsection*{What questions have I left?}
+My main concern was the quite simple simulation model on gazebo and i hope that they improve this.
+\subsubsection*{What is my main take away from this paper?}
+It is possible to detect plants in real time using point clouds in the agricultural sector even with 
+simple mathematical methods. The difference between a classical and those FX6 laser scanner is also interesting.
+I think plant detection like this is the way to go, by improving only the algorithm it should be possible
+soon to deploy at least field scouting robots in real world scenarios. 
+
+\subsection*{Summary}
+In depth paper for clustering point clouds into individual plants using a bounding box approach.
+Maths is explained nicely, can be used to build something similar.
+
+\subsection*{Rating}
+4/5
 
 \section{Reading Report: \emph{Agricultural robots for field operations: Concepts and components}}
 \cite{Bechar2016}
@@ -97,7 +170,7 @@ They propose a categorization of robotic system after the structure of their env
 can be either structured or unstructured. This categorization creates four different categories. First, a structured 
 environment and a structured object: This is the industrial domain. Second, a strucutred environment and a unstructured
 object: the medial domain. Further there is the unstructured enviroment with a structured object: the military, space, underwater
-andmining domains. The last domain, unstructured in environment and object of interest is the agricultural domain.
+and mining domains. The last domain, unstructured in environment and object of interest is the agricultural domain.
 
 The next contribution are guidelines under which circumstances a robot can be commercially successful. These guideline conclude
 that it is possible to start using robots even if the costs are the same as conventional methods if the work of
@@ -167,6 +240,8 @@ Great in depth analysis but dated (2006), has good numbers for conventional cost
 \subsection*{Rating}
 3/5
 
+
+\newpage
 \bibliography{isw_research}
 \bibliographystyle{apacite}
 

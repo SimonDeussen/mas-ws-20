@@ -67,4 +67,34 @@ Pedersen, S\BPBI M.%
   \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
+\bibitem [\protect \citeauthoryear {%
+Weiss%
+\ \BBA {} Biber%
+}{%
+Weiss%
+\ \BBA {} Biber%
+}{%
+{\protect \APACyear {2011}}%
+}]{%
+Weiss2011}
+\APACinsertmetastar {%
+Weiss2011}%
+\begin{APACrefauthors}%
+Weiss, U.%
+\BCBT {}\ \BBA {} Biber, P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{may}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Plant detection and mapping for agricultural robots
+  using a 3D {LIDAR} sensor} {Plant detection and mapping for agricultural
+  robots using a 3d {LIDAR} sensor}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Robotics and Autonomous Systems}{59}{5}{265--273}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.robot.2011.02.011}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
 \end{thebibliography}
