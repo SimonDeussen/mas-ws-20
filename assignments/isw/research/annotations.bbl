@@ -35,6 +35,37 @@ Bechar, A.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Henten%
+\ \protect \BOthers {.}}{%
+Henten%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2003}}%
+}]{%
+Henten2003}
+\APACinsertmetastar {%
+Henten2003}%
+\begin{APACrefauthors}%
+Henten, E\BPBI V.%
+, Tuijl, B\BPBI V.%
+, Hemming, J.%
+, Kornet, J.%
+, Bontsema, J.%
+\BCBL {}\ \BBA {} Os, E\BPBI V.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2003}{nov}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Field Test of an Autonomous Cucumber Picking Robot}
+  {Field test of an autonomous cucumber picking robot}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Biosystems Engineering}{86}{3}{305--313}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.biosystemseng.2003.08.002}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Pedersen%
 , Fountas%
 , Have%
@@ -64,6 +95,35 @@ Pedersen, S\BPBI M.%
 \APACjournalVolNumPages{Precision Agriculture}{7}{4}{295--308}.
 \newblock
 \begin{APACrefDOI} \doi{https://doi.org/10.1007/s11119-006-9014-9}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Siciliano%
+\ \BBA {} Khatib%
+}{%
+Siciliano%
+\ \BBA {} Khatib%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+Siciliano2016}
+\APACinsertmetastar {%
+Siciliano2016}%
+\begin{APACrefauthors}%
+Siciliano, B.%
+\BCBT {}\ \BBA {} Khatib, O.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2016}.
+\newblock
+\APACrefbtitle {Springer Handbook of Robotics} {Springer handbook of robotics}\
+  (B.~Siciliano\ \BBA {} O.~Khatib, \BEDS{}).
+\newblock
+\APACaddressPublisher{}{Springer International Publishing}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1007/978-3-319-32552-1}
   \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 

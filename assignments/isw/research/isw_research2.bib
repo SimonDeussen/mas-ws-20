@@ -373,10 +373,41 @@
   pages    = {94 - 111},
   volume   = {149},
   abstract = {This review investigates the research effort, developments and innovation in agricultural robots for field operations, and the associated concepts, principles, limitations and gaps. Robots are highly complex, consisting of different sub-systems that need to be integrated and correctly synchronised to perform tasks perfectly as a whole and successfully transfer the required information. Extensive research has been conducted on the application of robots and automation to a variety of field operations, and technical feasibility has been widely demonstrated. Agricultural robots for field operations must be able to operate in unstructured agricultural environments with the same quality of work achieved by current methods and means. To assimilate robotic systems, technologies must be developed to overcome continuously changing conditions and variability in produce and environments. Intelligent systems are needed for successful task performance in such environments. The robotic system must be cost-effective, while being inherently safe and reliable—human safety, and preservation of the environment, the crop and the machinery are mandatory. Despite much progress in recent years, in most cases the technology is not yet commercially available. Information-acquisition systems, including sensors, fusion algorithms and data analysis, need to be adjusted to the dynamic conditions of unstructured agricultural environments. Intensive research is needed on integrating human operators into the system control loop for increased system performance and reliability. System sizes should be reduced while improving the integration of all parts and components. For robots to perform in agricultural environments and execute agricultural tasks, research must focus on: fusing complementary sensors for adequate localisation and sensing abilities, developing simple manipulators for each agricultural task, developing path planning, navigation and guidance algorithms suited to environments besides open fields and known a-priori, and integrating human operators in this complex and highly dynamic situation.},
+  comment  = {The main subject of this paper is to show the current development, ideas and problems in the field of agricultural 
+robotics. This review paper explains first the background, then the economic feasibility and furthers goes into 
+concepts, principles and components.
+
+The paper concludes, that with current technologies the broad usage in commercial farming is not possible yet and 
+proposes to focus research on a number of fields. Those fields include sensor fusion for better localisation, 
+engineering of better simple manipulators and the development of specific path planning, navigation and guidance algorithms
+for agriculture.
+
+The authors make a great job in displaying the current technologies and their limitations. With this knowledge it is 
+easy to identify a subproblem to work on.
+Several points come to the mind. Firstly they create an in-depth background needed to understand the need of automated
+systems in agriculture, but also explain why it is so hard to create such systems. 
+They propose a categorization of robotic system after the structure of their environment and object of interest. Both 
+can be either structured or unstructured. This categorization creates four different categories. First, a structured 
+environment and a structured object: This is the industrial domain. Second, a strucutred environment and a unstructured
+object: the medial domain. Further there is the unstructured enviroment with a structured object: the military, space, underwater
+and mining domains. The last domain, unstructured in environment and object of interest is the agricultural domain.
+
+The next contribution are guidelines under which circumstances a robot can be commercially successful. These guideline conclude
+that it is possible to start using robots even if the costs are the same as conventional methods if the work of
+the robots create more steady and predictable processes.
+
+A big part of the review are categorization concepts, components and principles. These include Human-Robot-Systems versus
+Autonomous Robot Systems. In the component section the authors underline following topics: steering and mobility, 
+sensing and self-localization, path planning and guidance and last but not least, manipulators and effectors.
+
+One of the main problems is the highly dynamic environment and the need to react fast to unprecedented situations.
+This creates the question on how to define behavior in such a way to allow and strengthen the capabilities of 
+improvisation.
+
+Summary: In-depth review paper with some self citations but besides that it gives many new points to deepen my reseach.},
   doi      = {https://doi.org/10.1016/j.biosystemseng.2016.06.014},
   file     = {:/home/sd/Documents/papers/1-s2.0-S1537511015301914-main.pdf:PDF},
   keywords = {Agricultural robots, Robotics, Field operations, Autonomous, rank5},
-  priority = {146},
   ranking  = {rank5},
   url      = {http://www.sciencedirect.com/science/article/pii/S1537511015301914},
 }
@@ -551,12 +582,41 @@ There will always be economic analyses for newer technology. Because  this  pape
   number    = {5},
   pages     = {265--273},
   volume    = {59},
+  comment   = {A key problem in agricultural robots is to detect and map individual plants for several reasons, including 
+navigation, individual reports and individual care. For a robust plant mapping it is needed to use reliable
+sensors and algorithms. Much research is done in solving this problem 
+using 2D and 3D cameras but this paper on the other hand, works on detecting plants using low cost and low resolution
+3D Lidar sensors. The solution contains an algorithm for detecting individual plant in a row using a FX6 3D Lidar sensor. 
+This sensor is still in development, the current version has a resolution of 29 by 59 pixel creating 15 frames per second.
+To detect the plant from the resulting point cloud, the algorithm first detects the ground plane and second  
+creates cluster for each plants using a k,d tree and decides for each cluster only using the bounding box dimensions.
+The proposed algorithm works seemingly fast, and manages to identify in a single frame 60\% of the plants
+and using multiple frames with tracking it scores an average detection accuracy of 80-90\%. Further the average accuracy 
+of the position detection is 3 centimeters. One problem occurring repeatedly is that the algorithm fails to differentiate
+between the next plants if they grow into each other and the cluster connect. The idea to use a low cost 3D sensor is quite good because, as mentioned in the paper, it works independent from 
+existing lighting and is robust against fog and dust - conditions which occur frequently in the real world.
+The algorithm uses only a bounding box of a cluster to determine the position of the plant. This approach works okay 
+when every plant grows neatly far away from their neighbours but fails in messy real world conditions.
+Some aspects are great on the other hand, it has a fast runtime, for example. I think this given approach would work 
+better on a row basis and maybe use offline compute power to identify the individual plants? 
+Because measuring these plants is a repeated operation, one could leverage the result of a computational more expensive
+offline algorithm and map the online point cloud directly onto an existing map.
+This main contribution is an evaluation of a low-cost 3D lidar scanner with an basic point clustering algorithm in real time. besides
+that they also showcase other approaches for the same problem using traditional 2D camera systems and different scanners.
+The future research will include using stronger machine learning algorithms for clustering and plant separation. They also
+want to work on a row detection basis.
+My main concern was the quite simple simulation model on gazebo and i hope that they improve this.
+It is possible to detect plants in real time using point clouds in the agricultural sector even with 
+simple mathematical methods. The difference between a classical and those FX6 laser scanner is also interesting.
+I think plant detection like this is the way to go, by improving only the algorithm it should be possible
+soon to deploy at least field scouting robots in real world scenarios. 
+In depth paper for clustering point clouds into individual plants using a bounding box approach.
+Maths is explained nicely, can be used to build something similar.},
   doi       = {https://doi.org/10.1016/j.robot.2011.02.011},
   file      = {:/home/sd/Documents/papers/1-s2.0-S0921889011000315-main.pdf:PDF},
-  keywords  = {rank5},
-  priority  = {117},
+  keywords  = {rank4},
   publisher = {Elsevier {BV}},
-  ranking   = {rank5},
+  ranking   = {rank4},
 }
 
 @Article{Vasconez2019,
@@ -603,7 +663,7 @@ There will always be economic analyses for newer technology. Because  this  pape
   url    = {https://www.cs.cmu.edu/~motionplanning/reading/howtoread.pdf},
 }
 
-@Article{Choi_2020,
+@Article{Choi2020,
   author    = {Sang Hyun Choi and Vikyath D. Rao and Tim Gernat and Adam R. Hamilton and Gene E. Robinson and Nigel Goldenfeld},
   journal   = {Proceedings of the National Academy of Sciences},
   title     = {Individual variations lead to universal and cross-species patterns of social behavior},
@@ -613,6 +673,95 @@ There will always be economic analyses for newer technology. Because  this  pape
   doi       = {https://doi.org/10.1073/pnas.2002013117},
   publisher = {Proceedings of the National Academy of Sciences},
   url       = {https://www.igb.illinois.edu/article/unexpected-similarity-between-honey-bee-and-human-social-life},
+}
+
+@Book{Siciliano2016,
+  author    = {Bruno Siciliano and Oussama Khatib},
+  editor    = {Bruno Siciliano and Oussama Khatib},
+  publisher = {Springer International Publishing},
+  title     = {Springer Handbook of Robotics},
+  year      = {2016},
+  doi       = {https://doi.org/10.1007/978-3-319-32552-1},
+  file      = {:/home/sd/Documents/books/2016_Book_SpringerHandbookOfRobotics.pdf:PDF},
+  keywords  = {Overview, Case studies, weed control, high precision farming, crop yield estimation, Vehicle formation control, plant probing, leaf removal, harvesting, precision forestry, aerial based precision farming, rank5},
+  priority  = {4269},
+  ranking   = {rank5},
+}
+
+@InProceedings{Dong2014,
+  author    = {Jing Dong and Luca Carlone and Rains, {Glen C.} and Tim Coolong and Frank Dellaert},
+  booktitle = {American Society of Agricultural and Biological Engineers Annual International Meeting 2014, ASABE 2014},
+  title     = {4D mapping of fields using autonomous ground and aerial vehicles},
+  year      = {2014},
+  address   = {United States},
+  note      = {American Society of Agricultural and Biological Engineers Annual International Meeting 2014, ASABE 2014 ; Conference date: 13-07-2014 Through 16-07-2014},
+  pages     = {4270--4276},
+  publisher = {American Society of Agricultural and Biological Engineers},
+  series    = {American Society of Agricultural and Biological Engineers Annual International Meeting 2014, ASABE 2014},
+  abstract  = {In this study, we propose a novel technique for imaging of crops. Related work has significant limitations in terms of resolution as well as coverage in space and time. In order to overcome these limitations, we use a dense sampling of high-resolution images, which enables the creation of a sequence of 3D reconstructions over time, i.e., a 4D spatio-temporal model of a crop as it develops. To this end, we mounted a CCD camera with integrated GPS and Inertial Measurement Unit (IMU) on a ground articulated tractor, and we collected a set of images approximately once per week over staggered plantings of broccoli from October to January in South Georgia. Multiple images of individual plants taken from different angles are stitched together to produce a 3D reconstruction each week, using {"}Structure from Motion{"} (SFM) techniques from computer vision. These 3D reconstructions are then combined in a 4D GIS to show the plants growth and production of fruit over time (4D). These 4D imaging techniques can be applied to images collected from autonomous ground or aerial vehicles for multiple site-specific management practices, such as estimating where, when and how many fruit are ready for harvest in certain vegetable and fruit crops. Other potential applications include record keeping of canopy development for orchards, measuring rate of change of leaf area index, and weed dispersal, proliferation and identification.},
+  doi       = {10.13031/aim.20141912258},
+  file      = {:/home/sd/Documents/papers/4d-mapping-of-fields-using-autonomous-ground-and-aerial-vehicles-2014.pdf:PDF},
+  language  = {English},
+  priority  = {7},
+}
+
+@Article{Henten2003,
+  author    = {E.J. Van Henten and B.A.J. Van Tuijl and J. Hemming and J.G. Kornet and J. Bontsema and E.A. Van Os},
+  journal   = {Biosystems Engineering},
+  title     = {Field Test of an Autonomous Cucumber Picking Robot},
+  year      = {2003},
+  month     = {nov},
+  number    = {3},
+  pages     = {305--313},
+  volume    = {86},
+  doi       = {https://doi.org/10.1016/j.biosystemseng.2003.08.002},
+  file      = {:/home/sd/Documents/papers/vanhenten2003.pdf:PDF},
+  priority  = {150},
+  publisher = {Elsevier {BV}},
+}
+
+@Article{Alenya2014,
+  author    = {G. Aleny{\`{a}} and S. Foix and C. Torras},
+  journal   = {Intelligent Service Robotics},
+  title     = {Using {ToF} and {RGBD} cameras for 3D robot perception and manipulation in human environments},
+  year      = {2014},
+  month     = {sep},
+  number    = {4},
+  pages     = {211--220},
+  volume    = {7},
+  doi       = {https://doi.org/10.1007/s11370-014-0159-5},
+  file      = {:/home/sd/Documents/papers/Alenyà2014_Article_UsingToFAndRGBDCamerasFor3DRob.pdf:PDF},
+  priority  = {12},
+  publisher = {Springer Science and Business Media {LLC}},
+}
+
+@InBook{Wang2013,
+  author    = {Wang, Qi and Nuske, Stephen and Bergerman, Marcel and Singh, Sanjiv},
+  editor    = {Desai, Jaydev P. and Dudek, Gregory and Khatib, Oussama and Kumar, Vijay},
+  pages     = {745--758},
+  publisher = {Springer International Publishing},
+  title     = {Automated Crop Yield Estimation for Apple Orchards},
+  year      = {2013},
+  address   = {Heidelberg},
+  isbn      = {978-3-319-00065-7},
+  abstract  = {Crop yield estimation is an important task in apple orchard management. The current manual sampling-based yield estimation is time-consuming, labor-intensive and inaccurate. To deal with this challenge, we developed a computer vision-based system for automated, rapid and accurate yield estimation. The system uses a two-camera stereo rig for image acquisition. It works at nighttime with controlled artificial lighting to reduce the variance of natural illumination. An autonomous orchard vehicle is used as the support platform for automated data collection. The system scans both sides of each tree row in orchards. A computer vision algorithm detects and registers apples from acquired sequential images, and then generates apple counts as crop yield estimation. We deployed the yield estimation system in Washington state in September, 2011. The results show that the system works well with both red and green apples in the tall-spindle planting system. The crop yield estimation errors are -3.2{\%} for a red apple block with about 480 trees, and 1.2{\%} for a green apple block with about 670 trees.},
+  booktitle = {Experimental Robotics: The 13th International Symposium on Experimental Robotics},
+  doi       = {10.1007/978-3-319-00065-7_50},
+  file      = {:/home/sd/Documents/papers/wang2013.pdf:PDF},
+  priority  = {48},
+  url       = {https://doi.org/10.1007/978-3-319-00065-7_50},
+}
+
+@Article{Katupitiya2007,
+  author    = {Jayantha Katupitiya and Ray Eaton and Tahir Yaqub},
+  title     = {Systems Engineering Approach to Agricultural Automation: New Developments},
+  year      = {2007},
+  month     = {apr},
+  booktitle = {2007 1st Annual {IEEE} Systems Conference},
+  doi       = {https://doi.org/10.1109/SYSTEMS.2007.374688},
+  file      = {:/home/sd/Documents/papers/katupitiya2007.pdf:PDF},
+  priority  = {20},
+  publisher = {{IEEE}},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

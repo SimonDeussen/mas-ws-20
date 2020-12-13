@@ -40,6 +40,303 @@
 
 % ================= TEMPLATE =================
 
+
+\section{Reading Report: \emph{Field Test of an Autonomous Cucumber Picking Robot
+}}
+\cite{Henten2003}
+
+\subsection*{Abstract}
+At the Institute of Agricultural and Environmental Engineering (IMAG B.V.) an autonomous harvesting
+robot for cucumbers was developed and tested in a greenhouse in autumn 2001. Analysis of the harvest
+process had revealed that at a 2 ha Dutch production facility four robots are needed to replace the skilled
+human work force during the peak season. Then assuming a success rate of 100\%, a harvest cycle might take
+at most 10 s per cucumber fruit. In this paper the results of the field test of the harvesting robot are reported
+and analysed in view of the performance criteria mentioned above. Cucumbers (Cucumis sativus cv. Korinda)
+were grown in a high-wire cultivation system. In four independent experiments the robot was tested. The
+average success rate was 74.4\%. The majority of failures originated from inaccurate positioning of the end-
+effector at the stalk of the fruit. It was found to be a great advantage that the system was able to perform
+several harvest attempts on a single cucumber from different harvest positions of the robot. This improved the
+success rate considerably. A single successful harvest cycle took 65.2 s per cucumber. Since not all attempts
+were successful, a cycle time of 124 s per harvested cucumber was measured under practical circumstances. The
+test confirmed the ability to harvest more than one cucumber using a single set of images which reduced the
+cycle time of a successful harvest to 56.7 and 53.0 s if two or three cucumbers were harvested. To bridge the
+gap between the measured performance and the design specifications, future research focuses on improving the
+success rate, faster hardware and software for image processing and motion planning as well as the reduction
+of the motion time of the manipulator.
+
+
+\subsection*{Keywords} Harvesting, Computer Vision, Machine Vision, Stereo Vision, Experiment
+
+\subsection*{Questions}
+\subsubsection*{What are the motivations for this work?}
+
+\begin{itemize}
+    \item The authors wanted to create a comparable solution to recent advances in harvesting tomatoes and eggplants
+    \item Human labour fir harvesting is a tedious and expensive task.
+    \item Robot labour needs to be able to harvest one cucumber every 10 seconds. This experiment tries to show the current (2001) limitations.
+    \item Inside high-wire greenhouses mobile robots can move along tracks next to the cucumber plants which creates a somehow structured environment.
+    \item This proposed architecture should allow complete autonomous harvesting.
+\end{itemize}
+\subsubsection*{What is the proposed solution?}
+\begin{itemize}
+    \item Mobile system consisting of a robotic arm having a thermal cutter and a suction cup for cutting and grabbing the cucumbers. One camera for taking two
+    images (768x512px) at different positions to find 3D coordinates.
+    \item They restricted the way to cucumbers could grow so that they are always in a specific range reachable for the robots manipulators.
+    \item Removed leaves before hand to lessen occlusion errors.
+    \item They also removed cucumbers growing too close to each other.
+    \item The systems moves along a rail in 33cm steps. At each step the cameras look for cucumbers and if found and big enough proceed with the harvesting.
+    \item The harvesting does not take additional images. All informations come from the initial 2 pictures. Even if multiple cucumbers are found, the initial information and processing has to be enough.
+    \item Because the range of the system is around 1m, the 33cm step allow up to 3 harvest attempts for each cucumber.
+\end{itemize}
+\subsubsection*{What is the work`s evaluation of the solution?}
+\begin{itemize}
+    \item For this experiment the authors took in-depth runtime measurements and error protocols.
+    \item On average the system managed to harvest ca. 75\% of a present cucumbers. 
+    \item For the whole experiment with multiple attempts and failures, the resulting harvesting time was \textbf{124s} per cucumber!!!
+    \item If every first attempt would have been successful, the resulting time would have been   \textbf{75s} per harvested cucumber.
+    \item Most errors (ca. 36\%) came from an misplaced end-effector resulting from poor 3D coordinates.
+\end{itemize}
+\subsubsection*{What is my analysis of the identified problem, idea  and evaluation?}
+\begin{itemize}
+    \item Those experiments (20 years ago) have been one order of magnitude too slow for a commercial application.
+    \item I like the idea of using only one camera, but the extra cost would directly result in a speed up which would basically pay for itself to use a stereo camera.
+    \item The evaluation was very good. The authors managed to create an details overview over the shortcomings. 
+    \item Especially the failure categorization is great. This should be an inspiration for similar failure reports for my own experiments.
+    \item I was surprised that the paper was that old.
+    \item 10 seconds runtime for the image analysis will be much faster nowadays.
+\end{itemize}
+\subsubsection*{What are the contributions?} 
+\begin{itemize}
+    \item This paper was a report over an in depth experiment using this harvesting system.
+    \item It sheds light in many failure classes and shows how to make a proper report.
+    \item The robotic system had a bad execution time and accuracy.
+\end{itemize}
+\subsubsection*{What are the future directions of the research?}
+Harvesting crops in greenhouses will continue to be a key research topic. For this case I hope that the authors managed to increase the execution speeds.
+\subsubsection*{What questions have I left?} 
+\begin{itemize}
+    \item Mainly the comparison to todays systems. For the my next reading report I should find a more recent paper about the same topic.
+    \item If the system can easily exchange the end-effectors, it should be possible to use the mobile platform for all kind of different tasks.
+\end{itemize}
+\subsubsection*{What is my main take away from this paper?}
+Great structured experiment with a promising setup. Having rails in a greenhouse is not too expensive and solves many navigation problems. I am looking forward to deepen my research in this area.
+Would it be possible to create a rail grid with multiple robots, cooperating in this task?
+
+\subsection*{Summary}
+Definitely enjoyed the detailed reporting on different failures and execution times. This paper is an excellent blueprint on how to write a report over an experiment.
+
+
+\subsection*{Rating}
+4/5
+
+
+\section{Reading Report: Chapter 56 \emph{Robotics in Agriculture and Forestry} from \emph{Springer Handbook of Robotics}}
+\cite{Siciliano2016}
+
+\subsection*{Abstract}
+Robotics for agriculture and forestry (A\&F) represents the ultimate application of one of our
+society’s latest and most advanced innovations to its most ancient and important industries.
+Over the course of history, mechanization and automation increased crop output several orders of
+magnitude, enabling a geometric growth in population and an increase in quality of life across
+the globe. Rapid population growth and rising incomes in developing countries, however, 
+require ever larger amounts of A\&F output. This chapter addresses robotics for A\&F in the form
+of case studies where robotics is being success fully applied to solve well-identified problems.
+With respect to plant crops, the focus is on the in-field or in-farm tasks necessary to guarantee
+a quality crop and, generally speaking, end at harvest time. In the livestock domain, the focus
+is on breeding and nurturing, exploiting, harvesting, and slaughtering and processing. The chapter
+is organized in four main sections. The first one explains the scope, in particular, what aspects
+of robotics for A\&F are dealt with in the chapter. The second one discusses the challenges and
+opportunities associated with the application of robotics to A\&F. The third section is the core of
+the chapter, presenting twenty case studies that showcase (mostly) mature applications of robotics
+in various agricultural and forestry domains. The case studies are not meant to be comprehensive 
+but instead to give the reader a general overview of how robotics has been applied to
+A\&F in the last 10 years. The fourth section concludes the chapter with a discussion on specific
+improvements to current technology and paths to commercialization.
+
+
+
+\subsection*{Keywords} Overview, Case studies, coverage planning, weed control, high precision farming, crop yield estimation,
+Vehicle formation control, plant probing, leaf removal, harvesting, precision forestry, aerial based precision farming
+
+\subsection*{Questions}
+
+\subsubsection*{What are the motivations for this work?}
+\begin{description}
+
+    \item[Optimized Coverage for Arable Farming] \
+    \begin{itemize}
+        \item Minimizes soil compaction
+        \item Reduces fuel cost
+        \item Reduces time needed
+    \end{itemize}
+    \item[Weed Control] \
+    \begin{itemize}
+        \item Weeds directly reduce yield by competing the crops over light, water and nutrients
+        \item Weed control is needed to stop them from spreading
+        \item Robotic control system offer greater mechanical precision and a reduction in herbicides needed.
+    \end{itemize}
+    \item[High Precision Seeding] \
+    \begin{itemize}
+        \item When knowing the exact location of the seeded crops all following robotic operation can use this data
+        \item No further local sensing is needed
+        \item Can also be used as an input for localization
+    \end{itemize}
+    \item[Crop Yield Estimation] \
+    \begin{itemize}
+        \item manually gathering the required data is labour- and time-consuming error prone process.
+        \item accurate estimations will help growers in labour demand forecasting. 
+        \item Better planning reduces costs by optimizing packing and storage capacity.
+    \end{itemize}
+    \item[Precision Irrigation] Conventional irrigation technologies dent to over-watering. 
+    This is of course wasteful and also increases leaching of fertilizers.
+    \item[Tree Fruit Production] \
+    \begin{itemize}
+        \item One of the hardest problems of farming because of the complex tree geometry
+        \item Sloped terrain (vineyards)
+        \item Need to sense the branches
+        \item Occlusion of the fruits
+    \end{itemize}
+    \item[Vehicle Formation control] Using multiple robots together will increase the capabilities even further. One element of MRS is to control robots in a formation.
+    \item[Plant Probing] \
+    \begin{itemize}
+        \item Automated sample taking will enable large scale experiments.
+        \item It is hard to model deformable objects like plant parts (leaves, stems, flowers, fruits)
+        \item Proper models will enable individual plant part care, sampling, harvesting, predicting, robotized phenotyping
+    \end{itemize} 
+    \item[Cucumber Harvesting] Automated harvesting can improve efficiency and reduce labour costs. The same system can also be used to cut nonproductive leaves from the plants.
+
+\end{description} 
+\subsubsection*{What is the proposed solution?}
+\begin{description}
+
+    \item[Optimized Coverage for Arable Farming] \
+    \begin{itemize}
+        \item Find the optimal way to move around in complex terrain.
+        \item Introduction of \emph{Optimal coverage planning algorithm}
+    \end{itemize}
+    \item[Weed Control]\
+    \begin{itemize}
+        \item A robotic system to drive autonomous over trough the fields.
+        \item machine vision based approach to identify weeds
+        \item precise distribution of herbicides
+    \end{itemize}
+    \item[High Precision Seeding]\
+    \begin{itemize}
+        \item a driver-less seeding system with high accuracy localization
+        \item smaller wheels allow driving between ros eliminating soil compaction 
+    \end{itemize}
+    \item[Crop Yield Estimation]\
+    \begin{itemize}
+        \item A machine vision based system which is able to identify crops
+        \item the system is manually driven through orchards at night and takes pictures with artificial light
+        \item works for vineyards, apple orchards and strawberry ranches.
+    \end{itemize} 
+    \item[Precision Irrigation] A wireless sensor network monitoring the exact soil conditions.
+    \item[Tree Fruit Production] \
+    \begin{itemize}
+        \item Proposed a family of autonomous orchard vehicles. 
+        \item Only uses laser range finders, no gps for keeping the cost low
+        \item Designed in a way to enable faster working human labourers.
+    \end{itemize} 
+    \item[Vehicle Formation control] \
+    \begin{itemize}
+        \item a control architecture based on a path tracking framework. 
+        \item should allow multiple robots to continue to drive in formation even in ruff terrain with poor grip conditions.
+        \item the system uses RTK-GPS with an accuracy of 2cm.
+        \item wireless communications between robots to communicate relative positions
+    \end{itemize} 
+    \item[Plant Probing] \
+    \begin{itemize}
+        \item System consisting of a robotic arm, time-of-flight camera and a measurement technologies
+        \item image segmentation and model fitting are used to find single leaves from depth informations
+        \item The robot arms first finds position from where it can see the whole plant and then it moves further to enable unobstructed viewing of a single leave.
+        \item After selecting a target leave it will take a probe.
+    \end{itemize} 
+    \item[Cucumber Harvesting] \
+    \begin{itemize}
+        \item Mobile platform mounted on rails in greenhouses
+        \item Harvesting contains several subproblems, one of them is finding the ripeness of the crops. In this case a target weight is given. Because cucumbers are mostly water it is possible to determine the weight from 3D data.
+        \item The system has a single camera but it is possible to move it around to capture the needed 3D informations.
+        \item After identifying the ripe cucumber, it is cut and moved collision free to a storage crate. 
+    \end{itemize} 
+
+\end{description} 
+\subsubsection*{What is the work`s evaluation of the solution?}
+\begin{description}
+
+    \item[Optimized Coverage for Arable Farming] \
+    \begin{itemize}
+        \item reduces turns needed ca. 15\% 
+        \item reduces soil erosion cost ca. 25\%
+        \item reduces skipped area cost ca. 81\%
+    \end{itemize}
+    \item[Weed Control] \
+    \begin{itemize}
+        \item 77\% of weeds got precisely eradicated
+        \item reduction in herbicides
+    \end{itemize}
+    \item[High Precision Seeding] Not much data given, needs further study.
+    \item[Crop Yield Estimation] The results show that the system works surprisingly well in a different environments.
+    \item[Precision Irrigation] \
+    \begin{itemize}
+        \item reduces the water needed by 75\% against conventional watering        
+        \item should allow multiple robots to continue to drive in formation even in ruff terrain with poor grip conditions.
+    \end{itemize}
+    \item[Tree Fruit Production] The different approaches followed by the original authors showed that they are twice as fast as manual labor.
+    \item[Vehicle Formation control] \
+    \begin{itemize}
+        \item they tested using two robots, where one should follow the other in a defined distance along sloped terrain
+        \item the two robots managed to stay in their path with an accuracy of 15cm
+    \end{itemize}
+    \item[Plant Probing] In the summary is no further evaluation. Needs additional study!
+    \item[Cucumber Harvesting] \
+    \begin{itemize}
+        \item The system needs on average 65 seconds to cut one cucumber
+        \item Success rate: ca. 75\%
+    \end{itemize}
+
+\end{description} 
+
+\subsubsection*{What are the contributions?}
+\begin{description}
+
+    \item[Optimized Coverage for Arable Farming] Finds Optimal paths for 2D and 3D terrain with soil erosion models.
+    \item[Weed Control] They presented 3 different systems to autonomously kill weeds in different scenarios. 
+    The second one (volunteer potatoes in sugar beets) seemed like the best one. Further research here!
+    \item[High Precision Seeding] Complete system which achieves high precision seeding.
+    \item[Crop Yield Estimation] A camera rig for small tractors to gather data, can be further improved in the future.
+    \item[Precision Irrigation] Wireless system for monitoring and control
+    \item[Tree Fruit Production] 3 different autonomous platforms navigating by them selves inside orchards. The system has accumulated 350km driven.
+    \item[Vehicle Formation control] A control architecture for two or more robots to stay in formation.
+    \item[Plant Probing] Stationary system to take leave samples.
+    \item[Cucumber Harvesting] Whole system harvesting cucumbers and cutting leaves. Has algorithm to determine the 
+    ripeness and for finding paths for collision free manipulations.
+
+\end{description} 
+
+\subsubsection*{What questions have I left?}
+\begin{description}
+
+    \item[Optimized Coverage for Arable Farming] What is about the path length and exact fuel reduction?
+    \item[Weed Control] How is it possible to increase the velocity further? The machines are too slow.
+    \item[High Precision Seeding] Concrete implementations for further data fusion of seed map with the next scans for a living yield map.
+    \item[Crop Yield Estimation] Why is the system not self driving?
+    \item[Precision Irrigation] The savings in water needed and increase in growth speed are really impressive. How did this work? Did they somehow cheat on the data?
+    Definitely study the original paper. 
+    \item[Tree Fruit Production] Of course using vehicles is faster than manual work using ladders - but are they faster using the same approach with drivers? How does the navigation work with no GPS?
+    \item[Vehicle Formation control] How valid are the results today? Driving two robots in grass does not sound to impressive.
+    \item[Plant Probing] Can this system be mounted on rails?
+    \item[Cucumber Harvesting] How does the accuracy shrink when speeding the process up? How fast can this scale up? 
+
+\end{description} 
+
+
+\subsection*{Summary} 
+Summarizes many different papers in-depth. Refer to this for further research.
+
+\subsection*{Rating}
+5/5
+
 \section{Reading Report: \emph{Plant detection and mapping for agricultural robots using a 3D LIDAR sensor}}
 \cite{Weiss2011}
 

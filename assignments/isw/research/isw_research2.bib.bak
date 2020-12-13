@@ -663,7 +663,7 @@ Maths is explained nicely, can be used to build something similar.},
   url    = {https://www.cs.cmu.edu/~motionplanning/reading/howtoread.pdf},
 }
 
-@Article{Choi2020,
+@Article{Choi_2020,
   author    = {Sang Hyun Choi and Vikyath D. Rao and Tim Gernat and Adam R. Hamilton and Gene E. Robinson and Nigel Goldenfeld},
   journal   = {Proceedings of the National Academy of Sciences},
   title     = {Individual variations lead to universal and cross-species patterns of social behavior},
@@ -705,7 +705,7 @@ Maths is explained nicely, can be used to build something similar.},
   priority  = {7},
 }
 
-@Article{Henten2003,
+@Article{Van_Henten_2003,
   author    = {E.J. Van Henten and B.A.J. Van Tuijl and J. Hemming and J.G. Kornet and J. Bontsema and E.A. Van Os},
   journal   = {Biosystems Engineering},
   title     = {Field Test of an Autonomous Cucumber Picking Robot},
@@ -716,13 +716,11 @@ Maths is explained nicely, can be used to build something similar.},
   volume    = {86},
   doi       = {https://doi.org/10.1016/j.biosystemseng.2003.08.002},
   file      = {:/home/sd/Documents/papers/vanhenten2003.pdf:PDF},
-  keywords  = {Harvesting, Computer Vision, Machine Vision, Stereo Vision, Experiment, rank3},
   priority  = {150},
   publisher = {Elsevier {BV}},
-  ranking   = {rank3},
 }
 
-@Article{Alenya2014,
+@Article{Aleny__2014,
   author    = {G. Aleny{\`{a}} and S. Foix and C. Torras},
   journal   = {Intelligent Service Robotics},
   title     = {Using {ToF} and {RGBD} cameras for 3D robot perception and manipulation in human environments},
@@ -754,7 +752,7 @@ Maths is explained nicely, can be used to build something similar.},
   url       = {https://doi.org/10.1007/978-3-319-00065-7_50},
 }
 
-@Article{Katupitiya2007,
+@Article{Katupitiya_2007,
   author    = {Jayantha Katupitiya and Ray Eaton and Tahir Yaqub},
   title     = {Systems Engineering Approach to Agricultural Automation: New Developments},
   year      = {2007},
