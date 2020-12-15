@@ -44,26 +44,100 @@
 \cite{Lili2017}
 
 \subsection*{Abstract}
+A tomato harvesting robot was developed in this study, which consisted of a four-wheel independent steering system,
+a 5-DOF harvesting system, a navigation system, and a binocular stereo vision system.
+The four-wheel independent steering system was capable of providing a low-speed steering control of the robot based on Ackerman steering geometry.
+The proportional-integral-derivative (PID) algorithm was used in the laser navigation control system. The Otsu algorithm and the
+elliptic template method were used for the automatic recognition of ripe tomatoes, and obstacle avoidance strategies were
+proposed based on the C-space method. The maximum average absolute error between the set angle and the actual angle was
+about 0.14°, and the maximum standard deviation was about 0.04°.  The laser navigation system was able to rapidly and
+accurately track the path, with the deviation being less than 8 cm.  The load bearing capacity of the mechanical arm was about
+1.5 kg. The success rate of the binocular vision system in the recognition of ripe tomatoes was 99.3\%.
+When the distance was less than 600 mm, the positioning error was less than 10 mm.
+The time needed for recognition of ripe tomatoes and pitching was about 15 s per tomato, with a success rate of about 86\%. 
+This study provides some insights into the development and application of tomato harvesting robot used in the greenhouse.
+
 
 \subsection*{Keywords}
+tomato harvesting robot, four-wheel independent steering, automatic navigation, binocular stereo vision system,
+obstacle avoidance, greenhouse
 
 \subsection*{Questions}
 
 \subsubsection*{What are the motivations for this work?}
-\subsubsection*{What is the proposed solution?}
+\begin{itemize}
+    \item Harvesting tomatoes is a very popular and labour intensive vegetable. The annual production is around 60 million tons. 
+    \item Because the labor costs are rising - even in China they are trying to find a autonomous solution which can scale up.
+    \item Tomatoes are very soft and sensitive vegetables so harvesting them is especially complicated.
+    \item The authors name several other research in building this kind of harvesting robots, but those have slow reaction and clumsy movement. 
+    \item They want to create a fast system for picking tomatoes in greenhouses
+\end{itemize}
+\subsubsection*{What is the proposed solution?} 
+\begin{itemize}
+    \item A robot system capable of : \begin{itemize}
+        \item Automatic navigation
+        \item Recognition of ripeness
+        \item Detecting the exact position of the ripe fruits
+        \item Avoiding obstacles.
+    \end{itemize}
+    \item The solution also contains a image recognition algorithm and a picking control method.
+    \item The shown robot has a four-wheel drive with independent steering. The 4 wheels are controlled using and Ackermann steering model.
+    \item It detects tomatoes using a stereo-vision camera with a resolution of 1384×1032px
+    \item The pathfinding is done by using a laser scanner
+    \item To pick the ripe tomatoes, the robot has a 4-DOF mechanical arm with a 1-DOF end-effector 
+    \item After picking the tomatoes the robot outs them into a crate on its back.
+    \item The total mass of the robot is 540 kg and it reaches an maximum speed of 3.6 km/h.
+\end{itemize}
 \subsubsection*{What is the work`s evaluation of the solution?}
+\begin{itemize}
+    \item The authors evaluated every part of their system: \begin{itemize}
+        \item The controlling of the \textbf{steering angle} resulted in an average error of 0.14° with a standard deviation of 0.04°.
+        \item \textbf{Path tracking by the navigation system} could track the correct path with a deviation of less than 8cm. 
+        \item They also evaluated how much weight the \textbf{mechanical arm} the \textbf{end-effector} can carry without loosing precision. When using weights up to 1kg no big
+        deviation is measured. So the mechanical system is fit for its main goal of manipulating tomatoes.
+        \item Inside the greenhouse the \textbf{camera-system} has to detect the tomatoes. Here the authors measured a success rate of over 99.3\% in a sample size of 300.
+        \item The position of the tomatoes got detected correctly with an average positioning error of less than 10mm in a range of 600mm.
+        \item Finally the \textbf{picking rate} of the robot was measured to be 87\% in a sample size of 100 tomatoes. The robot needs 15 seconds from recognition to pitching the tomatoes.
+    \end{itemize}
+\end{itemize}
 \subsubsection*{What is my analysis of the identified problem, idea  and evaluation?}
+\begin{itemize}
+    \item This paper contains multiple system working together for a common goal. It showcases the steps needed to make the robot drive through a greenhouse and pick tomatoes.
+    \item The error and performance analyses is detailed. Only thing lacking is an in-depth breakdown of the task times. The only time measurement in the paper is the 15 seconds from recognition to picking - but how long does the robot need to pick 100 tomatoes? 
+    \item Tomato picking has the advantage that tomatoes are easy to detect via camera. A disadvantage is the soft nature of the fruits.
+\end{itemize}
 \subsubsection*{What are the contributions?}
-\subsubsection*{What are the future directions of the research?}
+\begin{itemize}
+    \item Algorithm to track the path inside a greenhouse using laser scanner 
+    \item Control architecture for the mechanical arm using a collision free A*-algorithm.
+    \item Tomato detection and localisation algorithms using stereo vision
+    \item In-depth error analysis.
+\end{itemize}
+\subsubsection*{What are the future directions of the research?} 
+\begin{itemize}
+    \item Improving the success rate and overall speed.
+    \item Using this system to other crops.
+\end{itemize}
 \subsubsection*{What questions have I left?}
-\subsubsection*{What is my main take away from this paper?}
+\begin{itemize}
+    \item They left out some key metrics like time breakdown and total time needed. So I would like to know if this system is even fast enough for a commercial consideration
+    \item I have not fully understand how the collision free path finding algorithm for the end-effector works, so this is something to study next.
+    \item Currently the robot is only following along the space in between two rows in a greenhouse. It would be great to add additional navigation systems for a a fully automated operation.
+\end{itemize}
+\subsubsection*{What is my main take away from this paper?} 
+\begin{itemize}
+    \item The localisation in a greenhouse for tomatoes works good enough to grap them.  I did not expect for this to work that good.
+    \item This paper is a good study of a holistic robot system working in the chaotic environment of a greenhouse.
+\end{itemize}
 
 \subsection*{Summary}
+This paper is a good study of a holistic robot system working in the chaotic environment of a greenhouse. But some key performance indicator are missing, even some already mentioned in the introduction. 
+In the motivation section of the paper they said that other systems would be too slow but did not deliver they own number. Nevertheless a good study and nice read.
 
 \subsection*{Rating}
+3/5
 
-\section{Reading Report: \emph{Field Test of an Autonomous Cucumber Picking Robot
-}}
+\section{Reading Report: \emph{Field Test of an Autonomous Cucumber Picking Robot}}
 \cite{Henten2003}
 
 \subsection*{Abstract}

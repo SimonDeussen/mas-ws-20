@@ -821,7 +821,7 @@ Maths is explained nicely, can be used to build something similar.},
 }
 
 @Article{Lili2017,
-  author    = {Wang Lili and and Zhao Bo and Fan Jinwei and Hu Xiaoan and Wei Shu and Li Yashuo and Zhou Qiangbing and Wei Chongfeng and},
+  author    = {Wang Lili and Zhao Bo and Fan Jinwei and Hu Xiaoan},
   journal   = {International Journal of Agricultural and Biological Engineering},
   title     = {Development of a tomato harvesting robot used in greenhouse},
   year      = {2017},
@@ -830,7 +830,7 @@ Maths is explained nicely, can be used to build something similar.},
   volume    = {10},
   doi       = {10.25165/j.ijabe.20171004.3204},
   file      = {:/home/sd/Documents/papers/Lili2017.pdf:PDF},
-  publisher = {International Journal of Agricultural and Biological Engineering ({IJABE})},
+  publisher = {International Journal of Agricultural and Biological Engineering},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
