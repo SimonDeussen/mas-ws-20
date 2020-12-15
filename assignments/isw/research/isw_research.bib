@@ -681,10 +681,206 @@ Maths is explained nicely, can be used to build something similar.},
   publisher = {Springer International Publishing},
   title     = {Springer Handbook of Robotics},
   year      = {2016},
+  abstract  = {Robotics for agriculture and forestry (A&F) rep-
+resents the ultimate application of one of our
+society’s latest and most advanced innovations
+to its most ancient and important industries.
+Over the course of history, mechanization and au-
+tomation increased crop output several orders of
+magnitude, enabling a geometric growth in pop-
+ulation and an increase in quality of life across
+the globe. Rapid population growth and rising
+incomes in developing countries, however, re-
+quire ever larger amounts of A&F output. This
+chapter addresses robotics for A&F in the form
+of case studies where robotics is being success-
+fully applied to solve well-identified problems.
+With respect to plant crops, the focus is on the
+in-field or in-farm tasks necessary to guarantee
+a quality crop and, generally speaking, end at
+harvest time. In the livestock domain, the focus
+is on breeding and nurturing, exploiting, harvest-
+ing, and slaughtering and processing. The chapter
+is organized in four main sections. The first one
+explains the scope, in particular, what aspects
+of robotics for A&F are dealt with in the chap-
+ter. The second one discusses the challenges and
+opportunities associated with the application of
+robotics to A&F. The third section is the core of
+the chapter, presenting twenty case studies that
+showcase (mostly) mature applications of robotics
+in various agricultural and forestry domains. The
+case studies are not meant to be comprehen-
+sive but instead to give the reader a general
+overview of how robotics has been applied to
+A&F in the last 10 years. The fourth section con-
+cludes the chapter with a discussion on specific
+improvements to current technology and paths to
+commercialization.},
+  comment   = {Questions
+What are the motivations for this work?
+Optimized Coverage for Arable Farming
+• Minimizes soil compaction
+• Reduces fuel cost
+• Reduces time needed
+Weed Control
+• Weeds directly reduce yield by competing the crops over light, water
+and nutrients
+• Weed control is needed to stop them from spreading
+• Robotic control system offer greater mechanical precision and a re-
+duction in herbicides needed.
+High Precision Seeding
+• When knowing the exact location of the seeded crops all following
+robotic operation can use this data
+• No further local sensing is needed
+• Can also be used as an input for localization
+Crop Yield Estimation
+• manually gathering the required data is labour- and time-consuming
+error prone process.
+• accurate estimations will help growers in labour demand forecasting.
+• Better planning reduces costs by optimizing packing and storage ca-
+pacity.
+Precision Irrigation Conventional irrigation technologies dent to over-watering.
+This is of course wasteful and also increases leaching of fertilizers.
+Tree Fruit Production
+• One of the hardest problems of farming because of the complex tree
+geometry
+• Sloped terrain (vineyards)
+• Need to sense the branches
+• Occlusion of the fruits
+Vehicle Formation control Using multiple robots together will increase the
+capabilities even further. One element of MRS is to control robots in a
+formation.
+Plant Probing
+• Automated sample taking will enable large scale experiments.
+• It is hard to model deformable objects like plant parts (leaves, stems,
+flowers, fruits)
+• Proper models will enable individual plant part care, sampling, har-
+vesting, predicting, robotized phenotyping
+Cucumber Harvesting Automated harvesting can improve efficiency and re-
+duce labour costs. The same system can also be used to cut nonproductive
+leaves from the plants.
+What is the proposed solution?
+Optimized Coverage for Arable Farming
+• Find the optimal way to move around in complex terrain.
+• Introduction of Optimal coverage planning algorithm
+Weed Control
+• A robotic system to drive autonomous over trough the fields.
+• machine vision based approach to identify weeds
+• precise distribution of herbicides
+High Precision Seeding
+• a driver-less seeding system with high accuracy localization
+• smaller wheels allow driving between ros eliminating soil compaction
+Crop Yield Estimation
+• A machine vision based system which is able to identify crops
+• the system is manually driven through orchards at night and takes
+pictures with artificial light
+• works for vineyards, apple orchards and strawberry ranches.
+Precision Irrigation A wireless sensor network monitoring the exact soil con-
+ditions.
+Tree Fruit Production
+• Proposed a family of autonomous orchard vehicles.
+• Only uses laser range finders, no gps for keeping the cost low
+• Designed in a way to enable faster working human labourers.
+Vehicle Formation control
+• a control architecture based on a path tracking framework.
+• should allow multiple robots to continue to drive in formation even
+in ruff terrain with poor grip conditions.
+• the system uses RTK-GPS with an accuracy of 2cm.
+• wireless communications between robots to communicate relative po-
+sitions
+Plant Probing
+• System consisting of a robotic arm, time-of-flight camera and a mea-
+surement technologies
+• image segmentation and model fitting are used to find single leaves
+from depth informations
+• The robot arms first finds position from where it can see the whole
+plant and then it moves further to enable unobstructed viewing of a
+single leave.
+• After selecting a target leave it will take a probe.
+Cucumber Harvesting
+• Mobile platform mounted on rails in greenhouses
+• Harvesting contains several subproblems, one of them is finding the
+ripeness of the crops. In this case a target weight is given. Because
+cucumbers are mostly water it is possible to determine the weight
+from 3D data.
+• The system has a single camera but it is possible to move it around
+to capture the needed 3D informations.
+• After identifying the ripe cucumber, it is cut and moved collision free
+to a storage crate.
+What is the work‘s evaluation of the solution?
+Optimized Coverage for Arable Farming
+• reduces turns needed ca. 15%
+• reduces soil erosion cost ca. 25%
+• reduces skipped area cost ca. 81%
+Weed Control
+• 77% of weeds got precisely eradicated
+• reduction in herbicides
+High Precision Seeding Not much data given, needs further study.
+Crop Yield Estimation The results show that the system works surprisingly
+well in a different environments.
+Precision Irrigation
+• reduces the water needed by 75% against conventional watering
+• should allow multiple robots to continue to drive in formation even
+in ruff terrain with poor grip conditions.
+Tree Fruit Production The different approaches followed by the original au-
+thors showed that they are twice as fast as manual labor.
+Vehicle Formation control
+• they tested using two robots, where one should follow the other in a
+defined distance along sloped terrain
+• the two robots managed to stay in their path with an accuracy of
+15cm
+Plant Probing In the summary is no further evaluation. Needs additional
+study!
+Cucumber Harvesting
+• The system needs on average 65 seconds to cut one cucumber
+• Success rate: ca. 75%
+What are the contributions?
+Optimized Coverage for Arable Farming Finds Optimal paths for 2D and
+3D terrain with soil erosion models.
+Weed Control They presented 3 different systems to autonomously kill weeds
+in different scenarios. The second one (volunteer potatoes in sugar beets)
+seemed like the best one. Further research here!
+High Precision Seeding Complete system which achieves high precision seed-
+ing.
+Crop Yield Estimation A camera rig for small tractors to gather data, can
+be further improved in the future.
+Precision Irrigation Wireless system for monitoring and control
+Tree Fruit Production 3 different autonomous platforms navigating by them
+selves inside orchards. The system has accumulated 350km driven.
+Vehicle Formation control A control architecture for two or more robots to
+stay in formation.
+Plant Probing Stationary system to take leave samples.
+Cucumber Harvesting Whole system harvesting cucumbers and cutting leaves.
+Has algorithm to determine the ripeness and for finding paths for collision
+free manipulations.
+What questions have I left?
+Optimized Coverage for Arable Farming What is about the path length
+and exact fuel reduction?
+Weed Control How is it possible to increase the velocity further? The ma-
+chines are too slow.
+High Precision Seeding Concrete implementations for further data fusion of
+seed map with the next scans for a living yield map.
+Crop Yield Estimation Why is the system not self driving?
+Precision Irrigation The savings in water needed and increase in growth
+speed are really impressive. How did this work? Did they somehow cheat
+on the data? Definitely study the original paper.
+Tree Fruit Production Of course using vehicles is faster than manual work
+using ladders - but are they faster using the same approach with drivers?
+How does the navigation work with no GPS?
+Vehicle Formation control How valid are the results today? Driving two
+robots in grass does not sound to impressive.
+Plant Probing Can this system be mounted on rails?
+Cucumber Harvesting How does the accuracy shrink when speeding the pro-
+cess up? How fast can this scale up?
+Summary
+Summarizes many different papers in-depth. Refer to this for further research.
+Rating
+5/5
+\},
   doi       = {https://doi.org/10.1007/978-3-319-32552-1},
   file      = {:/home/sd/Documents/books/2016_Book_SpringerHandbookOfRobotics.pdf:PDF},
   keywords  = {Overview, Case studies, weed control, high precision farming, crop yield estimation, Vehicle formation control, plant probing, leaf removal, harvesting, precision forestry, aerial based precision farming, rank5},
-  priority  = {4269},
   ranking   = {rank5},
 }
 
@@ -714,10 +910,99 @@ Maths is explained nicely, can be used to build something similar.},
   number    = {3},
   pages     = {305--313},
   volume    = {86},
+  abstract  = {At the Institute of Agricultural and Environmental Engineering (IMAG B.V.) an autonomous harvesting
+robot for cucumbers was developed and tested in a greenhouse in autumn 2001. Analysis of the harvest
+process had revealed that at a 2 ha Dutch production facility four robots are needed to replace the skilled
+human work force during the peak season. Then assuming a success rate of 100%, a harvest cycle might take
+at most 10 s per cucumber fruit. In this paper the results of the field test of the harvesting robot are reported
+and analysed in view of the performance criteria mentioned above. Cucumbers (Cucumis sativus cv. Korinda)
+were grown in a high-wire cultivation system. In four independent experiments the robot was tested. The
+average success rate was 744%. The majority of failures originated from inaccurate positioning of the end-
+effector at the stalk of the fruit. It was found to be a great advantage that the system was able to perform
+several harvest attempts on a single cucumber from different harvest positions of the robot. This improved the
+success rate considerably. A single successful harvest cycle took 652 s per cucumber. Since not all attempts
+were successful, a cycle time of 124 s per harvested cucumber was measured under practical circumstances. The
+test confirmed the ability to harvest more than one cucumber using a single set of images which reduced the
+cycle time of a successful harvest to 567 and 530 s if two or three cucumbers were harvested. To bridge the
+gap between the measured performance and the design specifications, future research focuses on improving the
+success rate, faster hardware and software for image processing and motion planning as well as the reduction
+of the motion time of the manipulator.},
+  comment   = {What are the motivations for this work?
+• The authors wanted to create a comparable solution to recent advances in
+harvesting tomatoes and eggplants
+• Human labour fir harvesting is a tedious and expensive task.
+• Robot labour needs to be able to harvest one cucumber every 10 seconds.
+This experiment tries to show the current (2001) limitations.
+• Inside high-wire greenhouses mobile robots can move along tracks next to
+the cucumber plants which creates a somehow structured environment.
+• This proposed architecture should allow complete autonomous harvesting.
+What is the proposed solution?
+• Mobile system consisting of a robotic arm having a thermal cutter and a
+suction cup for cutting and grabbing the cucumbers. One camera for tak-
+ing two images (768x512px) at different positions to find 3D coordinates.
+• They restricted the way to cucumbers could grow so that they are always
+in a specific range reachable for the robots manipulators.
+• Removed leaves before hand to lessen occlusion errors.
+• They also removed cucumbers growing too close to each other.
+• The systems moves along a rail in 33cm steps. At each step the cam-
+eras look for cucumbers and if found and big enough proceed with the
+harvesting.
+• The harvesting does not take additional images. All informations come
+from the initial 2 pictures. Even if multiple cucumbers are found, the
+initial information and processing has to be enough.
+• Because the range of the system is around 1m, the 33cm step allow up to
+3 harvest attempts for each cucumber.
+What is the work‘s evaluation of the solution?
+• For this experiment the authors took in-depth runtime measurements and
+error protocols.
+• On average the system managed to harvest ca. 75% of a present cucum-
+bers.
+• For the whole experiment with multiple attempts and failures, the result-
+ing harvesting time was 124s per cucumber!!!
+• If every first attempt would have been successful, the resulting time would
+have been 75s per harvested cucumber.
+• Most errors (ca. 36%) came from an misplaced end-effector resulting from
+poor 3D coordinates.
+What is my analysis of the identified problem, idea and evaluation?
+• Those experiments (20 years ago) have been one order of magnitude too
+slow for a commercial application.
+• I like the idea of using only one camera, but the extra cost would directly
+result in a speed up which would basically pay for itself to use a stereo
+camera.
+• The evaluation was very good. The authors managed to create an details
+overview over the shortcomings.
+• Especially the failure categorization is great. This should be an inspiration
+for similar failure reports for my own experiments.
+• I was surprised that the paper was that old.
+• 10 seconds runtime for the image analysis will be much faster nowadays.
+What are the contributions?
+• This paper was a report over an in depth experiment using this harvesting
+system.
+• It sheds light in many failure classes and shows how to make a proper
+report.
+• The robotic system had a bad execution time and accuracy.
+What are the future directions of the research?
+Harvesting crops in greenhouses will continue to be a key research topic. For
+this case I hope that the authors managed to increase the execution speeds.
+What questions have I left?
+• Mainly the comparison to todays systems. For the my next reading report
+I should find a more recent paper about the same topic.
+• If the system can easily exchange the end-effectors, it should be possible
+to use the mobile platform for all kind of different tasks.
+What is my main take away from this paper?
+Great structured experiment with a promising setup. Having rails in a green-
+house is not too expensive and solves many navigation problems. I am looking
+forward to deepen my research in this area. Would it be possible to create a
+rail grid with multiple robots, cooperating in this task?
+Summary
+Definitely enjoyed the detailed reporting on different failures and execution
+times. This paper is an excellent blueprint on how to write a report over an
+experiment.
+Rating
+4/5},
   doi       = {https://doi.org/10.1016/j.biosystemseng.2003.08.002},
   file      = {:/home/sd/Documents/papers/vanhenten2003.pdf:PDF},
   keywords  = {Harvesting, Computer Vision, Machine Vision, Stereo Vision, Experiment, rank3},
-  priority  = {150},
   publisher = {Elsevier {BV}},
   ranking   = {rank3},
 }
@@ -828,6 +1113,113 @@ Maths is explained nicely, can be used to build something similar.},
   number    = {4},
   pages     = {140--149},
   volume    = {10},
+  abstract  = {A tomato harvesting robot was developed in this study, which consisted of a four-wheel independent steering system,
+a 5-DOF harvesting system, a navigation system, and a binocular stereo vision system.
+ The four-wheel independent steering
+system was capable of providing a low-speed steering control of the robot based on Ackerman steering geometry.
+ The
+proportional-integral-derivative (PID) algorithm was used in the laser navigation control system. The Otsu algorithm and the
+elliptic template method were used for the automatic recognition of ripe tomatoes, and obstacle avoidance strategies were
+proposed based on the C-space method.
+ The maximum average absolute error between the set angle and the actual angle was
+about 0.14°, and the maximum standard deviation was about 0.04°.
+ The laser navigation system was able to rapidly and
+accurately track the path, with the deviation being less than 8 cm.
+ The load bearing capacity of the mechanical arm was about
+1.5 kg.
+ The success rate of the binocular vision system in the recognition of ripe tomatoes was 99.3%.
+ When the distance
+was less than 600 mm, the positioning error was less than 10 mm.
+ The time needed for recognition of ripe tomatoes and
+pitching was about 15 s per tomato, with a success rate of about 86%. This study provides some insights into the development
+and application of tomato harvesting robot used in the greenhouse.},
+  comment   = {What are the motivations for this work?
+• Harvesting tomatoes is a very popular and labour intensive vegetable. The
+annual production is around 60 million tons.
+• Because the labor costs are rising - even in China they are trying to find
+a autonomous solution which can scale up.
+• Tomatoes are very soft and sensitive vegetables so harvesting them is
+especially complicated.
+• The authors name several other research in building this kind of harvesting
+robots, but those have slow reaction and clumsy movement.
+• They want to create a fast system for picking tomatoes in greenhouses
+What is the proposed solution?
+• A robot system capable of :
+– Automatic navigation
+– Recognition of ripeness
+– Detecting the exact position of the ripe fruits
+– Avoiding obstacles.
+• The solution also contains a image recognition algorithm and a picking
+control method.
+• The shown robot has a four-wheel drive with independent steering. The
+4 wheels are controlled using and Ackermann steering model.
+• It detects tomatoes using a stereo-vision camera with a resolution of
+1384×1032px
+• The pathfinding is done by using a laser scanner
+• To pick the ripe tomatoes, the robot has a 4-DOF mechanical arm with a
+1-DOF end-effector
+• After picking the tomatoes the robot outs them into a crate on its back.
+• The total mass of the robot is 540 kg and it reaches an maximum speed
+of 3.6 km/h.
+What is the work‘s evaluation of the solution?
+• The authors evaluated every part of their system:
+– The controlling of the steering angle resulted in an average error
+of 0.14° with a standard deviation of 0.04°.
+– Path tracking by the navigation system could track the correct
+path with a deviation of less than 8cm.
+– They also evaluated how much weight the mechanical arm the end-
+effector can carry without loosing precision. When using weights up
+to 1kg no big deviation is measured. So the mechanical system is fit
+for its main goal of manipulating tomatoes.
+– Inside the greenhouse the camera-system has to detect the toma-
+toes. Here the authors measured a success rate of over 99.3% in a
+sample size of 300.
+– The position of the tomatoes got detected correctly with an average
+positioning error of less than 10mm in a range of 600mm.
+– Finally the picking rate of the robot was measured to be 87% in
+a sample size of 100 tomatoes. The robot needs 15 seconds from
+recognition to pitching the tomatoes.
+What is my analysis of the identified problem, idea and evaluation?
+• This paper contains multiple system working together for a common goal.
+It showcases the steps needed to make the robot drive through a green-
+house and pick tomatoes.
+• The error and performance analyses is detailed. Only thing lacking is an
+in-depth breakdown of the task times. The only time measurement in the
+paper is the 15 seconds from recognition to picking - but how long does
+the robot need to pick 100 tomatoes?
+• Tomato picking has the advantage that tomatoes are easy to detect via
+camera. A disadvantage is the soft nature of the fruits.
+What are the contributions?
+• Algorithm to track the path inside a greenhouse using laser scanner
+• Control architecture for the mechanical arm using a collision free A*-
+algorithm.
+• Tomato detection and localisation algorithms using stereo vision
+• In-depth error analysis.
+What are the future directions of the research?
+• Improving the success rate and overall speed.
+• Using this system to other crops.
+What questions have I left?
+• They left out some key metrics like time breakdown and total time needed.
+So I would like to know if this system is even fast enough for a commercial
+consideration
+• I have not fully understand how the collision free path finding algorithm
+for the end-effector works, so this is something to study next.
+• Currently the robot is only following along the space in between two rows
+in a greenhouse. It would be great to add additional navigation systems
+for a a fully automated operation.
+What is my main take away from this paper?
+• The localisation in a greenhouse for tomatoes works good enough to grap
+them. I did not expect for this to work that good.
+• This paper is a good study of a holistic robot system working in the chaotic
+environment of a greenhouse.
+Summary
+This paper is a good study of a holistic robot system working in the chaotic
+environment of a greenhouse. But some key performance indicator are missing,
+even some already mentioned in the introduction. In the motivation section of
+the paper they said that other systems would be too slow but did not deliver
+they own number. Nevertheless a good study and nice read.
+Rating
+3/5},
   doi       = {10.25165/j.ijabe.20171004.3204},
   file      = {:/home/sd/Documents/papers/Lili2017.pdf:PDF},
   keywords  = {tomato harvesting robot, four-wheel independent steering, automatic navigation, binocular stereo vision system, obstacle avoidance, greenhouse, rank3},
