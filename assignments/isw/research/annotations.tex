@@ -24,21 +24,171 @@
 % \subsection*{Keywords}
 
 % \subsection*{Questions}
-
 % \subsubsection*{What are the motivations for this work?}
+% \begin{itemize}
+%     \item 
+% \end{itemize}
 % \subsubsection*{What is the proposed solution?}
+% \begin{itemize}
+%     \item 
+% \end{itemize}
 % \subsubsection*{What is the work`s evaluation of the solution?}
+% \begin{itemize}
+%     \item 
+% \end{itemize}
 % \subsubsection*{What is my analysis of the identified problem, idea  and evaluation?}
+% \begin{itemize}
+%     \item 
+% \end{itemize}
 % \subsubsection*{What are the contributions?}
+% \begin{itemize}
+%     \item 
+% \end{itemize}
 % \subsubsection*{What are the future directions of the research?}
+% \begin{itemize}
+%     \item 
+% \end{itemize}
 % \subsubsection*{What questions have I left?}
+% \begin{itemize}
+%     \item 
+% \end{itemize}
 % \subsubsection*{What is my main take away from this paper?}
+% \begin{itemize}
+%     \item 
+% \end{itemize}
 
 % \subsection*{Summary}
 
 % \subsection*{Rating}
 
 % ================= TEMPLATE =================
+
+\section{Reading Report: \emph{Heterogeneous Multi-Robot System for Mapping
+Environmental Variables of Greenhouses
+}}
+\cite{Roldan2016}
+
+\subsection*{Abstract}
+The productivity of greenhouses highly depends on the environmental conditions of crops,
+such as temperature and humidity. The control and monitoring might need large sensor networks,
+and as a consequence, mobile sensory systems might be a more suitable solution. This paper describes
+the application of a heterogeneous robot team to monitor environmental variables of greenhouses.
+The multi-robot system includes both ground and aerial vehicles, looking to provide flexibility
+and improve performance. The multi-robot sensory system measures the temperature, humidity,
+luminosity and carbon dioxide concentration in the ground and at different heights. Nevertheless,
+these measurements can be complemented with other ones (e.g., the concentration of various
+gases or images of crops) without a considerable effort. Additionally, this work addresses some
+relevant challenges of multi-robot sensory systems, such as the mission planning and task allocation,
+the guidance, navigation and control of robots in greenhouses and the coordination among ground
+and aerial vehicles. This work has an eminently practical approach, and therefore, the system has
+been extensively tested both in simulations and field experiments.
+
+
+\subsection*{Keywords}
+robotics, UGV, UAV, multi-robot, environmental monitoring, sensory system, agriculture, greenhouse
+
+
+\subsection*{Questions}
+\subsubsection*{What are the motivations for this work?}
+\begin{itemize} 
+    \item The crop output of a greenhouse is a result of strongly controlled climate and conditions. 
+    \item To keep the conditions of a greenhouse in optimal levels, high definition sensor data is needed. This allows will allow local climate control and product traceability.
+    \item Equipping large-scale greenhouses with sensors to monitor data is so expensive that it is often not possible in a high spatial resolution.
+    \item Instead of having multiple stationary sensors, this paper proposes to use mobile robots equipped with sensors instead.
+    \item For creating a model of the greenhouse the papers proposes using following variables:\begin{description}
+        \item[Input Variables]  \ 
+        \begin{itemize}
+            \item Ventilation system
+            \item Heating system
+            \item Fogging system
+            \item Shading screens
+        \end{itemize}
+        \item[Output variables]   \ 
+        \begin{itemize}
+            \item Air temperature
+            \item Air humidity
+            \item Solar radiation
+            \item ($CO_2$ concentration) not mentioned in the listing of the paper but used anyways
+        \end{itemize}
+        \item[External disturbances]\ 
+        \begin{itemize}
+            \item External Temperature
+            \item External humidity
+            \item Wind speed
+            \item Wind direction
+            \item Solar radiation
+            \item External $CO_2$ concentration
+            \item Cover temperature
+            \item Crop temperature
+            \item Soil temperature 
+        \end{itemize}
+    \end{description}
+    \item The authors also mentioned several advantages of using wireless sensor networks for monitoring like flexibility, 
+    modularity and fault tolerance. But having a mobile platform can be cheaper and even more robust then the stationary sensors. 
+    And one could also use the robots for tasks like spraying and harvesting.
+\end{itemize}
+    \subsubsection*{What is the proposed solution?}
+\begin{itemize}
+    \item The solution consists of a two robot system. One four-wheel drive unmanned ground vehicle (UGV) robot and one unmanned ground vehicle (UAV). The UAV sits on top of the ground robot until its needed.
+    \item Both robots are equipped with: \begin{itemize}
+        \item 2D-cameras
+        \item Temperature sensor
+        \item Humidity sensor
+        \item Luminosity sensor
+        \item $CO_2$ sensor
+    \end{itemize}
+    \item The goal of the duo is to drive trough the whole greenhouse using a \emph{back-and-forth} strategy.
+    \item When ever the path is blocked, the UAV starts and continues to monitor the rows. UAV and UGV meet after the blocked row is monitored. 
+    \item This allows the UAV to recharge and to be ready for the next blockage.
+    \item Both the UGV and UAV are off-the-shelf commercially available hardware. The UAV uses a RaspberryPie for computation.
+    \item In this paper, they are evaluating the strategic partnership between the two robots, \textbf{but the UAV is tele-operated!}
+\end{itemize}
+\subsubsection*{What is the work`s evaluation of the solution?}
+\begin{itemize}
+    \item The basic idea is, that the UAV can be deployed whenever the path is blocked for the UGV. A commercial greenhouse has a structured layout of rows so the team can meet up at the next crossing.
+    \item Without the UAV the UGV would have to make a detour resulting in a longer runtime and more battery usage.
+    \item Inside different simulated test environments the system archived a performance uplift between 8\% and 23\%.
+\end{itemize}
+\subsubsection*{What is my analysis of the identified problem, idea  and evaluation?}
+\begin{itemize}
+    \item The idea main idea is really great and progressive. The concrete implementations are good steps in this direction but lack of real benefits.
+    \item Having multiple robots patrol a greenhouse on a regular basis to get high definition spatial and lower definition temporal data has have many benefits over installing 
+    a sensor grid in the same spatial dimension. Moving robots can continually measure values while moving but will measure every given point only once per round trip. Combining this
+    with a couple of stationary sensors could yield in an even better modelling of the local climates.
+    \item The solution from the authors is a little disappointing. On the one hand their evaluation is a result of a simulation and one small real greenhouse. On the other hand,
+    the system is not autonomous. The UAV needs to be tele-operated which is a let down. I hope in future research the UAV can fly by itself.
+\end{itemize}
+\subsubsection*{What are the contributions?}
+\begin{itemize}
+    \item Build a platform from off-the-shelf hardware for mobile monitoring of temperature, humidity, luminosity and $CO_2$ concentration.
+    \item The authors contribute a simulation system build in \emph{Unity3D 5.2.1} for simulating the behavior of the dual robot system. 
+    \item The robot system consists of a UAV sitting on top the UGV which gets deployed as soon as the way is blocked which happends often in real world greenhouses.
+    \item But they do not provide algorithms for flying the UAV. This is done manually by hand.
+    \item Navigation algorithm for the UGV using SLAM and ACML.
+\end{itemize}
+\subsubsection*{What are the future directions of the research?}
+\begin{itemize}
+    \item They want to make the UAV fly by itself
+    \item Testing it in real world greenhouses is also scheduled
+\end{itemize}
+\subsubsection*{What questions have I left?}
+\begin{itemize}
+    \item My main concern is the tele-operated drone. This has to get improved in future work: can a UAV fly properly in a cluttered and narrow environment.
+    \item When having a self-flying drone, would it be better to use the combination of UAV and UGV instead of only using a UAV?
+    \item How precise can one model the local climates from this kind of data? (High spatial and low temporal resolution)
+\end{itemize}
+\subsubsection*{What is my main take away from this paper?}
+\begin{itemize}
+    \item Great idea to get critical environment data from mobile sensors, but the climate modelling aspect has to be researched even more.
+    \item Heterogeneous robot cooperation is really interesting! I wish to learn more about the task and motion planning involved to get a system like this properly running.
+    \item 
+\end{itemize}
+
+\subsection*{Summary}
+UGV transporting a UAV for a spontaneous deployment if the path is blocked - amazing idea! The concrete implementations is a bit disappointing but good written paper anyway.
+
+\subsection*{Rating}
+3/5
 
 \section{Reading Report: \emph{Development of a tomato harvesting robot used in greenhouse}}
 \cite{Lili2017}

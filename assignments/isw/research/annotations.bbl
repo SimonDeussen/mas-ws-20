@@ -132,32 +132,34 @@ Pedersen, S\BPBI M.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Siciliano%
-\ \BBA {} Khatib%
-}{%
-Siciliano%
-\ \BBA {} Khatib%
-}{%
+Rold{\'{a}}n%
+\ \protect \BOthers {.}}{%
+Rold{\'{a}}n%
+\ \protect \BOthers {.}}{%
 {\protect \APACyear {2016}}%
 }]{%
-Siciliano2016}
+Roldan2016}
 \APACinsertmetastar {%
-Siciliano2016}%
+Roldan2016}%
 \begin{APACrefauthors}%
-Siciliano, B.%
-\BCBT {}\ \BBA {} Khatib, O.%
+Rold{\'{a}}n, J.%
+, Garcia-Aunon, P.%
+, Garz{\'{o}}n, M.%
+, de Le{\'{o}}n, J.%
+, del Cerro, J.%
+\BCBL {}\ \BBA {} Barrientos, A.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYear{2016}.
+\APACrefYearMonthDay{2016}{jul}{}.
 \newblock
-\APACrefbtitle {Springer Handbook of Robotics} {Springer handbook of robotics}\
-  (B.~Siciliano\ \BBA {} O.~Khatib, \BEDS{}).
+{\BBOQ}\APACrefatitle {Heterogeneous Multi-Robot System for Mapping
+  Environmental Variables of Greenhouses} {Heterogeneous multi-robot system for
+  mapping environmental variables of greenhouses}.{\BBCQ}
 \newblock
-\APACaddressPublisher{}{Springer International Publishing}.
+\APACjournalVolNumPages{Sensors}{16}{7}{1018}.
 \newblock
-\begin{APACrefDOI} \doi{https://doi.org/10.1007/978-3-319-32552-1}
-  \end{APACrefDOI}
+\begin{APACrefDOI} \doi{https://doi.org/10.3390/s16071018} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
