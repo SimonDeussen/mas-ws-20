@@ -1228,7 +1228,7 @@ Rating
   ranking   = {rank3},
 }
 
-@Article{Arad_2020,
+@Article{Arad2020,
   author    = {Boaz Arad and Jos Balendonck and Ruud Barth and Ohad Ben-Shahar and Yael Edan and Thomas Hellström and Jochen Hemming and Polina Kurtser and Ola Ringdahl and Toon Tielen and Bart Tuijl},
   journal   = {Journal of Field Robotics},
   title     = {Development of a sweet pepper harvesting robot},
@@ -1241,6 +1241,15 @@ Rating
   file      = {:/home/sd/Documents/papers/10.1002@rob.21937.pdf:PDF},
   priority  = {9},
   publisher = {Wiley},
+}
+
+@Book{Siciliano2016,
+  author    = {Siciliano, Bruno and Khatib, Oussama},
+  publisher = {Springer},
+  title     = {Springer handbook of robotics},
+  year      = {2016},
+  file      = {:/home/sd/Documents/books/2016_Book_SpringerHandbookOfRobotics.pdf:PDF},
+  url       = {https://link.springer.com/book/10.1007/978-3-319-32552-1},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

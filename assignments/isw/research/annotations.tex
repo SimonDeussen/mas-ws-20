@@ -62,6 +62,148 @@
 % \subsection*{Rating}
 
 % ================= TEMPLATE =================
+\section{Reading Report: \emph{Development of a sweet pepper harvesting robot}}
+\cite{Arad2020}
+
+\subsection*{Abstract}
+This paper presents the development, testing and validation of SWEEPER, a robot for
+harvesting sweet pepper fruit in greenhouses. The robotic system includes a six
+degrees of freedom industrial arm equipped with a specially designed end effector,
+RGB‐D camera, high‐end computer with graphics processing unit, programmable logic
+controllers, other electronic equipment, and a small container to store harvested
+fruit. All is mounted on a cart that autonomously drives on pipe rails and concrete
+floor in the end‐user environment. The overall operation of the harvesting robot is
+described along with details of the algorithms for fruit detection and localization,
+grasp pose estimation, and motion control. The main contributions of this paper are
+the integrated system design and its validation and extensive field testing in a
+commercial greenhouse for different varieties and growing conditions. A total of 262
+fruits were involved in a 4‐week long testing period. The average cycle time to
+harvest a fruit was 24 s. Logistics took approximately 50\% of this time (7.8 s for
+discharge of fruit and 4.7 s for platform movements). Laboratory experiments have
+proven that the cycle time can be reduced to 15 s by running the robot manipulator at
+a higher speed. The harvest success rates were 61\% for the best fit crop conditions
+and 18\% in current crop conditions. This reveals the importance of finding the best fit
+crop conditions and crop varieties for successful robotic harvesting. The SWEEPER
+robot is the first sweet pepper harvesting robot to demonstrate this kind of
+performance in a commercial greenhouse.
+
+
+\subsection*{Keywords}
+agriculture, computer vision, field test, motion control, real‐world conditions, robotics
+
+
+\subsection*{Questions}
+\subsubsection*{What are the motivations for this work?}
+\begin{itemize}
+    \item Working in greenhouses is a extrem unfriendly environment with boring and repetitive tasks. Finding skilled
+    labor for this get harder and harder every year. Because of this automated and commercially viable automations are needed.
+    \item To make harvesting robots commercially viable it is needed to improve the harvesting performance and speed in real-world conditions.
+    \item This papers shows how one current state-of-art robot performs under realistic conditions.
+    \item Of course the main goal of having robots harvest in greenhouses is cost reduction, quality increase and 
+    better predictability.
+    \item Other harvesting robot have cycle times around 33 seconds per fruit. Here the authors want to improve the state-of-art with better results.
+    \item The authors also state, that many research papers lack large-scale experiments, which they want to improve. 
+    Maybe they initially wanted to harvest more fruits, but in the end their total harvest was only 262.
+    \item Also most other proposed robot solution are too slow or generally bad to be useable in a commercial way.
+\end{itemize}
+\subsubsection*{What is the proposed solution?}
+\begin{itemize}
+    \item In this paper the authors propose a robotic harvesting system for sweet peppers and showcase the testing and validations of its capabilities.
+    \item The robots consists of following main components: \begin{itemize}
+        \item A standard card driving on rails with a height adjustable platform. 
+        \item Six degree of freedom standard industrial arm
+        \item Custom build end-effector with a cutter (vibrating knife), sensors and catching mechanism
+        \item RGB-D camera 
+        \item High-end computer running Ubuntu 14.04 and ROS Indigo with GPU
+        \item The whole system is really big! The cart is around four times the length of the arm.
+    \end{itemize}
+    \item Besides the robot system, the authors also developed algorithms for: \begin{itemize}
+        \item Fruit detection
+        \item Fruit localization
+        \item Grasp pose estimation
+        \item Motion control
+    \end{itemize}
+\end{itemize}
+\subsubsection*{What is the work`s evaluation of the solution?}
+\begin{itemize}
+    \item The authors did a very detailed performance evaluation and error analysis. All in all they did 4 weeks of experiments involving 262 peppers of 2 varieties.
+    \item On average the robot needed \textbf{24s to harvest a pepper}.
+    \item So now comes the bad part: Because real-world conditions are extremely demanding, their systems only managed to
+    harvest \textbf{18\% of the peppers}. To make the robot perform better, they removed leaves and fruit cluster and archived 
+    a performance of \textbf{61\% successful harvested peppers}.
+    \item The main problem with real world conditions are the many occlusions making the detection much harder and often 
+    blocking ways of the end-effector to reach the fruits without damaging the plant.
+    \item They also proposed to user a smaller end-effector for easier grepping in a a tight environment for future improvements.
+\end{itemize}
+\subsubsection*{What is my analysis of the identified problem, idea  and evaluation?}
+\begin{itemize}
+    \item The paper, the robot and the analysis of the robots performance are all in-depth and detailed. 
+    The robots performance of course is far from being commercial viable.
+    \item During the experiments the  authors measured as many parameters manually to get a complete picture of 
+    the robots capabilities and shortcomings. (e.g. the paused the robots for each harvesting try to get the relative distance and the angle of the fruits)
+    \item Real-world commercially grown pepper plants have a high density and heaps of leaves hiding the fruits. 
+    This results in a complex and unstructured geometry making each of the robot`s task even harder
+    .\begin{itemize}
+        \item The leaves occlude the peppers: The detection and localization needs models which can work with that.
+        \item Not only the fruits but also the main stem gets harder to detect which is needed to find the relative position of the fruit and steam for cutting.
+        \item The robot has to navigate around the leaves to cut and catch the fruits: Motion planning gets orders of magnitude more complicated. 
+    \end{itemize}
+    \item With a modification of the crop the detection and harvest rates got much better. This would strongly imply to make the same robot 
+    also removes the leaves. I hope they study this topic as well
+    \item The authors separeted the whole task in several subtasks and delivered an analysis of every one of their problems. \begin{itemize}
+        \item Fruit detection
+        \item Fruit researched
+        \item Fruit cut
+        \item Fruit caught
+        \item Fruit placed into container
+    \end{itemize}
+    \item One of my main doubt is that the authors detected the fruit but not the cutting point. That means they positioned the end-effector 
+    relative to the fruit and hoped for the best that the knife will find its correct way to cut off the pepper. This method works okay for them,
+    but still this is a area in which they could improve greatly. One of the varieties had longer fruit stems which resulted in a higher failure in the cutting because
+    the knife would slide of.
+\end{itemize}
+\subsubsection*{What are the contributions?}
+\begin{itemize}
+    \item The authors proposed an integrated system for harvesting sweet peppers.
+    \item Besides that they showcased extensive field testing in a commercial greenhouse with partial real-world conditions.
+    \item The field testing, error analysis, structure of the paper and methodology are also important contributions.
+\end{itemize}
+\subsubsection*{What are the future directions of the research?}
+\begin{itemize}
+    \item One idea was speeding up the robot. In this experiments with scientists around the robot they could not operate on full speed because of safety concerns.
+    \item Using a smaller end-effector could result in easier motion planning and better navigation in tight, occluded spaces.
+    \item To be able to grep fruits behind leaves it could be feasible to use an arm with an higher degree of freedom. But this would also result in a higher computational cost.
+    \item Some parts of the catching mechanism were too stiff which was a source of repeated failures because it has moved parts of the plants away resulting in positioning errors. 
+    For this the authors already have a solution planned for the next experiments.
+    \item As soon as the system looses sight of a specific fruit the harvesting attempt is cancelled. Including some kind of backtracking will result in a improved harvesting rate.
+\end{itemize}
+\subsubsection*{What questions have I left?}
+\begin{itemize}
+    \item Next to a high-end oc the robot has multiple smaller controllers. I would like to have an in-depth overview over the hardware specs and the components used.
+    \item Could the robot use the same end-effector to remove leaves? If so the robot could in the first step prepare every thing for the harvest itself.
+\end{itemize}
+\subsubsection*{What is my main take away from this paper?}
+\begin{itemize}
+    \item This paper is quite new so I am a bit disappointed in the performance of the state-of-the-art.
+    Nevertheless the robot platform and paper is sophisticated and I am sure that with a bit tweaking the performance can improve.
+    \item The robots goes to multiple different phases in detection and control modes. Because of this I think the 
+    computations are more effecient but on the other hand I seems like it has no proper world and plant model. 
+    This results in errors in positioning and the need for occlusion free line of sight to the peppers. 
+    \item So the state of the art still relies on simple 2D vision methods for finding its way.  
+    This means we need proper ways to model the plants in 3D in an computational effecient form for better motion planning and detection.
+\end{itemize}
+
+\subsection*{Summary}
+Papers about whole systems with in-depth error and performance analysis are always great. This in particular because it is well written and has a good structure. 
+Comeback to this paper and read some of the references!!
+
+\subsection*{Rating}
+5/5
+
+
+
+
+
 \section{Reading Report: \emph{Crop design for improved robotic harvesting: A case study of sweet pepper harvesting}}
 \cite{Herck2020}
 
