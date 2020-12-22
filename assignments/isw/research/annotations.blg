@@ -14,45 +14,45 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: isw_research.bib
 Warning--I didn't find a database entry for "Siciliano2016"
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
-You've used 6 entries,
+You've used 7 entries,
             6951 wiz_defined-function locations,
-            1324 strings with 12212 characters,
-and the built_in function-call counts, 12900 in all, are:
-= -- 1505
-> -- 128
-< -- 630
-+ -- 680
-- -- 12
-* -- 906
-:= -- 2416
-add.period$ -- 24
-call.type$ -- 6
-change.case$ -- 110
+            1332 strings with 12450 characters,
+and the built_in function-call counts, 15198 in all, are:
+= -- 1768
+> -- 151
+< -- 757
++ -- 808
+- -- 14
+* -- 1071
+:= -- 2868
+add.period$ -- 28
+call.type$ -- 7
+change.case$ -- 129
 chr.to.int$ -- 0
-cite$ -- 12
-duplicate$ -- 383
-empty$ -- 500
-format.name$ -- 238
-if$ -- 2345
+cite$ -- 14
+duplicate$ -- 444
+empty$ -- 583
+format.name$ -- 279
+if$ -- 2751
 int.to.chr$ -- 0
-int.to.str$ -- 18
+int.to.str$ -- 21
 missing$ -- 0
-newline$ -- 177
-num.names$ -- 48
-pop$ -- 167
+newline$ -- 207
+num.names$ -- 56
+pop$ -- 194
 preamble$ -- 1
-purify$ -- 32
+purify$ -- 38
 quote$ -- 0
-skip$ -- 782
+skip$ -- 917
 stack$ -- 0
-substring$ -- 728
-swap$ -- 237
-text.length$ -- 20
+substring$ -- 861
+swap$ -- 275
+text.length$ -- 24
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 480
+type$ -- 560
 warning$ -- 0
-while$ -- 84
+while$ -- 100
 width$ -- 0
-write$ -- 230
+write$ -- 271
 (There was 1 warning)

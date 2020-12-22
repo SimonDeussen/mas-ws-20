@@ -1,8 +1,9 @@
-\contentsline {section}{\numberline {1}Reading Report: \emph {Heterogeneous Multi-Robot System for Mapping Environmental Variables of Greenhouses }}{2}{section.1}%
-\contentsline {section}{\numberline {2}Reading Report: \emph {Development of a tomato harvesting robot used in greenhouse}}{6}{section.2}%
-\contentsline {section}{\numberline {3}Reading Report: \emph {Field Test of an Autonomous Cucumber Picking Robot}}{9}{section.3}%
-\contentsline {section}{\numberline {4}Reading Report: Chapter 56 \emph {Robotics in Agriculture and Forestry} from \emph {Springer Handbook of Robotics}}{12}{section.4}%
-\contentsline {section}{\numberline {5}Reading Report: \emph {Plant detection and mapping for agricultural robots using a 3D LIDAR sensor}}{18}{section.5}%
-\contentsline {section}{\numberline {6}Reading Report: \emph {Agricultural robots for field operations: Concepts and components}}{20}{section.6}%
-\contentsline {section}{\numberline {7}Reading Report: \emph {Agricultural robots—system analysis and economic feasibility}}{23}{section.7}%
-\contentsline {section}{References}{26}{section*.90}%
+\contentsline {section}{\numberline {1}Reading Report: \emph {Crop design for improved robotic harvesting: A case study of sweet pepper harvesting}}{2}{section.1}%
+\contentsline {section}{\numberline {2}Reading Report: \emph {Heterogeneous Multi-Robot System for Mapping Environmental Variables of Greenhouses}}{6}{section.2}%
+\contentsline {section}{\numberline {3}Reading Report: \emph {Development of a tomato harvesting robot used in greenhouse}}{10}{section.3}%
+\contentsline {section}{\numberline {4}Reading Report: \emph {Field Test of an Autonomous Cucumber Picking Robot}}{13}{section.4}%
+\contentsline {section}{\numberline {5}Reading Report: Chapter 56 \emph {Robotics in Agriculture and Forestry} from \emph {Springer Handbook of Robotics}}{17}{section.5}%
+\contentsline {section}{\numberline {6}Reading Report: \emph {Plant detection and mapping for agricultural robots using a 3D LIDAR sensor}}{22}{section.6}%
+\contentsline {section}{\numberline {7}Reading Report: \emph {Agricultural robots for field operations: Concepts and components}}{25}{section.7}%
+\contentsline {section}{\numberline {8}Reading Report: \emph {Agricultural robots—system analysis and economic feasibility}}{27}{section.8}%
+\contentsline {section}{References}{30}{section*.103}%

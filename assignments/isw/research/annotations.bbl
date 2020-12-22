@@ -163,6 +163,39 @@ Rold{\'{a}}n, J.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+van Herck%
+, Kurtser%
+, Wittemans%
+\BCBL {}\ \BBA {} Edan%
+}{%
+van Herck%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+Herck2020}
+\APACinsertmetastar {%
+Herck2020}%
+\begin{APACrefauthors}%
+van Herck, L.%
+, Kurtser, P.%
+, Wittemans, L.%
+\BCBL {}\ \BBA {} Edan, Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{apr}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Crop design for improved robotic harvesting: A case
+  study of sweet pepper harvesting} {Crop design for improved robotic
+  harvesting: A case study of sweet pepper harvesting}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Biosystems Engineering}{192}{}{294--308}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.biosystemseng.2020.01.021}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Weiss%
 \ \BBA {} Biber%
 }{%
