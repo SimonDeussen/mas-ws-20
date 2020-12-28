@@ -290,8 +290,10 @@
   volume    = {16},
   doi       = {https://doi.org/10.3390/s16071018},
   file      = {:/home/sd/Documents/papers/sensors-16-01018.pdf:PDF},
+  keywords  = {rank3},
   priority  = {24},
   publisher = {{MDPI} {AG}},
+  ranking   = {rank3},
 }
 
 @Article{Ball2015,
@@ -674,13 +676,48 @@ Maths is explained nicely, can be used to build something similar.},
   publisher = {Proceedings of the National Academy of Sciences},
   url       = {https://www.igb.illinois.edu/article/unexpected-similarity-between-honey-bee-and-human-social-life},
 }
-
-@Book{Siciliano2016,
+{Siciliano2016,
   author    = {Bruno Siciliano and Oussama Khatib},
   editor    = {Bruno Siciliano and Oussama Khatib},
   publisher = {Springer International Publishing},
   title     = {Springer Handbook of Robotics},
   year      = {2016},
+  abstract  = {Robotics for agriculture and forestry (A&F) rep-
+resents the ultimate application of one of our
+society’s latest and most advanced innovations
+to its most ancient and important industries.
+Over the course of history, mechanization and au-
+tomation increased crop output several orders of
+magnitude, enabling a geometric growth in pop-
+ulation and an increase in quality of life across
+the globe. Rapid population growth and rising
+incomes in developing countries, however, re-
+quire ever larger amounts of A&F output. This
+chapter addresses robotics for A&F in the form
+of case studies where robotics is being success-
+fully applied to solve well-identified problems.
+With respect to plant crops, the focus is on the
+in-field or in-farm tasks necessary to guarantee
+a quality crop and, generally speaking, end at
+harvest time. In the livestock domain, the focus
+is on breeding and nurturing, exploiting, harvest-
+ing, and slaughtering and processing. The chapter
+is organized in four main sections. The first one
+explains the scope, in particular, what aspects
+of robotics for A&F are dealt with in the chap-
+ter. The second one discusses the challenges and
+opportunities associated with the application of
+robotics to A&F. The third section is the core of
+the chapter, presenting twenty case studies that
+showcase (mostly) mature applications of robotics
+in various agricultural and forestry domains. The
+case studies are not meant to be comprehen-
+sive but instead to give the reader a general
+overview of how robotics has been applied to
+A&F in the last 10 years. The fourth section con-
+cludes the chapter with a discussion on specific
+improvements to current technology and paths to
+commercialization.},
   comment   = {Questions
 What are the motivations for this work?
 Optimized Coverage for Arable Farming
@@ -874,6 +911,23 @@ Rating
   number    = {3},
   pages     = {305--313},
   volume    = {86},
+  abstract  = {At the Institute of Agricultural and Environmental Engineering (IMAG B.V.) an autonomous harvesting
+robot for cucumbers was developed and tested in a greenhouse in autumn 2001. Analysis of the harvest
+process had revealed that at a 2 ha Dutch production facility four robots are needed to replace the skilled
+human work force during the peak season. Then assuming a success rate of 100%, a harvest cycle might take
+at most 10 s per cucumber fruit. In this paper the results of the field test of the harvesting robot are reported
+and analysed in view of the performance criteria mentioned above. Cucumbers (Cucumis sativus cv. Korinda)
+were grown in a high-wire cultivation system. In four independent experiments the robot was tested. The
+average success rate was 744%. The majority of failures originated from inaccurate positioning of the end-
+effector at the stalk of the fruit. It was found to be a great advantage that the system was able to perform
+several harvest attempts on a single cucumber from different harvest positions of the robot. This improved the
+success rate considerably. A single successful harvest cycle took 652 s per cucumber. Since not all attempts
+were successful, a cycle time of 124 s per harvested cucumber was measured under practical circumstances. The
+test confirmed the ability to harvest more than one cucumber using a single set of images which reduced the
+cycle time of a successful harvest to 567 and 530 s if two or three cucumbers were harvested. To bridge the
+gap between the measured performance and the design specifications, future research focuses on improving the
+success rate, faster hardware and software for image processing and motion planning as well as the reduction
+of the motion time of the manipulator.},
   comment   = {What are the motivations for this work?
 • The authors wanted to create a comparable solution to recent advances in
 harvesting tomatoes and eggplants
@@ -1060,6 +1114,26 @@ Rating
   number    = {4},
   pages     = {140--149},
   volume    = {10},
+  abstract  = {A tomato harvesting robot was developed in this study, which consisted of a four-wheel independent steering system,
+a 5-DOF harvesting system, a navigation system, and a binocular stereo vision system.
+ The four-wheel independent steering
+system was capable of providing a low-speed steering control of the robot based on Ackerman steering geometry.
+ The
+proportional-integral-derivative (PID) algorithm was used in the laser navigation control system. The Otsu algorithm and the
+elliptic template method were used for the automatic recognition of ripe tomatoes, and obstacle avoidance strategies were
+proposed based on the C-space method.
+ The maximum average absolute error between the set angle and the actual angle was
+about 0.14°, and the maximum standard deviation was about 0.04°.
+ The laser navigation system was able to rapidly and
+accurately track the path, with the deviation being less than 8 cm.
+ The load bearing capacity of the mechanical arm was about
+1.5 kg.
+ The success rate of the binocular vision system in the recognition of ripe tomatoes was 99.3%.
+ When the distance
+was less than 600 mm, the positioning error was less than 10 mm.
+ The time needed for recognition of ripe tomatoes and
+pitching was about 15 s per tomato, with a success rate of about 86%. This study provides some insights into the development
+and application of tomato harvesting robot used in the greenhouse.},
   comment   = {What are the motivations for this work?
 • Harvesting tomatoes is a very popular and labour intensive vegetable. The
 annual production is around 60 million tons.
@@ -1152,6 +1226,32 @@ Rating
   keywords  = {tomato harvesting robot, four-wheel independent steering, automatic navigation, binocular stereo vision system, obstacle avoidance, greenhouse, rank3},
   publisher = {International Journal of Agricultural and Biological Engineering},
   ranking   = {rank3},
+}
+
+@Article{Arad2020,
+  author    = {Boaz Arad and Jos Balendonck and Ruud Barth and Ohad Ben-Shahar and Yael Edan and Thomas Hellström and Jochen Hemming and Polina Kurtser and Ola Ringdahl and Toon Tielen and Bart Tuijl},
+  journal   = {Journal of Field Robotics},
+  title     = {Development of a sweet pepper harvesting robot},
+  year      = {2020},
+  month     = {jan},
+  number    = {6},
+  pages     = {1027--1039},
+  volume    = {37},
+  doi       = {https://doi.org/10.1002/rob.21937},
+  file      = {:/home/sd/Documents/papers/10.1002@rob.21937.pdf:PDF},
+  keywords  = {rank5},
+  priority  = {9},
+  publisher = {Wiley},
+  ranking   = {rank5},
+}
+
+@Book{Siciliano2016,
+  author    = {Siciliano, Bruno and Khatib, Oussama},
+  publisher = {Springer},
+  title     = {Springer handbook of robotics},
+  year      = {2016},
+  file      = {:/home/sd/Documents/books/2016_Book_SpringerHandbookOfRobotics.pdf:PDF},
+  url       = {https://link.springer.com/book/10.1007/978-3-319-32552-1},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

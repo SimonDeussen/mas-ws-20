@@ -1,0 +1,129 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Farms%
+}{%
+Farms%
+}{%
+{\protect \APACyear {2020}}%
+}]{%
+Farms2020}
+\APACinsertmetastar {%
+Farms2020}%
+\begin{APACrefauthors}%
+Farms.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+\APACrefbtitle {Farms Dictionary.} {Farms dictionary.}
+\newblock
+\begin{APACrefURL}
+  \url{https://www.farms.com/precision-agriculture/crop-scouting/}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+MarketBusinessNews%
+}{%
+MarketBusinessNews%
+}{%
+{\protect \APACyear {2020}}%
+}]{%
+MarketBusinessNews2020}
+\APACinsertmetastar {%
+MarketBusinessNews2020}%
+\begin{APACrefauthors}%
+MarketBusinessNews.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+\APACrefbtitle {Market Business News financial glossary.} {Market business news
+  financial glossary.}
+\newblock
+\begin{APACrefURL}
+  \url{https://marketbusinessnews.com/financial-glossary/agricultural-robot-agribot/}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Merriam-Webster%
+}{%
+Merriam-Webster%
+}{%
+{\protect \APACyear {2020}}%
+}]{%
+MerriamWebster2020}
+\APACinsertmetastar {%
+MerriamWebster2020}%
+\begin{APACrefauthors}%
+Merriam-Webster.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+\APACrefbtitle {Merriam-Webster.com dictionary.} {Merriam-webster.com
+  dictionary.}
+\newblock
+\begin{APACrefURL} \url{https://www.merriam-webster.com/dictionary/agriculture}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Siciliano%
+\ \BBA {} Khatib%
+}{%
+Siciliano%
+\ \BBA {} Khatib%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+Siciliano2016}
+\APACinsertmetastar {%
+Siciliano2016}%
+\begin{APACrefauthors}%
+Siciliano, B.%
+\BCBT {}\ \BBA {} Khatib, O.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2016}.
+\newblock
+\APACrefbtitle {Springer handbook of robotics} {Springer handbook of robotics}.
+\newblock
+\APACaddressPublisher{}{Springer}.
+\newblock
+\begin{APACrefURL}
+  \url{https://link.springer.com/book/10.1007/978-3-319-32552-1}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Technopedia%
+}{%
+Technopedia%
+}{%
+{\protect \APACyear {2020}}%
+}]{%
+Technopedia2020}
+\APACinsertmetastar {%
+Technopedia2020}%
+\begin{APACrefauthors}%
+Technopedia.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+\APACrefbtitle {Technopedia Dictionary.} {Technopedia dictionary.}
+\newblock
+\begin{APACrefURL}
+  \url{https://www.techopedia.com/definition/32694/autonomous-robot}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}
