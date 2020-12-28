@@ -285,4 +285,38 @@ Weiss, U.%
   \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
+\bibitem [\protect \citeauthoryear {%
+Zhao%
+, Gong%
+, Huang%
+\BCBL {}\ \BBA {} Liu%
+}{%
+Zhao%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2016}}%
+}]{%
+Zhao2016}
+\APACinsertmetastar {%
+Zhao2016}%
+\begin{APACrefauthors}%
+Zhao, Y.%
+, Gong, L.%
+, Huang, Y.%
+\BCBL {}\ \BBA {} Liu, C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{sep}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A review of key techniques of vision-based control for
+  harvesting robot} {A review of key techniques of vision-based control for
+  harvesting robot}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Computers and Electronics in
+  Agriculture}{127}{}{311--323}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.compag.2016.06.022}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
 \end{thebibliography}

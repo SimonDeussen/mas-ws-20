@@ -62,6 +62,157 @@
 % \subsection*{Rating}
 
 % ================= TEMPLATE =================
+\section{Reading Report: \emph{A review of key techniques of vision-based control for harvesting robot}}
+\cite{Zhao2016}
+
+\subsection*{Abstract}
+Although there is a rapid development of agricultural robotic technologies, a lack of access to robust fruit
+recognition and precision picking capabilities has limited the commercial application of harvesting
+robots. On the other hand, recent advances in key techniques in vision-based control have improved this
+situation. These techniques include vision information acquisition strategies, fruit recognition algo-
+rithms, and eye-hand coordination methods. In a fruit or vegetable harvesting robot, vision control is
+employed to solve two major problems in detecting objects in tree canopies and picking objects using
+visual information. This paper presents a review on these key vision control techniques and their poten-
+tial applications in fruit or vegetable harvesting robots. The challenges and feature trends of applying
+these vision control techniques in harvesting robots are also described and discussed in the review.
+
+
+\subsection*{Keywords}
+Harvesting robot, Vision-based control, Vision information acquisition, Fruit recognition, Eye-hand coordination
+
+
+\subsection*{Questions}
+\subsubsection*{What are the motivations for this work?}
+\begin{itemize}
+    \item The authors claim that the recognition and the localization of fruits is the biggest bottleneck in harvesting.
+    \item Because of the complex loosely structured nature of the agricultural domain, vision-based control is the only possibility.
+    \item Each fruit hangs or lies in a random location which makes it necessary to continually find the fruits. 
+    \item The recognition and localization is the foundation of successful harvesting. So this is the first thing which has to wokr in order to get commercial harvesting robots. 
+    \item All in all this papers wants to give an overview over current (2016) techniques to identify fruits in plants.
+\end{itemize}
+\subsubsection*{What is the proposed solution?}
+\begin{itemize}
+    \item This papers reviews current and older approaches in following categories of vision schemes:
+    \begin{itemize}
+        \item Monocular camera scheme
+        \item Binocular camera scheme
+        \item Laser active visual scheme
+        \item Thermal imaging scheme
+        \item Spectral imaging scheme
+    \end{itemize} 
+    \item Another part of the review are recognition approaches, those are classified in:
+    \begin{itemize}
+        \item Single feature analysis
+        \item Multi feature analysis
+        \item Pattern recognition 
+    \end{itemize}
+    \item The last part of the paper analyses two different ways for the \emph{eye-hand} coordination:
+    \begin{itemize}
+        \item Open-loop visual control
+        \item Visual servo control
+    \end{itemize} 
+\end{itemize}
+\subsubsection*{What is the work`s evaluation of the solution?}
+\begin{itemize}
+    \item Because this work is a review, I will write down and highlight the papers findings in each category:
+    \begin{description}
+        \item[Monocular camera scheme] \ 
+        \begin{itemize} 
+            \item This is a classical and cheap approach to recognition. The biggest problem is of course getting 3D coordinates from 2D data.
+            \item Recognition rates are between 75\% (2005) and 96\% (2011). 
+         \end{itemize}
+        \item[Binocular camera scheme] \ 
+        \begin{itemize} 
+            \item Using two different calibrated cameras are able to not just get color information but directly create 3D coordinates using triangulation.
+            \item Recognition rates are also in the 90\% area. 
+            \item A system developed 2004 could reliable detect apples with an error of  less than 20mm in a distance between 400 and 1500mm.
+         \end{itemize}
+        \item[Laser active visual scheme] \ 
+        \begin{itemize} 
+            \item By using laser scanners to obtain 3D geometry it is possible to have much higher positional accuracy.
+            \item Different sensors work with different kinds of lasers. By combining different wave lengths it is even possible to detect fruits by spectral reflections.
+            \item Newest data from 2015 shows an accuracy of 97.5\% for finding apples with an 3D reconstruction technique.
+         \end{itemize}
+        \item[Thermal imaging scheme] \ 
+        \begin{itemize} 
+            \item Infrared radiation from plants can make it easier to distinguish from fruits and other plant parts. Leaves and such accumulate less heats than the fruits.
+            \item Studies in 2008 have shown that citrus fruits are consistent 1 °C warmer than other objects.
+         \end{itemize}
+        \item[Spectral imaging scheme] \ 
+        \begin{itemize} 
+            \item Spectral cameras are using special wave length to create more contrast between the fruits and leaves. When looking for green crops this approach can be better than using a traditional camera.
+            \item This technique also got accuracies around 90\%.
+         \end{itemize}
+        \item[Single feature analysis] \ 
+        \begin{itemize} 
+            \item This way of image-analysis uses only one feature like color, shape, and texture.
+            \item For fruits which have a different color than the other plant parts, using color this a viable approach.  
+            \item It is also possible to look for shapes, but this approach has more problems with clusters and occlusions.
+            \item Accuracy's of 95+\% are reported. 
+            \item This is computational cheaper than using multi-features
+         \end{itemize}
+        \item[Multi feature analysis] \ 
+        \begin{itemize} 
+            \item In order to increase detection, reliability and robustness, multiple feautres from an image can be used to detect and localize the fruits.
+            \item Using multiple features increases algorithmic complexity. This needs better processors to compute in an appropriate time.
+            \item Interestingly this review shows \emph{worse} results here, but still in the area of 90\%.
+         \end{itemize}
+        \item[Pattern recognition ] \ 
+        \begin{itemize} 
+            \item The pattern recognition approach uses even more complex algorithms to find the fruits. 
+            \item Examples are statistical models, clustering, artificial neural networks, support vector machines and fuzzy patern recognition.
+            \item Here the papers gets worse and worse, no real value besides the pointers to the mentioned papers.
+         \end{itemize}
+        \item[Open-loop visual control] \ 
+        \begin{itemize} 
+            \item In an open-loop control mode, the sensors will first detect the positions and then the manipulator will move to estimated positions.
+            \item Without feedback, this system will fail as soon as wind or the manipulators displace the fruits.
+            \item The authors mentioned system where first the manipulators gets placed fast using open-loop control in the vincinity then uses visual servo for fine positioning for grasping the fruits.
+         \end{itemize}
+        \item[Visual servo control] \ 
+        \begin{itemize} 
+            \item This mode uses feedback between the manipulator and the sensors to continually adjust the position. This needs a fixed loop between control, computation, manipulators and sensors.
+            \item This approach is slower but also more accurate.
+            \item Generally speaking i think this or a combination of both control modes make the most sense.
+         \end{itemize}
+    \end{description}
+\end{itemize} 
+\subsubsection*{What is my analysis of the identified problem, idea  and evaluation?}
+\begin{itemize}
+    \item Vision based system to recognize and localize fruits are needed to make harvesting by robots work. Because the environment is complex and the plants chaotic finding the position of the fruits is really hard.
+    \item The authors describe many ways to exploit some characteristics of the fruits for an easy recognition. But all of those approaches are in my opinion shortcuts which do not really work.
+    \item I think more complex models of the plants are needed to build robots which are able to work in real-world conditions in the industry.
+    \item Of course some of the exploits can help, but the robots must have to work with 3D geometry otherwise the performance will always be worse than the one of humans. 
+    \item Occlusion and low contrast have to be part of the models of the robots.
+    \item This will need high computational power.
+\end{itemize}
+\subsubsection*{What are the contributions?}
+\begin{itemize}
+    \item This review shows some key aspect of the computer vision problems of harvesting. 
+    \item The authors created categories of important aspects and showcased work in those.
+    \item The authors \textbf{did not} create a systematic approach to compare the results of papers. For example did they show higher accuray for single feature analysis than multi feature analysis or pattern recognition. Which does not make sense.
+    \item The authors also did not say anything about computational costs.
+\end{itemize}
+\subsubsection*{What are the future directions of the research?}
+\begin{itemize}
+    \item Besides improving the current algorithms and sensor technologies, the authos talked about more coming research in following areas: \begin{itemize}
+        \item Human-machine interaction
+        \item Multi-arm robots
+        \item Improving Greenhouse environments for robots.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection*{What is my main take away from this paper?}
+\begin{itemize}
+    \item Current vision systems need to use some kind of exploit or trick to find the fruits. (Tomatoes are redder than the leaves) While this of course an important feature, all approaches lack a model of the plants based on their real 3D geometry. Because of this all robotic systems using those approaches will only be able to pick the best and easiest to see fruits but nothing hidden behind leaves. As long as it is not possible to use a geometry based solution i do not think that robots are viable for agriculture.
+\end{itemize}
+
+\subsection*{Summary}
+Good pointers to deeper research but no good comparison between papers. No deeper methodology, also not written in a good way.
+\subsection*{Rating}
+2/5
+
+
 \section{Reading Report: \emph{Development of a sweet pepper harvesting robot}}
 \cite{Arad2020}
 
