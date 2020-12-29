@@ -36,7 +36,7 @@
 % \begin{itemize}
 %     \item 
 % \end{itemize}
-% \subsubsection*{What is my analysis of the identified problem, idea  and evaluation?}
+% \subsubsection*{What is my analysis of the identified problem, idea and evaluation?}
 % \begin{itemize}
 %     \item 
 % \end{itemize}
@@ -62,6 +62,86 @@
 % \subsection*{Rating}
 
 % ================= TEMPLATE =================
+
+\section{Reading Report: \emph{Using color and 3D geometry features to segment fruit point cloud and improve fruit recognition accuracy}}
+\cite{Wu2020}
+
+\subsection*{Abstract}
+Fruit image segmentation is an essential step to distinguish fruits from the background. In order to improve the
+fruits recognition accuracy for harvesting robots in three-dimensional (3D) space, a method with the fusion of
+color and 3D geometry features for fruit point cloud segmentation was proposed in this study. The local de-
+scriptor was applied to obtain the candidate regions, and the global descriptor was used to obtain the final
+segmented results. Firstly, the hue, saturation, value (HSV) color features and normal orientation features of
+pixels were fused to obtain the preliminary segmentation results. Then, the pre-processed color image and depth
+image were converted to a point cloud, and it was clustered into multiple regions by the Euclidean clustering
+algorithm. Finally, we utilized the viewpoint feature histogram (VFH) of each point cloud cluster to remove the
+remaining non-fruit regions. The experiments showed that the segmentation accuracy of the proposed method
+was 98.99\%, and the precision was 80.09\%, which are both superior to the traditional color segmentation
+methods. In addition, a fruit detection method based on shape analysis showed that it is more effective in
+improving fruit recognition rate and reducing false detection rate than the color segmentation methods.
+
+\subsection*{Keywords}
+Fruit recognition, Point cloud, Geometry feature, Local descriptor, Global descriptor
+
+\subsection*{Questions}
+\subsubsection*{What are the motivations for this work?}
+\begin{itemize}
+    \item The main motivation for using agricultural robots is cost reduction by saving labor costs.
+    \item Fruit recognition ist the basis of proper robotic harvesting. Without a high recognition accuracy there is no high harvesting success rate feasible.
+    \item Most fruit recognition approaches use only color information fir finding the fruits. Those approaches are ineffective under real world conditions because they fail under certain light conditions and low contrast. 
+    \item Here the authors want to improve detection rates by including depth information using a \emph{Microsoft Kinect 2.0} .
+    \item The authors claim that using the additional 3D data the resulting algorithms should be more robust and fit for the real world.
+\end{itemize}
+\subsubsection*{What is the proposed solution?}
+\begin{itemize}
+    \item Using a \emph{Microsoft Kinect 2.0} camera which can simultaneously capture color and depth image as well as point cloud data, the authors propose an algorithm to segment fruit and non-fruit regions in the captured data.
+    \item The authors first transform the RGB color data into HSV format, then they extract color features and normal orientation features from depth information for a combined feature vector for classification using a support vector machine.
+    \item After the classification it is now possible to remove all non-fruit regions.
+\end{itemize}
+\subsubsection*{What is the work`s evaluation of the solution?}
+\begin{itemize}
+    \item The authors evaluated different feature sets to be able to compare themselves against other studies. They basically created labelled data for training and testing and compared the classification results resulting from different feature sets. The best results come from using the color information as HSV data and using the 3D information as normal orientation. 
+    \item With the presented method they were able to classify pixels into fruit and non-fruit regions with an accuracy of 97.55\%. 
+    \item The authors noted that this method is more robust in cases of occlusion or harsh light conditions than methods only utilizing image data. They also were able to remove more background area from fruits than older approaches.
+    \item But they tried to avoid strong sunlight because the \emph{Kinect} stops working properly if its too bright.
+    \item The biggest downside they mentioned was that they needed \textbf{60 seconds processing time} per image. (but they did use matlab...)
+\end{itemize}
+\subsubsection*{What is my analysis of the identified problem, idea and evaluation?}
+\begin{itemize}
+    \item The idea of using \emph{Kinect} cameras to gather more information than just RGB data is great. I do not think that harvesting robots in the future will be able to only use 2D data to navigate itself and their end-effectors in complex environments like orchards, greenhouses and fields.
+    \item The methodology used to determined the best feature set is clear and concise - so I would trust their results.
+    \item My biggest disappointment is that they did not show any code at all. It is obvious from the results, that their matlab code has to be really bad because they have a runtime of 60 seconds. Using a proper programming language will improve their results drastically.
+\end{itemize}
+\subsubsection*{What are the contributions?}
+\begin{itemize}
+    \item They contributed an algorithm to classify image plus depth data from \emph{Kinect} into fruit and non-fruit regions. Here the authors used peaches. 
+    \item The algorithm works in multiple stages, generating feature sets from different transformed data and finally classifying each pixel into one of the two classes.
+    \item Using the same classifier they tested different feature sets to show each classification accuracy. From here future work can see which features to avoid or use.
+\end{itemize}
+\subsubsection*{What are the future directions of the research?}
+\begin{itemize}
+    \item In their next study they want to reduce the influence of light conditions and variations to the classification. 
+    \item Another point is to use more effective 3D features to assist the point cloud segmentation.
+\end{itemize}
+\subsubsection*{What questions have I left?}
+\begin{itemize}
+    \item This kind of papers always profit from having their code open source. I would like to see their data pipelines and scripts to figure out why they needed 60 seconds.
+    \item I still do not understand the Normal Orientation algorithm, but this should be fine for now.
+\end{itemize}
+\subsubsection*{What is my main take away from this paper?}
+\begin{itemize}
+    \item My hypothesis, that it can not work to just use 2D features for recognizing and localizing fruits is validated.\
+    \item The  authors used quite simple 3D features but they could improve significantly over not using them. 
+\end{itemize}
+
+\subsection*{Summary}
+Cool paper over the algorithmic side of finding fruits.  Unfortunately no code at all but the general directions of their approach are clear.
+
+\subsection*{Rating}
+4/5
+
+
+
 \section{Reading Report: \emph{A review of key techniques of vision-based control for harvesting robot}}
 \cite{Zhao2016}
 
@@ -177,7 +257,7 @@ Harvesting robot, Vision-based control, Vision information acquisition, Fruit re
          \end{itemize}
     \end{description}
 \end{itemize} 
-\subsubsection*{What is my analysis of the identified problem, idea  and evaluation?}
+\subsubsection*{What is my analysis of the identified problem, idea and evaluation?}
 \begin{itemize}
     \item Vision based system to recognize and localize fruits are needed to make harvesting by robots work. Because the environment is complex and the plants chaotic finding the position of the fruits is really hard.
     \item The authors describe many ways to exploit some characteristics of the fruits for an easy recognition. But all of those approaches are in my opinion shortcuts which do not really work.
@@ -195,7 +275,7 @@ Harvesting robot, Vision-based control, Vision information acquisition, Fruit re
 \end{itemize}
 \subsubsection*{What are the future directions of the research?}
 \begin{itemize}
-    \item Besides improving the current algorithms and sensor technologies, the authos talked about more coming research in following areas: \begin{itemize}
+    \item Besides improving the current algorithms and sensor technologies, the authors talked about more coming research in following areas: \begin{itemize}
         \item Human-machine interaction
         \item Multi-arm robots
         \item Improving Greenhouse environments for robots.
@@ -204,7 +284,9 @@ Harvesting robot, Vision-based control, Vision information acquisition, Fruit re
 
 \subsubsection*{What is my main take away from this paper?}
 \begin{itemize}
-    \item Current vision systems need to use some kind of exploit or trick to find the fruits. (Tomatoes are redder than the leaves) While this of course an important feature, all approaches lack a model of the plants based on their real 3D geometry. Because of this all robotic systems using those approaches will only be able to pick the best and easiest to see fruits but nothing hidden behind leaves. As long as it is not possible to use a geometry based solution i do not think that robots are viable for agriculture.
+    \item Current vision systems need to use some kind of exploit or trick to find the fruits. (Tomatoes are redder than the leaves) 
+    \item While this of course an important feature, all approaches lack a model of the plants based on their real 3D geometry. 
+    \item Because of this all robotic systems using those approaches will only be able to pick the best and easiest to see fruits but nothing hidden behind leaves. As long as it is not possible to use a geometry based solution i do not think that robots are viable for agriculture.
 \end{itemize}
 
 \subsection*{Summary}
@@ -286,7 +368,7 @@ agriculture, computer vision, field test, motion control, real‐world condition
     blocking ways of the end-effector to reach the fruits without damaging the plant.
     \item They also proposed to user a smaller end-effector for easier grepping in a a tight environment for future improvements.
 \end{itemize}
-\subsubsection*{What is my analysis of the identified problem, idea  and evaluation?}
+\subsubsection*{What is my analysis of the identified problem, idea and evaluation?}
 \begin{itemize}
     \item The paper, the robot and the analysis of the robots performance are all in-depth and detailed. 
     The robots performance of course is far from being commercial viable.
@@ -443,7 +525,7 @@ Crop design, Harvesting robot, Sweet pepper, Agricultural robotics, Crop enginee
     \item Using additional grow lights did not yield improvements for the harvestability of the crops here is additional research needed.
     \item The authors also said that it is important to deepen the research in the choosing of harvesting method.
 \end{itemize}
-\subsubsection*{What is my analysis of the identified problem, idea  and evaluation?}
+\subsubsection*{What is my analysis of the identified problem, idea and evaluation?}
 \begin{itemize}
     \item The concrete results are not as impressive as initial thought
     \item The highly methodic approach resulting from collaboration with domain experts on the other hand is really important and should be noted.
@@ -564,7 +646,7 @@ robotics, UGV, UAV, multi-robot, environmental monitoring, sensory system, agric
     \item Without the UAV the UGV would have to make a detour resulting in a longer runtime and more battery usage.
     \item Inside different simulated test environments the system archived a performance uplift between 8\% and 23\%.
 \end{itemize}
-\subsubsection*{What is my analysis of the identified problem, idea  and evaluation?}
+\subsubsection*{What is my analysis of the identified problem, idea and evaluation?}
 \begin{itemize}
     \item The idea main idea is really great and progressive. The concrete implementations are good steps in this direction but lack of real benefits.
     \item Having multiple robots patrol a greenhouse on a regular basis to get high definition spatial and lower definition temporal data has have many benefits over installing 
@@ -665,7 +747,7 @@ obstacle avoidance, greenhouse
         \item Finally the \textbf{picking rate} of the robot was measured to be 87\% in a sample size of 100 tomatoes. The robot needs 15 seconds from recognition to pitching the tomatoes.
     \end{itemize}
 \end{itemize}
-\subsubsection*{What is my analysis of the identified problem, idea  and evaluation?}
+\subsubsection*{What is my analysis of the identified problem, idea and evaluation?}
 \begin{itemize}
     \item This paper contains multiple system working together for a common goal. It showcases the steps needed to make the robot drive through a greenhouse and pick tomatoes.
     \item The error and performance analyses is detailed. Only thing lacking is an in-depth breakdown of the task times. The only time measurement in the paper is the 15 seconds from recognition to picking - but how long does the robot need to pick 100 tomatoes? 
@@ -756,7 +838,7 @@ of the motion time of the manipulator.
     \item If every first attempt would have been successful, the resulting time would have been   \textbf{75s} per harvested cucumber.
     \item Most errors (ca. 36\%) came from an misplaced end-effector resulting from poor 3D coordinates.
 \end{itemize}
-\subsubsection*{What is my analysis of the identified problem, idea  and evaluation?}
+\subsubsection*{What is my analysis of the identified problem, idea and evaluation?}
 \begin{itemize}
     \item Those experiments (20 years ago) have been one order of magnitude too slow for a commercial application.
     \item I like the idea of using only one camera, but the extra cost would directly result in a speed up which would basically pay for itself to use a stereo camera.
@@ -1037,7 +1119,7 @@ and using multiple frames with tracking it scores an average detection accuracy 
 of the position detection is 3 centimeters. One problem occurring repeatedly is that the algorithm fails to differentiate
 between the next plants if they grow into each other and the cluster connect. 
 
-\subsubsection*{What is my analysis of the identified problem, idea  and evaluation?}
+\subsubsection*{What is my analysis of the identified problem, idea and evaluation?}
 The idea to use a low cost 3D sensor is quite good because, as mentioned in the paper, it works independent from 
 existing lighting and is robust against fog and dust - conditions which occur frequently in the real world.
 The algorithm uses only a bounding box of a cluster to determine the position of the plant. This approach works okay 
@@ -1117,7 +1199,7 @@ engineering of better simple manipulators and the development of specific path p
 for agriculture.
 \subsubsection*{What is the work`s evaluation of the solution?}
 This question is not applicable.
-\subsubsection*{What is my analysis of the identified problem, idea  and evaluation?}
+\subsubsection*{What is my analysis of the identified problem, idea and evaluation?}
 The authors make a great job in displaying the current technologies and their limitations. With this knowledge it is 
 easy to identify a subproblem to work on.
 \subsubsection*{What are the contributions?}
@@ -1176,7 +1258,7 @@ In all scenarios the authors showcase a reduction in primary and secondary costs
     \item[Weeding] Only by reducing the cost of the navigation system by half it is possible to save 12-21\% or manuel costs. and reduction of herbicide use of 90\%   
     \item[Grass cutting] Reduction of cost of 52\% (but only when paying the gardener 27 Euro per hour, lol) 
 \end{description}
-\subsubsection*{What is my analysis of the identified problem, idea  and evaluation?}
+\subsubsection*{What is my analysis of the identified problem, idea and evaluation?}
 The usage of automated systems for growing crops is one of the key points in reducing the environmental footprint
 of large scale agriculture. The three analyzed areas are great entry points for deploying such systems. Especially 
 the field scouting and the automated weeding are very interesting. For the evaluation the authors compared 

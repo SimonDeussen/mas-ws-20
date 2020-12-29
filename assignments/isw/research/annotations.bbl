@@ -286,6 +286,43 @@ Weiss, U.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Wu%
+, Li%
+, Zhu%
+, Huang%
+\BCBL {}\ \BBA {} Guo%
+}{%
+Wu%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+Wu2020}
+\APACinsertmetastar {%
+Wu2020}%
+\begin{APACrefauthors}%
+Wu, G.%
+, Li, B.%
+, Zhu, Q.%
+, Huang, M.%
+\BCBL {}\ \BBA {} Guo, Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{jul}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Using color and 3D geometry features to segment fruit
+  point cloud and improve fruit recognition accuracy} {Using color and 3d
+  geometry features to segment fruit point cloud and improve fruit recognition
+  accuracy}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Computers and Electronics in
+  Agriculture}{174}{}{105475}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.compag.2020.105475}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Zhao%
 , Gong%
 , Huang%
