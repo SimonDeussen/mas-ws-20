@@ -63,6 +63,151 @@
 
 % ================= TEMPLATE =================
 
+\section{Reading Report: \emph{Advances in Multi-Robot Systems}}
+\cite{Arai2002}
+
+\subsection*{Abstract}
+As research progresses in distributed robotic sys-
+tems, more and more aspects of multi-robot systems are being
+explored. This special issue on Multi-Robot Systems provides
+a broad sampling of the research that is currently ongoing in
+the field of distributed mobile robot systems. To help categorize this research, we have identified seven primary research top-
+ics within multi-robot systems — biological inspirations, communication, architectures, localization/mapping/exploration, object
+transport and manipulation, motion coordination, and reconfigurable robots. This editorial examines these research areas and
+discusses the special issue articles in this context. We conclude by
+identifying several additional open research issues in distributed
+mobile robotic systems.
+
+
+\subsection*{Keywords}
+Distributed robotics, survey, cooperative robotics, multi-robot systems
+
+
+
+\subsection*{Questions}
+\subsubsection*{What are the motivations for this work?}
+\begin{itemize}
+    \item The main motivations for the authors is to categorize recent (2002) research in the field of multi-robot systems (MRS) and give an in-depth overview.
+    \item MRS are proven to be often more efficient and more fault tolerant than single robots. 
+    \item Cooperation in robots is a emerging field and needs much additional research.
+    \item It is usually cheaper to solve a problem with multiple simple robots instead of one big robot.
+\end{itemize}
+\subsubsection*{What is the proposed solution?}
+\begin{itemize}
+    \item The authors identified those seven categories of recent research: \ 
+    \begin{itemize}
+        \item Biological inspiration
+        \item Communication
+        \item Architecture, task allocation and control
+        \item Localization, mapping, and exploration
+        \item Object transport and manipulation
+        \item Motion coordination 
+        \item Reconfigurable robots
+    \end{itemize}
+\end{itemize}
+\subsubsection*{What is the work`s evaluation of the solution?}
+\begin{itemize}
+    \item Following recent work has been done in the categories: \
+    \begin{description}
+        \item[Biological inspiration] \ 
+        \begin{itemize} 
+            \item The current (2002) trend is to use behavior driven control (BDC).
+            \item BDC is the using of using social characteristics of insects like bees or ants for controlling robots.
+            \item Using those approaches MRS can flock, disperse, aggregate, forage and follow trails.
+            \item Another direction is trying to imitate the behavior of higher animals like wolf packs or predator-prey systems.
+            \item Robot soccer is also a domain where the behavior is biologically inspired: Here from humans. Role distribution and acting are keywords here.
+        \end{itemize}
+        \item[Communication] \ 
+        \begin{itemize} 
+            \item Studies on implicit and explicit communication both show advantages for MRS. 
+            \item Implicit communications is through the world and through behavior - an human example could be body language.
+            \item Explicit communication is using an dedicated channel for sending particular messages between the actors.
+            \item Using distributed communication networks can improve fault tolerance and availability. Here lies a key topic: How can multiple robots work together if the communication channel is not available all the time and fails unexpectedly?
+            \item More research is also done in using a shared channel for process scheduling in low compute nodes.
+        \end{itemize}
+        \item[Architecture, task allocation and control] \ 
+        \begin{itemize} 
+            \item This topics are key aspects in MRS and holds some of the hardest problems: \
+            \begin{itemize}
+                \item Action selection
+                \item Delegation of authority and control
+                \item Communication structure
+                \item Heterogeneity versus homogeneity of robots
+                \item Achieving coherence amidst local actions
+                \item Resolving of conflicts
+            \end{itemize}
+            \item One approach is an proxy processing scheme for remote computation
+            \item Using multiple layers of abstraction for control is another idea. Layers include here the robot control level, group level, object control level and task control.
+            \item There are even papers using an emotion based control for MRS.
+            \item Using a currency as a control architecture for resource allocation gets also investigated in mentioned research.
+            \item Other research uses multiple planners for priority based task assignment and motion planning.
+        \end{itemize}
+        \item[Localization, mapping, and exploration] \ 
+        \begin{itemize} 
+            \item For single robots exists already an extensive amount of research for mapping and exploration. Adapting this library of knowledge for MRS is only a fairly recently trend.
+            \item New algorithms got developed taking advantages of the mapping capabilities of multiple robots. Groups of robots can sense and localize simultaneously resulting in higher accuracy than only a single robot.
+            \item Localizing their team members visually is also an important topic for multi robot cooperation.
+            \item The last mentioned research topic is to enable a robotic team to navigate in an unknown environment using landmarks and following waypoints.
+        \end{itemize}
+        \item[Object transport and manipulation] \ 
+        \begin{itemize} 
+            \item Using MRS to manipulate a object cooperatively is a long standing, but hard to reach goal.
+            \item More feasible, than having mutiple robots grip an object, is to push objects around using formation control approaches.
+            \item I think more current reseach (newer than from 2002) will have more progress here.
+        \end{itemize}
+        \item[Motion coordination ] \ 
+        \begin{itemize} 
+            \item Topics in motion coordination include: \
+            \begin{itemize}
+                \item Multi-robot path planning
+                \item Traffic control
+                \item Formation generation
+                \item Formation keeping 
+                \item Target tracking
+                \item Target search 
+                \item Multi-robot docking
+            \end{itemize}
+            \item Here, the presented research are systems to scout using UGV and dynamic priority assignments. Here the goal is to track multiple objects in a cluttered environment.
+            \item Another approach makes the robots track one special \emph{friend} for advanced formation control. Here the robots should maintain a desired angle and distance in between them.
+            \item Decentralized motion coordination efforts can be used for perimeter security.
+        \end{itemize}
+        \item[Reconfigurable robots] \ 
+        \begin{itemize} 
+            \item This topic studies modular robots which can connect in different ways into a specific shape.
+            \item Most studies sofar have been simulation only, but there are some research with physical robots in a worm-like or spider-like configuration.
+        \end{itemize}
+    \end{description}
+
+\end{itemize}
+\subsubsection*{What is my analysis of the identified problem, idea and evaluation?}
+\begin{itemize}
+    \item The seven chosen categories are on point. Even 20 years later those categories remain.
+\end{itemize}
+\subsubsection*{What are the contributions?}
+\begin{itemize}
+    \item Great, in-depth snapshot of the current (2002) state of the art. The authors explain the categories and the mentioned research very well.
+\end{itemize}
+\subsubsection*{What are the future directions of the research?}
+\begin{itemize}
+    \item In each of the categories the research goes much further now. This question does not rely apply.
+\end{itemize}
+\subsubsection*{What questions have I left?}
+\begin{itemize}
+    \item Reconfigurable robots sounds super interesting, i might have to study some papers about current capabilities.
+\end{itemize}
+\subsubsection*{What is my main take away from this paper?}
+\begin{itemize}
+    \item This paper is good basis to compare the progress of the last 20 years to. Roboticists in 2002 struggled with the same problems as now. Of course we have stronger computers now, but the problems in control, distribution and communication remain.
+\end{itemize}
+
+\subsection*{Summary}
+Great, in-depth snapshot of the current (2002) state of the art. The authors explain the categories and the mentioned research very well.
+But quite dated (2002). Good basis and good for comparison.
+
+\subsection*{Rating}
+3/5
+
+
 \section{Reading Report: \emph{Using color and 3D geometry features to segment fruit point cloud and improve fruit recognition accuracy}}
 \cite{Wu2020}
 

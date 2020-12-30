@@ -32,6 +32,34 @@ Arad, B.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Arai%
+, Pagello%
+, Parker%
+\BCBL {}\ \protect \BOthers {.}}{%
+Arai%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2002}}%
+}]{%
+Arai2002}
+\APACinsertmetastar {%
+Arai2002}%
+\begin{APACrefauthors}%
+Arai, T.%
+, Pagello, E.%
+, Parker, L\BPBI E.%
+\BCBL {}\ \BOthersPeriod {.}\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2002}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Advances in multi-robot systems} {Advances in
+  multi-robot systems}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{IEEE Transactions on robotics and
+  automation}{18}{5}{655--661}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Bechar%
 \ \BBA {} Vigneault%
 }{%

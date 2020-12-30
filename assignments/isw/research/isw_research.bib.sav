@@ -1265,6 +1265,7 @@ Rating
 }
 
 @Article{2016,
+  author    = {Thuy Tuong Nguyen, David C. Slaughter and Brad Townsley and Leonela Carriedoand Julin N. N., Neelima Sinha},
   title     = {Comparison of Structure-from-Motion and Stereo Vision Techniques for Full In-Field 3D Reconstruction and Phenotyping of Plants: An Investigation in Sunflower},
   year      = {2016},
   month     = {jul},
@@ -1382,7 +1383,7 @@ Rating
 }
 
 @Article{Ge2019,
-  author    = {Yuanyue Ge and Ya Xiong and P{\aa}l J. From},
+  author    = {Yuanyue Ge and Ya Xiong},
   journal   = {{IFAC}-{PapersOnLine}},
   title     = {Instance Segmentation and Localization of Strawberries in Farm Conditions for Automatic Fruit Harvesting},
   year      = {2019},
@@ -1394,7 +1395,7 @@ Rating
   publisher = {Elsevier {BV}},
 }
 
-@Article{Hameed_2018,
+@Article{Hameed2018a,
   author    = {Khurram Hameed and Douglas Chai and Alexander Rassau},
   journal   = {Image and Vision Computing},
   title     = {A comprehensive review of fruit and vegetable classification~techniques},
@@ -1407,7 +1408,7 @@ Rating
   publisher = {Elsevier {BV}},
 }
 
-@Article{Chen_2019,
+@Article{Chen2019,
   author    = {Mingyou Chen and Yunchao Tang and Xiangjun Zou and Kuangyu Huang and Lijuan Li and Yuxin He},
   journal   = {Optics and Lasers in Engineering},
   title     = {High-accuracy multi-camera reconstruction enhanced by adaptive point cloud correction algorithm},
@@ -1420,7 +1421,7 @@ Rating
   publisher = {Elsevier {BV}},
 }
 
-@Article{Kusumam_2017,
+@Article{Kusumam2017,
   author    = {Keerthy Kusumam and Tom{\'{a}}{\v{s}} Krajn{\'{\i}}k and Simon Pearson and Tom Duckett and Grzegorz Cielniak},
   journal   = {Journal of Field Robotics},
   title     = {3D-vision based detection, localization, and sizing of broccoli heads in the field},
@@ -1447,7 +1448,7 @@ Rating
   publisher = {Elsevier {BV}},
 }
 
-@Article{Wong_2018,
+@Article{Wong2018,
   author    = {Cuebong Wong and Erfu Yang and Xiu-Tian Yan and Dongbing Gu},
   journal   = {Systems Science {\&} Control Engineering},
   title     = {Autonomous robots for harsh environments: a holistic overview of current solutions and ongoing challenges},
@@ -1461,7 +1462,7 @@ Rating
   publisher = {Informa {UK} Limited},
 }
 
-@Article{arai2002advances,
+@Article{Arai2002,
   author    = {Arai, Tamio and Pagello, Enrico and Parker, Lynne E and others},
   journal   = {IEEE Transactions on robotics and automation},
   title     = {Advances in multi-robot systems},
