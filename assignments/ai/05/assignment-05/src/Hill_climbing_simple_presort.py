@@ -1,20 +1,18 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Thu May 31 11:04:22 2018
 
-@author: iswariya
-"""
-from helper import City, hill_climb
-from typing import List
-import csv
+
 import argparse
-import os
 import random
 import timeit
+import os
+import csv
+from typing import List
+
+from helper import City, hill_climb
 
 
-def hill_climb_steepest_descent(cities: List[City]):
+def hill_climb_simple(cities: List[City]):
     """Implements the simple and steepest hillclimb algorithm.
 
     Args:
@@ -29,7 +27,7 @@ def hill_climb_steepest_descent(cities: List[City]):
         [type]: [description]
     """
 
-    shortest_distance, shortest_sequence, _ = hill_climb(cities, steepest_hill=True)
+    shortest_distance, shortest_sequence, _ = hill_climb(cities, pre_sort=True)
 
     return shortest_distance, shortest_sequence
 
@@ -58,11 +56,11 @@ if __name__ == '__main__':
 
     start_time = timeit.default_timer()
 
-    least_distance, best_seq = hill_climb_steepest_descent(cities)
+    least_distance, best_seq = hill_climb_simple(cities)
 
     end_time = timeit.default_timer()
 
     print("Best Sequence:", best_seq)
     print("Best Sequence:", " -> ".join([cities[i].name for i in best_seq]))
-    print("Least distance from Steepest hill climbing:", least_distance)
+    print("Least distance from Simple hill climbing:", least_distance)
     print("Time: {}".format(end_time - start_time))

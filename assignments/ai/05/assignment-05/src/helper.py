@@ -24,7 +24,7 @@ class City():
         return sqrt((self.longitude - other_city.longitude)**2 + (self.latitude - other_city.latitude)**2)
 
     def __repr__(self) -> str:
-        return self.name
+        return f"City({self.name} {self.longitude} {self.latitude})"
 
 
 def calculate_distance_matrix(cities: List[City]) -> List[List[float]]:
@@ -131,7 +131,7 @@ def generate_successors(sequence: List[int]) -> List[int]:
 def hill_climb(
         cities: List[City],
         *, iterations: int = 20000, restarts: int = 5, explore_space: int = 100, steepest_hill: bool = False,
-        generate_report: bool = False):
+        generate_report: bool = False, pre_sort: bool = False):
     """Implements the simple and steepest hillclimb algorithm.
 
     Args:
@@ -154,12 +154,16 @@ def hill_climb(
     distance_matrix = calculate_distance_matrix(cities)
 
     for _ in range(restarts):
+
         start_sequence = random.sample(range(0, len(cities)), len(cities))
         start_sequence.append(start_sequence[0])
 
+        if pre_sort:
+            start_sequence = pre_sort_sequence(start_sequence, distance_matrix)
+
         current_distance = calculate_total_distance(start_sequence, distance_matrix)
-        print(f"Start is in: {cities[start_sequence[0]]}")
-        print(f"Current total distance: {current_distance}")
+        # print(f"Start is in: {cities[start_sequence[0]]}")
+        # print(f"Current total distance: {current_distance}")
 
         for _ in range(iterations):
             successor_count = 0
@@ -183,7 +187,7 @@ def hill_climb(
                     if not steepest_hill:
                         break
 
-        print(f"Best distance for this iteration: {current_distance}")
+        # print(f"Best distance for this iteration: {current_distance}")
         seen_states.append((current_distance, start_sequence))
 
     seen_states.sort(key=lambda x: x[0])

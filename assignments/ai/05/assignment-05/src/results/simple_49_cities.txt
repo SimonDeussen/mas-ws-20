@@ -1,0 +1,5 @@
+Found 49 in data/49_cities.txt. Example: City(Shanghai 121.47 31.23)
+Best Sequence: [1, 46, 2, 4, 9, 36, 43, 23, 8, 41, 5, 45, 26, 17, 34, 18, 40, 12, 33, 11, 44, 22, 14, 47, 31, 16, 21, 20, 48, 0, 39, 37, 6, 13, 10, 38, 29, 35, 27, 24, 7, 3, 28, 19, 32, 25, 30, 15, 42, 1]
+Best Sequence: Bombay -> Ahmadabad -> Karachi -> Delhi -> Dhaka -> Chongqing -> Chengdu -> Lahore -> Moscow -> Saint Petersburg -> Istanbul -> Ankara -> Bagdad -> Tehran -> Riyadh -> Cairo -> Alexandria -> Kinshasa -> Ibadan -> Lagos -> Abidjan -> Bogota -> Mexico City -> Los Angeles -> Toronto -> New York -> London -> Peking -> Tianjin -> Shanghai -> Wuhan -> Ho Chi Minh City -> Manila -> Tokyo -> Soul -> Xian -> Calcutta -> Madras -> Bangalore -> Rio de Janeiro -> Sao Paulo -> Buenos Aires -> Santiago -> Lima -> Rangoon -> Bangkok -> Singapore -> Jakarta -> Hyderabad -> Bombay
+Least distance from Simple hill climbing: 1212.0074821100973
+Time: 0.6074366780012497

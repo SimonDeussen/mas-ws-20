@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.com/hbrs-ai/assignment-05.svg?branch=master)](https://travis-ci.com/hbrs-ai/assignment-05)
 
-# <YOUR_FIRST_NAME><YOUR_LAST_NAME>
+# Simon Deussen
 
 # Assignment 5
 In this Assignment you will be implementing simple hill climbing and steepest descent hill climbing for the travelling salesman problem.

@@ -43,7 +43,6 @@ if __name__ == '__main__':
 
     if args.filename:
         file_name = args.filename
-
     else:
         file_name = "data/cities_full.txt"
 
@@ -62,5 +61,6 @@ if __name__ == '__main__':
     end_time = timeit.default_timer()
 
     print("Best Sequence:", best_seq)
+    print("Best Sequence:", " -> ".join([cities[i].name for i in best_seq]))
     print("Least distance from Simple hill climbing:", least_distance)
     print("Time: {}".format(end_time - start_time))
