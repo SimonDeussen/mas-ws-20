@@ -1,5 +1,5 @@
 Found 49 in data/49_cities.txt. Example: City(Shanghai 121.47 31.23)
-Best Sequence: [1, 46, 2, 4, 9, 36, 43, 23, 8, 41, 5, 45, 26, 17, 34, 18, 40, 12, 33, 11, 44, 22, 14, 47, 31, 16, 21, 20, 48, 0, 39, 37, 6, 13, 10, 38, 29, 35, 27, 24, 7, 3, 28, 19, 32, 25, 30, 15, 42, 1]
-Best Sequence: Bombay -> Ahmadabad -> Karachi -> Delhi -> Dhaka -> Chongqing -> Chengdu -> Lahore -> Moscow -> Saint Petersburg -> Istanbul -> Ankara -> Bagdad -> Tehran -> Riyadh -> Cairo -> Alexandria -> Kinshasa -> Ibadan -> Lagos -> Abidjan -> Bogota -> Mexico City -> Los Angeles -> Toronto -> New York -> London -> Peking -> Tianjin -> Shanghai -> Wuhan -> Ho Chi Minh City -> Manila -> Tokyo -> Soul -> Xian -> Calcutta -> Madras -> Bangalore -> Rio de Janeiro -> Sao Paulo -> Buenos Aires -> Santiago -> Lima -> Rangoon -> Bangkok -> Singapore -> Jakarta -> Hyderabad -> Bombay
-Least distance from Simple hill climbing: 1212.0074821100973
-Time: 0.6074366780012497
+Best Sequence: [3, 11, 33, 5, 45, 17, 43, 36, 9, 29, 32, 25, 38, 39, 0, 6, 37, 30, 15, 42, 46, 26, 18, 40, 22, 14, 47, 31, 16, 44, 12, 34, 2, 1, 27, 35, 13, 10, 48, 20, 4, 23, 8, 41, 21, 24, 7, 19, 28, 3]
+Best Sequence: Buenos Aires -> Lagos -> Ibadan -> Istanbul -> Ankara -> Tehran -> Chengdu -> Chongqing -> Dhaka -> Calcutta -> Rangoon -> Bangkok -> Xian -> Wuhan -> Shanghai -> Manila -> Ho Chi Minh City -> Singapore -> Jakarta -> Hyderabad -> Ahmadabad -> Bagdad -> Cairo -> Alexandria -> Bogota -> Mexico City -> Los Angeles -> Toronto -> New York -> Abidjan -> Kinshasa -> Riyadh -> Karachi -> Bombay -> Bangalore -> Madras -> Tokyo -> Soul -> Tianjin -> Peking -> Delhi -> Lahore -> Moscow -> Saint Petersburg -> London -> Rio de Janeiro -> Sao Paulo -> Lima -> Santiago -> Buenos Aires
+Least distance from Simple hill climbing: 1167.83242952288
+Time: 5.754355944000054

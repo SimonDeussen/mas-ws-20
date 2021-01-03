@@ -112,25 +112,26 @@ def generate_successors(sequence: List[int]) -> List[int]:
         Iterator[List[int]]: Same list but two cities swapped
     """
 
-    index_2 = index_1 = random.randint(1, len(sequence)-2)
+    while True:
+        index_2 = index_1 = random.randint(1, len(sequence)-2)
 
-    while index_1 == index_2:
-        index_2 = random.randint(1, len(sequence)-2)
+        while index_1 == index_2:
+            index_2 = random.randint(1, len(sequence)-2)
 
-    assert index_1 not in [0, len(sequence)-1]
-    assert index_2 not in [0, len(sequence)-1]
+        assert index_1 not in [0, len(sequence)-1]
+        assert index_2 not in [0, len(sequence)-1]
 
-    permutation = [index for index in sequence]
-    permutation[index_1], permutation[index_2] = permutation[index_2], permutation[index_1]
+        permutation = [index for index in sequence]
+        permutation[index_1], permutation[index_2] = permutation[index_2], permutation[index_1]
 
-    assert permutation[0] == permutation[-1]
+        assert permutation[0] == permutation[-1]
 
-    yield permutation
+        yield permutation
 
 
 def hill_climb(
         cities: List[City],
-        *, iterations: int = 20000, restarts: int = 5, explore_space: int = 100, steepest_hill: bool = False,
+        *, iterations: int = 2000, restarts: int = 5, explore_space: int = 100, steepest_hill: bool = False,
         generate_report: bool = False, pre_sort: bool = False):
     """Implements the simple and steepest hillclimb algorithm.
 
@@ -165,7 +166,7 @@ def hill_climb(
         # print(f"Start is in: {cities[start_sequence[0]]}")
         # print(f"Current total distance: {current_distance}")
 
-        for _ in range(iterations):
+        for __ in range(iterations):
             successor_count = 0
 
             # I do not want to generate 100 successors if i do not have to.
@@ -177,15 +178,16 @@ def hill_climb(
 
                 new_distance = calculate_total_distance(successor, distance_matrix)
 
-                if generate_report:
-                    distances.append(new_distance)
-
                 if new_distance < current_distance:
+
                     start_sequence = successor
                     current_distance = new_distance
 
                     if not steepest_hill:
                         break
+
+            if generate_report:
+                distances.append(current_distance)
 
         # print(f"Best distance for this iteration: {current_distance}")
         seen_states.append((current_distance, start_sequence))
