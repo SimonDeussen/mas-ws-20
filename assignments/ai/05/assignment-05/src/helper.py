@@ -67,7 +67,7 @@ def calculate_total_distance(sequence: List[int], distance_matrix: List[List[flo
 
 
 def pre_sort_sequence(sequence: List[int], distance_matrix: List[List[float]]) -> List[int]:
-    """Makes on pass swapping cities for the shortest distance
+    """Makes on pass swapping cities for the shortest distance (just a bad sorting algo with O(n^2))
 
     Args:
         sequence (List[int]): The list containing the indexes of cities
@@ -102,7 +102,7 @@ def pre_sort_sequence(sequence: List[int], distance_matrix: List[List[float]]) -
     return working_sequence
 
 
-def generate_successors(sequence: List[int]) -> List[int]:
+def generate_successors(sequence: List[int], *, random_steps: int = 1) -> List[int]:
     """Generator function exporing the problem space by randomly swapping to cities.
 
     Args:
@@ -113,26 +113,23 @@ def generate_successors(sequence: List[int]) -> List[int]:
     """
 
     while True:
-        index_2 = index_1 = random.randint(1, len(sequence)-2)
+        permutation = [entry for entry in sequence]
 
-        while index_1 == index_2:
-            index_2 = random.randint(1, len(sequence)-2)
+        for _ in range(random.randint(1, random_steps)):
+            index_2 = index_1 = random.randint(1, len(sequence)-2)
 
-        assert index_1 not in [0, len(sequence)-1]
-        assert index_2 not in [0, len(sequence)-1]
+            while index_1 == index_2:
+                index_2 = random.randint(1, len(sequence)-2)
 
-        permutation = [index for index in sequence]
-        permutation[index_1], permutation[index_2] = permutation[index_2], permutation[index_1]
-
-        assert permutation[0] == permutation[-1]
+            permutation[index_1], permutation[index_2] = permutation[index_2], permutation[index_1]
 
         yield permutation
 
 
-def hill_climb(
+\def hill_climb(
         cities: List[City],
         *, iterations: int = 2000, restarts: int = 5, explore_space: int = 100, steepest_hill: bool = False,
-        generate_report: bool = False, pre_sort: bool = False):
+        generate_report: bool = False, pre_sort: bool = False, random_steps: int = 1):
     """Implements the simple and steepest hillclimb algorithm.
 
     Args:
@@ -163,23 +160,21 @@ def hill_climb(
             start_sequence = pre_sort_sequence(start_sequence, distance_matrix)
 
         current_distance = calculate_total_distance(start_sequence, distance_matrix)
-        # print(f"Start is in: {cities[start_sequence[0]]}")
-        # print(f"Current total distance: {current_distance}")
+        distances.append(current_distance)
 
         for __ in range(iterations):
             successor_count = 0
 
             # I do not want to generate 100 successors if i do not have to.
             # So I use a generator to create them on the fly
-            for successor in generate_successors(start_sequence):
+            for successor in generate_successors(start_sequence, random_steps=random_steps):
                 if successor_count > explore_space:
                     break
-                successor_count += 1
 
+                successor_count += 1
                 new_distance = calculate_total_distance(successor, distance_matrix)
 
                 if new_distance < current_distance:
-
                     start_sequence = successor
                     current_distance = new_distance
 
@@ -189,9 +184,10 @@ def hill_climb(
             if generate_report:
                 distances.append(current_distance)
 
-        # print(f"Best distance for this iteration: {current_distance}")
         seen_states.append((current_distance, start_sequence))
 
     seen_states.sort(key=lambda x: x[0])
+
+    print(len(distances))
 
     return seen_states[0][0], seen_states[0][1], distances

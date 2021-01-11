@@ -1,14 +1,14 @@
 # Fdb version 3
-["bibtex annotations"] 1609336518 "annotations.aux" "annotations.bbl" "annotations" 1609336525
+["bibtex annotations"] 1609336518 "annotations.aux" "annotations.bbl" "annotations" 1609576603
   "/usr/local/texlive/2020/texmf-dist/bibtex/bst/apacite/apacite.bst" 1374530685 141073 9d7b79dbf9d91133318126032cff8c27 ""
   "annotations.aux" 1609336525 6129 5c1ccb5db78529ea2179a98077bd9b86 "pdflatex"
   "isw_research.bib" 1609331429 98535 3fe439dc297ee0af87af2e2aef976a1e ""
   (generated)
   "annotations.bbl"
   "annotations.blg"
-["pdflatex"] 1609336524 "/home/sd/Documents/code/mas-ws-20/assignments/isw/research/annotations.tex" "/home/sd/Documents/code/mas-ws-20/assignments/isw/research/annotations.pdf" "annotations" 1609336525
+["pdflatex"] 1609336524 "/home/sd/Documents/code/mas-ws-20/assignments/isw/research/annotations.tex" "/home/sd/Documents/code/mas-ws-20/assignments/isw/research/annotations.pdf" "annotations" 1609576603
   "/home/sd/Documents/code/mas-ws-20/assignments/isw/research/annotations.aux" 1609336525 6129 5c1ccb5db78529ea2179a98077bd9b86 ""
-  "/home/sd/Documents/code/mas-ws-20/assignments/isw/research/annotations.tex" 1609336524 95839 38051828173f57fcb287e9e85719ae9c ""
+  "/home/sd/Documents/code/mas-ws-20/assignments/isw/research/annotations.tex" 1609576602 95839 38051828173f57fcb287e9e85719ae9c ""
   "/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -89,13 +89,13 @@
   "annotations.aux" 1609336525 6129 5c1ccb5db78529ea2179a98077bd9b86 "pdflatex"
   "annotations.bbl" 1609336518 9166 bc71e0b0c5dfc726de581b4e533ae75b "bibtex annotations"
   "annotations.out" 1609336525 1480 4bf2594932d5997d8d98066a045134f9 "pdflatex"
-  "annotations.tex" 1609336524 95839 38051828173f57fcb287e9e85719ae9c ""
+  "annotations.tex" 1609576602 95839 38051828173f57fcb287e9e85719ae9c ""
   "annotations.toc" 1609336525 1851 da9c4f23768e49e0ab6f6ccdef4a0b26 "pdflatex"
   (generated)
-  "/home/sd/Documents/code/mas-ws-20/assignments/isw/research/annotations.log"
-  "annotations.out"
-  "/home/sd/Documents/code/mas-ws-20/assignments/isw/research/annotations.pdf"
-  "annotations.aux"
-  "annotations.pdf"
   "annotations.toc"
+  "/home/sd/Documents/code/mas-ws-20/assignments/isw/research/annotations.log"
   "annotations.log"
+  "/home/sd/Documents/code/mas-ws-20/assignments/isw/research/annotations.pdf"
+  "annotations.pdf"
+  "annotations.out"
+  "annotations.aux"
