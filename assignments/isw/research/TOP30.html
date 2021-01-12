@@ -1,0 +1,1311 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>JabRef references</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+<!--
+// QuickSearch script for JabRef HTML export 
+// Version: 3.0
+//
+// Copyright (c) 2006-2011, Mark Schenk
+//
+// This software is distributed under a Creative Commons Attribution 3.0 License
+// http://creativecommons.org/licenses/by/3.0/
+//
+// Features:
+// - intuitive find-as-you-type searching
+//    ~ case insensitive
+//    ~ ignore diacritics (optional)
+//
+// - search with/without Regular Expressions
+// - match BibTeX key
+//
+
+// Search settings
+var searchAbstract = true;	// search in abstract
+var searchComment = true;	// search in comment
+
+var noSquiggles = true; 	// ignore diacritics when searching
+var searchRegExp = false; 	// enable RegExp searches
+
+
+if (window.addEventListener) {
+	window.addEventListener("load",initSearch,false); }
+else if (window.attachEvent) {
+	window.attachEvent("onload", initSearch); }
+
+function initSearch() {
+	// check for quick search table and searchfield
+	if (!document.getElementById('qs_table')||!document.getElementById('quicksearch')) { return; }
+
+	// load all the rows and sort into arrays
+	loadTableData();
+	
+	//find the query field
+	qsfield = document.getElementById('qs_field');
+
+	// previous search term; used for speed optimisation
+	prevSearch = '';
+
+	//find statistics location
+	stats = document.getElementById('stat');
+	setStatistics(-1);
+	
+	// set up preferences
+	initPreferences();
+
+	// shows the searchfield
+	document.getElementById('quicksearch').style.display = 'block';
+	document.getElementById('qs_field').onkeyup = quickSearch;
+}
+
+function loadTableData() {
+	// find table and appropriate rows
+	searchTable = document.getElementById('qs_table');
+	var allRows = searchTable.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+
+	// split all rows into entryRows and infoRows (e.g. abstract, comment, bibtex)
+	entryRows = new Array(); infoRows = new Array(); absRows = new Array(); revRows = new Array();
+
+	// get data from each row
+	entryRowsData = new Array(); absRowsData = new Array(); revRowsData = new Array(); 
+	
+	BibTeXKeys = new Array();
+	
+	for (var i=0, k=0, j=0; i<allRows.length;i++) {
+		if (allRows[i].className.match(/entry/)) {
+			entryRows[j] = allRows[i];
+			entryRowsData[j] = stripDiacritics(getTextContent(allRows[i]));
+			allRows[i].id ? BibTeXKeys[j] = allRows[i].id : allRows[i].id = 'autokey_'+j;
+			j ++;
+		} else {
+			infoRows[k++] = allRows[i];
+			// check for abstract/comment
+			if (allRows[i].className.match(/abstract/)) {
+				absRows.push(allRows[i]);
+				absRowsData[j-1] = stripDiacritics(getTextContent(allRows[i]));
+			} else if (allRows[i].className.match(/comment/)) {
+				revRows.push(allRows[i]);
+				revRowsData[j-1] = stripDiacritics(getTextContent(allRows[i]));
+			}
+		}
+	}
+	//number of entries and rows
+	numEntries = entryRows.length;
+	numInfo = infoRows.length;
+	numAbs = absRows.length;
+	numRev = revRows.length;
+}
+
+function quickSearch(){
+	
+	tInput = qsfield;
+
+	if (tInput.value.length == 0) {
+		showAll();
+		setStatistics(-1);
+		qsfield.className = '';
+		return;
+	} else {
+		t = stripDiacritics(tInput.value);
+
+		if(!searchRegExp) { t = escapeRegExp(t); }
+			
+		// only search for valid RegExp
+		try {
+			textRegExp = new RegExp(t,"i");
+			closeAllInfo();
+			qsfield.className = '';
+		}
+			catch(err) {
+			prevSearch = tInput.value;
+			qsfield.className = 'invalidsearch';
+			return;
+		}
+	}
+	
+	// count number of hits
+	var hits = 0;
+
+	// start looping through all entry rows
+	for (var i = 0; cRow = entryRows[i]; i++){
+
+		// only show search the cells if it isn't already hidden OR if the search term is getting shorter, then search all
+		if(cRow.className.indexOf('noshow')==-1 || tInput.value.length <= prevSearch.length){
+			var found = false; 
+
+			if (entryRowsData[i].search(textRegExp) != -1 || BibTeXKeys[i].search(textRegExp) != -1){ 
+				found = true;
+			} else {
+				if(searchAbstract && absRowsData[i]!=undefined) {
+					if (absRowsData[i].search(textRegExp) != -1){ found=true; } 
+				}
+				if(searchComment && revRowsData[i]!=undefined) {
+					if (revRowsData[i].search(textRegExp) != -1){ found=true; } 
+				}
+			}
+			
+			if (found){
+				cRow.className = 'entry show';
+				hits++;
+			} else {
+				cRow.className = 'entry noshow';
+			}
+		}
+	}
+
+	// update statistics
+	setStatistics(hits)
+	
+	// set previous search value
+	prevSearch = tInput.value;
+}
+
+
+// Strip Diacritics from text
+// http://stackoverflow.com/questions/990904/javascript-remove-accents-in-strings
+
+// String containing replacement characters for stripping accents 
+var stripstring = 
+    'AAAAAAACEEEEIIII'+
+    'DNOOOOO.OUUUUY..'+
+    'aaaaaaaceeeeiiii'+
+    'dnooooo.ouuuuy.y'+
+    'AaAaAaCcCcCcCcDd'+
+    'DdEeEeEeEeEeGgGg'+
+    'GgGgHhHhIiIiIiIi'+
+    'IiIiJjKkkLlLlLlL'+
+    'lJlNnNnNnnNnOoOo'+
+    'OoOoRrRrRrSsSsSs'+
+    'SsTtTtTtUuUuUuUu'+
+    'UuUuWwYyYZzZzZz.';
+
+function stripDiacritics(str){
+
+    if(noSquiggles==false){
+        return str;
+    }
+
+    var answer='';
+    for(var i=0;i<str.length;i++){
+        var ch=str[i];
+        var chindex=ch.charCodeAt(0)-192;   // Index of character code in the strip string
+        if(chindex>=0 && chindex<stripstring.length){
+            // Character is within our table, so we can strip the accent...
+            var outch=stripstring.charAt(chindex);
+            // ...unless it was shown as a '.'
+            if(outch!='.')ch=outch;
+        }
+        answer+=ch;
+    }
+    return answer;
+}
+
+// http://stackoverflow.com/questions/3446170/escape-string-for-use-in-javascript-regex
+// NOTE: must escape every \ in the export code because of the JabRef Export...
+function escapeRegExp(str) {
+  return str.replace(/[-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+}
+
+function toggleInfo(articleid,info) {
+
+	var entry = document.getElementById(articleid);
+	var abs = document.getElementById('abs_'+articleid);
+	var rev = document.getElementById('rev_'+articleid);
+	var bib = document.getElementById('bib_'+articleid);
+	
+	if (abs && info == 'abstract') {
+		abs.className.indexOf('noshow') == -1?abs.className = 'abstract noshow':abs.className = 'abstract show';
+	} else if (rev && info == 'comment') {
+		rev.className.indexOf('noshow') == -1?rev.className = 'comment noshow':rev.className = 'comment show';
+	} else if (bib && info == 'bibtex') {
+		bib.className.indexOf('noshow') == -1?bib.className = 'bibtex noshow':bib.className = 'bibtex show';
+	} else { 
+		return;
+	}
+
+	// check if one or the other is available
+	var revshow; var absshow; var bibshow;
+	(abs && abs.className.indexOf('noshow') == -1)? absshow = true: absshow = false;
+	(rev && rev.className.indexOf('noshow') == -1)? revshow = true: revshow = false;	
+	(bib && bib.className.indexOf('noshow') == -1)? bibshow = true: bibshow = false;
+	
+	// highlight original entry
+	if(entry) {
+		if (revshow || absshow || bibshow) {
+		entry.className = 'entry highlight show';
+		} else {
+		entry.className = 'entry show';
+		}
+	}
+	
+	// When there's a combination of abstract/comment/bibtex showing, need to add class for correct styling
+	if(absshow) {
+		(revshow||bibshow)?abs.className = 'abstract nextshow':abs.className = 'abstract';
+	} 
+	if (revshow) {
+		bibshow?rev.className = 'comment nextshow': rev.className = 'comment';
+	}	
+	
+}
+
+function setStatistics (hits) {
+	if(hits < 0) { hits=numEntries; }
+	if(stats) { stats.firstChild.data = hits + '/' + numEntries}
+}
+
+function getTextContent(node) {
+	// Function written by Arve Bersvendsen
+	// http://www.virtuelvis.com
+	
+	if (node.nodeType == 3) {
+	return node.nodeValue;
+	} // text node
+	if (node.nodeType == 1 && node.className != "infolinks") { // element node
+	var text = [];
+	for (var chld = node.firstChild;chld;chld=chld.nextSibling) {
+		text.push(getTextContent(chld));
+	}
+	return text.join("");
+	} return ""; // some other node, won't contain text nodes.
+}
+
+function showAll(){
+	closeAllInfo();
+	for (var i = 0; i < numEntries; i++){ entryRows[i].className = 'entry show'; }
+}
+
+function closeAllInfo(){
+	for (var i=0; i < numInfo; i++){
+		if (infoRows[i].className.indexOf('noshow') ==-1) {
+			infoRows[i].className = infoRows[i].className + ' noshow';
+		}
+	}
+}
+
+function clearQS() {
+	qsfield.value = '';
+	showAll();
+}
+
+function redoQS(){
+	showAll();
+	quickSearch(qsfield);
+}
+
+function updateSetting(obj){
+	var option = obj.id;
+	var checked = obj.value;
+
+	switch(option)
+	 {
+	 case "opt_searchAbs":
+	   searchAbstract=!searchAbstract;
+	   redoQS();
+	   break;
+	 case "opt_searchRev":
+	   searchComment=!searchComment;
+	   redoQS();
+	   break;
+	 case "opt_useRegExp":
+	   searchRegExp=!searchRegExp;
+	   redoQS();
+	   break;
+	 case "opt_noAccents":
+	   noSquiggles=!noSquiggles;
+	   loadTableData();
+	   redoQS();
+	   break;
+	 }
+}
+
+function initPreferences(){
+	if(searchAbstract){document.getElementById("opt_searchAbs").checked = true;}
+	if(searchComment){document.getElementById("opt_searchRev").checked = true;}
+	if(noSquiggles){document.getElementById("opt_noAccents").checked = true;}
+	if(searchRegExp){document.getElementById("opt_useRegExp").checked = true;}
+	
+	if(numAbs==0) {document.getElementById("opt_searchAbs").parentNode.style.display = 'none';}
+	if(numRev==0) {document.getElementById("opt_searchRev").parentNode.style.display = 'none';}
+}
+
+function toggleSettings(){
+	var togglebutton = document.getElementById('showsettings');
+	var settings = document.getElementById('settings');
+	
+	if(settings.className == "hidden"){
+		settings.className = "show";
+		togglebutton.innerText = "close settings";
+		togglebutton.textContent = "close settings";
+	}else{
+		settings.className = "hidden";
+		togglebutton.innerText = "settings...";		
+		togglebutton.textContent = "settings...";
+	}
+}
+
+-->
+</script>
+<style type="text/css">
+body { background-color: white; font-family: Arial, sans-serif; font-size: 13px; line-height: 1.2; padding: 1em; color: #2E2E2E; margin: auto 2em; }
+
+form#quicksearch { width: auto; border-style: solid; border-color: gray; border-width: 1px 0px; padding: 0.7em 0.5em; display:none; position:relative; }
+span#searchstat {padding-left: 1em;}
+
+div#settings { margin-top:0.7em; /* border-bottom: 1px transparent solid; background-color: #efefef; border: 1px grey solid; */ }
+div#settings ul {margin: 0; padding: 0; }
+div#settings li {margin: 0; padding: 0 1em 0 0; display: inline; list-style: none; }
+div#settings li + li { border-left: 2px #efefef solid; padding-left: 0.5em;}
+div#settings input { margin-bottom: 0px;}
+
+div#settings.hidden {display:none;}
+
+#showsettings { border: 1px grey solid; padding: 0 0.5em; float:right; line-height: 1.6em; text-align: right; }
+#showsettings:hover { cursor: pointer; }
+
+.invalidsearch { background-color: red; }
+input[type="button"] { background-color: #efefef; border: 1px #2E2E2E solid;}
+
+table { width: 100%; empty-cells: show; border-spacing: 0em 0.2em; margin: 1em 0em; border-style: none; }
+th, td { border: 1px gray solid; border-width: 1px 1px; padding: 0.5em; vertical-align: top; text-align: left; }
+th { background-color: #efefef; }
+td + td, th + th { border-left: none; }
+
+td a { color: navy; text-decoration: none; }
+td a:hover  { text-decoration: underline; }
+
+tr.noshow { display: none;}
+tr.highlight td { background-color: #EFEFEF; border-top: 2px #2E2E2E solid; font-weight: bold; }
+tr.abstract td, tr.comment td, tr.bibtex td { background-color: #EFEFEF; text-align: justify; border-bottom: 2px #2E2E2E solid; }
+tr.nextshow td { border-bottom: 1px gray solid; }
+
+tr.bibtex pre { width: 100%; overflow: auto; white-space: pre-wrap;}
+p.infolinks { margin: 0.3em 0em 0em 0em; padding: 0px; }
+
+@media print {
+	p.infolinks, #qs_settings, #quicksearch, t.bibtex { display: none !important; }
+	tr { page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<form action="" id="quicksearch">
+<input type="text" id="qs_field" autocomplete="off" placeholder="Type to search..." /> <input type="button" onclick="clearQS()" value="clear" />
+<span id="searchstat">Matching entries: <span id="stat">0</span></span>
+<div id="showsettings" onclick="toggleSettings()">settings...</div>
+<div id="settings" class="hidden">
+<ul>
+<li><input type="checkbox" class="search_setting" id="opt_searchAbs" onchange="updateSetting(this)"><label for="opt_searchAbs"> include abstract</label></li>
+<li><input type="checkbox" class="search_setting" id="opt_searchRev" onchange="updateSetting(this)"><label for="opt_searchRev"> include comment</label></li>
+<li><input type="checkbox" class="search_setting" id="opt_useRegExp" onchange="updateSetting(this)"><label for="opt_useRegExp"> use RegExp</label></li>
+<li><input type="checkbox" class="search_setting" id="opt_noAccents" onchange="updateSetting(this)"><label for="opt_noAccents"> ignore accents</label></li>
+</ul>
+</div>
+</form>
+<table id="qs_table" border="1">
+<thead><tr><th width="20%">Author</th><th width="30%">Title</th><th width="5%">Year</th><th width="30%">Journal/Proceedings</th><th width="10%">Reftype</th><th width="5%">DOI/URL</th></tr></thead>
+<tbody><tr id="Albani2017" class="entry">
+	<td>Albani, D., IJsselmuiden, J., Haken, R. and Trianni, V.</td>
+	<td>Monitoring and mapping with robot swarms for agricultural applications <p class="infolinks">[<a href="javascript:toggleInfo('Albani2017','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Albani2017','bibtex')">BibTeX</a>]</p></td>
+	<td>2017</td>
+	<td>2017 14th IEEE International Conference on Advanced Video and Signal Based Surveillance (AVSS)&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1109/AVSS.2017.8078478">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Albani2017" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Robotics is expected to play a major role in the agri-cultural domain, and often multi-robot systems and col-laborative approaches are mentioned as potential solutionsto improve efficiency and system robustness.  Among themulti-robot approaches, swarm robotics stresses aspectslike flexibility, scalability and robustness in solving complextasks, and is considered very relevant for precision farmingand large-scale agricultural applications. However, swarmrobotics research is still confined into the lab, and no ap-plication in the field is currently available. In this paper,we describe a roadmap to bring swarm robotics to the fieldwithin the domain of weed control problems. This roadmapis implemented within the experiment SAGA, founded withinthe context of the ECORD++ EU Project. Together with theexperiment concept, we introduce baseline results for thetarget scenario of monitoring and mapping weed in a fieldby means of a swarm of UAVs</td>
+</tr>
+<tr id="bib_Albani2017" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Albani2017,
+  author = {Dario Albani and Joris IJsselmuiden and Ramon Haken and Vito Trianni},
+  title = {Monitoring and mapping with robot swarms for agricultural applications},
+  booktitle = {2017 14th IEEE International Conference on Advanced Video and Signal Based Surveillance (AVSS)},
+  publisher = {IEEE},
+  year = {2017},
+  doi = {https://doi.org/10.1109/AVSS.2017.8078478}
+}
+</pre></td>
+</tr>
+<tr id="Almeida2019" class="entry">
+	<td>de Almeida, J.P.L.S., Nakashima, R.T., Neves-Jr, F. and de Arruda, L.V.R.</td>
+	<td>Bio-inspired on-line path planner for cooperative exploration of unknown environment by a Multi-Robot System <p class="infolinks">[<a href="javascript:toggleInfo('Almeida2019','bibtex')">BibTeX</a>]</p></td>
+	<td>2019</td>
+	<td>Robotics and Autonomous Systems<br/>Vol. 112, pp. 32-48&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1016/j.robot.2018.11.005">DOI</a> &nbsp;</td>
+</tr>
+<tr id="bib_Almeida2019" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Almeida2019,
+  author = {Jo&atilde;o Paulo Lima Silva de Almeida and Renan Taizo Nakashima and Fl&aacute;vio Neves-Jr and L&uacute;cia Val&eacute;ria Ramos de Arruda},
+  title = {Bio-inspired on-line path planner for cooperative exploration of unknown environment by a Multi-Robot System},
+  journal = {Robotics and Autonomous Systems},
+  publisher = {Elsevier BV},
+  year = {2019},
+  volume = {112},
+  pages = {32--48},
+  doi = {https://doi.org/10.1016/j.robot.2018.11.005}
+}
+</pre></td>
+</tr>
+<tr id="Amer2016" class="entry">
+	<td>Amer, N.H., Zamzuri, H., Hudha, K. and Kadir, Z.A.</td>
+	<td>Modelling and Control Strategies in Path Tracking Control for Autonomous Ground Vehicles: A Review of State of the Art and Challenges <p class="infolinks">[<a href="javascript:toggleInfo('Amer2016','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Amer2016','bibtex')">BibTeX</a>]</p></td>
+	<td>2016</td>
+	<td>Journal of Intelligent &amp; Robotic Systems<br/>Vol. 86(2), pp. 225-254&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1007/s10846-016-0442-0">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Amer2016" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: This paper presents a Tracking-Error Learning Control (TELC) algorithm for precise mobile robot path tracking in off-road terrain. In traditional tracking error-based control approaches, feedback and feedforward controllers are designed based on the nominal model which cannot capture the uncertainties, disturbances and changing working conditions so that they cannot ensure precise path tracking performance in the outdoor environment. In TELC algorithm, the feedforward control actions are updated by using the tracking error dynamics and the plant-model mismatch problem is thus discarded. Therefore, the feedforward controller gradually eliminates the feedback controller from the control of the system once the mobile robot has been on-track. In addition to the proof of the stability, it is proven that the cost functions do not have local minima so that the coefficients in TELC algorithm guarantee that the global minimum is reached. The experimental results show that the TELC algorithm results in better path tracking performance than the traditional tracking error-based control method. The mobile robot controlled by TELC algorithm can track a target path precisely with less than 10 cm error in off-road terrain.</td>
+</tr>
+<tr id="bib_Amer2016" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Amer2016,
+  author = {Noor Hafizah Amer and Hairi Zamzuri and Khisbullah Hudha and Zulkiffli Abdul Kadir},
+  title = {Modelling and Control Strategies in Path Tracking Control for Autonomous Ground Vehicles: A Review of State of the Art and Challenges},
+  journal = {Journal of Intelligent &amp; Robotic Systems},
+  publisher = {Springer Science and Business Media LLC},
+  year = {2016},
+  volume = {86},
+  number = {2},
+  pages = {225--254},
+  doi = {https://doi.org/10.1007/s10846-016-0442-0}
+}
+</pre></td>
+</tr>
+<tr id="Arad2020" class="entry">
+	<td>Arad, B., Balendonck, J., Barth, R., Ben-Shahar, O., Edan, Y., Hellström, T., Hemming, J., Kurtser, P., Ringdahl, O., Tielen, T. and Tuijl, B.</td>
+	<td>Development of a sweet pepper harvesting robot <p class="infolinks">[<a href="javascript:toggleInfo('Arad2020','bibtex')">BibTeX</a>]</p></td>
+	<td>2020</td>
+	<td>Journal of Field Robotics<br/>Vol. 37(6), pp. 1027-1039&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1002/rob.21937">DOI</a> &nbsp;</td>
+</tr>
+<tr id="bib_Arad2020" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Arad2020,
+  author = {Boaz Arad and Jos Balendonck and Ruud Barth and Ohad Ben-Shahar and Yael Edan and Thomas Hellström and Jochen Hemming and Polina Kurtser and Ola Ringdahl and Toon Tielen and Bart Tuijl},
+  title = {Development of a sweet pepper harvesting robot},
+  journal = {Journal of Field Robotics},
+  publisher = {Wiley},
+  year = {2020},
+  volume = {37},
+  number = {6},
+  pages = {1027--1039},
+  doi = {https://doi.org/10.1002/rob.21937}
+}
+</pre></td>
+</tr>
+<tr id="Arai2002" class="entry">
+	<td>Arai, T., Pagello, E., Parker, L.E. and others</td>
+	<td>Advances in multi-robot systems <p class="infolinks">[<a href="javascript:toggleInfo('Arai2002','bibtex')">BibTeX</a>]</p></td>
+	<td>2002</td>
+	<td>IEEE Transactions on robotics and automation<br/>Vol. 18(5), pp. 655-661&nbsp;</td>
+	<td>article</td>
+	<td>&nbsp;</td>
+</tr>
+<tr id="bib_Arai2002" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Arai2002,
+  author = {Arai, Tamio and Pagello, Enrico and Parker, Lynne E and others},
+  title = {Advances in multi-robot systems},
+  journal = {IEEE Transactions on robotics and automation},
+  publisher = {Citeseer},
+  year = {2002},
+  volume = {18},
+  number = {5},
+  pages = {655--661}
+}
+</pre></td>
+</tr>
+<tr id="Ball2015a" class="entry">
+	<td>Ball, D., Ross, P., English, A., Patten, T., Upcroft, B., Fitch, R., Sukkarieh, S., Wyeth, G. and Corke, P.</td>
+	<td>Robotics for Sustainable Broad-Acre Agriculture <p class="infolinks">[<a href="javascript:toggleInfo('Ball2015a','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Ball2015a','bibtex')">BibTeX</a>]</p></td>
+	<td>2015</td>
+	<td>Springer Tracts in Advanced Robotics, pp. 439-453&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1007/978-3-319-07488-7_30">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Ball2015a" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: This paper describes the development of small low-cost cooperative robots for sustainable broad-acre agriculture to increase broad-acre crop production and reduce environmental impact. The current focus of the project is to use robotics to deal with resistant weeds, a critical problem for Australian farmers. To keep the overall system affordable our robot uses low-cost cameras and positioning sensors to perform a large scale coverage task while also avoiding obstacles. A multi-robot coordinator assigns parts of a given field to individual robots. The paper describes the modification of an electric vehicle for autonomy and experimental results from one real robot and twelve simulated robots working in coordination for approximately two hours on a 55 hectare field in Emerald Australia. Over this time the real robot ‘sprayed’ 6 hectares missing 2.6% and overlapping 9.7% within its assigned field partition, and successfully avoided three obstacles.</td>
+</tr>
+<tr id="bib_Ball2015a" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Ball2015a,
+  author = {David Ball and Patrick Ross and Andrew English and Tim Patten and Ben Upcroft and Robert Fitch and Salah Sukkarieh and Gordon Wyeth and Peter Corke},
+  title = {Robotics for Sustainable Broad-Acre Agriculture},
+  booktitle = {Springer Tracts in Advanced Robotics},
+  publisher = {Springer International Publishing},
+  year = {2015},
+  pages = {439--453},
+  doi = {https://doi.org/10.1007/978-3-319-07488-7_30}
+}
+</pre></td>
+</tr>
+<tr id="Bechar2016" class="entry">
+	<td>Bechar, A. and Vigneault, C.</td>
+	<td>Agricultural robots for field operations: Concepts and components <p class="infolinks">[<a href="javascript:toggleInfo('Bechar2016','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Bechar2016','comment')">Comment</a>] [<a href="javascript:toggleInfo('Bechar2016','bibtex')">BibTeX</a>]</p></td>
+	<td>2016</td>
+	<td>Biosystems Engineering<br/>Vol. 149, pp. 94 - 111&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1016/j.biosystemseng.2016.06.014">DOI</a> <a href="http://www.sciencedirect.com/science/article/pii/S1537511015301914">URL</a>&nbsp;</td>
+</tr>
+<tr id="abs_Bechar2016" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: This review investigates the research effort, developments and innovation in agricultural robots for field operations, and the associated concepts, principles, limitations and gaps. Robots are highly complex, consisting of different sub-systems that need to be integrated and correctly synchronised to perform tasks perfectly as a whole and successfully transfer the required information. Extensive research has been conducted on the application of robots and automation to a variety of field operations, and technical feasibility has been widely demonstrated. Agricultural robots for field operations must be able to operate in unstructured agricultural environments with the same quality of work achieved by current methods and means. To assimilate robotic systems, technologies must be developed to overcome continuously changing conditions and variability in produce and environments. Intelligent systems are needed for successful task performance in such environments. The robotic system must be cost-effective, while being inherently safe and reliable—human safety, and preservation of the environment, the crop and the machinery are mandatory. Despite much progress in recent years, in most cases the technology is not yet commercially available. Information-acquisition systems, including sensors, fusion algorithms and data analysis, need to be adjusted to the dynamic conditions of unstructured agricultural environments. Intensive research is needed on integrating human operators into the system control loop for increased system performance and reliability. System sizes should be reduced while improving the integration of all parts and components. For robots to perform in agricultural environments and execute agricultural tasks, research must focus on: fusing complementary sensors for adequate localisation and sensing abilities, developing simple manipulators for each agricultural task, developing path planning, navigation and guidance algorithms suited to environments besides open fields and known a-priori, and integrating human operators in this complex and highly dynamic situation.</td>
+</tr>
+<tr id="rev_Bechar2016" class="comment noshow">
+	<td colspan="6"><b>Comment</b>: The main subject of this paper is to show the current development, ideas and problems in the field of agricultural <br>robotics. This review paper explains first the background, then the economic feasibility and furthers goes into <br>concepts, principles and components.<p>The paper concludes, that with current technologies the broad usage in commercial farming is not possible yet and <br>proposes to focus research on a number of fields. Those fields include sensor fusion for better localisation, <br>engineering of better simple manipulators and the development of specific path planning, navigation and guidance algorithms<br>for agriculture.<p>The authors make a great job in displaying the current technologies and their limitations. With this knowledge it is <br>easy to identify a subproblem to work on.<br>Several points come to the mind. Firstly they create an in-depth background needed to understand the need of automated<br>systems in agriculture, but also explain why it is so hard to create such systems. <br>They propose a categorization of robotic system after the structure of their environment and object of interest. Both <br>can be either structured or unstructured. This categorization creates four different categories. First, a structured <br>environment and a structured object: This is the industrial domain. Second, a strucutred environment and a unstructured<br>object: the medial domain. Further there is the unstructured enviroment with a structured object: the military, space, underwater<br>and mining domains. The last domain, unstructured in environment and object of interest is the agricultural domain.<p>The next contribution are guidelines under which circumstances a robot can be commercially successful. These guideline conclude<br>that it is possible to start using robots even if the costs are the same as conventional methods if the work of<br>the robots create more steady and predictable processes.<p>A big part of the review are categorization concepts, components and principles. These include Human-Robot-Systems versus<br>Autonomous Robot Systems. In the component section the authors underline following topics: steering and mobility, <br>sensing and self-localization, path planning and guidance and last but not least, manipulators and effectors.<p>One of the main problems is the highly dynamic environment and the need to react fast to unprecedented situations.<br>This creates the question on how to define behavior in such a way to allow and strengthen the capabilities of <br>improvisation.<p>Summary: In-depth review paper with some self citations but besides that it gives many new points to deepen my reseach.</td>
+</tr>
+<tr id="bib_Bechar2016" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Bechar2016,
+  author = {Avital Bechar and Clément Vigneault},
+  title = {Agricultural robots for field operations: Concepts and components},
+  journal = {Biosystems Engineering},
+  year = {2016},
+  volume = {149},
+  pages = {94 - 111},
+  url = {http://www.sciencedirect.com/science/article/pii/S1537511015301914},
+  doi = {https://doi.org/10.1016/j.biosystemseng.2016.06.014}
+}
+</pre></td>
+</tr>
+<tr id="Bechar2017" class="entry">
+	<td>Bechar, A. and Vigneault, C.</td>
+	<td>Agricultural robots for field operations. Part 2: Operations and systems <p class="infolinks">[<a href="javascript:toggleInfo('Bechar2017','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Bechar2017','bibtex')">BibTeX</a>]</p></td>
+	<td>2017</td>
+	<td>Biosystems Engineering<br/>Vol. 153, pp. 110-128&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1016/j.biosystemseng.2016.11.004">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Bechar2017" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: This part of our review of the research, developments and innovation in agricultural robotsfor field operations, focuses on characteristics, performance measures, agricultural tasks andoperations. The application of robots to a variety of field operations has been widelydemonstrated. A key feature of agricultural robots is that they must operate in unstructuredenvironments without impairing the quality of work currently achieved. Designs, de-velopments and evaluations of agricultural robots are diverse in terms of objectives, struc-tures, methods, techniques, and sensors. Standardisation of terms, system-performancemeasures and methodologies, and adequacy of technological requirements are vital forcomparing robot performance and technical progress. Factors limiting commercialisationand assimilation of agricultural autonomous robot systems are unique to each system and toeach task. However, some common gaps need to be filled to suit unstructured, dynamic en-vironments; e.g. poor detection performance, inappropriate decision-making and low actionsuccess rate. Research and development of versatile and adaptive algorithms, integrated intomulti-sensor platforms, is required. Cycle time must be reduced and production rateincreased to justify economic use. Improved wholeness or integration of all sub-systems willenable sustainable performance and complete task operation. Research must focus on eachof these gaps and factors that limit commercialisation of agricultural robotics. Researchneeds to focus on the field use of autonomous or humanerobot systems, the latter being areasonable step toward fully autonomous robots. More robust, reliable information-acquisition systems, including sensor-fusion algorithms and data analysis, should besuited to the dynamic conditions of unstructured agricultural environments.</td>
+</tr>
+<tr id="bib_Bechar2017" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Bechar2017,
+  author = {Avital Bechar and Cl&eacute;ment Vigneault},
+  title = {Agricultural robots for field operations. Part 2: Operations and systems},
+  journal = {Biosystems Engineering},
+  publisher = {Elsevier BV},
+  year = {2017},
+  volume = {153},
+  pages = {110--128},
+  doi = {https://doi.org/10.1016/j.biosystemseng.2016.11.004}
+}
+</pre></td>
+</tr>
+<tr id="Chamanbaz2017" class="entry">
+	<td>Chamanbaz, M., Mateo, D., Zoss, B.M., Toki&cacute;, G., Wilhelm, E., Bouffanais, R. and Yue, D.K.P.</td>
+	<td>Swarm-Enabling Technology for Multi-Robot Systems <p class="infolinks">[<a href="javascript:toggleInfo('Chamanbaz2017','bibtex')">BibTeX</a>]</p></td>
+	<td>2017</td>
+	<td>Frontiers in Robotics and AI<br/>Vol. 4&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.3389/frobt.2017.00012">DOI</a> &nbsp;</td>
+</tr>
+<tr id="bib_Chamanbaz2017" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Chamanbaz2017,
+  author = {Mohammadreza Chamanbaz and David Mateo and Brandon M. Zoss and Grgur Toki&cacute; and Erik Wilhelm and Roland Bouffanais and Dick K. P. Yue},
+  title = {Swarm-Enabling Technology for Multi-Robot Systems},
+  journal = {Frontiers in Robotics and AI},
+  publisher = {Frontiers Media SA},
+  year = {2017},
+  volume = {4},
+  doi = {https://doi.org/10.3389/frobt.2017.00012}
+}
+</pre></td>
+</tr>
+<tr id="Erdem2013" class="entry">
+	<td>Erdem, E., Kisa, D., Oztok, U. and Schüller, P.</td>
+	<td>A General Formal Framework for Pathfinding Problems with Multiple Agents <p class="infolinks">[<a href="javascript:toggleInfo('Erdem2013','bibtex')">BibTeX</a>]</p></td>
+	<td>2013</td>
+	<td>Proceedings of the AAAI Conference on Artificial Intelligence<br/>Vol. 27(1)&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://ojs.aaai.org/index.php/AAAI/article/view/8592">URL</a>&nbsp;</td>
+</tr>
+<tr id="bib_Erdem2013" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Erdem2013,
+  author = {Erdem, Esra and Kisa, Doga and Oztok, Umut and Schüller, Peter},
+  title = {A General Formal Framework for Pathfinding Problems with Multiple Agents},
+  journal = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  year = {2013},
+  volume = {27},
+  number = {1},
+  url = {https://ojs.aaai.org/index.php/AAAI/article/view/8592}
+}
+</pre></td>
+</tr>
+<tr id="Gao2018a" class="entry">
+	<td>Gao, T., Emadi, H., Saha, H., Zhang, J., Lofquist, A., Singh, A., Ganapathysubramanian, B., Sarkar, S., Singh, A. and Bhattacharya, S.</td>
+	<td>A Novel Multirobot System for Plant Phenotyping <p class="infolinks">[<a href="javascript:toggleInfo('Gao2018a','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Gao2018a','bibtex')">BibTeX</a>]</p></td>
+	<td>2018</td>
+	<td>Robotics<br/>Vol. 7(4), pp. 61&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.3390/robotics7040061">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Gao2018a" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: henotypic studies require large datasets for accurate inference and prediction. Collectingplant data in a farm can be very labor intensive and costly. This paper presents the design, architecture(hardware and software) and deployment of a multi-robot system for row crop field data collection.The proposed system has been deployed in a soybean research farm at Iowa State University</td>
+</tr>
+<tr id="bib_Gao2018a" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Gao2018a,
+  author = {Tianshuang Gao and Hamid Emadi and Homagni Saha and Jiaoping Zhang and Alec Lofquist and Arti Singh and Baskar Ganapathysubramanian and Soumik Sarkar and Asheesh Singh and Sourabh Bhattacharya},
+  title = {A Novel Multirobot System for Plant Phenotyping},
+  journal = {Robotics},
+  publisher = {MDPI AG},
+  year = {2018},
+  volume = {7},
+  number = {4},
+  pages = {61},
+  doi = {https://doi.org/10.3390/robotics7040061}
+}
+</pre></td>
+</tr>
+<tr id="Gerkey2004" class="entry">
+	<td>Gerkey, B.P. and Matari&cacute;, M.J.</td>
+	<td>A Formal Analysis and Taxonomy of Task Allocation in Multi-Robot Systems <p class="infolinks">[<a href="javascript:toggleInfo('Gerkey2004','comment')">Comment</a>] [<a href="javascript:toggleInfo('Gerkey2004','bibtex')">BibTeX</a>]</p></td>
+	<td>2004</td>
+	<td>The International Journal of Robotics Research<br/>Vol. 23(9), pp. 939-954&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1177/0278364904045564">DOI</a> &nbsp;</td>
+</tr>
+<tr id="rev_Gerkey2004" class="comment noshow">
+	<td colspan="6"><b>Comment</b>: 1450</td>
+</tr>
+<tr id="bib_Gerkey2004" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Gerkey2004,
+  author = {Brian P. Gerkey and Maja J. Matari&cacute;},
+  title = {A Formal Analysis and Taxonomy of Task Allocation in Multi-Robot Systems},
+  journal = {The International Journal of Robotics Research},
+  publisher = {SAGE Publications},
+  year = {2004},
+  volume = {23},
+  number = {9},
+  pages = {939--954},
+  doi = {https://doi.org/10.1177/0278364904045564}
+}
+</pre></td>
+</tr>
+<tr id="Graetz2018" class="entry">
+	<td>Graetz, G. and Michaels, G.</td>
+	<td>Robots at Work <p class="infolinks">[<a href="javascript:toggleInfo('Graetz2018','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Graetz2018','comment')">Comment</a>] [<a href="javascript:toggleInfo('Graetz2018','bibtex')">BibTeX</a>]</p></td>
+	<td>2018</td>
+	<td>The Review of Economics and Statistics<br/>Vol. 100(5), pp. 753-768&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1162/rest_a_00754">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Graetz2018" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: We analyze for the first time the economic contributions ofmodern industrial robots, which are flexible, versatile, and autonomousmachines. We use novel panel data on robot adoption within industries inseventeen countries from 1993 to 2007 and new instrumental variables thatrelyonrobots’comparativeadvantageinspecifictasks.Ourfindingssuggestthat increased robot use contributed approximately 0.36 percentage pointsto annual labor productivity growth, while at the same time raising totalfactor productivity and lowering output prices. Our estimates also suggestthat robots did not significantly reduce total employment, although they didreduce low-skilled workers’ employment share.</td>
+</tr>
+<tr id="rev_Graetz2018" class="comment noshow">
+	<td colspan="6"><b>Comment</b>: 751</td>
+</tr>
+<tr id="bib_Graetz2018" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Graetz2018,
+  author = {Georg Graetz and Guy Michaels},
+  title = {Robots at Work},
+  journal = {The Review of Economics and Statistics},
+  publisher = {MIT Press - Journals},
+  year = {2018},
+  volume = {100},
+  number = {5},
+  pages = {753--768},
+  doi = {https://doi.org/10.1162/rest_a_00754}
+}
+</pre></td>
+</tr>
+<tr id="Hameed2013" class="entry">
+	<td>Hameed, I.A.</td>
+	<td>Intelligent Coverage Path Planning for Agricultural Robots and Autonomous Machines on Three-Dimensional Terrain <p class="infolinks">[<a href="javascript:toggleInfo('Hameed2013','comment')">Comment</a>] [<a href="javascript:toggleInfo('Hameed2013','bibtex')">BibTeX</a>]</p></td>
+	<td>2013</td>
+	<td>Journal of Intelligent &amp; Robotic Systems<br/>Vol. 74(3-4), pp. 965-983&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1007/s10846-013-9834-6">DOI</a> &nbsp;</td>
+</tr>
+<tr id="rev_Hameed2013" class="comment noshow">
+	<td colspan="6"><b>Comment</b>: 81</td>
+</tr>
+<tr id="bib_Hameed2013" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Hameed2013,
+  author = {I. A. Hameed},
+  title = {Intelligent Coverage Path Planning for Agricultural Robots and Autonomous Machines on Three-Dimensional Terrain},
+  journal = {Journal of Intelligent &amp; Robotic Systems},
+  publisher = {Springer Science and Business Media LLC},
+  year = {2013},
+  volume = {74},
+  number = {3-4},
+  pages = {965--983},
+  doi = {https://doi.org/10.1007/s10846-013-9834-6}
+}
+</pre></td>
+</tr>
+<tr id="Henten2003" class="entry">
+	<td>Henten, E.V., Tuijl, B.V., Hemming, J., Kornet, J., Bontsema, J. and Os, E.V.</td>
+	<td>Field Test of an Autonomous Cucumber Picking Robot <p class="infolinks">[<a href="javascript:toggleInfo('Henten2003','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Henten2003','comment')">Comment</a>] [<a href="javascript:toggleInfo('Henten2003','bibtex')">BibTeX</a>]</p></td>
+	<td>2003</td>
+	<td>Biosystems Engineering<br/>Vol. 86(3), pp. 305-313&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1016/j.biosystemseng.2003.08.002">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Henten2003" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: At the Institute of Agricultural and Environmental Engineering (IMAG B.V.) an autonomous harvesting<br>robot for cucumbers was developed and tested in a greenhouse in autumn 2001. Analysis of the harvest<br>process had revealed that at a 2 ha Dutch production facility four robots are needed to replace the skilled<br>human work force during the peak season. Then assuming a success rate of 100%, a harvest cycle might take<br>at most 10 s per cucumber fruit. In this paper the results of the field test of the harvesting robot are reported<br>and analysed in view of the performance criteria mentioned above. Cucumbers (Cucumis sativus cv. Korinda)<br>were grown in a high-wire cultivation system. In four independent experiments the robot was tested. The<br>average success rate was 744%. The majority of failures originated from inaccurate positioning of the end-<br>effector at the stalk of the fruit. It was found to be a great advantage that the system was able to perform<br>several harvest attempts on a single cucumber from different harvest positions of the robot. This improved the<br>success rate considerably. A single successful harvest cycle took 652 s per cucumber. Since not all attempts<br>were successful, a cycle time of 124 s per harvested cucumber was measured under practical circumstances. The<br>test confirmed the ability to harvest more than one cucumber using a single set of images which reduced the<br>cycle time of a successful harvest to 567 and 530 s if two or three cucumbers were harvested. To bridge the<br>gap between the measured performance and the design specifications, future research focuses on improving the<br>success rate, faster hardware and software for image processing and motion planning as well as the reduction<br>of the motion time of the manipulator.</td>
+</tr>
+<tr id="rev_Henten2003" class="comment noshow">
+	<td colspan="6"><b>Comment</b>: What are the motivations for this work?<br>• The authors wanted to create a comparable solution to recent advances in<br>harvesting tomatoes and eggplants<br>• Human labour fir harvesting is a tedious and expensive task.<br>• Robot labour needs to be able to harvest one cucumber every 10 seconds.<br>This experiment tries to show the current (2001) limitations.<br>• Inside high-wire greenhouses mobile robots can move along tracks next to<br>the cucumber plants which creates a somehow structured environment.<br>• This proposed architecture should allow complete autonomous harvesting.<br>What is the proposed solution?<br>• Mobile system consisting of a robotic arm having a thermal cutter and a<br>suction cup for cutting and grabbing the cucumbers. One camera for tak-<br>ing two images (768x512px) at different positions to find 3D coordinates.<br>• They restricted the way to cucumbers could grow so that they are always<br>in a specific range reachable for the robots manipulators.<br>• Removed leaves before hand to lessen occlusion errors.<br>• They also removed cucumbers growing too close to each other.<br>• The systems moves along a rail in 33cm steps. At each step the cam-<br>eras look for cucumbers and if found and big enough proceed with the<br>harvesting.<br>• The harvesting does not take additional images. All informations come<br>from the initial 2 pictures. Even if multiple cucumbers are found, the<br>initial information and processing has to be enough.<br>• Because the range of the system is around 1m, the 33cm step allow up to<br>3 harvest attempts for each cucumber.<br>What is the work‘s evaluation of the solution?<br>• For this experiment the authors took in-depth runtime measurements and<br>error protocols.<br>• On average the system managed to harvest ca. 75% of a present cucum-<br>bers.<br>• For the whole experiment with multiple attempts and failures, the result-<br>ing harvesting time was 124s per cucumber!!!<br>• If every first attempt would have been successful, the resulting time would<br>have been 75s per harvested cucumber.<br>• Most errors (ca. 36%) came from an misplaced end-effector resulting from<br>poor 3D coordinates.<br>What is my analysis of the identified problem, idea and evaluation?<br>• Those experiments (20 years ago) have been one order of magnitude too<br>slow for a commercial application.<br>• I like the idea of using only one camera, but the extra cost would directly<br>result in a speed up which would basically pay for itself to use a stereo<br>camera.<br>• The evaluation was very good. The authors managed to create an details<br>overview over the shortcomings.<br>• Especially the failure categorization is great. This should be an inspiration<br>for similar failure reports for my own experiments.<br>• I was surprised that the paper was that old.<br>• 10 seconds runtime for the image analysis will be much faster nowadays.<br>What are the contributions?<br>• This paper was a report over an in depth experiment using this harvesting<br>system.<br>• It sheds light in many failure classes and shows how to make a proper<br>report.<br>• The robotic system had a bad execution time and accuracy.<br>What are the future directions of the research?<br>Harvesting crops in greenhouses will continue to be a key research topic. For<br>this case I hope that the authors managed to increase the execution speeds.<br>What questions have I left?<br>• Mainly the comparison to todays systems. For the my next reading report<br>I should find a more recent paper about the same topic.<br>• If the system can easily exchange the end-effectors, it should be possible<br>to use the mobile platform for all kind of different tasks.<br>What is my main take away from this paper?<br>Great structured experiment with a promising setup. Having rails in a green-<br>house is not too expensive and solves many navigation problems. I am looking<br>forward to deepen my research in this area. Would it be possible to create a<br>rail grid with multiple robots, cooperating in this task?<br>Summary<br>Definitely enjoyed the detailed reporting on different failures and execution<br>times. This paper is an excellent blueprint on how to write a report over an<br>experiment.<br>Rating<br>4/5</td>
+</tr>
+<tr id="bib_Henten2003" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Henten2003,
+  author = {E.J. Van Henten and B.A.J. Van Tuijl and J. Hemming and J.G. Kornet and J. Bontsema and E.A. Van Os},
+  title = {Field Test of an Autonomous Cucumber Picking Robot},
+  journal = {Biosystems Engineering},
+  publisher = {Elsevier BV},
+  year = {2003},
+  volume = {86},
+  number = {3},
+  pages = {305--313},
+  doi = {https://doi.org/10.1016/j.biosystemseng.2003.08.002}
+}
+</pre></td>
+</tr>
+<tr id="Herck2020" class="entry">
+	<td>van Herck, L., Kurtser, P., Wittemans, L. and Edan, Y.</td>
+	<td>Crop design for improved robotic harvesting: A case study of sweet pepper harvesting <p class="infolinks">[<a href="javascript:toggleInfo('Herck2020','bibtex')">BibTeX</a>]</p></td>
+	<td>2020</td>
+	<td>Biosystems Engineering<br/>Vol. 192, pp. 294-308&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1016/j.biosystemseng.2020.01.021">DOI</a> &nbsp;</td>
+</tr>
+<tr id="bib_Herck2020" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Herck2020,
+  author = {Liesbet van Herck and Polina Kurtser and Lieve Wittemans and Yael Edan},
+  title = {Crop design for improved robotic harvesting: A case study of sweet pepper harvesting},
+  journal = {Biosystems Engineering},
+  publisher = {Elsevier BV},
+  year = {2020},
+  volume = {192},
+  pages = {294--308},
+  doi = {https://doi.org/10.1016/j.biosystemseng.2020.01.021}
+}
+</pre></td>
+</tr>
+<tr id="Jin2011" class="entry">
+	<td>Jin, J. and Tang, L.</td>
+	<td>Coverage path planning on three-dimensional terrain for arable farming <p class="infolinks">[<a href="javascript:toggleInfo('Jin2011','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Jin2011','bibtex')">BibTeX</a>]</p></td>
+	<td>2011</td>
+	<td>Journal of Field Robotics<br/>Vol. 28(3), pp. 424-440&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1002/rob.20388">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Jin2011" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Field operations should be done in a manner that minimizes time and travels over the field surface and is coordinated with topographic land features. Automated path planning can help to find the best coverage path so that the field operation costs can be minimized. Intelligent algorithms are desired for both two‐dimensional (2D) and three‐dimensional (3D) terrain field coverage path planning. The algorithm of generating an optimized full coverage pattern for a given 2D planar field by using boustrophedon paths has been investigated and reported before. However, a great proportion of farms have rolling terrains, which have a considerable influence on the design of coverage paths. Coverage path planning in 3D space has a great potential to further optimize field operations. This work addressed four critical tasks: terrain modeling and representation, coverage cost analysis, terrain decomposition, and the development of optimized path searching algorithm. The developed algorithms and methods have been successfully implemented and tested using 3D terrain maps of farm fields with various topographic features. Each field was decomposed into subregions based on its terrain features. A recommended “seed curve” based on a customized cost function was searched for each subregion, and parallel coverage paths were generated by offsetting the found “seed curve” toward its two sides until the whole region was completely covered. Compared with the 2D planning results, the experimental results of 3D coverage path planning showed its superiority in reducing both headland turning cost and soil erosion cost. On the tested fields, on average the 3D planning algorithm saved 10.3% on headland turning cost, 24.7% on soil erosion cost, 81.2% on skipped area cost, and 22.0% on the weighted sum of these costs, where their corresponding weights were 1, 1, and 0.5, respectively. © 2011 Wiley Periodicals, Inc.</td>
+</tr>
+<tr id="bib_Jin2011" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Jin2011,
+  author = {Jian Jin and Lie Tang},
+  title = {Coverage path planning on three-dimensional terrain for arable farming},
+  journal = {Journal of Field Robotics},
+  publisher = {Wiley},
+  year = {2011},
+  volume = {28},
+  number = {3},
+  pages = {424--440},
+  doi = {https://doi.org/10.1002/rob.20388}
+}
+</pre></td>
+</tr>
+<tr id="Khamis2015" class="entry">
+	<td>Khamis, A., Hussein, A. and Elmogy, A.</td>
+	<td>Multi-robot Task Allocation: A Review of the State-of-the-Art <p class="infolinks">[<a href="javascript:toggleInfo('Khamis2015','comment')">Comment</a>] [<a href="javascript:toggleInfo('Khamis2015','bibtex')">BibTeX</a>]</p></td>
+	<td>2015</td>
+	<td>Cooperative Robots and Sensor Networks 2015, pp. 31-51&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1007/978-3-319-18299-5_2">DOI</a> &nbsp;</td>
+</tr>
+<tr id="rev_Khamis2015" class="comment noshow">
+	<td colspan="6"><b>Comment</b>: 195</td>
+</tr>
+<tr id="bib_Khamis2015" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Khamis2015,
+  author = {Alaa Khamis and Ahmed Hussein and Ahmed Elmogy},
+  title = {Multi-robot Task Allocation: A Review of the State-of-the-Art},
+  booktitle = {Cooperative Robots and Sensor Networks 2015},
+  publisher = {Springer International Publishing},
+  year = {2015},
+  pages = {31--51},
+  doi = {https://doi.org/10.1007/978-3-319-18299-5_2}
+}
+</pre></td>
+</tr>
+<tr id="Ko2015" class="entry">
+	<td>Ko, M.H., Ryuh, B.-S., Kim, K.C., Suprem, A. and Mahalik, N.P.</td>
+	<td>Autonomous Greenhouse Mobile Robot Driving Strategies From System Integration Perspective: Review and Application <p class="infolinks">[<a href="javascript:toggleInfo('Ko2015','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Ko2015','comment')">Comment</a>] [<a href="javascript:toggleInfo('Ko2015','bibtex')">BibTeX</a>]</p></td>
+	<td>2015</td>
+	<td>IEEE/ASME Transactions on Mechatronics<br/>Vol. 20(4), pp. 1705-1716&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1109/TMECH.2014.2350433">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Ko2015" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Agricultural operations are constantly becoming technology-driven mainly due to labor shortages, increase in labor cost, and trends in new and advanced technology applications. In this paper, we have presented a system-of-systems approach to design and development of a mobile robotic platform for agricultural applications. Similar to other field robots, the mobile platform for agricultural applications requires a different set of predefined attributes for its operation. We have designed, fabricated, and demonstrated the mobile platform for pesticide spraying application. The design and development includes synergistic integration of mechanical, sensor and actuator, navigational and control, and electronic and software interfacings. The autonomous navigation aspect of the development was achieved via three stages: learning stage, implementation stage (training stage), and testing stage. In the learning stage, we defined the path patterns and studied and recorded the behavior of the vehicle in real-world environment. In the training stage, various steering algorithms for four-wheel driving system were developed and inherent errors were compensated using advanced tools and methods. In the testing stage, we put the robotic platform on an arbitrary path pattern and demonstrated its success in autonomous navigation. The medium-sized mobile robot can be commercialized for greenhouse-based agricultural operations.</td>
+</tr>
+<tr id="rev_Ko2015" class="comment noshow">
+	<td colspan="6"><b>Comment</b>: 24</td>
+</tr>
+<tr id="bib_Ko2015" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Ko2015,
+  author = {Min Hyuc Ko and Beom-Sahng Ryuh and Kyoung Chul Kim and Abhijit Suprem and Nitaigour P. Mahalik},
+  title = {Autonomous Greenhouse Mobile Robot Driving Strategies From System Integration Perspective: Review and Application},
+  journal = {IEEE/ASME Transactions on Mechatronics},
+  publisher = {Institute of Electrical and Electronics Engineers (IEEE)},
+  year = {2015},
+  volume = {20},
+  number = {4},
+  pages = {1705--1716},
+  doi = {https://doi.org/10.1109/TMECH.2014.2350433}
+}
+</pre></td>
+</tr>
+<tr id="Lehnert2020" class="entry">
+	<td>Lehnert, C., McCool, C., Sa, I. and Perez, T.</td>
+	<td>Performance improvements of a sweet pepper harvesting robot in protected cropping environments <p class="infolinks">[<a href="javascript:toggleInfo('Lehnert2020','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Lehnert2020','bibtex')">BibTeX</a>]</p></td>
+	<td>2020</td>
+	<td>Journal of Field Robotics&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1002/rob.21973">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Lehnert2020" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Using robots to harvest sweet peppers in protected cropping environments hasremained unsolved despite considerable effort by the research community overseveral decades. In this paper, we present the robotic harvester, Harvey, designedfor sweet peppers in protected cropping environments that achieved a 76.5%success rate on 68 fruit (within a modified scenario) which improves upon our priorwork which achieved 58% on 24 fruit and related sweet pepper harvesting workwhich achieved 33% on 39 fruit (for their best tool in a modified scenario). Thisimprovement was primarily achieved through the introduction of a novel pedunclesegmentation system using an efficient deep convolutional neural network, in con-junction with three‐dimensional postfiltering to detect the critical cutting location.We benchmark the peduncle segmentation against prior art demonstratingan improvement in performance with aF1score of 0.564 compared to 0.302. Therobotic harvester uses a perception pipeline to detect a target sweet pepper and anappropriate grasp and cutting pose used to determine the trajectory of a multimodalharvesting tool to grasp the sweet pepper and cut it from the plant. A noveldecoupling mechanism enables the gripping and cutting operations to be performedindependently. We perform an in‐depth analysis of the full robotic harvesting systemto highlight bottlenecks and failure points that future work could address.</td>
+</tr>
+<tr id="bib_Lehnert2020" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Lehnert2020,
+  author = {Chris Lehnert and Chris McCool and Inkyu Sa and Tristan Perez},
+  title = {Performance improvements of a sweet pepper harvesting robot in protected cropping environments},
+  journal = {Journal of Field Robotics},
+  publisher = {Wiley},
+  year = {2020},
+  doi = {https://doi.org/10.1002/rob.21973}
+}
+</pre></td>
+</tr>
+<tr id="Lerman2006" class="entry">
+	<td>Lerman, K., Jones, C., Galstyan, A. and Matari&cacute;, M.J.</td>
+	<td>Analysis of Dynamic Task Allocation in Multi-Robot Systems <p class="infolinks">[<a href="javascript:toggleInfo('Lerman2006','comment')">Comment</a>] [<a href="javascript:toggleInfo('Lerman2006','bibtex')">BibTeX</a>]</p></td>
+	<td>2006</td>
+	<td>The International Journal of Robotics Research<br/>Vol. 25(3), pp. 225-241&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1177/0278364906063426">DOI</a> &nbsp;</td>
+</tr>
+<tr id="rev_Lerman2006" class="comment noshow">
+	<td colspan="6"><b>Comment</b>: 305</td>
+</tr>
+<tr id="bib_Lerman2006" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Lerman2006,
+  author = {Kristina Lerman and Chris Jones and Aram Galstyan and Maja J Matari&cacute;},
+  title = {Analysis of Dynamic Task Allocation in Multi-Robot Systems},
+  journal = {The International Journal of Robotics Research},
+  publisher = {SAGE Publications},
+  year = {2006},
+  volume = {25},
+  number = {3},
+  pages = {225--241},
+  doi = {https://doi.org/10.1177/0278364906063426}
+}
+</pre></td>
+</tr>
+<tr id="Li2017a" class="entry">
+	<td>Li, J. and Tang, L.</td>
+	<td>Crop recognition under weedy conditions based on 3D imaging for robotic weed control <p class="infolinks">[<a href="javascript:toggleInfo('Li2017a','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Li2017a','bibtex')">BibTeX</a>]</p></td>
+	<td>2017</td>
+	<td>Journal of Field Robotics<br/>Vol. 35(4), pp. 596-611&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1002/rob.21763">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Li2017a" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: A 3D time‐of‐flight camera was applied to develop a crop plant recognition system for broccoli and green bean plants under weedy conditions. The developed system overcame the previously unsolved problems caused by occluded canopy and illumination variation. An efficient noise filter was developed to remove the sparse noise points in 3D point cloud space. Both 2D and 3D features including the gradient of amplitude and depth image, surface curvature, amplitude percentile index, normal direction, and neighbor point count in 3D space were extracted and found effective for recognizing these two types of plants. Separate segmentation algorithms were developed for each of the broccoli and green bean plant in accordance with their 3D geometry and 2D amplitude characteristics. Under the experimental condition where the crops were heavily infested by various types of weed plants, detection rates over 88.3% and 91.2% were achieved for broccoli and green bean plant leaves, respectively. Additionally, the crop plants were segmented out with nearly complete shape. Moreover, the algorithms were computationally optimized, resulting in an image processing speed of over 30 frames per second.</td>
+</tr>
+<tr id="bib_Li2017a" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Li2017a,
+  author = {Ji Li and Lie Tang},
+  title = {Crop recognition under weedy conditions based on 3D imaging for robotic weed control},
+  journal = {Journal of Field Robotics},
+  publisher = {Wiley},
+  year = {2017},
+  volume = {35},
+  number = {4},
+  pages = {596--611},
+  doi = {https://doi.org/10.1002/rob.21763}
+}
+</pre></td>
+</tr>
+<tr id="Lili2017" class="entry">
+	<td>Lili, W., Bo, Z., Jinwei, F. and Xiaoan, H.</td>
+	<td>Development of a tomato harvesting robot used in greenhouse <p class="infolinks">[<a href="javascript:toggleInfo('Lili2017','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Lili2017','comment')">Comment</a>] [<a href="javascript:toggleInfo('Lili2017','bibtex')">BibTeX</a>]</p></td>
+	<td>2017</td>
+	<td>International Journal of Agricultural and Biological Engineering<br/>Vol. 10(4), pp. 140-149&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.25165/j.ijabe.20171004.3204">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Lili2017" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: A tomato harvesting robot was developed in this study, which consisted of a four-wheel independent steering system,<br>a 5-DOF harvesting system, a navigation system, and a binocular stereo vision system.<br> The four-wheel independent steering<br>system was capable of providing a low-speed steering control of the robot based on Ackerman steering geometry.<br> The<br>proportional-integral-derivative (PID) algorithm was used in the laser navigation control system. The Otsu algorithm and the<br>elliptic template method were used for the automatic recognition of ripe tomatoes, and obstacle avoidance strategies were<br>proposed based on the C-space method.<br> The maximum average absolute error between the set angle and the actual angle was<br>about 0.14°, and the maximum standard deviation was about 0.04°.<br> The laser navigation system was able to rapidly and<br>accurately track the path, with the deviation being less than 8 cm.<br> The load bearing capacity of the mechanical arm was about<br>1.5 kg.<br> The success rate of the binocular vision system in the recognition of ripe tomatoes was 99.3%.<br> When the distance<br>was less than 600 mm, the positioning error was less than 10 mm.<br> The time needed for recognition of ripe tomatoes and<br>pitching was about 15 s per tomato, with a success rate of about 86%. This study provides some insights into the development<br>and application of tomato harvesting robot used in the greenhouse.</td>
+</tr>
+<tr id="rev_Lili2017" class="comment noshow">
+	<td colspan="6"><b>Comment</b>: What are the motivations for this work?<br>• Harvesting tomatoes is a very popular and labour intensive vegetable. The<br>annual production is around 60 million tons.<br>• Because the labor costs are rising - even in China they are trying to find<br>a autonomous solution which can scale up.<br>• Tomatoes are very soft and sensitive vegetables so harvesting them is<br>especially complicated.<br>• The authors name several other research in building this kind of harvesting<br>robots, but those have slow reaction and clumsy movement.<br>• They want to create a fast system for picking tomatoes in greenhouses<br>What is the proposed solution?<br>• A robot system capable of :<br>– Automatic navigation<br>– Recognition of ripeness<br>– Detecting the exact position of the ripe fruits<br>– Avoiding obstacles.<br>• The solution also contains a image recognition algorithm and a picking<br>control method.<br>• The shown robot has a four-wheel drive with independent steering. The<br>4 wheels are controlled using and Ackermann steering model.<br>• It detects tomatoes using a stereo-vision camera with a resolution of<br>1384×1032px<br>• The pathfinding is done by using a laser scanner<br>• To pick the ripe tomatoes, the robot has a 4-DOF mechanical arm with a<br>1-DOF end-effector<br>• After picking the tomatoes the robot outs them into a crate on its back.<br>• The total mass of the robot is 540 kg and it reaches an maximum speed<br>of 3.6 km/h.<br>What is the work‘s evaluation of the solution?<br>• The authors evaluated every part of their system:<br>– The controlling of the steering angle resulted in an average error<br>of 0.14° with a standard deviation of 0.04°.<br>– Path tracking by the navigation system could track the correct<br>path with a deviation of less than 8cm.<br>– They also evaluated how much weight the mechanical arm the end-<br>effector can carry without loosing precision. When using weights up<br>to 1kg no big deviation is measured. So the mechanical system is fit<br>for its main goal of manipulating tomatoes.<br>– Inside the greenhouse the camera-system has to detect the toma-<br>toes. Here the authors measured a success rate of over 99.3% in a<br>sample size of 300.<br>– The position of the tomatoes got detected correctly with an average<br>positioning error of less than 10mm in a range of 600mm.<br>– Finally the picking rate of the robot was measured to be 87% in<br>a sample size of 100 tomatoes. The robot needs 15 seconds from<br>recognition to pitching the tomatoes.<br>What is my analysis of the identified problem, idea and evaluation?<br>• This paper contains multiple system working together for a common goal.<br>It showcases the steps needed to make the robot drive through a green-<br>house and pick tomatoes.<br>• The error and performance analyses is detailed. Only thing lacking is an<br>in-depth breakdown of the task times. The only time measurement in the<br>paper is the 15 seconds from recognition to picking - but how long does<br>the robot need to pick 100 tomatoes?<br>• Tomato picking has the advantage that tomatoes are easy to detect via<br>camera. A disadvantage is the soft nature of the fruits.<br>What are the contributions?<br>• Algorithm to track the path inside a greenhouse using laser scanner<br>• Control architecture for the mechanical arm using a collision free A*-<br>algorithm.<br>• Tomato detection and localisation algorithms using stereo vision<br>• In-depth error analysis.<br>What are the future directions of the research?<br>• Improving the success rate and overall speed.<br>• Using this system to other crops.<br>What questions have I left?<br>• They left out some key metrics like time breakdown and total time needed.<br>So I would like to know if this system is even fast enough for a commercial<br>consideration<br>• I have not fully understand how the collision free path finding algorithm<br>for the end-effector works, so this is something to study next.<br>• Currently the robot is only following along the space in between two rows<br>in a greenhouse. It would be great to add additional navigation systems<br>for a a fully automated operation.<br>What is my main take away from this paper?<br>• The localisation in a greenhouse for tomatoes works good enough to grap<br>them. I did not expect for this to work that good.<br>• This paper is a good study of a holistic robot system working in the chaotic<br>environment of a greenhouse.<br>Summary<br>This paper is a good study of a holistic robot system working in the chaotic<br>environment of a greenhouse. But some key performance indicator are missing,<br>even some already mentioned in the introduction. In the motivation section of<br>the paper they said that other systems would be too slow but did not deliver<br>they own number. Nevertheless a good study and nice read.<br>Rating<br>3/5</td>
+</tr>
+<tr id="bib_Lili2017" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Lili2017,
+  author = {Wang Lili and Zhao Bo and Fan Jinwei and Hu Xiaoan},
+  title = {Development of a tomato harvesting robot used in greenhouse},
+  journal = {International Journal of Agricultural and Biological Engineering},
+  publisher = {International Journal of Agricultural and Biological Engineering},
+  year = {2017},
+  volume = {10},
+  number = {4},
+  pages = {140--149},
+  doi = {https://doi.org/10.25165/j.ijabe.20171004.3204}
+}
+</pre></td>
+</tr>
+<tr id="Majeed2021" class="entry">
+	<td>Majeed, Y., Karkee, M., Zhang, Q., Fu, L. and Whiting, M.D.</td>
+	<td>Development and performance evaluation of a machine vision system and an integrated prototype for automated green shoot thinning in vineyards <p class="infolinks">[<a href="javascript:toggleInfo('Majeed2021','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Majeed2021','bibtex')">BibTeX</a>]</p></td>
+	<td>2021</td>
+	<td>Journal of Field Robotics&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1002/rob.22013">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Majeed2021" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: Green shoot thinning in vineyards is an essential, perennial operation for main-taining canopy health and optimizing yield and quality of wine grapes. Use of me-chanized thinning system, which is essential to reduce labor dependency andassociated cost, causes high variability in shoot removal efficiency due to difficultyin precisely positioning the thinning end‐effector along cordon trajectories. Auto-mated/robotic solution for precise positioning of the thinning end‐effector couldsignificantly improve the performance and efficiency of mechanical green shootthinning. This study presents: (i) a machine vision‐based cordon detection systemthat can estimate cordon trajectories at different shoot growth stages in a vineyard;and (ii) evaluation of an integrated green shoot thinning system capable of auto-matically positioning the thinning end‐effector following vine cordon trajectories.The developed machine vision system uses deep learning‐based techniques thatcould accurately estimate cordon trajectories with root mean square error(RMSE) of 7.3, 10.3, and 16.1 pixels for canopy images captured in 2–4 weeks ofshoot growth, respectively. Then, a control strategy was presented for theintegrated system, which receives the computed cordon trajectories from machinevision system to automatically position the thinning end‐effector to cordon trajec-tories. Field evaluations in a research vineyard showed that the integrated systemcan achieve an RMSE of 1.47 cm in following the cordon trajectories at 6.6 cm·s−1forward speed. Future work will incorporate additional sensing system to detectindividual shoot on cordon and integrating it with an existing system to achievehigher level of precision in green shoot thinning.</td>
+</tr>
+<tr id="bib_Majeed2021" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Majeed2021,
+  author = {Yaqoob Majeed and Manoj Karkee and Qin Zhang and Longsheng Fu and Matthew D. Whiting},
+  title = {Development and performance evaluation of a machine vision system and an integrated prototype for automated green shoot thinning in vineyards},
+  journal = {Journal of Field Robotics},
+  publisher = {Wiley},
+  year = {2021},
+  doi = {https://doi.org/10.1002/rob.22013}
+}
+</pre></td>
+</tr>
+<tr id="Pedersen2006" class="entry">
+	<td>Pedersen, S.M., Fountas, S., Have, H. and Blackmore, B.S.</td>
+	<td>Agricultural robots&mdash;system analysis and economic feasibility <p class="infolinks">[<a href="javascript:toggleInfo('Pedersen2006','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Pedersen2006','comment')">Comment</a>] [<a href="javascript:toggleInfo('Pedersen2006','bibtex')">BibTeX</a>]</p></td>
+	<td>2006</td>
+	<td>Precision Agriculture<br/>Vol. 7(4), pp. 295-308&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1007/s11119-006-9014-9">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Pedersen2006" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: This paper focuses on the economic feasibility of applying autonomous roboticvehicles compared to conventional systems in three different applications: roboticweeding in high value crops (particularly sugar beet), crop scouting in cerealsand  grass  cutting  on  golf  courses.   The  comparison  was  based  on  a  systemsanalysis and an individual economic feasibility study for each of the three appli-cations.  The results showed that in all three scenarios, the robotic applicationsare more economically feasible than the conventional systems.  The high costof real time kinematics Global Positioning System (RTK-GPS) and the smallcapacity of the vehicles are the main parameters that increase the cost of therobotic systems.</td>
+</tr>
+<tr id="rev_Pedersen2006" class="comment noshow">
+	<td colspan="6"><b>Comment</b>: The papers main focus lies on displaying the cost reduction possible by utilizingautonomous system for agriculture tasks.  Most agricultural task can not useindividual-plant-based  solutions  with  conventional  methods.   By  using  robotsand big data processing it will be possible to care for each plant individually.Taking care of an identified weed patch for example will need much less herbi-cides than spaying the whole field preemptively.<br>The authors propose solutions for using autonomous robots for field scouting -the identification and localisation of growing weeds -, intra-row and near-cropweeding and automated grass cutting.<br>In all scenarios the authors showcase a reduction in primary and secondary costsin comparison to conventional methods.<p>Field scouting:20% cost reduction in labor and secondary benefits of the databecause it is now possible to only deploy herbicides where needed.<br>Weeding:Only  by  reducing  the  cost  of  the  navigation  system  by  half  it  ispossible to save 12-21% or manuel costs.  and reduction of herbicide useof 90%.<br>Grass cutting:Reduction of cost of 52% (but only when paying the gardener27 Euro per hour, lol)<p>The usage of automated systems for growing crops is one of the key points inreducing the environmental footprint of large scale agriculture.  The three ana-lyzed areas are great entry points for deploying such systems. Especially the fieldscouting and the automated weeding are very interesting.  For the evaluationthe authors compared the costs of the components with average conventionalcosts witch is mostly reasonable, expect the estimated labor cost of the gardenerof 27 Euros per hour for grass cutting.<p>The ideas of the authors in breaking down the cost of the robots into severalcomponents are very helpful to estimate economic costs of different system forthis  usage.   The  main  contribution  is  this  economic  analysis  which  helped  tospark more research in this direction.<p>There will always be economic analyses for newer technology. Because  this  paper  is  from  2006  I  am  eager  to  find  a  similar,  more  current breakdown.</td>
+</tr>
+<tr id="bib_Pedersen2006" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Pedersen2006,
+  author = {S. M. Pedersen and S. Fountas and H. Have and B. S. Blackmore},
+  title = {Agricultural robots&mdash;system analysis and economic feasibility},
+  journal = {Precision Agriculture},
+  publisher = {Springer Science and Business Media LLC},
+  year = {2006},
+  volume = {7},
+  number = {4},
+  pages = {295--308},
+  doi = {https://doi.org/10.1007/s11119-006-9014-9}
+}
+</pre></td>
+</tr>
+<tr id="Roldan2016" class="entry">
+	<td>Rold&aacute;n, J., Garcia-Aunon, P., Garz&oacute;n, M., de Le&oacute;n, J., del Cerro, J. and Barrientos, A.</td>
+	<td>Heterogeneous Multi-Robot System for Mapping Environmental Variables of Greenhouses <p class="infolinks">[<a href="javascript:toggleInfo('Roldan2016','bibtex')">BibTeX</a>]</p></td>
+	<td>2016</td>
+	<td>Sensors<br/>Vol. 16(7), pp. 1018&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.3390/s16071018">DOI</a> &nbsp;</td>
+</tr>
+<tr id="bib_Roldan2016" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Roldan2016,
+  author = {Juan Rold&aacute;n and Pablo Garcia-Aunon and Mario Garz&oacute;n and Jorge de Le&oacute;n and Jaime del Cerro and Antonio Barrientos},
+  title = {Heterogeneous Multi-Robot System for Mapping Environmental Variables of Greenhouses},
+  journal = {Sensors},
+  publisher = {MDPI AG},
+  year = {2016},
+  volume = {16},
+  number = {7},
+  pages = {1018},
+  doi = {https://doi.org/10.3390/s16071018}
+}
+</pre></td>
+</tr>
+<tr id="Siciliano2016" class="entry">
+	<td>Siciliano, B. and Khatib, O.</td>
+	<td>Springer handbook of robotics <p class="infolinks">[<a href="javascript:toggleInfo('Siciliano2016','bibtex')">BibTeX</a>]</p></td>
+	<td>2016</td>
+	<td>&nbsp;</td>
+	<td>book</td>
+	<td><a href="https://link.springer.com/book/10.1007/978-3-319-32552-1">URL</a>&nbsp;</td>
+</tr>
+<tr id="bib_Siciliano2016" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@book{Siciliano2016,
+  author = {Siciliano, Bruno and Khatib, Oussama},
+  title = {Springer handbook of robotics},
+  publisher = {Springer},
+  year = {2016},
+  url = {https://link.springer.com/book/10.1007/978-3-319-32552-1}
+}
+</pre></td>
+</tr>
+<tr id="Singh2018" class="entry">
+	<td>Singh, R., Samkaria, R., Gehlot, A. and Choudhary, S.</td>
+	<td>Design and Development of IoT enabled Multi Robot System for Search and Rescue Mission <p class="infolinks">[<a href="javascript:toggleInfo('Singh2018','bibtex')">BibTeX</a>]</p></td>
+	<td>2018</td>
+	<td>International Journal of Web Applications<br/>Vol. 10(2), pp. 51&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.6025/ijwa/2018/10/2/51-63">DOI</a> &nbsp;</td>
+</tr>
+<tr id="bib_Singh2018" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Singh2018,
+  author = {Rajesh Singh and Rohit Samkaria and Anita Gehlot and Sushabhan Choudhary},
+  title = {Design and Development of IoT enabled Multi Robot System for Search and Rescue Mission},
+  journal = {International Journal of Web Applications},
+  publisher = {Digital Information Research Foundation},
+  year = {2018},
+  volume = {10},
+  number = {2},
+  pages = {51},
+  doi = {https://doi.org/10.6025/ijwa/2018/10/2/51-63}
+}
+</pre></td>
+</tr>
+<tr id="Wang2017" class="entry">
+	<td>Wang, Q., Chen, Z. and Yi, Y.</td>
+	<td>Adaptive coordinated tracking control for multi-robot system with directed communication topology <p class="infolinks">[<a href="javascript:toggleInfo('Wang2017','bibtex')">BibTeX</a>]</p></td>
+	<td>2017</td>
+	<td>International Journal of Advanced Robotic Systems<br/>Vol. 14(6), pp. 172988141774322&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1177/1729881417743227">DOI</a> &nbsp;</td>
+</tr>
+<tr id="bib_Wang2017" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Wang2017,
+  author = {Qin Wang and Zuwen Chen and Yang Yi},
+  title = {Adaptive coordinated tracking control for multi-robot system with directed communication topology},
+  journal = {International Journal of Advanced Robotic Systems},
+  publisher = {SAGE Publications},
+  year = {2017},
+  volume = {14},
+  number = {6},
+  pages = {172988141774322},
+  doi = {https://doi.org/10.1177/1729881417743227}
+}
+</pre></td>
+</tr>
+<tr id="Weiss2011" class="entry">
+	<td>Weiss, U. and Biber, P.</td>
+	<td>Plant detection and mapping for agricultural robots using a 3D LIDAR sensor <p class="infolinks">[<a href="javascript:toggleInfo('Weiss2011','comment')">Comment</a>] [<a href="javascript:toggleInfo('Weiss2011','bibtex')">BibTeX</a>]</p></td>
+	<td>2011</td>
+	<td>Robotics and Autonomous Systems<br/>Vol. 59(5), pp. 265-273&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1016/j.robot.2011.02.011">DOI</a> &nbsp;</td>
+</tr>
+<tr id="rev_Weiss2011" class="comment noshow">
+	<td colspan="6"><b>Comment</b>: A key problem in agricultural robots is to detect and map individual plants for several reasons, including <br>navigation, individual reports and individual care. For a robust plant mapping it is needed to use reliable<br>sensors and algorithms. Much research is done in solving this problem <br>using 2D and 3D cameras but this paper on the other hand, works on detecting plants using low cost and low resolution<br>3D Lidar sensors. The solution contains an algorithm for detecting individual plant in a row using a FX6 3D Lidar sensor. <br>This sensor is still in development, the current version has a resolution of 29 by 59 pixel creating 15 frames per second.<br>To detect the plant from the resulting point cloud, the algorithm first detects the ground plane and second  <br>creates cluster for each plants using a k,d tree and decides for each cluster only using the bounding box dimensions.<br>The proposed algorithm works seemingly fast, and manages to identify in a single frame 60% of the plants<br>and using multiple frames with tracking it scores an average detection accuracy of 80-90%. Further the average accuracy <br>of the position detection is 3 centimeters. One problem occurring repeatedly is that the algorithm fails to differentiate<br>between the next plants if they grow into each other and the cluster connect. The idea to use a low cost 3D sensor is quite good because, as mentioned in the paper, it works independent from <br>existing lighting and is robust against fog and dust - conditions which occur frequently in the real world.<br>The algorithm uses only a bounding box of a cluster to determine the position of the plant. This approach works okay <br>when every plant grows neatly far away from their neighbours but fails in messy real world conditions.<br>Some aspects are great on the other hand, it has a fast runtime, for example. I think this given approach would work <br>better on a row basis and maybe use offline compute power to identify the individual plants? <br>Because measuring these plants is a repeated operation, one could leverage the result of a computational more expensive<br>offline algorithm and map the online point cloud directly onto an existing map.<br>This main contribution is an evaluation of a low-cost 3D lidar scanner with an basic point clustering algorithm in real time. besides<br>that they also showcase other approaches for the same problem using traditional 2D camera systems and different scanners.<br>The future research will include using stronger machine learning algorithms for clustering and plant separation. They also<br>want to work on a row detection basis.<br>My main concern was the quite simple simulation model on gazebo and i hope that they improve this.<br>It is possible to detect plants in real time using point clouds in the agricultural sector even with <br>simple mathematical methods. The difference between a classical and those FX6 laser scanner is also interesting.<br>I think plant detection like this is the way to go, by improving only the algorithm it should be possible<br>soon to deploy at least field scouting robots in real world scenarios. <br>In depth paper for clustering point clouds into individual plants using a bounding box approach.<br>Maths is explained nicely, can be used to build something similar.</td>
+</tr>
+<tr id="bib_Weiss2011" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Weiss2011,
+  author = {Ulrich Weiss and Peter Biber},
+  title = {Plant detection and mapping for agricultural robots using a 3D LIDAR sensor},
+  journal = {Robotics and Autonomous Systems},
+  publisher = {Elsevier BV},
+  year = {2011},
+  volume = {59},
+  number = {5},
+  pages = {265--273},
+  doi = {https://doi.org/10.1016/j.robot.2011.02.011}
+}
+</pre></td>
+</tr>
+<tr id="Wu2020" class="entry">
+	<td>Wu, G., Li, B., Zhu, Q., Huang, M. and Guo, Y.</td>
+	<td>Using color and 3D geometry features to segment fruit point cloud and improve fruit recognition accuracy <p class="infolinks">[<a href="javascript:toggleInfo('Wu2020','bibtex')">BibTeX</a>]</p></td>
+	<td>2020</td>
+	<td>Computers and Electronics in Agriculture<br/>Vol. 174, pp. 105475&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1016/j.compag.2020.105475">DOI</a> &nbsp;</td>
+</tr>
+<tr id="bib_Wu2020" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Wu2020,
+  author = {Gang Wu and Bin Li and Qibing Zhu and Min Huang and Ya Guo},
+  title = {Using color and 3D geometry features to segment fruit point cloud and improve fruit recognition accuracy},
+  journal = {Computers and Electronics in Agriculture},
+  publisher = {Elsevier BV},
+  year = {2020},
+  volume = {174},
+  pages = {105475},
+  doi = {https://doi.org/10.1016/j.compag.2020.105475}
+}
+</pre></td>
+</tr>
+<tr id="Yao2018" class="entry">
+	<td>Yao, X.-Y., Ding, H.-F. and Ge, M.-F.</td>
+	<td>Task-space tracking control of multi-robot systems with disturbances and uncertainties rejection capability <p class="infolinks">[<a href="javascript:toggleInfo('Yao2018','bibtex')">BibTeX</a>]</p></td>
+	<td>2018</td>
+	<td>Nonlinear Dynamics<br/>Vol. 92(4), pp. 1649-1664&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1007/s11071-018-4152-y">DOI</a> &nbsp;</td>
+</tr>
+<tr id="bib_Yao2018" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Yao2018,
+  author = {Xiang-Yu Yao and Hua-Feng Ding and Ming-Feng Ge},
+  title = {Task-space tracking control of multi-robot systems with disturbances and uncertainties rejection capability},
+  journal = {Nonlinear Dynamics},
+  publisher = {Springer Science and Business Media LLC},
+  year = {2018},
+  volume = {92},
+  number = {4},
+  pages = {1649--1664},
+  doi = {https://doi.org/10.1007/s11071-018-4152-y}
+}
+</pre></td>
+</tr>
+<tr id="Zhang2017" class="entry">
+	<td>Zhang, C. and Noguchi, N.</td>
+	<td>Development of a multi-robot tractor system for agriculture field work <p class="infolinks">[<a href="javascript:toggleInfo('Zhang2017','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Zhang2017','bibtex')">BibTeX</a>]</p></td>
+	<td>2017</td>
+	<td>Computers and Electronics in Agriculture<br/>Vol. 142, pp. 79-90&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1016/j.compag.2017.08.017">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Zhang2017" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: A multi-robot tractor system for conducting agriculture field work was developed in order to reduce total work time and to improve work efficiency. The robot tractors can form a spatial pattern, I-pattern, V-pattern or W-pattern, during the work process. The safety zones of each robot were defined as a circle and a rectangle. The robots can coordinate to turn to the next lands without collision or deadlock. The efficiency of the system depends on the number of robots, the spatial pattern, the setting distance between each robot, and the field length. Three simulations were carried out to determine the usefulness of the system. The simulation results showed that the efficiency range of three robots using the I-pattern is from 83.2% to 89.8% at a field length of 100 m. The efficiency range of seven robots using the W-pattern is from 59.4% to 65.8% at a field length of 100 m. However, the minimum efficiency of seven robots using the W-pattern is 84.9% at a field length of 500 m. The efficiency would be higher than 85% if the field length was larger than 500 m. Thus, the newly developed multi-robot tractor system is more effective in a large field.</td>
+</tr>
+<tr id="bib_Zhang2017" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Zhang2017,
+  author = {Chi Zhang and Noboru Noguchi},
+  title = {Development of a multi-robot tractor system for agriculture field work},
+  journal = {Computers and Electronics in Agriculture},
+  publisher = {Elsevier BV},
+  year = {2017},
+  volume = {142},
+  pages = {79--90},
+  doi = {https://doi.org/10.1016/j.compag.2017.08.017}
+}
+</pre></td>
+</tr>
+<tr id="Zhang2018" class="entry">
+	<td>Zhang, J. and Singh, S.</td>
+	<td>Laser-visual-inertial odometry and mapping with high robustness and low drift <p class="infolinks">[<a href="javascript:toggleInfo('Zhang2018','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('Zhang2018','bibtex')">BibTeX</a>]</p></td>
+	<td>2018</td>
+	<td>Journal of Field Robotics<br/>Vol. 35(8), pp. 1242-1264&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1002/rob.21809">DOI</a> &nbsp;</td>
+</tr>
+<tr id="abs_Zhang2018" class="abstract noshow">
+	<td colspan="6"><b>Abstract</b>: We present a data processing pipeline to online estimate ego‐motion and build a map of the traversed environment, leveraging data from a 3D laser scanner, a camera, and an inertial measurement unit (IMU). Different from traditional methods that use a Kalman filter or factor‐graph optimization, the proposed method employs a sequential, multilayer processing pipeline, solving for motion from coarse to fine. Starting with IMU mechanization for motion prediction, a visual–inertial coupled method estimates motion; then, a scan matching method further refines the motion estimates and registers maps. The resulting system enables high‐frequency, low‐latency ego‐motion estimation, along with dense, accurate 3D map registration. Further, the method is capable of handling sensor degradation by automatic reconfiguration bypassing failure modules. Therefore, it can operate in the presence of highly dynamic motion as well as in the dark, texture‐less, and structure‐less environments. During experiments, the method demonstrates 0.22% of relative position drift over 9.3 km of navigation and robustness w.r.t. running, jumping, and even highway speed driving (up to 33 m/s).</td>
+</tr>
+<tr id="bib_Zhang2018" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Zhang2018,
+  author = {Ji Zhang and Sanjiv Singh},
+  title = {Laser-visual-inertial odometry and mapping with high robustness and low drift},
+  journal = {Journal of Field Robotics},
+  publisher = {Wiley},
+  year = {2018},
+  volume = {35},
+  number = {8},
+  pages = {1242--1264},
+  doi = {https://doi.org/10.1002/rob.21809}
+}
+</pre></td>
+</tr>
+<tr id="Zhao2016" class="entry">
+	<td>Zhao, Y., Gong, L., Huang, Y. and Liu, C.</td>
+	<td>A review of key techniques of vision-based control for harvesting robot <p class="infolinks">[<a href="javascript:toggleInfo('Zhao2016','bibtex')">BibTeX</a>]</p></td>
+	<td>2016</td>
+	<td>Computers and Electronics in Agriculture<br/>Vol. 127, pp. 311-323&nbsp;</td>
+	<td>article</td>
+	<td><a href="https://doi.org/10.1016/j.compag.2016.06.022">DOI</a> &nbsp;</td>
+</tr>
+<tr id="bib_Zhao2016" class="bibtex noshow">
+<td colspan="6"><b>BibTeX</b>:
+<pre>
+@article{Zhao2016,
+  author = {Yuanshen Zhao and Liang Gong and Yixiang Huang and Chengliang Liu},
+  title = {A review of key techniques of vision-based control for harvesting robot},
+  journal = {Computers and Electronics in Agriculture},
+  publisher = {Elsevier BV},
+  year = {2016},
+  volume = {127},
+  pages = {311--323},
+  doi = {https://doi.org/10.1016/j.compag.2016.06.022}
+}
+</pre></td>
+</tr>
+</tbody>
+</table>
+<footer>
+ <small>Created by <a href="http://jabref.sourceforge.net">JabRef</a> on 12/01/2021.</small>
+</footer>
+<!-- file generated by JabRef -->
+</body>
+</html>

@@ -1264,7 +1264,7 @@ Rating
   publisher = {{MDPI} {AG}},
 }
 
-@Article{2016,
+@Article{ThuyTuongNguyen2016,
   author    = {Thuy Tuong Nguyen, David C. Slaughter and Brad Townsley and Leonela Carriedoand Julin N. N., Neelima Sinha},
   title     = {Comparison of Structure-from-Motion and Stereo Vision Techniques for Full In-Field 3D Reconstruction and Phenotyping of Plants: An Investigation in Sunflower},
   year      = {2016},
@@ -1474,7 +1474,7 @@ Rating
   publisher = {Citeseer},
 }
 
-@Article{Gerkey_2004,
+@Article{Gerkey2004,
   author    = {Brian P. Gerkey and Maja J. Matari{\'{c}}},
   journal   = {The International Journal of Robotics Research},
   title     = {A Formal Analysis and Taxonomy of Task Allocation in Multi-Robot Systems},
@@ -1490,7 +1490,7 @@ Rating
   publisher = {{SAGE} Publications},
 }
 
-@Article{Lerman_2006,
+@Article{Lerman2006,
   author    = {Kristina Lerman and Chris Jones and Aram Galstyan and Maja J Matari{\'{c}}},
   journal   = {The International Journal of Robotics Research},
   title     = {Analysis of Dynamic Task Allocation in Multi-Robot Systems},
@@ -1506,7 +1506,7 @@ Rating
   publisher = {{SAGE} Publications},
 }
 
-@Article{Khamis_2015,
+@Article{Khamis2015,
   author    = {Alaa Khamis and Ahmed Hussein and Ahmed Elmogy},
   title     = {Multi-robot Task Allocation: A Review of the State-of-the-Art},
   year      = {2015},
@@ -1531,7 +1531,7 @@ Rating
   publisher = {Springer-Verlag},
 }
 
-@Article{Chamanbaz_2017,
+@Article{Chamanbaz2017,
   author    = {Mohammadreza Chamanbaz and David Mateo and Brandon M. Zoss and Grgur Toki{\'{c}} and Erik Wilhelm and Roland Bouffanais and Dick K. P. Yue},
   journal   = {Frontiers in Robotics and {AI}},
   title     = {Swarm-Enabling Technology for Multi-Robot Systems},
@@ -1544,7 +1544,7 @@ Rating
   publisher = {Frontiers Media {SA}},
 }
 
-@Article{Erdem_Kisa_Oztok_Schüller_2013,
+@Article{Erdem2013,
   author       = {Erdem, Esra and Kisa, Doga and Oztok, Umut and Schüller, Peter},
   journal      = {Proceedings of the AAAI Conference on Artificial Intelligence},
   title        = {A General Formal Framework for Pathfinding Problems with Multiple Agents},
@@ -1558,7 +1558,7 @@ Rating
   url          = {https://ojs.aaai.org/index.php/AAAI/article/view/8592},
 }
 
-@Article{de_Almeida_2019,
+@Article{Almeida2019,
   author    = {Jo{\~{a}}o Paulo Lima Silva de Almeida and Renan Taizo Nakashima and Fl{\'{a}}vio Neves-Jr and L{\'{u}}cia Val{\'{e}}ria Ramos de Arruda},
   journal   = {Robotics and Autonomous Systems},
   title     = {Bio-inspired on-line path planner for cooperative exploration of unknown environment by a Multi-Robot System},
@@ -1572,7 +1572,7 @@ Rating
   publisher = {Elsevier {BV}},
 }
 
-@Article{Wang_2017,
+@Article{Wang2017,
   author    = {Qin Wang and Zuwen Chen and Yang Yi},
   journal   = {International Journal of Advanced Robotic Systems},
   title     = {Adaptive coordinated tracking control for multi-robot system with directed communication topology},
@@ -1587,7 +1587,7 @@ Rating
   publisher = {{SAGE} Publications},
 }
 
-@Article{Singh_2018,
+@Article{Singh2018,
   author    = {Rajesh Singh and Rohit Samkaria and Anita Gehlot and Sushabhan Choudhary},
   journal   = {International Journal of Web Applications},
   title     = {Design and Development of {IoT} enabled Multi Robot System for Search and Rescue Mission},
@@ -1602,7 +1602,7 @@ Rating
   publisher = {Digital Information Research Foundation},
 }
 
-@Article{Yao_2018,
+@Article{Yao2018,
   author    = {Xiang-Yu Yao and Hua-Feng Ding and Ming-Feng Ge},
   journal   = {Nonlinear Dynamics},
   title     = {Task-space tracking control of multi-robot systems with disturbances and uncertainties rejection capability},
@@ -1617,7 +1617,7 @@ Rating
   publisher = {Springer Science and Business Media {LLC}},
 }
 
-@Article{Graetz_2018,
+@Article{Graetz2018,
   author    = {Georg Graetz and Guy Michaels},
   journal   = {The Review of Economics and Statistics},
   title     = {Robots at Work},
@@ -1634,7 +1634,7 @@ Rating
   publisher = {{MIT} Press - Journals},
 }
 
-@Article{Tang_SH_2015,
+@Article{KamilFTang2015,
   author    = {Kamil F Tang SH and Khaksar W Zulkifli N},
   journal   = {Advances in Robotics {\&} Automation},
   title     = {A Review on Motion Planning and Obstacle Avoidance Approaches in Dynamic Environments},
@@ -1649,7 +1649,7 @@ Rating
   publisher = {{OMICS} Publishing Group},
 }
 
-@Article{Tang_2015,
+@Article{Tang2015,
   author    = {S. H. Tang and Farah Kamil and W. Khaksar and N. Zulkifli and S.A Ahmad},
   title     = {Robotic motion planning in unknown dynamic environments: Existing approaches and challenges},
   year      = {2015},
@@ -1662,7 +1662,7 @@ Rating
   publisher = {{IEEE}},
 }
 
-@InProceedings{muller2006off,
+@InProceedings{Muller2006,
   author    = {Muller, Urs and Ben, Jan and Cosatto, Eric and Flepp, Beat and Cun, Yann L},
   booktitle = {Advances in neural information processing systems},
   title     = {Off-road obstacle avoidance through end-to-end learning},
@@ -1674,7 +1674,7 @@ Rating
   keywords  = {basis, old},
 }
 
-@Article{Amer_2016,
+@Article{Amer2016,
   author    = {Noor Hafizah Amer and Hairi Zamzuri and Khisbullah Hudha and Zulkiffli Abdul Kadir},
   journal   = {Journal of Intelligent {\&} Robotic Systems},
   title     = {Modelling and Control Strategies in Path Tracking Control for Autonomous Ground Vehicles: A Review of State of the Art and Challenges},
@@ -1690,7 +1690,7 @@ Rating
   publisher = {Springer Science and Business Media {LLC}},
 }
 
-@Article{Li_2017,
+@Article{Li2017a,
   author    = {Ji Li and Lie Tang},
   journal   = {Journal of Field Robotics},
   title     = {Crop recognition under weedy conditions based on 3D imaging for robotic weed control},
@@ -1706,7 +1706,7 @@ Rating
   publisher = {Wiley},
 }
 
-@Article{Majeed_2021,
+@Article{Majeed2021,
   author    = {Yaqoob Majeed and Manoj Karkee and Qin Zhang and Longsheng Fu and Matthew D. Whiting},
   journal   = {Journal of Field Robotics},
   title     = {Development and performance evaluation of a machine vision system and an integrated prototype for automated green shoot thinning in vineyards},
@@ -1719,7 +1719,7 @@ Rating
   publisher = {Wiley},
 }
 
-@Article{Lehnert_2020,
+@Article{Lehnert2020,
   author    = {Chris Lehnert and Chris McCool and Inkyu Sa and Tristan Perez},
   journal   = {Journal of Field Robotics},
   title     = {Performance improvements of a sweet pepper harvesting robot in protected cropping environments},
@@ -1732,7 +1732,7 @@ Rating
   publisher = {Wiley},
 }
 
-@Article{Zhang_2018,
+@Article{Zhang2018,
   author    = {Ji Zhang and Sanjiv Singh},
   journal   = {Journal of Field Robotics},
   title     = {Laser-visual-inertial odometry and mapping with high robustness and low drift},
@@ -1748,7 +1748,7 @@ Rating
   publisher = {Wiley},
 }
 
-@Article{McGarey_2018,
+@Article{McGarey2018,
   author    = {Patrick McGarey and David Yoon and Tim Tang and Fran{\c{c}}ois Pomerleau and Timothy D. Barfoot},
   journal   = {Journal of Field Robotics},
   title     = {Developing and deploying a tethered robot to map extremely steep terrain},
@@ -1764,7 +1764,7 @@ Rating
   publisher = {Wiley},
 }
 
-@Article{Ramin_Shamshiri_2018,
+@Article{Shamshiri2018,
   author    = {Redmond Ramin Shamshiri and and Cornelia Weltzien and Ibrahim A. Hameed and Ian J. Yule and Tony E. Grift and Siva K. Balasundram and Lenka Pitonakova and Desa Ahmad and Girish Chowdhary and and and and and and},
   journal   = {International Journal of Agricultural and Biological Engineering},
   title     = {Research and development in agricultural robotics: A perspective of digital farming},
@@ -1779,7 +1779,7 @@ Rating
   publisher = {International Journal of Agricultural and Biological Engineering ({IJABE})},
 }
 
-@Article{Bechar_2017,
+@Article{Bechar2017,
   author    = {Avital Bechar and Cl{\'{e}}ment Vigneault},
   journal   = {Biosystems Engineering},
   title     = {Agricultural robots for field operations. Part 2: Operations and systems},
@@ -1794,7 +1794,7 @@ Rating
   publisher = {Elsevier {BV}},
 }
 
-@Article{Gao_2018,
+@Article{Gao2018a,
   author    = {Tianshuang Gao and Hamid Emadi and Homagni Saha and Jiaoping Zhang and Alec Lofquist and Arti Singh and Baskar Ganapathysubramanian and Soumik Sarkar and Asheesh Singh and Sourabh Bhattacharya},
   journal   = {Robotics},
   title     = {A Novel Multirobot System for Plant Phenotyping},
@@ -1810,7 +1810,7 @@ Rating
   publisher = {{MDPI} {AG}},
 }
 
-@Article{Albani_2017,
+@Article{Albani2017,
   author    = {Dario Albani and Joris IJsselmuiden and Ramon Haken and Vito Trianni},
   title     = {Monitoring and mapping with robot swarms for agricultural applications},
   year      = {2017},
@@ -1823,7 +1823,7 @@ Rating
   publisher = {{IEEE}},
 }
 
-@Article{Zhang_2017,
+@Article{Zhang2017,
   author    = {Chi Zhang and Noboru Noguchi},
   journal   = {Computers and Electronics in Agriculture},
   title     = {Development of a multi-robot tractor system for agriculture field work},
@@ -1838,7 +1838,7 @@ Rating
   publisher = {Elsevier {BV}},
 }
 
-@Article{Ball_2015,
+@Article{Ball2015a,
   author    = {David Ball and Patrick Ross and Andrew English and Tim Patten and Ben Upcroft and Robert Fitch and Salah Sukkarieh and Gordon Wyeth and Peter Corke},
   title     = {Robotics for Sustainable Broad-Acre Agriculture},
   year      = {2015},
@@ -1849,6 +1849,84 @@ Rating
   file      = {:/home/sd/Documents/papers/field-and-service-robotics-2015.pdf:PDF},
   keywords  = {Inertia Measurement Unit Stereo Match Real Robot Path Planner Real Time Kinematic, TOP30},
   publisher = {Springer International Publishing},
+}
+
+@Article{Hameed2013,
+  author    = {I. A. Hameed},
+  journal   = {Journal of Intelligent {\&} Robotic Systems},
+  title     = {Intelligent Coverage Path Planning for Agricultural Robots and Autonomous Machines on Three-Dimensional Terrain},
+  year      = {2013},
+  month     = {may},
+  number    = {3-4},
+  pages     = {965--983},
+  volume    = {74},
+  comment   = {81},
+  doi       = {https://doi.org/10.1007/s10846-013-9834-6},
+  file      = {:/home/sd/Documents/papers/Hameed2014_Article_IntelligentCoveragePathPlannin.pdf:PDF},
+  keywords  = {Route planning, DEM, Optimization, Genetic algorithm, base, top30},
+  publisher = {Springer Science and Business Media {LLC}},
+}
+
+@Article{Jin2011,
+  author    = {Jian Jin and Lie Tang},
+  journal   = {Journal of Field Robotics},
+  title     = {Coverage path planning on three-dimensional terrain for arable farming},
+  year      = {2011},
+  month     = {apr},
+  number    = {3},
+  pages     = {424--440},
+  volume    = {28},
+  abstract  = {Field operations should be done in a manner that minimizes time and travels over the field surface and is coordinated with topographic land features. Automated path planning can help to find the best coverage path so that the field operation costs can be minimized. Intelligent algorithms are desired for both two‐dimensional (2D) and three‐dimensional (3D) terrain field coverage path planning. The algorithm of generating an optimized full coverage pattern for a given 2D planar field by using boustrophedon paths has been investigated and reported before. However, a great proportion of farms have rolling terrains, which have a considerable influence on the design of coverage paths. Coverage path planning in 3D space has a great potential to further optimize field operations. This work addressed four critical tasks: terrain modeling and representation, coverage cost analysis, terrain decomposition, and the development of optimized path searching algorithm. The developed algorithms and methods have been successfully implemented and tested using 3D terrain maps of farm fields with various topographic features. Each field was decomposed into subregions based on its terrain features. A recommended “seed curve” based on a customized cost function was searched for each subregion, and parallel coverage paths were generated by offsetting the found “seed curve” toward its two sides until the whole region was completely covered. Compared with the 2D planning results, the experimental results of 3D coverage path planning showed its superiority in reducing both headland turning cost and soil erosion cost. On the tested fields, on average the 3D planning algorithm saved 10.3% on headland turning cost, 24.7% on soil erosion cost, 81.2% on skipped area cost, and 22.0% on the weighted sum of these costs, where their corresponding weights were 1, 1, and 0.5, respectively. © 2011 Wiley Periodicals, Inc.},
+  doi       = {https://doi.org/10.1002/rob.20388},
+  file      = {:/home/sd/Documents/papers/rob.20388.pdf:PDF},
+  keywords  = {3D, Terrain, Modelling, Base, TOP30},
+  publisher = {Wiley},
+}
+
+@Article{Ko2015,
+  author    = {Min Hyuc Ko and Beom-Sahng Ryuh and Kyoung Chul Kim and Abhijit Suprem and Nitaigour P. Mahalik},
+  journal   = {{IEEE}/{ASME} Transactions on Mechatronics},
+  title     = {Autonomous Greenhouse Mobile Robot Driving Strategies From System Integration Perspective: Review and Application},
+  year      = {2015},
+  month     = {aug},
+  number    = {4},
+  pages     = {1705--1716},
+  volume    = {20},
+  abstract  = {Agricultural operations are constantly becoming technology-driven mainly due to labor shortages, increase in labor cost, and trends in new and advanced technology applications. In this paper, we have presented a system-of-systems approach to design and development of a mobile robotic platform for agricultural applications. Similar to other field robots, the mobile platform for agricultural applications requires a different set of predefined attributes for its operation. We have designed, fabricated, and demonstrated the mobile platform for pesticide spraying application. The design and development includes synergistic integration of mechanical, sensor and actuator, navigational and control, and electronic and software interfacings. The autonomous navigation aspect of the development was achieved via three stages: learning stage, implementation stage (training stage), and testing stage. In the learning stage, we defined the path patterns and studied and recorded the behavior of the vehicle in real-world environment. In the training stage, various steering algorithms for four-wheel driving system were developed and inherent errors were compensated using advanced tools and methods. In the testing stage, we put the robotic platform on an arbitrary path pattern and demonstrated its success in autonomous navigation. The medium-sized mobile robot can be commercialized for greenhouse-based agricultural operations.},
+  comment   = {24},
+  doi       = {https://doi.org/10.1109/TMECH.2014.2350433},
+  file      = {:/home/sd/Documents/papers/ko2015.pdf:PDF},
+  keywords  = {Agricultural robot , autonomous driving , distributed control , 4WS , front-wheel-steering (FWS) , global algorithm , path pattern entities , rear-wheel-steering (RWS) , system-of-systems, Top30},
+  publisher = {Institute of Electrical and Electronics Engineers ({IEEE})},
+}
+
+@Article{Dusadeerungsikul2019,
+  author    = {Puwadol Oak Dusadeerungsikul and Shimon Y. Nof},
+  journal   = {Computers {\&} Industrial Engineering},
+  title     = {A collaborative control protocol for agricultural robot routing with online adaptation},
+  year      = {2019},
+  month     = {sep},
+  pages     = {456--466},
+  volume    = {135},
+  abstract  = {Stress in crops is one of the major concerns in precision agriculture because it indicates the emergence of disease and damage in plants. Detecting the stress condition of a plant early is critical. A system that can monitor the condition of plants is a desirable solution. In this work, Collaborative Control Theory is utilized to construct a new system, ARS (agricultural robotic system) which synchronizes humans, a mobile robot, and a variable set of sensors to effectively perform the monitoring and detection tasks. A key protocol for that system, which combines routing algorithm, adaptive search algorithm, and collaboration control framework has been developed and validated, and is presented in this article. By using greenhouse as a case study structure, the protocol routes a robot to visit the sampled locations by using a genetic algorithm. In addition, the search algorithm can be guided by the predictive characteristics of the crops’ stress, which can spread to other plants according to sunlight, airflow direction, and other known conditions. Based on simulation experiments, the results indicate with statistical significance that (1) the routing algorithm increases the number of successful detections of existing stressed plants by 45.77% compared to monitoring without this routing algorithm. (2) The adaptive search algorithm improves the number of successful detections of stressed plants by 71.88% compared to a system without the adaptive search algorithm. (3) The new protocol developed in this research yields the highest overall robotic efficiency, compared with a system without collaborative control framework.},
+  doi       = {https://doi.org/10.1016/j.cie.2019.06.037},
+  file      = {:/home/sd/Documents/papers/dusadeerungsikul2019.pdf:PDF},
+  keywords  = {Collaborative control theory, Collaboration, Greenhouse, Traveling salesmen problem, Sensors, Adaptive search algorithm},
+  publisher = {Elsevier {BV}},
+}
+
+@Article{Kim2020,
+  author    = {Jeongeun Kim and Hyoung Il Son},
+  journal   = {{IEEE} Access},
+  title     = {A Voronoi Diagram-Based Workspace Partition for Weak Cooperation of Multi-Robot System in Orchard},
+  year      = {2020},
+  pages     = {20676--20686},
+  volume    = {8},
+  abstract  = {Nowadays, multi-robot systems are being utilized to perform agricultural tasks. It is particularly essential to robotize pesticide spraying because of the risk of poisoning workers. However, the problem is that the human-driven sprayers are big size, and difficult to maneuver in many orchards. Therefore, heavy spraying robots must be replaced with lighter robots. Also, it takes a lot of times to perform spraying using only one sprayer in a large orchard. To achieve this goal, the multi-robot system (MRS) can be applied to the spraying by robot cooperation to improve performance. In this study, we developed a task allocation system based on a Voronoi diagram for a multi-robot spraying system in an orchard. The seed point for area partition using the Voronoi diagram was obtained through node clustering using a k-means clustering algorithm. In the experiment, workspaces were partitioned according to the number of robots, from 2 to 10. A total of four metrics were used to evaluate the performance of the system. The results confirmed that our task allocation system is applicable to real orchards.},
+  doi       = {https://doi.org/10.1109/ACCESS.2020.2969449},
+  file      = {:/home/sd/Documents/papers/kim2020.pdf:PDF},
+  keywords  = {Agricultural robot , multi-robot system , task allocation , area partition , unmanned ground vehicle (UGV)},
+  publisher = {Institute of Electrical and Electronics Engineers ({IEEE})},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
