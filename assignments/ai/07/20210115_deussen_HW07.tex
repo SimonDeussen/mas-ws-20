@@ -1,0 +1,118 @@
+\documentclass{article}
+
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{listings}% http://ctan.org/pkg/listings
+\lstset{
+  basicstyle=\ttfamily,
+  mathescape
+}
+\usepackage{a4wide}
+
+\title{MAS AI Assignment 7}
+\author{Simon Deussen}
+
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+\pagenumbering{arabic}
+
+\section*{Task 1: Definitions}
+All answers use the book "Artificial Intelligence - A modern approach" from Russel and Norvig as basis.
+
+\begin{description}
+  \item[Enumeration] A way to \textbf{check} a sentence in against a \textbf{model} in propositional logic. This works by \emph{enumerating} each possible row of a truth table for a given sentence.
+  \item[Validity] Also a property of propositional logic. A sentence is \emph{valid} if it is true in \textbf{all} models.
+  \item[Satisfiability] A sentence is \emph{satisfiable}, if it is true in a subset of all models. 
+  \item[CNF and DNF] \ \begin{description}
+    \item[Conjunctive normal form, CNF]  Expressing a sentence as a conjunction of clauses. For every sentence exists as CNF.  This way the sentence can be put into an resolution algorithm. The sentence $B_{1,1} \Leftrightarrow (P_{1,2} \vee  P_{2,1})$ can be converted in following CNF: $(\neg B_{1,1} \vee P_{1,2} \vee P_{2,1}) \wedge (\neg P_{1,2} \vee B_{1,1}) \wedge (\neg P_{2,1} \vee B_{1,2})$
+    \item[Disjunctive normal form, DNF] This is a form were a disjunction of conjunctions of literals is used. Example from the book: $(A \wedge B \wedge C) \vee (\neg A \wedge C) \vee (B \wedge \neg C)$
+  \end{description}
+  \item[Resolution] This is a specific inference rule which creates a complete inference algorithm when using any search algorithm. It uses factoring to eliminate multiple copies of literals.
+\end{description}
+
+\section*{Task 2: Implications}
+Given sentence: $[(F \Longrightarrow P) \vee (D \Longrightarrow P)] \Longrightarrow [(F \wedge D) \Longrightarrow P]$
+
+\subsection*{Proof by enumeration}
+The truth table shows that the sentence is valid because it holds true in all models:
+
+\begin{table}[h]
+\begin{tabular}{lllllllll}
+F & P & D & $F \Longrightarrow P$ & $D \Longrightarrow P$ & $(F \Longrightarrow P) \vee (D \Longrightarrow P)$ & $ F \wedge D$ & $(F \wedge D) \Longrightarrow P$ & Full sentence \\
+0 & 0 & 0 & 1                     & 1                     & 1                                                  &  0            & 1                                & 1                                                                                                                                                                                                     \\
+0 & 0 & 1 & 1                     & 0                     & 1                                                  &  0            & 1                                & 1                                                                                                                                                                                                     \\
+0 & 1 & 0 & 1                     & 1                     & 1                                                  &  0            & 1                                & 1                                                                                                                                                                                                     \\
+0 & 1 & 1 & 1                     & 1                     & 1                                                  &  0            & 1                                & 1                                                                                                                                                                                                     \\
+1 & 0 & 0 & 0                     & 1                     & 1                                                  &  0            & 1                                & 1                                                                                                                                                                                                     \\
+1 & 0 & 1 & 0                     & 0                     & 0                                                  &  1            & 0                                & 1                                                                                                                                                                                                     \\
+1 & 1 & 0 & 1                     & 1                     & 1                                                  &  0            & 1                                & 1                                                                                                                                                                                                     \\
+1 & 1 & 1 & 1                     & 1                     & 1                                                  &  1            & 1                                & 1                                                                                                                                                                                                    
+\end{tabular}
+\end{table}
+
+\subsection*{Convert to CNF}
+
+\begin{enumerate}
+  \item Given sentence: \\ $[(F \Longrightarrow P) \vee (D \Longrightarrow P)] \Longrightarrow [(F \wedge D) \Longrightarrow P]$
+  \item Eliminate three times the inner \emph{implications}: \\ $[(\neg F \vee P) \vee (\neg D \vee P)] \Longrightarrow [\neg (F \wedge D) \vee P]$
+  \item Use \emph{De Morgan} on the right side: \\ $[(\neg F \vee P) \vee (\neg D \vee P)] \Longrightarrow [(\neg F \vee \neg D) \vee P]$
+  \item Eliminate remaining \emph{implication}: \\ $\neg[(\neg F \vee P) \vee (\neg D \vee P)] \vee [(\neg F \vee \neg D) \vee P]$ 
+  \item Use \emph{De Morgan} on the left side: \\ $[\neg(\neg F \vee P) \wedge \neg(\neg D \vee P)] \vee [(\neg F \vee \neg D) \vee P]$ 
+  \item Use two times \emph{De Morgan} on the left side: \\ $[(F \wedge \neg P) \wedge (D \wedge \neg P)] \vee [(\neg F \vee \neg D) \vee P]$ 
+  \item Remove inner brackets: \\ $[F \wedge \neg P \wedge D \wedge \neg P] \vee [\neg F \vee \neg D \vee P]$ 
+  \item Remove double $\neg P$ get CNF: \\ $[F \wedge D \wedge \neg P] \vee [\neg F \vee \neg D \vee P]$ 
+\end{enumerate}
+
+\subsection*{Prove using resolution}
+
+\begin{table}[h]
+  \begin{tabular}{lllllllll}
+  F & D & P & !F & !D & !P & $F \wedge D \wedge \neg P$ & $\neg F \vee \neg D \vee P$ & $[F \wedge D \wedge \neg P] \vee [\neg F \vee \neg D \vee P]$ \\
+  0 & 0 & 0 & 1  & 1  & 1  &  0            & 1                                & 1                                                                                                                                                                                                     \\
+  0 & 0 & 1 & 1  & 1  & 0  &  0            & 1                                & 1                                                                                                                                                                                                     \\
+  0 & 1 & 0 & 1  & 0  & 1  &  0            & 1                                & 1                                                                                                                                                                                                     \\
+  0 & 1 & 1 & 1  & 0  & 0  &  0            & 1                                & 1                                                                                                                                                                                                     \\
+  1 & 0 & 0 & 0  & 1  & 1  &  0            & 1                                & 1                                                                                                                                                                                                     \\
+  1 & 0 & 1 & 0  & 1  & 0  &  0            & 1                                & 1                                                                                                                                                                                                     \\
+  1 & 1 & 0 & 0  & 0  & 1  &  1            & 0                                & 1                                                                                                                                                                                                     \\
+  1 & 1 & 1 & 0  & 0  & 0  &  0            & 1                                & 1                                                                                                                                                                                                    
+  \end{tabular}
+  \end{table}
+
+  We see that the CNF $[F \wedge D \wedge \neg P] \vee [\neg F \vee \neg D \vee P]$  is equal to $False \vee True$ which is always $True$.
+\section*{Task 3: Entailment}
+
+Given formula $(A \wedge B) \Longrightarrow C$ prove that $(A \Longrightarrow C) \vee (B \Longrightarrow C)$ is equivalent.
+
+\begin{enumerate}
+  \item Given formula: \\ $(A \wedge B) \Longrightarrow C$ 
+  \item Eliminate \emph{implication}: \\ $\neg(A \wedge B) \vee C$
+  \item Use \emph{De Morgan}: \\ $\neg A \vee \neg B \vee C$
+  \item Which is equivalent to: \\ $\neg A \vee C \vee \neg B \vee C$
+  \item Recreate \emph{implications}: \\ $(A \Longrightarrow C) \vee (B \Longrightarrow C)$
+\end{enumerate}
+
+\section*{Task 4: Proving}
+\subsection*{a)}
+\begin{enumerate}
+  \item Given formula: \\ $\neg P \wedge \neg Q \Leftrightarrow \neg(P \vee Q)$
+  \item Use \emph{De Morgan} on the right side: \\ $\neg P \wedge \neg Q \Leftrightarrow \neg P \wedge \neg Q$
+\end{enumerate}
+\subsection*{b)}
+\begin{enumerate}
+  \item Given formula: \\ $\neg P \vee \neg Q \Leftrightarrow \neg(P \wedge Q)$
+  \item Use \emph{De Morgan} on the right side: \\ $\neg P \wedge \neg Q \Leftrightarrow \neg P \wedge \neg Q $
+\end{enumerate}
+\subsection*{c)}
+\begin{enumerate}
+  \item Given formula: \\ $P \vee (P \wedge Q) \Leftrightarrow P$
+  \item Left side, distribute $\vee$ over $\wedge$: \\ $(P \vee Q) \wedge (P \vee P) \Leftrightarrow P$
+  \item Which is equivalent to: \\ $P \wedge (P \vee Q) \Leftrightarrow P$
+  \item Because $P$ overshadows all values of $Q$ this is equivalient to: \\ $P \Leftrightarrow P$
+\end{enumerate}
+
+% \bibliography{stuff} 
+% \bibliographystyle{ieeetr}
+
+\end{document}
