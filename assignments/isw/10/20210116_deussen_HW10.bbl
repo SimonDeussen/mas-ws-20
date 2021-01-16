@@ -1,0 +1,199 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Arad%
+\ \protect \BOthers {.}}{%
+Arad%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+Arad2020}
+\APACinsertmetastar {%
+Arad2020}%
+\begin{APACrefauthors}%
+Arad, B.%
+, Balendonck, J.%
+, Barth, R.%
+, Ben-Shahar, O.%
+, Edan, Y.%
+, Hellström, T.%
+\BDBL {}Tuijl, B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{jan}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Development of a sweet pepper harvesting robot}
+  {Development of a sweet pepper harvesting robot}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Field Robotics}{37}{6}{1027--1039}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1002/rob.21937} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Bechar%
+\ \BBA {} Vigneault%
+}{%
+Bechar%
+\ \BBA {} Vigneault%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+Bechar2016}
+\APACinsertmetastar {%
+Bechar2016}%
+\begin{APACrefauthors}%
+Bechar, A.%
+\BCBT {}\ \BBA {} Vigneault, C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Agricultural robots for field operations: Concepts and
+  components} {Agricultural robots for field operations: Concepts and
+  components}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Biosystems Engineering}{149}{}{94 - 111}.
+\newblock
+\begin{APACrefURL}
+  \url{http://www.sciencedirect.com/science/article/pii/S1537511015301914}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.biosystemseng.2016.06.014}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Rold{\'{a}}n%
+\ \protect \BOthers {.}}{%
+Rold{\'{a}}n%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2016}}%
+}]{%
+Roldan2016}
+\APACinsertmetastar {%
+Roldan2016}%
+\begin{APACrefauthors}%
+Rold{\'{a}}n, J.%
+, Garcia-Aunon, P.%
+, Garz{\'{o}}n, M.%
+, de Le{\'{o}}n, J.%
+, del Cerro, J.%
+\BCBL {}\ \BBA {} Barrientos, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{jul}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Heterogeneous Multi-Robot System for Mapping
+  Environmental Variables of Greenhouses} {Heterogeneous multi-robot system for
+  mapping environmental variables of greenhouses}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Sensors}{16}{7}{1018}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.3390/s16071018} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+van Herck%
+, Kurtser%
+, Wittemans%
+\BCBL {}\ \BBA {} Edan%
+}{%
+van Herck%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+Herck2020}
+\APACinsertmetastar {%
+Herck2020}%
+\begin{APACrefauthors}%
+van Herck, L.%
+, Kurtser, P.%
+, Wittemans, L.%
+\BCBL {}\ \BBA {} Edan, Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{apr}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Crop design for improved robotic harvesting: A case
+  study of sweet pepper harvesting} {Crop design for improved robotic
+  harvesting: A case study of sweet pepper harvesting}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Biosystems Engineering}{192}{}{294--308}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.biosystemseng.2020.01.021}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Weiss%
+\ \BBA {} Biber%
+}{%
+Weiss%
+\ \BBA {} Biber%
+}{%
+{\protect \APACyear {2011}}%
+}]{%
+Weiss2011}
+\APACinsertmetastar {%
+Weiss2011}%
+\begin{APACrefauthors}%
+Weiss, U.%
+\BCBT {}\ \BBA {} Biber, P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{may}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Plant detection and mapping for agricultural robots
+  using a 3D sensor} {Plant detection and mapping for agricultural robots using
+  a 3d sensor}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Robotics and Autonomous Systems}{59}{5}{265--273}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.robot.2011.02.011}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Wu%
+, Li%
+, Zhu%
+, Huang%
+\BCBL {}\ \BBA {} Guo%
+}{%
+Wu%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+Wu2020}
+\APACinsertmetastar {%
+Wu2020}%
+\begin{APACrefauthors}%
+Wu, G.%
+, Li, B.%
+, Zhu, Q.%
+, Huang, M.%
+\BCBL {}\ \BBA {} Guo, Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{jul}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Using color and 3D geometry features to segment fruit
+  point cloud and improve fruit recognition accuracy} {Using color and 3d
+  geometry features to segment fruit point cloud and improve fruit recognition
+  accuracy}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Computers and Electronics in
+  Agriculture}{174}{}{105475}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.compag.2020.105475}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

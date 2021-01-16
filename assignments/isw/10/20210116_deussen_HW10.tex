@@ -1,0 +1,99 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{apacite}
+
+\title{MAS ISW Assignment 10}
+\date{16.01.2021}
+\author{Simon Deussen}
+
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+\pagenumbering{arabic}
+
+\section*{Analyze the problem formulation of six papers}
+
+\subsection*{\emph{Development of a sweet pepper harvesting robot}}
+\cite{Arad2020}
+
+\begin{itemize}
+  \item This paper is about \emph{SWEEPER}, a robot for harvesting sweet pepper fruits in greenhouses. It presents the development, the testing and the validation of the system in close to real world conditions.
+  \item The motivations of the authors are, that the performance of robots in automated harvesting stalled over the last decades. In their introduction they stated that around 50 robotic harvesting systems habe been developed, but none of them could be commercialized because of the still too bad performance. Thus the need for another approach which should come closer the goal.
+  \item The discrepancy between required and achieved technological level is one of the biggest problems as stated in the paper, which the authors want to change.
+  \item The papers starts with a section over the state of the art. In here it displays how bad the current state in respect to testing on a large scale. Many contributions tested their system with less than one hundred fruits harvested. Here comes a critique from me: They also just have 246 fruits harvested during their testing.
+  \item The authors underline that their contribution is a holistic approach, including hardware, software and environmental design and evaluation. 
+  \item The results are better than other papers (as stated by the authors) but they are still far from a feasible economic deployment of the robots: \emph{SWEEPER} could only harvest 18\% of peppers in a real world setting.
+\end{itemize}
+
+\subsection*{Using color and 3D geometry features to segment fruit point cloud and improve fruit recognition accuracy}
+\cite{Wu2020}
+
+\begin{itemize}
+  \item In the introduction the authors argue straight forward why agricultural robots are needed (economic reasons) and why the vision systems is the integral part of the robot (navigation, locating targets).
+  \item Many vision systems rely in 2D cameras, which is proven to be worse than 3D data said by the authors.
+  \item The contribution of the paper is a system using a Kinect camera for getting data and algorithms to find peaches in the gathered  data.
+  \item The vision system extracts features from 2D camera data as well as point cloud data. The system fuses both kinds of features together for superior fruit detection and localisation.
+  \item After presenting the approach in great detail, they compare this system to other papers and find that they have a higher accuracy and precision compared to all approaches only using 2D image data.
+  \item Although the method presented fails in sunlight, the authors made good process in the field of fruit detection.
+\end{itemize}
+
+\subsection*{\emph{Crop design for improved robotic harvesting: A case study of sweet pepper harvesting}}
+\cite{Herck2020}
+
+\begin{itemize}
+  \item This paper is about an engineering approach to a more robot-friendly greenhouse design.
+  \item Vision and positioning systems struggle with the unstructured and dynamic nature of greenhouses and the their target fruits in them. To aid those systems the authors suggest a methodology to improve the design of the growing crops.
+  \item Improving the performance of those systems yields into higher harvest success rates and also a faster adaption of robots in agriculture.
+  \item The authors did experiments spanning multiple years evaluating several method to change the way crops grow. 
+  \item The evaluated dimension, show ways to improve attributes of the plant, like more free hanging fruits or less leaves which could occlude the targets.
+  \item They present a framework for comparing the attributes of different plants against each others in respect to their harvestability.
+\end{itemize}
+
+\subsection*{\emph{Agricultural robots for field operations: Concepts and components}}
+\cite{Bechar2016}
+
+\begin{itemize}
+  \item This is a review paper investigating recent developments in the field of agricultural robots, and the associated shortcomings next to concepts and principles.
+  \item The authors underline the high complexity of robotic systems and the environmental challenges imposed in robots working in agriculture. For a feasible deployment of robots in agriculture, the systems have to compete and work side-by-side with human workers. This introduces even higher demands in the system safety and effectiveness.
+  \item After telling about the problems, the authors examine the current state of the art in an extensive background section. This section is divided into the following parts:\\ \begin{itemize}
+    \item \emph{Incentives for robots in field operations}
+    \item \emph{Conditions for robotic systems in agriculture}
+    \item \emph{Limitations of robotic systems in agriculture}
+  \end{itemize}
+  This part is great display of using structure and precise formulated problems. 
+  \item Inside the background section, the authors use helpful structures to make everything easy to read like lists and enumerations.
+  \item The main part of the paper reviewing the concepts gives more helpful structure like tables, charts and images.
+  \item The conclusion nicely takes on the different limitations and problems. It underlines again the economic aspect which currently prohibits the use use of agricultural robots.
+\end{itemize}
+
+\subsection*{\emph{Plant detection and mapping for agricultural robots using a 3D LIDAR sensor}}
+\cite{Weiss2011}
+
+\begin{itemize}
+  \item The authors want to contribute to precision agriculture by creating a system which can detect individual plants in open filed using a 3D Lidar sensor. This is needed for measuring KPIs of individual plants. 
+  \item Without robotics help, farmers are only able to gather plant data by taking random samples and treating huge numbers of plants the same. One part of robots in agruculture is to create big data sets of individual plants for further optimizing the grow process.
+  \item Using positioning information by itself to map individual plants is not precise enough, so this data needs to be fused with more data for a dependable mapping.
+  \item This kind of work can be done in multiple ways, many approaches are using cameras for gathering of 3D data. The authors believe that using 2D or 3D cameras have too many short comings, like the lack of robustness against illumination and atmospheric conditions.
+  \item The robot evaluated in this papers manages to track individual plants and rows using a low cost laser scanner with 25 fps.
+  \item Further mapping and modelling of the plants is needed, but those result are good by themselves.
+\end{itemize}
+
+\subsection*{\emph{Heterogeneous Multi-Robot System for Mapping Environmental Variables of Greenhouses}}
+\cite{Roldan2016}
+
+\begin{itemize}
+  \item For optimizing the climate conditions in greenhouses, it is needed to gather huge amount of plant specific data. One approach would be to distribute sensor networks inside the greenhouse, but the authors follow a different approach by deploying a team of two robots (UGV+UAV) into greenhouse to collect data.
+  \item Having fine granular, or even individual plant level data allows superior control for optimizing the plant grow. 
+  \item Using a robot instead of a sensor network proves to be more cost effective. The approach by the authors uses a UAV which can be deployed from the UGV, in cases the path is blocked. This is a completely novel approach.
+  \item The UAV is battery constraint. It would not be able to map a effective area by itself. So the authors use this only if the path is blocked for the UGV. With this cooperation the UGV does not need to waste time going around.
+  \item Really bad: The UGV could not fly by itself!!! The deployment started autonomously but the it was remote controlled.
+  \item The approach of just using the UGV would propably work as good as needed.
+\end{itemize}
+
+ 
+\bibliography{stuff}
+\bibliographystyle{apacite}
+
+\end{document}
