@@ -1355,11 +1355,28 @@ Rating
   number    = {9},
   pages     = {939--954},
   volume    = {23},
+  abstract  = {Despite more than a decade of experimental work in multi-robot
+systems, important theoretical aspects of multi-robot coordination
+mechanisms have, to date, been largely untreated. To address this
+issue, we focus on the problem of multi-robot task allocation (MRTA).
+Most work on MRTA has been ad hoc and empirical, with many
+coordination architectures having been proposed and validated in a
+proof-of-concept fashion, but infrequently analyzed. With the goal of
+bringing objective grounding to this important area of research, we
+present a formal study of MRTA problems. A domain-independent
+taxonomy of MRTA problems is given, and it is shown how many
+such problems can be viewed as instances of other, well-studied,
+optimization problems. We demonstrate how relevant theory from
+operations research and combinatorial optimization can be used for
+analysis and greater understanding of existing approaches to task
+allocation, and to show how the same theory can be used in the
+synthesis of new approaches.},
   comment   = {1450},
   doi       = {https://doi.org/10.1177%2F0278364904045564},
   file      = {:/home/sd/Documents/papers/gerkey2004.pdf:PDF},
-  keywords  = {Task allocation, multi-robot systems, coordination, utility, TOP30, basis, mrs},
+  keywords  = {Task allocation, multi-robot systems, coordination, utility, TOP30, basis, mrs, rank5},
   publisher = {{SAGE} Publications},
+  ranking   = {rank5},
 }
 
 @Article{Lerman2006,

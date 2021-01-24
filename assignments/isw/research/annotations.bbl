@@ -94,6 +94,37 @@ Bechar, A.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Gerkey%
+\ \BBA {} Matari{\'{c}}%
+}{%
+Gerkey%
+\ \BBA {} Matari{\'{c}}%
+}{%
+{\protect \APACyear {2004}}%
+}]{%
+Gerkey2004}
+\APACinsertmetastar {%
+Gerkey2004}%
+\begin{APACrefauthors}%
+Gerkey, B\BPBI P.%
+\BCBT {}\ \BBA {} Matari{\'{c}}, M\BPBI J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2004}{sep}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A Formal Analysis and Taxonomy of Task Allocation in
+  Multi-Robot Systems} {A formal analysis and taxonomy of task allocation in
+  multi-robot systems}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The International Journal of Robotics
+  Research}{23}{9}{939--954}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1177%2F0278364904045564}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Henten%
 \ \protect \BOthers {.}}{%
 Henten%

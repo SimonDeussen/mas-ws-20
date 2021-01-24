@@ -400,8 +400,8 @@ INPUT /home/sd/Documents/code/mas-ws-20/assignments/isw/research/annotations.toc
 INPUT /home/sd/Documents/code/mas-ws-20/assignments/isw/research/annotations.toc
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
-OUTPUT /home/sd/Documents/code/mas-ws-20/assignments/isw/research/annotations.toc
 INPUT /usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+OUTPUT /home/sd/Documents/code/mas-ws-20/assignments/isw/research/annotations.toc
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm

@@ -549,36 +549,6 @@ There will always be economic analyses for newer technology. Because  this  pape
   number    = {5},
   pages     = {265--273},
   volume    = {59},
-  comment   = {A key problem in agricultural robots is to detect and map individual plants for several reasons, including 
-navigation, individual reports and individual care. For a robust plant mapping it is needed to use reliable
-sensors and algorithms. Much research is done in solving this problem 
-using 2D and 3D cameras but this paper on the other hand, works on detecting plants using low cost and low resolution
-3D Lidar sensors. The solution contains an algorithm for detecting individual plant in a row using a FX6 3D Lidar sensor. 
-This sensor is still in development, the current version has a resolution of 29 by 59 pixel creating 15 frames per second.
-To detect the plant from the resulting point cloud, the algorithm first detects the ground plane and second  
-creates cluster for each plants using a k,d tree and decides for each cluster only using the bounding box dimensions.
-The proposed algorithm works seemingly fast, and manages to identify in a single frame 60\% of the plants
-and using multiple frames with tracking it scores an average detection accuracy of 80-90\%. Further the average accuracy 
-of the position detection is 3 centimeters. One problem occurring repeatedly is that the algorithm fails to differentiate
-between the next plants if they grow into each other and the cluster connect. The idea to use a low cost 3D sensor is quite good because, as mentioned in the paper, it works independent from 
-existing lighting and is robust against fog and dust - conditions which occur frequently in the real world.
-The algorithm uses only a bounding box of a cluster to determine the position of the plant. This approach works okay 
-when every plant grows neatly far away from their neighbours but fails in messy real world conditions.
-Some aspects are great on the other hand, it has a fast runtime, for example. I think this given approach would work 
-better on a row basis and maybe use offline compute power to identify the individual plants? 
-Because measuring these plants is a repeated operation, one could leverage the result of a computational more expensive
-offline algorithm and map the online point cloud directly onto an existing map.
-This main contribution is an evaluation of a low-cost 3D lidar scanner with an basic point clustering algorithm in real time. besides
-that they also showcase other approaches for the same problem using traditional 2D camera systems and different scanners.
-The future research will include using stronger machine learning algorithms for clustering and plant separation. They also
-want to work on a row detection basis.
-My main concern was the quite simple simulation model on gazebo and i hope that they improve this.
-It is possible to detect plants in real time using point clouds in the agricultural sector even with 
-simple mathematical methods. The difference between a classical and those FX6 laser scanner is also interesting.
-I think plant detection like this is the way to go, by improving only the algorithm it should be possible
-soon to deploy at least field scouting robots in real world scenarios. 
-In depth paper for clustering point clouds into individual plants using a bounding box approach.
-Maths is explained nicely, can be used to build something similar.},
   doi       = {https://doi.org/10.1016/j.robot.2011.02.011},
   file      = {:/home/sd/Documents/papers/1-s2.0-S0921889011000315-main.pdf:PDF},
   keywords  = {top30, rank4},
@@ -893,79 +863,6 @@ cycle time of a successful harvest to 567 and 530 s if two or three cucumbers we
 gap between the measured performance and the design specifications, future research focuses on improving the
 success rate, faster hardware and software for image processing and motion planning as well as the reduction
 of the motion time of the manipulator.},
-  comment   = {What are the motivations for this work?
-• The authors wanted to create a comparable solution to recent advances in
-harvesting tomatoes and eggplants
-• Human labour fir harvesting is a tedious and expensive task.
-• Robot labour needs to be able to harvest one cucumber every 10 seconds.
-This experiment tries to show the current (2001) limitations.
-• Inside high-wire greenhouses mobile robots can move along tracks next to
-the cucumber plants which creates a somehow structured environment.
-• This proposed architecture should allow complete autonomous harvesting.
-What is the proposed solution?
-• Mobile system consisting of a robotic arm having a thermal cutter and a
-suction cup for cutting and grabbing the cucumbers. One camera for tak-
-ing two images (768x512px) at different positions to find 3D coordinates.
-• They restricted the way to cucumbers could grow so that they are always
-in a specific range reachable for the robots manipulators.
-• Removed leaves before hand to lessen occlusion errors.
-• They also removed cucumbers growing too close to each other.
-• The systems moves along a rail in 33cm steps. At each step the cam-
-eras look for cucumbers and if found and big enough proceed with the
-harvesting.
-• The harvesting does not take additional images. All informations come
-from the initial 2 pictures. Even if multiple cucumbers are found, the
-initial information and processing has to be enough.
-• Because the range of the system is around 1m, the 33cm step allow up to
-3 harvest attempts for each cucumber.
-What is the work‘s evaluation of the solution?
-• For this experiment the authors took in-depth runtime measurements and
-error protocols.
-• On average the system managed to harvest ca. 75% of a present cucum-
-bers.
-• For the whole experiment with multiple attempts and failures, the result-
-ing harvesting time was 124s per cucumber!!!
-• If every first attempt would have been successful, the resulting time would
-have been 75s per harvested cucumber.
-• Most errors (ca. 36%) came from an misplaced end-effector resulting from
-poor 3D coordinates.
-What is my analysis of the identified problem, idea and evaluation?
-• Those experiments (20 years ago) have been one order of magnitude too
-slow for a commercial application.
-• I like the idea of using only one camera, but the extra cost would directly
-result in a speed up which would basically pay for itself to use a stereo
-camera.
-• The evaluation was very good. The authors managed to create an details
-overview over the shortcomings.
-• Especially the failure categorization is great. This should be an inspiration
-for similar failure reports for my own experiments.
-• I was surprised that the paper was that old.
-• 10 seconds runtime for the image analysis will be much faster nowadays.
-What are the contributions?
-• This paper was a report over an in depth experiment using this harvesting
-system.
-• It sheds light in many failure classes and shows how to make a proper
-report.
-• The robotic system had a bad execution time and accuracy.
-What are the future directions of the research?
-Harvesting crops in greenhouses will continue to be a key research topic. For
-this case I hope that the authors managed to increase the execution speeds.
-What questions have I left?
-• Mainly the comparison to todays systems. For the my next reading report
-I should find a more recent paper about the same topic.
-• If the system can easily exchange the end-effectors, it should be possible
-to use the mobile platform for all kind of different tasks.
-What is my main take away from this paper?
-Great structured experiment with a promising setup. Having rails in a green-
-house is not too expensive and solves many navigation problems. I am looking
-forward to deepen my research in this area. Would it be possible to create a
-rail grid with multiple robots, cooperating in this task?
-Summary
-Definitely enjoyed the detailed reporting on different failures and execution
-times. This paper is an excellent blueprint on how to write a report over an
-experiment.
-Rating
-4/5},
   doi       = {https://doi.org/10.1016/j.biosystemseng.2003.08.002},
   file      = {:/home/sd/Documents/papers/vanhenten2003.pdf:PDF},
   keywords  = {Top30, basis, Harvesting, Computer Vision, Machine Vision, Stereo Vision, Experiment, rank4},
@@ -1458,11 +1355,28 @@ Rating
   number    = {9},
   pages     = {939--954},
   volume    = {23},
+  abstract  = {Despite more than a decade of experimental work in multi-robot
+systems, important theoretical aspects of multi-robot coordination
+mechanisms have, to date, been largely untreated. To address this
+issue, we focus on the problem of multi-robot task allocation (MRTA).
+Most work on MRTA has been ad hoc and empirical, with many
+coordination architectures having been proposed and validated in a
+proof-of-concept fashion, but infrequently analyzed. With the goal of
+bringing objective grounding to this important area of research, we
+present a formal study of MRTA problems. A domain-independent
+taxonomy of MRTA problems is given, and it is shown how many
+such problems can be viewed as instances of other, well-studied,
+optimization problems. We demonstrate how relevant theory from
+operations research and combinatorial optimization can be used for
+analysis and greater understanding of existing approaches to task
+allocation, and to show how the same theory can be used in the
+synthesis of new approaches.},
   comment   = {1450},
   doi       = {https://doi.org/10.1177%2F0278364904045564},
   file      = {:/home/sd/Documents/papers/gerkey2004.pdf:PDF},
-  keywords  = {Task allocation, multi-robot systems, coordination, utility, TOP30, basis, mrs},
+  keywords  = {Task allocation, multi-robot systems, coordination, utility, TOP30, basis, mrs, rank5},
   publisher = {{SAGE} Publications},
+  ranking   = {rank5},
 }
 
 @Article{Lerman2006,

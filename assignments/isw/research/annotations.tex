@@ -63,12 +63,97 @@
 
 % ================= TEMPLATE =================
 
+\section{Reading Report: \emph{A Formal Analysis and Taxonomy of Task Allocation in Multi-Robot Systems
+}}
+\cite{Gerkey2004}
+
+\subsection*{Abstract}
+Despite more than a decade of experimental work in multi-robot
+systems, important theoretical aspects of multi-robot coordination
+mechanisms have, to date, been largely untreated. To address this
+issue, we focus on the problem of multi-robot task allocation (MRTA).
+Most work on MRTA has been ad hoc and empirical, with many
+coordination architectures having been proposed and validated in a
+proof-of-concept fashion, but infrequently analyzed. With the goal of
+bringing objective grounding to this important area of research, we
+present a formal study of MRTA problems. A domain-independent
+taxonomy of MRTA problems is given, and it is shown how many
+such problems can be viewed as instances of other, well-studied,
+optimization problems. We demonstrate how relevant theory from
+operations research and combinatorial optimization can be used for
+analysis and greater understanding of existing approaches to task
+allocation, and to show how the same theory can be used in the
+synthesis of new approaches.
+
+\subsection*{Keywords}
+task allocation, multi-robot systems, coordination, utility
+
+
+\subsection*{Questions}
+\subsubsection*{What are the motivations for this work?}
+\begin{itemize}
+    \item For many problems exist better solution using multiple robots instead of a single system. But as soon as multiple actors are involved, there is a need for coordination, collaboration and cooperation. This emerges in the field of multi-robot task allocation (MRTA).
+    \item With more and more research in multi robot systems, the authors recognized a need for a formal taxonomy for comparison of different approaches. 
+    \item The authors say, most reseach efforts in MRS focus heavily on the building and validation of somewhat working systems. Missing here is a methodology to compare the approaches between each other and recommend algorithms for each problem class.
+\end{itemize}
+\subsubsection*{What is the proposed solution?}
+\begin{itemize}
+    \item The authors recommend a general taxonomy for classifying MRTA problems and suggest formal algorithms for each classes.
+    \item The taxonomy is build along following axis:\ \begin{itemize}
+        \item Single-task robots (ST) versus multi-task robots (MT)
+        \item Single-robot tasks (SR) versus multi-robot tasks (MR)
+        \item Instantaneous assignment (IA) versus time-extended assignment (TA):
+    \end{itemize}
+    \item This results in following problem classes: \ \begin{itemize}
+        \item ST–SR–IA: Single-Task Robots, Single-Robot Tasks, Instantaneous Assignment
+        \item ST–SR–TA: Single-Task Robots, Single-Robot Tasks, Time-Extended Assignment
+        \item ST–MR–IA: Single-Task Robots, Multi-Robot Tasks, Instantaneous Assignment
+        \item ST–MR–TA: Single-Task Robots, Multi-Robot Tasks, Time-Extended Assignment
+        \item MT–SR–IA and MT–SR–TA: Multi-Task Robots, Single-Robot Tasks
+        \item MT–MR–IA: Multi-Task Robots, Multi-Robot Tasks, Instantaneous Assignment        
+        \item MT–MR–TA: Multi-Task Robots, Multi-Robot Tasks, Time-Extended Assignment
+    \end{itemize}
+    \item Each of those formal classes is evaluated in computational and communication requirements as well as the solution quality.
+\end{itemize}
+\subsubsection*{What is the work`s evaluation of the solution?}
+\begin{itemize}
+    \item The authors point out, this is a corse and general taxonomy. Its goal is to find comparisons and classifications on a high level. The proposed algorithms can work in some ways, but should be seen as a baseline for comparing to engineered solutions using domain specific knowledge.  
+\end{itemize}
+\subsubsection*{What is my analysis of the identified problem, idea and evaluation?}
+\begin{itemize}
+    \item The need for formal constraints to analyse research in MRS its important. This shows similarities, differences and leaps in existing and future work.
+    \item I think the seven presented classes are a good way to differentiate between problem cases.
+\end{itemize}
+\subsubsection*{What are the contributions?}
+\begin{itemize}
+    \item A formal taxonomy
+    \item Comparison between 6 recent (2004) research topics
+\end{itemize}
+\subsubsection*{What are the future directions of the research?}
+\begin{itemize}
+    \item The most needed research direction are of course better heuristic algorithms to solve all of the optimization problems occurring in MRTA.
+    \item It is possible to create a more specific taxonomy using domain specific knowledge for different fields.
+    \item Another approach is using the high-dimensional utility landscape to classify different MRTA problems.
+\end{itemize}
+\subsubsection*{What is my main take away from this paper?}
+\begin{itemize}
+    \item The approach using economic and organizational tools to certain problems in robotic communication. 
+    \item Task assignment is a major part in any distributed system, the paper showed interesting solution approaches.
+\end{itemize}
+
+\subsection*{Summary}
+Good taxonomy, will be a major part of the MRS section of the seminar report.
+\subsection*{Rating}
+5/5
+
+
+
+
 \section{Reading Report: \emph{Advances in Multi-Robot Systems}}
 \cite{Arai2002}
 
 \subsection*{Abstract}
-As research progresses in distributed robotic sys-
-tems, more and more aspects of multi-robot systems are being
+As research progresses in distributed robotic systems, more and more aspects of multi-robot systems are being
 explored. This special issue on Multi-Robot Systems provides
 a broad sampling of the research that is currently ongoing in
 the field of distributed mobile robot systems. To help categorize this research, we have identified seven primary research top-
