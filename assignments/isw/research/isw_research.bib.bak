@@ -1422,8 +1422,9 @@ the future directions.},
   comment   = {195},
   doi       = {https://doi.org/10.1007/978-3-319-18299-5_2},
   file      = {:/home/sd/Documents/papers/khamis2015.pdf:PDF},
-  keywords  = {TOP30, basis, mrs, structure, mindmap},
+  keywords  = {TOP30, basis, mrs, structure, mindmap, rank2},
   publisher = {Springer International Publishing},
+  ranking   = {rank2},
 }
 
 @Article{Shell,
