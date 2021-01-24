@@ -1374,7 +1374,7 @@ synthesis of new approaches.},
   comment   = {1450},
   doi       = {https://doi.org/10.1177%2F0278364904045564},
   file      = {:/home/sd/Documents/papers/gerkey2004.pdf:PDF},
-  keywords  = {Task allocation, multi-robot systems, coordination, utility, TOP30, basis, mrs, rank5},
+  keywords  = {\mindmap, Task allocation, multi-robot systems, coordination, utility, TOP30, basis, structure, mrs, rank5},
   publisher = {{SAGE} Publications},
   ranking   = {rank5},
 }
@@ -1400,11 +1400,29 @@ synthesis of new approaches.},
   title     = {Multi-robot Task Allocation: A Review of the State-of-the-Art},
   year      = {2015},
   pages     = {31--51},
+  abstract  = {Multi-robot systems (MRS) are a group of robots that are designed
+aiming to perform some collective behavior. By this collective behavior, some goals
+that are impossible for a single robot to achieve become feasible and attainable.
+There are several foreseen benefits of MRS compared to single robot systems such
+as the increased ability to resolve task complexity, increasing performance, relia-
+bility and simplicity in design. These benefits have attracted many researchers from
+academia and industry to investigate how to design and develop robust versatile MRS
+by solving a number of challenging problems such as complex task allocation, group
+formation, cooperative object detection and tracking, communication relaying and
+self-organization to name just a few. One of the most challenging problems of MRS
+is how to optimally assign a set of robots to a set of tasks in such a way that optimizes
+the overall system performance subject to a set of constraints. This problem is known
+as Multi-robot Task Allocation (MRTA) problem. MRTA is a complex problem
+especially when it comes to heterogeneous unreliable robots equipped with different
+capabilities that are required to perform various tasks with different requirements
+and constraints in an optimal way. This chapter provides a comprehensive review on
+challenging aspects of MRTA problem, recent approaches to tackle this problem and
+the future directions.},
   booktitle = {Cooperative Robots and Sensor Networks 2015},
   comment   = {195},
   doi       = {https://doi.org/10.1007/978-3-319-18299-5_2},
   file      = {:/home/sd/Documents/papers/khamis2015.pdf:PDF},
-  keywords  = {TOP30, basis, mrs},
+  keywords  = {TOP30, basis, mrs, structure, mindmap},
   publisher = {Springer International Publishing},
 }
 

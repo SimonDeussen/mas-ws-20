@@ -156,6 +156,37 @@ Henten, E\BPBI V.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Khamis%
+, Hussein%
+\BCBL {}\ \BBA {} Elmogy%
+}{%
+Khamis%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2015}}%
+}]{%
+Khamis2015}
+\APACinsertmetastar {%
+Khamis2015}%
+\begin{APACrefauthors}%
+Khamis, A.%
+, Hussein, A.%
+\BCBL {}\ \BBA {} Elmogy, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Multi-robot Task Allocation: A Review of the
+  State-of-the-Art} {Multi-robot task allocation: A review of the
+  state-of-the-art}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{}{}{}{31--51}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1007/978-3-319-18299-5_2}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Lili%
 , Bo%
 , Jinwei%

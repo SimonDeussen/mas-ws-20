@@ -63,6 +63,85 @@
 
 % ================= TEMPLATE =================
 
+\section{Reading Report: \emph{Multi-robot Task Allocation: A Review of the State-of-the-Art}}
+\cite{Khamis2015}
+
+\subsection*{Abstract}
+Multi-robot systems (MRS) are a group of robots that are designed
+aiming to perform some collective behavior. By this collective behavior, some goals
+that are impossible for a single robot to achieve become feasible and attainable.
+There are several foreseen benefits of MRS compared to single robot systems such
+as the increased ability to resolve task complexity, increasing performance, relia-
+bility and simplicity in design. These benefits have attracted many researchers from
+academia and industry to investigate how to design and develop robust versatile MRS
+by solving a number of challenging problems such as complex task allocation, group
+formation, cooperative object detection and tracking, communication relaying and
+self-organization to name just a few. One of the most challenging problems of MRS
+is how to optimally assign a set of robots to a set of tasks in such a way that optimizes
+the overall system performance subject to a set of constraints. This problem is known
+as Multi-robot Task Allocation (MRTA) problem. MRTA is a complex problem
+especially when it comes to heterogeneous unreliable robots equipped with different
+capabilities that are required to perform various tasks with different requirements
+and constraints in an optimal way. This chapter provides a comprehensive review on
+challenging aspects of MRTA problem, recent approaches to tackle this problem and
+the future directions.
+
+\subsection*{Keywords}
+Multi-robot Task Allocation, Optimization based approach, market based approach, distribution, cooperation
+
+\subsection*{Questions}
+\subsubsection*{What are the motivations for this work?}
+\begin{itemize}
+    \item The authors state that using multu robot systems (MRS) help solving problems with following benefits: \ \begin{itemize}
+        \item Resolving task complexity: Some task can be achieved easier in a group than in a single system.
+        \item Increasing performance: If tasks can be parallelizes, the performance improves dramatically.
+        \item Increasing reliability: Having multiply actors increases redundancy and robustness for less failures.
+        \item Simplicity in design: Multiple small and simple robots should be easier to build than big mighty machines.
+    \end{itemize}
+    \item The authors further state the MRTA is the hardest problem in MRS. To solve this, many different research approaches have been done, and the authors want to capture the state of the art.
+\end{itemize}
+
+\subsubsection*{What is the proposed solution?}
+\begin{itemize}
+    \item This a in-depth review of current (2015) work in the field of MRTA. 
+    \item The papers showcase several ways to model the MRTA problem mathematically. Including: \begin{itemize}
+        \item ALLIANCE efficiency problem (AEP)
+        \item Optimal assignment problem (OAP)
+        \item Multiple traveling salesman problem (mTSP)
+        \item Discrete fair division
+    \end{itemize}
+    \item For deeper understanding the authors classified MRTA schemes similar to \cite{Gerkey2004}.
+    \item The crux of MRTA are the organizational paradigms for the communication between the actors. The authors distinguish between \emph{centralized approaches} and \emph{decentralized approaches}. Several papers are mentioned here for further research into the state-of-the-art.
+\item The last parts are a comparison of \emph{market-based approaches} versus \emph{optimization-based approaches}. 
+\end{itemize}
+\subsubsection*{What is the work`s evaluation of the solution?}
+\begin{itemize}
+    \item The authors claim to have cpatures the current (2015) state-of-the-art of MRTA.
+\end{itemize}
+\subsubsection*{What is my analysis of the identified problem, idea and evaluation?}
+\begin{itemize}
+    \item While the paper has a good beginning, with many helpful links, reviews and pointer to other research, the ending is underwhelming. It feels like the paper stops half-way trough. 
+    \item Marked-based approaches are still described and reviews in-depth, but after this suddenly details and structure starts missing.
+    \item The conclusion has no real content or ending.
+\end{itemize}
+\subsubsection*{What are the contributions?}
+\begin{itemize}
+    \item Review of different techniques, methods and algorithms for multiple robot task assignment problems.
+\end{itemize}
+\subsubsection*{What questions have I left?}
+\begin{itemize}
+    \item Why did they stop writing the paper? The start and the first couple of reviews haven been useful.
+\end{itemize}
+\subsubsection*{What is my main take away from this paper?}
+\begin{itemize}
+    \item Simulated annealing MRTA strategies tend to perform the best in small-, medium- and large-scale problems. For best capabilities matching market-based approaches are better.
+\end{itemize}
+
+\subsection*{Summary}
+Good explanation of several algorithms and approaches for solving task assignment problems. But the ending is bad.
+\subsection*{Rating}
+2/5
+
 \section{Reading Report: \emph{A Formal Analysis and Taxonomy of Task Allocation in Multi-Robot Systems
 }}
 \cite{Gerkey2004}
