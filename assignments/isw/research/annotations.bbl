@@ -187,6 +187,38 @@ Khamis, A.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Korsah%
+, Stentz%
+\BCBL {}\ \BBA {} Dias%
+}{%
+Korsah%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2013}}%
+}]{%
+Korsah2013}
+\APACinsertmetastar {%
+Korsah2013}%
+\begin{APACrefauthors}%
+Korsah, G\BPBI A.%
+, Stentz, A.%
+\BCBL {}\ \BBA {} Dias, M\BPBI B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2013}{oct}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A comprehensive taxonomy for multi-robot task
+  allocation} {A comprehensive taxonomy for multi-robot task
+  allocation}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The International Journal of Robotics
+  Research}{32}{12}{1495--1512}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1177%2F0278364913496484}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Lili%
 , Bo%
 , Jinwei%

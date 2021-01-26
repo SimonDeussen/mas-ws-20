@@ -5,7 +5,7 @@
 \usepackage{apacite}
 
 \title{MAS ISW Reading Reports}
-\date{15.12.2020}
+\date{26.01.2021}
 \author{Simon Deussen}
 
 \begin{document}
@@ -62,6 +62,81 @@
 % \subsection*{Rating}
 
 % ================= TEMPLATE =================
+
+\section{Reading Report: \emph{A comprehensive taxonomy for multi-robot task allocation}}
+\cite{Korsah2013}
+
+\subsection*{Abstract}
+Task allocation is an important aspect of many multi-robot systems. The features and complexity of multi-robot task allo-
+cation (MRTA) problems are dictated by the requirements of the particular domain under consideration. These problems
+can range from those involving instantaneous distribution of simple, independent tasks among members of a homogenous
+team, to those requiring the time-extended scheduling of complex interrelated multi-step tasks for members of a heteroge-
+nous team related by several constraints. The existing widely used taxonomy for task allocation in multi-robot systems was
+designed for problems with independent tasks and does not deal with problems with interrelated utilities and constraints.
+While that taxonomy was a ground-breaking contribution to the MRTA literature, a survey of recent work in MRTA reveals
+that it is no longer a sufficient taxonomy, due to the increasing importance of interrelated utilities and constraints in
+realistic MRTA problems under consideration. Thus, in this paper, we present a new, comprehensive taxonomy, iTax, that
+explicitly takes into consideration the issues of interrelated utilities and constraints. Our taxonomy maps categories of
+MRTA problems to existing mathematical models from combinatorial optimization and operations research, and hence
+draws important parallels between robotics and these fields.
+
+\subsection*{Keywords}
+multi-robot coordination, task allocation, taxonomy
+
+\subsection*{Questions}
+\subsubsection*{What are the motivations for this work?}
+\begin{itemize}
+    \item The authors want to extend the commonly used MRTA taxonomy from Gerkey \cite{Gerkey2004} with the dimension of interrelatedness of given task. 
+    \item Different task can be decomposed and related with each other. To capture this, a classification along the degrees between single or atomic tasks, and complex task is needed.
+    \item The authors found the increasing importance of interrelated and complex tasks as a basis to crate this new and more complex taxonomy.
+\end{itemize}
+\subsubsection*{What is the proposed solution?}
+\begin{itemize}
+  \item The authors created a taxonomy for MRTA problems along the degree of interrelatedness of tasks. Following classes are presented: \ 
+  \begin{description}
+      \item[No Dependencies class (ND)] The utility of an agent only depends on the agent and the task itself. No other dependencies. 
+      \item[In-schedule Dependencies (ID)] The agents effective utility depends on the other task it is assigned to. The schedule how the tasks are executed gets relvant.
+      \item[Cross-schedule Dependencies (XD)] Here the utility of the agents not only depend on their one schedule but also the schedule of all the other agents. Until here, all task have been elemental, simple or compound tasks.
+      \item[Complex Dependencies (CD)] It is not just relevant \emph{who} and \emph{when} each task should be executed, but on the same time the \emph{decomposition} of any given task also depends on the schedule of all other tasks and agents. (Complex tasks)
+      \item[Elemental task]  An task, which can not be decomposed any further.
+      \item[Simple task]  An task, which is either elemental or can be decomposed into elemental tasks.
+      \item[Compound task] A task which can be decomposed in exactly one fixed set of simple subtasks.
+      \item[Comlplex task] This task can be decomposed into multiple different subsets, where at least one subset requirers multi agent comporation.
+  \end{description}
+\end{itemize}
+\subsubsection*{What is the work`s evaluation of the solution?}
+\begin{itemize}
+    \item Even though it is more complex than the standard taxonomy from Gerkey, they find it still comprehensive and relevant. 
+    \item With the new classes the authors find it is much easier to forsee the computational complexity of given problems.
+\end{itemize}
+\subsubsection*{What is my analysis of the identified problem, idea and evaluation?}
+\begin{itemize}
+    \item The new degree of interrelatedness is a valid measure to compare the difficulty of tasks. 
+    \item Two categories contain most of the relevant work and examples, so I wonder if the separation into four classes is needed, or if the two classes ND and XD would have been enough for practical reasoning. 
+    \item Since MRTA problems in the ND class are still solvable in polynomial time, and the remaining are all NP-hard, with no out-of-the-box solutions, this could be enough. But the overall distinguishing makes somewhat sense of course, but most real tasks fall in the XD category anyways.
+\end{itemize}
+\subsubsection*{What are the contributions?}
+\begin{itemize}
+    \item The author created an in-depth taxonomy which highlights a new key dimension, the degree of interrelatedness if tasks and constraints.
+    \item Using this new taxonomy the authors showcase relevant mathematical models for each problem class.
+    \item They used many parts of Gerkeys taxonomy and relate all of their new found classes to the standards. 
+\end{itemize}
+\subsubsection*{What are the future directions of the research?}
+\begin{itemize}
+    \item None, explicit. 
+\end{itemize}
+\subsubsection*{What questions have I left?}
+\begin{itemize}
+    \item I wonder if there is another, newer taxonomy build on top of this.
+\end{itemize}
+\subsubsection*{What is my main take away from this paper?}
+\begin{itemize}
+    \item Great in-depth taxonomy of relevant problems in MRTA.
+\end{itemize}
+
+\subsection*{Summary}
+This paper is an excellent building block of my seminar report!
+\subsection*{Rating}
 
 \section{Reading Report: \emph{Multi-robot Task Allocation: A Review of the State-of-the-Art}}
 \cite{Khamis2015}
