@@ -64,6 +64,92 @@
 
 % ================= TEMPLATE =================
 
+\section{Reading Report: \emph{Swarm-enabling Technology for Multi-Robot Systems}}
+\cite{Chamanbaz2017}
+
+\subsection*{Abstract}
+Swarm robotics has experienced a rapid expansion in recent years, primarily fueled by
+specialized multi-robot systems developed to achieve dedicated collective actions. These
+specialized platforms are, in general, designed with swarming considerations at the front
+and center. Key hardware and software elements required for swarming are often deeply
+embedded and integrated with the particular system. However, given the noticeable
+increase in the number of low-cost mobile robots readily available, practitioners and
+hobbyists may start considering to assemble full-fledged swarms by minimally retrofitting
+such mobile platforms with a swarm-enabling technology. Here, we report one possible
+embodiment of such a technology—an integrated combination of hardware and soft-
+ware—designed to enable the assembly and the study of swarming in a range of general-purpose robotic systems. This is achieved by combining a modular and transferable
+software toolbox with a hardware suite composed of a collection of low-cost and off-the-
+shelf components. The developed technology can be ported to a relatively vast range of
+robotic platforms—such as land and surface vehicles—with minimal changes and high
+levels of scalability. This swarm-enabling technology has successfully been implemented
+on two distinct distributed multi-robot systems, a swarm of mobile marine buoys and a
+team of commercial terrestrial robots. We have tested the effectiveness of both of these
+distributed robotic systems in performing collective exploration and search scenarios,
+as well as other classical cooperative behaviors. Experimental results on different swarm
+behaviors are reported for the two platforms in uncontrolled environments and without
+any supporting infrastructure. The design of the associated software library allows for a
+seamless switch to other cooperative behaviors—e.g., leader–follower heading consensus and collision avoidance, and also offers the possibility to simulate newly designed
+collective behaviors prior to their implementation onto the platforms. This feature greatly
+facilitates behavior-based design, i.e., the design of new swarming behaviors, with the
+possibility to simulate them prior to physically test them.
+
+\subsection*{Keywords}
+swarm robotics, distributed multi-robot systems, cooperative control, flocking, distributed communication
+
+
+\subsection*{Questions}
+\subsubsection*{What are the motivations for this work?}
+\begin{itemize}
+    \item Since swarm robotics has experienced a rapid expansion recently and more and more low cost robots are available to purchase off-the-shelf, the authors found a need for a general, integrated hardware and software combination for a control framework for constructing and evaluating swarm robotics.
+    \item The authors state that for researchers and practitioners in swarm robotic research there is no other option than to devise a custom solution for their hardware. As a better alternative they present this framework with custom control hardware for a quicker start into main work of creating behaviors.
+    \item They want to fill the gap between off-the-shelf hardware and custom coded solutions.
+\end{itemize}
+\subsubsection*{What is the proposed solution?}
+\begin{itemize}
+    \item The authors created a uniform platform-agnostic hardware and software toolkit, capable of transforming ordinary mobile robots in fully fledged swarms and achieving a multitude of swarming behaviors using a software layer.
+    \item Each agent will be retrofitted with a RaspberryPie for computation and a XBee for communication. A Python software library runs on the Pie for controlling the behavior, body and networking of the robots.
+\end{itemize}
+\subsubsection*{What is the work`s evaluation of the solution?}
+\begin{itemize}
+    \item The authors showcase several swarm behaviors - perimeter defense, search and exploration, heading consensus, aggregation and leader-follower modes - realized with their low cost hardware and software platform.
+    \item The experiments conducted were realized with \emph{BoB}s (Buoys) and \emph{eBots} (wheeled mobile platform). The \emph{eBots} swarm consisted of 5 to 10 robots and the \emph{BoB}s  had 45 units. 
+    \item Results from the experiments showcased interesting behavior patterns and a functioning robot control.
+    \item All in all the authors are quite happy with their results.
+\end{itemize}
+\subsubsection*{What is my analysis of the identified problem, idea and evaluation?}
+\begin{itemize}
+    \item Supporting the swarm robotic community with proper tools for rapid development is a great idea. Together with a low cost hardware system the authors make it easy too deploy distributed multi-robot systems and robot swarms.
+    \item Some limitation were visible in their networking approach. Their idea is, that each robot broadcasts relevant data to all other robots with 0,1 Hz into a range of around 300m. When using aroung 50 units, they realized that the single units were not able to read all messages. This means that this approach is not going to scale very well with many robots in the broadcast range. A solution would be to decrease either the range or the frequency.
+\end{itemize}
+\subsubsection*{What are the contributions?}
+\begin{itemize}
+    \item They provided a general blueprint for a low cost hardware platform enabling swarm behavior on existing off-the-shelf robots. Thus making swarm robot research and prototyping much easier. The hardware is a RaspberryPie for computing and a XBee for network interfacing.
+    \item Next to the hardware solution they also presented a python framework for controlling the robot`s body, the behavior and the networking interface.
+\end{itemize}
+\subsubsection*{What are the future directions of the research?}
+\begin{itemize}
+    \item The future research directions are upgrades towards the computing hardware for calculating more complex algorithms on the robots. 
+    \item Another directions is the inclusion of advanced swarm behavior algorithms in the python library.
+    \item Besides the improvement of homogenous swarming the authors also expect to make the system work with heterogeneous swarm platform which they also want to investigate.
+\end{itemize}
+\subsubsection*{What questions have I left?}
+\begin{itemize}
+    \item Remaining questions and thoughts about this paper lie in the actual implementation of the python code as well as the needed integration of the existing hardware of the robots. This has to get investigated.
+    \item Can this also easily implemented in simulator for playing around?
+\end{itemize}
+\subsubsection*{What is my main take away from this paper?}
+\begin{itemize}
+    \item Open source software platform for enabling swarm behavior in off-the-shelf robots.
+    \item Running swarm behaviour on RaspberryPies.
+\end{itemize}
+
+\subsection*{Summary}
+Cool implementation and validation of "plugin" swarm intelligence modules. Check the code on github!
+\subsection*{Rating}
+5/5
+
+
+
 \section{Reading Report: \emph{Analysis of Dynamic Task Allocation in Multi-Robot Systems
 }}
 \cite{Lerman2006}

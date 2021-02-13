@@ -94,6 +94,38 @@ Bechar, A.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Chamanbaz%
+\ \protect \BOthers {.}}{%
+Chamanbaz%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2017}}%
+}]{%
+Chamanbaz2017}
+\APACinsertmetastar {%
+Chamanbaz2017}%
+\begin{APACrefauthors}%
+Chamanbaz, M.%
+, Mateo, D.%
+, Zoss, B\BPBI M.%
+, Toki{\'{c}}, G.%
+, Wilhelm, E.%
+, Bouffanais, R.%
+\BCBL {}\ \BBA {} Yue, D\BPBI K\BPBI P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{apr}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Swarm-Enabling Technology for Multi-Robot Systems}
+  {Swarm-enabling technology for multi-robot systems}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Frontiers in Robotics and {AI}}{4}{}{}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.3389/frobt.2017.00012}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Gerkey%
 \ \BBA {} Matari{\'{c}}%
 }{%
