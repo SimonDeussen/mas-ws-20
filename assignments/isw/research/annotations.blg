@@ -15,45 +15,45 @@ Database file #1: isw_research.bib
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
 Warning--`others' not consistent with 6th ed. of the APA Manual
 Warning--No journal in Khamis2015
-You've used 15 entries,
+You've used 16 entries,
             6951 wiz_defined-function locations,
-            1398 strings with 14256 characters,
-and the built_in function-call counts, 31530 in all, are:
-= -- 3684
-> -- 317
-< -- 1551
-+ -- 1624
-- -- 32
-* -- 2168
-:= -- 5823
-add.period$ -- 58
-call.type$ -- 15
-change.case$ -- 275
+            1405 strings with 14460 characters,
+and the built_in function-call counts, 33675 in all, are:
+= -- 3933
+> -- 340
+< -- 1658
++ -- 1735
+- -- 34
+* -- 2316
+:= -- 6211
+add.period$ -- 62
+call.type$ -- 16
+change.case$ -- 294
 chr.to.int$ -- 0
-cite$ -- 31
-duplicate$ -- 946
-empty$ -- 1238
-format.name$ -- 581
-if$ -- 5793
+cite$ -- 33
+duplicate$ -- 1013
+empty$ -- 1321
+format.name$ -- 622
+if$ -- 6188
 int.to.chr$ -- 0
-int.to.str$ -- 45
+int.to.str$ -- 48
 missing$ -- 0
-newline$ -- 435
-num.names$ -- 120
-pop$ -- 436
+newline$ -- 465
+num.names$ -- 128
+pop$ -- 464
 preamble$ -- 1
-purify$ -- 80
+purify$ -- 86
 quote$ -- 0
-skip$ -- 1938
+skip$ -- 2069
 stack$ -- 0
-substring$ -- 1735
-swap$ -- 565
-text.length$ -- 51
+substring$ -- 1853
+swap$ -- 605
+text.length$ -- 55
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 1200
+type$ -- 1280
 warning$ -- 2
-while$ -- 211
+while$ -- 227
 width$ -- 0
-write$ -- 574
+write$ -- 615
 (There were 2 warnings)
