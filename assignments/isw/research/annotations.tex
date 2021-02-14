@@ -64,6 +64,89 @@
 
 % ================= TEMPLATE =================
 
+\section{Reading Report: \emph{Performance improvements of a sweet pepper harvesting robot in protected cropping environments
+}}
+\cite{Lehnert2020}
+
+\subsection*{Abstract}
+Using robots to harvest sweet peppers in protected cropping environments has
+remained unsolved despite considerable effort by the research community over
+several decades. In this paper, we present the robotic harvester, Harvey, designed
+for sweet peppers in protected cropping environments that achieved a 76.5\%
+success rate on 68 fruit (within a modified scenario) which improves upon our prior
+work which achieved 58\% on 24 fruit and related sweet pepper harvesting work
+which achieved 33\% on 39 fruit (for their best tool in a modified scenario). This
+improvement was primarily achieved through the introduction of a novel peduncle
+segmentation system using an efficient deep convolutional neural network, in con-
+junction with three‐dimensional postfiltering to detect the critical cutting location.
+We benchmark the peduncle segmentation against prior art demonstrating
+an improvement in performance with a $F_1$ score of 0.564 compared to 0.302. The
+robotic harvester uses a perception pipeline to detect a target sweet pepper and an
+appropriate grasp and cutting pose used to determine the trajectory of a multimodal
+harvesting tool to grasp the sweet pepper and cut it from the plant. A novel
+decoupling mechanism enables the gripping and cutting operations to be performed
+independently. We perform an in‐depth analysis of the full robotic harvesting system
+to highlight bottlenecks and failure points that future work could address.
+
+\subsection*{Keywords}
+agriculture, grasping, manipulators, perception, robotic harvesting, state-of-the-art
+
+
+\subsection*{Questions}
+\subsubsection*{What are the motivations for this work?}
+\begin{itemize}
+    \item For growing and harvesting crops, one of the biggest costs is associated with labor hire. Together with high cost of inouts like energy, water and agrochemicals, the author state that the profit margins of farmers stand under tremendous pressure. To combat the high labor costs utilizing robots is a viable solution.
+    \item Using robots in farming can also lower the risks associated with food safety.
+    \item Another important aspect of using robots for plant care, is that they will be able to optimal schedule care and harvest activity - an efficiency boost.
+\end{itemize}
+\subsubsection*{What is the proposed solution?}
+\begin{itemize}
+    \item The authors propose a autonomous harvester, called 'Harvey', for sweet peppers or other high value crops.
+    \item The plattforms consists of following parts: \ \begin{itemize}
+        \item Wheeled, mobile plattform
+        \item Custom water-cooled linux computer with Intel i7 and Nvidia 1070
+        \item Custom designed harvesting tool with: \ \begin{itemize}
+            \item RGB-D camera
+            \item Oscillating cutter
+            \item Detachable Suction cup
+        \end{itemize}
+        \item 7DOF manipulator attached to a lift
+        \item The software system is using ROS 
+    \end{itemize} 
+    \item For perception and harvest planning of the crops, the authors crated an image processing pipeline for first detecting a target pepper, next segment the pepper and the peduncle and then planning the grabbing and cutting separeted. The suction cup can be easily detached from the arm, so the arm can still move around to find a better cut angle in the peduncle.
+\end{itemize}
+\subsubsection*{What is the work`s evaluation of the solution?}
+\begin{itemize}
+    \item The system was able to successfully harvest \textbf{76.5}\% of 68 peppers in modified plants. The modification was removing of occluding plant parts or a better positioning of the peppers. In unmodified plants the success rate was only \textbf{47}\%.
+    \item The authors liked their harvesting success, but mentioned that they are note satisfied with their speed. Harvesting one pepper took on average \textbf{36.9} seconds. Most time was spent on the detachment stage, and because of some software errors on the placement stage after harvesting. The authors state that this could be fixed easily.
+\end{itemize}
+\subsubsection*{What is my analysis of the identified problem, idea and evaluation?}
+\begin{itemize}
+    \item The overall system seems great. One point which I disliked was the segmentation of the sweet pepper, because they are going for the simplest method which is only looking for the red colored fruits. Of course, if a simple method works, this is not too bad, but for transferring this system to other crops, this needs to get worked out.
+    \item The evaluation of the authors was in-depth, including failure and timing analysis.
+    \item Another part I really liked about this paper, was the detailed description of the custom designed harvesting tool.
+\end{itemize}
+\subsubsection*{What are the contributions?}
+\begin{itemize}
+    \item Custom build autonomous mobile platform for harvesting sweet peppers using ROS.
+    \item Custom designed harvesting tool, consisting of detachable suction cup for grasping and oscillating knife for cutting the peduncle.
+    \item New RGB-D based perception pipeline, using a \emph{MiniInception} DNN for peduncle detection.
+\end{itemize}
+\subsubsection*{What are the future directions of the research?}
+\begin{itemize}
+    \item First and foremost the authors want to fix the timing problem on the placement process.
+    \item Another point is using the system to harvest other fruits - here the perception pipeline has to be updated and the DNN has to be retrained. A general visual crop detection is the goal.
+    \item The pose detection of the peduncle for a more reliable detachment process will also get improved.
+\end{itemize}
+\subsubsection*{What is my main take away from this paper?}
+\begin{itemize}
+    \item Sweet peppers are fruits with high value and are easily distinguished from other plant parts and the canopy. Thats why there are so many papers and research about them. I think this is a shortcut fir the plant detection and segmentation. The overall system presented in the article here is \emph{great}, but I doubt that relying on simple features like color for image detection will not work in the long run. Like for the peduncle detection, more complex models are needed for the detection of the crops. Otherwise green peppers have to get harvested by hand.
+\end{itemize}
+
+\subsection*{Summary}
+Great, in-depth presentation of a state-of-the-art harvester design. Detailed testing and error analysis. And custom water-cooled pc using ROS.
+\subsection*{Rating}
+5/5
 \section{Reading Report: \emph{Swarm-enabling Technology for Multi-Robot Systems}}
 \cite{Chamanbaz2017}
 
@@ -140,7 +223,7 @@ swarm robotics, distributed multi-robot systems, cooperative control, flocking, 
 \subsubsection*{What is my main take away from this paper?}
 \begin{itemize}
     \item Open source software platform for enabling swarm behavior in off-the-shelf robots.
-    \item Running swarm behaviour on RaspberryPies.
+    \item Running swarm behavior on RaspberryPies.
 \end{itemize}
 
 \subsection*{Summary}
