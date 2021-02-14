@@ -60,6 +60,38 @@ Arai, T.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Bac%
+, van Henten%
+, Hemming%
+\BCBL {}\ \BBA {} Edan%
+}{%
+Bac%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2014}}%
+}]{%
+Bac2014}
+\APACinsertmetastar {%
+Bac2014}%
+\begin{APACrefauthors}%
+Bac, C\BPBI W.%
+, van Henten, E\BPBI J.%
+, Hemming, J.%
+\BCBL {}\ \BBA {} Edan, Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{jul}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Harvesting Robots for High-value Crops: State-of-the-art
+  Review and Challenges Ahead} {Harvesting robots for high-value crops:
+  State-of-the-art review and challenges ahead}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Field Robotics}{31}{6}{888--911}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1002/rob.21525} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Bechar%
 \ \BBA {} Vigneault%
 }{%

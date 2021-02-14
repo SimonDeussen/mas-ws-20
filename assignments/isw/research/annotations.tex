@@ -63,6 +63,96 @@
 % \subsection*{Rating}
 
 % ================= TEMPLATE =================
+\section{Reading Report: \emph{Harvesting Robots for High-value Crops: State-of-the-art Review and Challenges Ahead}}
+\cite{Bac2014}
+
+\subsection*{Abstract}
+This review article analyzes state-of-the-art and future perspectives for harvesting robots in high-value crops.
+The objectives were to characterize the crop environment relevant for robotic harvesting, to perform a literature
+review on the state-of-the-art of harvesting robots using quantitative measures, and to reflect on the crop en-
+vironment and literature review to formulate challenges and directions for future research and development.
+Harvesting robots were reviewed regarding the crop harvested in a production environment, performance indicators, design process techniques used, hardware design decisions, and algorithm characteristics. On average,
+localization success was 85\%, detachment success was 75\%, harvest success was 66\%, fruit damage was 5\%,
+peduncle damage was 45\%, and cycle time was 33 s. A kiwi harvesting robot achieved the shortest cycle time
+of 1 s. Moreover, the performance of harvesting robots did not improve in the past three decades, and none
+of these 50 robots was commercialized. Four future challenges with R\&D directions were identified to realize
+a positive trend in performance and to successfully implement harvesting robots in practice: (1) simplifying
+the task, (2) enhancing the robot, (3) defining requirements and measuring performance, and (4) considering
+additional requirements for successful implementation. This review article may provide new directions for
+future automation projects in high-value crops.
+\subsection*{Keywords}
+
+\subsection*{Questions}
+\subsubsection*{What are the motivations for this work?}
+\begin{itemize}
+    \item The authors state that they have not noticed a considerable improvement in harvester robotics in the last 30 years (from 2014). To analyze the key factors why the research stagnated, the authors felt the need for an comprehensive review of the state-of-the-art.
+    \item Another point was to extract meaningful metrics on how to measure performance for better comparison of research and benchmarking of results.
+\end{itemize}
+\subsubsection*{What is the proposed solution?}
+\begin{itemize}
+    \item To find the reasons behind the stagnation, the authors made a review of 50 research papers about harvesting robots. 
+    \item During the review they found three sources of variation between the environment in which the robots operate: \ \begin{itemize}
+        \item Variation of objects in the crop (obstacles, different cultivars, growing is non deterministic)
+        \item Variation in the environment (orchard, greenhouse, indoor, open field)
+        \item Variation among crops (robots suitable for harvesting roses can not harvest tomatoes)
+    \end{itemize}
+    \item To make research efforts compare able, the authors identified following KPIs: \ \begin{itemize}
+        \item Fruit localization success
+        \item False-positive fruit detection
+        \item Detachment success
+        \item Harvest success
+        \item Cycle time
+        \item Damage rate
+        \item Number of fruits evaluated
+        \item Detachment attempt ratio
+    \end{itemize}
+    \item Other characteristics they analyzed are: \ \begin{itemize}
+        \item Comparison of performance
+        \item Design process techniques
+        \item Hardware design decisions
+        \item Algorithm characteristics 
+    \end{itemize}
+\end{itemize}
+\subsubsection*{What is the work`s evaluation of the solution?}
+\begin{itemize}
+    \item The authors painted a complete picture of the current (2014) state-of-the-art. They disliked the small number of research projects in this specific area, which made statistical analysis impossible.
+    \item The area with the most number of projects are tomato harvesting, and even here are only 8 projects. 
+    \item For addressing bottlenecks, the authors suggest two R\&D directions, namely in simplifying the task and enhancing the robots further.
+\end{itemize}
+\subsubsection*{What is my analysis of the identified problem, idea and evaluation?}
+\begin{itemize}
+    \item Like the authors, I realized that no research project I have read resulted in any commercial success. Because of this I really welcome the efforts of the authors in finding common bottlenecks to tackle. 
+    \item Many of the reviewed papers lacked a economic analysis, which resulted in lacking requirements - I found this particular insight very important. Even in researching groundwork, it is necessary to have strict requirements and guidelines for validating the KPIs.
+\end{itemize}
+\subsubsection*{What are the contributions?}
+\begin{itemize}
+    \item The biggest contribution is a review of 50 research papers published in the last 30 years in the field of harvesting robots. The authors developed KPIs for comparison, were able to paint a clear picture of the state-of-the-art: \ \begin{itemize}
+        \item Overall localization success is: \textbf{85\%}
+        \item Overall detachment success is: \textbf{75\%}
+        \item Overall harvest success is: \textbf{66\%}
+        \item The average harvesting cycle time is: \textbf{33s}
+    \end{itemize}
+    \item Most manipulators used three degrees of freedom, witch options going from 2 to 7 DOF.
+    \item Overall most algorithms were only poorly reported.
+    \item In summary, the authors found out, that the current state-of-the-art is far from commercial viability and has stagnated in the last decades. 
+\end{itemize}
+\subsubsection*{What are the future directions of the research?}
+\begin{itemize}
+    \item The authors suggest developing robot-friendly environments.
+    \item One big critic on the current state-of-the-art is that every reseach has to start again from the beginning. Here the authors suggest using similar methodologies and KPIs. Further more sharing of knowledge is needed.
+    \item Robot design processes are hard and multi disciplinary, the authors pleed that the research community starts better engineering processes for the robots used in harvesting. 
+\end{itemize}
+\subsubsection*{What is my main take away from this paper?}
+\begin{itemize}
+    \item Robot harvesting is far frim being commercial successful. It is an extreme hard problem and many people try to solve this - even tough there will be much space for growing and it is an super important topic.
+    \item All in all the process in building, programming and evaluating the different approaches should get standardized for better collaboration in the research community and bigger steps forward.
+\end{itemize}
+
+\subsection*{Summary}
+Great, detailled review of many papers. Reference this for methods on how to validate and design experiments with robots.
+\subsection*{Rating}
+7/5
+
 
 \section{Reading Report: \emph{Performance improvements of a sweet pepper harvesting robot in protected cropping environments
 }}
