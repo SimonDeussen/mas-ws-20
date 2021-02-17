@@ -126,6 +126,39 @@ Bechar, A.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Brambilla%
+, Ferrante%
+, Birattari%
+\BCBL {}\ \BBA {} Dorigo%
+}{%
+Brambilla%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2013}}%
+}]{%
+Brambilla2013}
+\APACinsertmetastar {%
+Brambilla2013}%
+\begin{APACrefauthors}%
+Brambilla, M.%
+, Ferrante, E.%
+, Birattari, M.%
+\BCBL {}\ \BBA {} Dorigo, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2013}{jan}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Swarm robotics: a review from the swarm engineering
+  perspective} {Swarm robotics: a review from the swarm engineering
+  perspective}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Swarm Intelligence}{7}{1}{1--41}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1007/s11721-012-0075-2}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Chamanbaz%
 \ \protect \BOthers {.}}{%
 Chamanbaz%

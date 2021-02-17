@@ -1922,9 +1922,10 @@ draws important parallels between robotics and these fields.},
   number    = {1},
   pages     = {1--41},
   volume    = {7},
+  comment   = {CHECK THE STRUCTURE AND WRITING STYLE FOR SEMINAR REPORT},
   doi       = {https://doi.org/10.1007/s11721-012-0075-2},
   file      = {:/home/sd/Documents/papers/brambilla2013.pdf:PDF},
-  keywords  = {taxonomy, top30},
+  keywords  = {taxonomy, top30, glossary, structure},
   publisher = {Springer Science and Business Media {LLC}},
 }
 
@@ -1940,7 +1941,7 @@ draws important parallels between robotics and these fields.},
   abstract  = {This review article analyzes state-of-the-art and future perspectives for harvesting robots in high-value crops.The objectives were to characterize the crop environment relevant for robotic harvesting, to perform a literaturereview on the state-of-the-art of harvesting robots using quantitative measures, and to reflect on the crop en-vironment and literature review to formulate challenges and directions for future research and development.Harvesting robots were reviewed regarding the crop harvested in a production environment, performance indi-cators, design process techniques used, hardware design decisions, and algorithm characteristics. On average,localization success was 85%, detachment success was 75%, harvest success was 66%, fruit damage was 5%,peduncle damage was 45%, and cycle time was 33 s. A kiwi harvesting robot achieved the shortest cycle timeof 1 s. Moreover, the performance of harvesting robots did not improve in the past three decades, and noneof these 50 robots was commercialized. Four future challenges with R&D directions were identified to realizea positive trend in performance and to successfully implement harvesting robots in practice: (1) simplifyingthe task, (2) enhancing the robot, (3) defining requirements and measuring performance, and (4) consideringadditional requirements for successful implementation. This review article may provide new directions forfuture automation projects in high-value crops},
   doi       = {https://doi.org/10.1002/rob.21525},
   file      = {:/home/sd/Documents/papers/bac2014.pdf:PDF},
-  keywords  = {top30, basis, glossary},
+  keywords  = {top30, basis, important, chapter, glossary},
   publisher = {Wiley},
 }
 
