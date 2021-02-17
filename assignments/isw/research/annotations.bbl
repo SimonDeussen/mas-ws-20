@@ -191,6 +191,38 @@ Chamanbaz, M.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+de Santos%
+\ \protect \BOthers {.}}{%
+de Santos%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+deSantos2020}
+\APACinsertmetastar {%
+deSantos2020}%
+\begin{APACrefauthors}%
+de Santos, P\BPBI G.%
+, Fern{\'{a}}ndez, R.%
+, Sep{\'{u}}lveda, D.%
+, Navas, E.%
+, Emmi, L.%
+\BCBL {}\ \BBA {} Armada, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{oct}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Field Robots for Intelligent Farms{\textemdash}Inhering
+  Features from Industry} {Field robots for intelligent
+  farms{\textemdash}inhering features from industry}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Agronomy}{10}{11}{1638}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.3390/agronomy10111638}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Gerkey%
 \ \BBA {} Matari{\'{c}}%
 }{%
