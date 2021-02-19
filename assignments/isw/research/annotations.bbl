@@ -223,6 +223,39 @@ de Santos, P\BPBI G.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+de Santos%
+\ \protect \BOthers {.}}{%
+de Santos%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2016}}%
+}]{%
+deSantos2016}
+\APACinsertmetastar {%
+deSantos2016}%
+\begin{APACrefauthors}%
+de Santos, P\BPBI G.%
+, Ribeiro, A.%
+, Fernandez-Quintanilla, C.%
+, Lopez-Granados, F.%
+, Brandstoetter, M.%
+, Tomic, S.%
+\BDBL {}Debilde, B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{oct}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Fleets of robots for environmentally-safe pest control
+  in agriculture} {Fleets of robots for environmentally-safe pest control in
+  agriculture}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Precision Agriculture}{18}{4}{574--614}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1007/s11119-016-9476-3}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Gerkey%
 \ \BBA {} Matari{\'{c}}%
 }{%
