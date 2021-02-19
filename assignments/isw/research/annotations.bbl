@@ -191,6 +191,39 @@ Chamanbaz, M.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Conesa-Mu{\~{n}}oz%
+, de Soto%
+, de Santos%
+\BCBL {}\ \BBA {} Ribeiro%
+}{%
+Conesa-Mu{\~{n}}oz%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2015}}%
+}]{%
+ConesaMunoz2015}
+\APACinsertmetastar {%
+ConesaMunoz2015}%
+\begin{APACrefauthors}%
+Conesa-Mu{\~{n}}oz, J.%
+, de Soto, M\BPBI G.%
+, de Santos, P\BPBI G.%
+\BCBL {}\ \BBA {} Ribeiro, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{mar}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Distributed Multi-Level Supervision to Effectively
+  Monitor the Operations of a Fleet of Autonomous Vehicles in Agricultural
+  Tasks} {Distributed multi-level supervision to effectively monitor the
+  operations of a fleet of autonomous vehicles in agricultural tasks}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Sensors}{15}{3}{5402--5428}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.3390/s150305402} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 de Santos%
 \ \protect \BOthers {.}}{%
 de Santos%

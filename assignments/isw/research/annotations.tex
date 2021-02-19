@@ -63,7 +63,82 @@
 % \subsection*{Rating}
 
 % ================= TEMPLATE =================
-\section{Reading Report: \emph{Fleets of robots for environmentally-safe pest control in agriculture}}
+\section{Reading Report: \emph{Robot fleets for highly effective agriculture}}
+\cite{ConesaMunoz2015}
+
+\subsection*{Abstract}
+This paper describes a supervisor system for monitoring the operation of automated
+agricultural vehicles. The system analyses all of the information provided by the sensors and
+subsystems on the vehicles in real time and notifies the user when a failure or potentially
+dangerous situation is detected. In some situations, it is even able to execute a neutralising
+protocol to remedy the failure. The system is based on a distributed and multi-level architecture
+that divides the supervision into different subsystems, allowing for better management of the
+detection and repair of failures. The proposed supervision system was developed to perform
+well in several scenarios, such as spraying canopy treatments against insects and diseases
+and selective weed treatments, by either spraying herbicide or burning pests with a
+mechanical-thermal actuator. Results are presented for selective weed treatment by the
+spraying of herbicide. The system successfully supervised the task; it detected failures such
+as service disruptions, incorrect working speeds, incorrect implement states, and potential
+collisions. Moreover, the system was able to prevent collisions between vehicles by taking
+action to avoid intersecting trajectories. The results show that the proposed system is a highly
+useful tool for managing fleets of autonomous vehicles. In particular, it can be used to
+manage agricultural vehicles during treatment operations.
+
+\subsection*{Keywords}
+
+\subsection*{Questions}
+\subsubsection*{What are the motivations for this work?}
+\begin{itemize}
+    \item To reduce the environmental impact of agriculture, autonomous systems can be used. Especially the usage of pesticides can and should be reduced. 
+    \item When using autonomous robot fleets, safety and a fine control over all ongoing behaviors is needed. This paper realizes a supervision system for fleets in pest control.
+\end{itemize}
+\subsubsection*{What is the proposed solution?}
+\begin{itemize}
+    \item  This work presents a supervision system for controlling a fleet of unmanned ground vehicles (UGV) for pest control. By deploying the agrochemicals only to areas were they are needed, huge amounts can be saved. The supervision system works in a distributed fashion with a multilevel architecture. Some of the components are situated on the UGVs while other are located in a base station next to the mission areas.
+    \item The supervision system should be able to control multiple UGV at once, making sure that they interact safely and optimal along the mission parameters.  
+    \item The authors put a focus on error detection and alarm propagation. One the one side for failure correcting, and one the other side it was important to only notifying the human oversight if necessary. 
+    \item Most important for the system are the avoidance of collision and stopping out-of-track errors. The UGVs used in the experiments are medium size tractors - collision or accidents with machines this size and weight will be devastating.
+\end{itemize}
+\subsubsection*{What is the work`s evaluation of the solution?}
+\begin{itemize}
+    \item The authors are satisfied with the results of the experiments. They underline how well suited a distributed supervision approach is towards a fleet of autonomous vehicles, which is distributed as well.
+    \item The supervision system is able to preform the requiered three functions, namely fault detection, fault diagnosis and fault recovery.
+    \item In both experiments the supervision system accomplished the task with high performance.
+\end{itemize}
+\subsubsection*{What is my analysis of the identified problem, idea and evaluation?}
+\begin{itemize}
+    \item The idea of utilizing multiple layers in alarm and error analysis is a best practice in software development. I welcome the use of proper software system design here. 
+    \item Testing this system with proper robots in an realistic environment displays a great confidence in the system. Of course the vehicles speed is quite low, but this is fine for first experiments.
+    \item During the paper the authors go into great detail how they developed the software system and the testing scenarios. 
+\end{itemize}
+\subsubsection*{What are the contributions?}
+\begin{itemize}
+    \item This work is part of a larger research project called RHEA. For this the authors created a supervision system, which is able to control a fleet of autonomous ground vehicles. Its task are mission planning, execution and most importantly fault detection, diagnosis and correction.
+    \item The system works in a multi-layered and distributed fashion. It consists of following layers: \ \begin{description}
+        \item[Level 1] Elemental supervisor, running directly on each UGVs hardware as part of the unit control system. Generates alarm when discovering faults in the hardware, for example low fuel levels, spay nozzles not opening, etc... Raises them to higher levels (even if it can be fixed by the UGV itself)
+        \item[Level 2] This system is running on a server in the base station. It is divided into three modules, the mission supervisor, the fault recovery module and the alarm notification manager. The mission supervisor aggregates the alarm data from am UGVs in the fleet and searches for alarm patterns. If some alarm or alarm pattern can be recovered by the system it self, the fault recovery module will fix this and send commands to the fleet. For example when the system realizes that the paths of two UGVs cross, it will signal one of them to wait to avoid collision. If the current alarm or alarm pattern is too critical to handle it by itself, it will get escalated to level 3. 
+        \item[Level 3] The human supervisor. This is the last instance of supervision and only acts in the most critical alarms. 
+    \end{description}
+\end{itemize}
+\subsubsection*{What are the future directions of the research?}
+\begin{itemize}
+    \item The extension of the fault recovery module is a central part in the future work. It has to be able to fix more failures without human intervention. 
+    \item The system has only been tested with three vehicles sofar. The authors want to extend this system and use it with a bigger fleet.
+    \item Another part which has to get improved is the notification manager. Currently it display too many unnecessary messages to the human operator. This has to get reduced. General some threshold have to be fine tuned for a better user experience.
+\end{itemize}
+\subsubsection*{What questions have I left?}
+\begin{itemize}
+    \item The authors suggested that the supervision system is easily transferable to a different fleet configurations, but of course this has to be validated. 
+    \item Another interesting idea would be to make the system avoid collisions by modifying the routes instead of full stops. How could this be achieved?
+\end{itemize}
+
+\subsection*{Summary}
+Proper description of a software architecture for controlling and supervising a fleet of UGVs.
+\subsection*{Rating}
+4/5
+
+
+\section{Reading Report: \emph{Fleets of robots for environmentally safe pest control in agriculture}}
 \cite{deSantos2016}
 
 \subsection*{Abstract}
@@ -134,17 +209,17 @@ Pest control, agricultural robots, autonomous robots, fleets of robots, multi-ro
 \end{itemize}
 \subsubsection*{What questions have I left?}
 \begin{itemize}
-    \item 
+    \item The transfer ability of this system did not get evaluated in detail. For a commercial success this would be the most important thing.
 \end{itemize}
 \subsubsection*{What is my main take away from this paper?}
 \begin{itemize}
-    \item 
+    \item This is so far the best system, I have read about. Great, in-depth execution and thorough experiments shows a great basis for a future commercial MRS.
 \end{itemize}
 
 \subsection*{Summary}
-
+MRS consisting of UAVs and UGVs autonomously detecting and eradicating weeds.
 \subsection*{Rating}
-
+5/5
 
 
 \section{Reading Report: \emph{Field Robots for Intelligent Farms - Inhering Features from Industry}}
