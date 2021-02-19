@@ -63,6 +63,103 @@
 % \subsection*{Rating}
 
 % ================= TEMPLATE =================
+\section{Reading Report: \emph{Robotic Manipulation for Specialty Crop Harvesting:A Review of Manipulator and End-Effector Technologies}}
+\cite{Davidson2020}
+
+\subsection*{Abstract}
+This paper reviews recent developments in manipulator and end-effector technologies for the robotic
+harvesting of specialty crops that include fruits, vegetables, nursery crops, and nuts among others.
+Quantitative performance measures and general review criteria, including methods of crop detachment and
+end-effector sensing, are used to evaluate technologies and determine state-of-the-art in the field. Challenges
+affecting commercial implementation, limitations of current mechanical designs, and best practices are then
+presented. Results of the review show that, in general, robotic manipulation during harvesting has been
+limited by lack of system optimization and insufficient robustness to position error accumulated during
+visual localization. Inconsistent reporting practices have also hampered research and development across
+the field. At the conclusion of the review, some avenues of future research that could potentially lead to
+improvements in system performance are proposed. Some of the proposed recommendations include
+specific horticultural practices, the development of modular, multi-functional designs, and the incorporation
+of robust grasping techniques used in many of today’s robotic hands.
+
+\subsection*{Keywords}
+manipulator, end-effector, mechanical harvesting, specialty crops
+
+\subsection*{Questions}
+\subsubsection*{What are the motivations for this work?}
+\begin{itemize}
+    \item The authors state, that there have not been any significant progress in automation and mechanization in agriculture in the recent years. There are some special cases in bulk commodities like corn and wheat. High value fruits on the other hand get harvested manually.
+    \item One part of the lacking process is the actual detachment of the fruits in the harvesting process. This step is either so slow, only works in special cases or even damages the fruit. Here the authors want to find out best practices for further research.
+\end{itemize}
+\subsubsection*{What is the proposed solution?}
+\begin{itemize}
+    \item The authors made a review of 39 papers showcasing their harvesters, their manipulators and end-effectors.
+    \item Using this review, the authors want to identify working patterns, technologies and approaches for successful harvesting.
+    \item Next to this, the authors want to find general system requirements and engineering techniques for the robotic systems.
+    \item For the review they highlighted following points of the papers: \ \begin{itemize}
+        \item Performance indicators
+        \item Application of design methods
+        \item Manipulator kinematics and actuator selection
+        \item Method of fruit detachments
+        \item End-effector actuator and sensor selection
+    \end{itemize}
+\end{itemize}
+\subsubsection*{What is the work`s evaluation of the solution?}
+\begin{itemize}
+    \item The authors mentioned that an absence of reporting standards hinders the research process. This makes it hard for researchers to compare and to identify best practices.
+    \item Requirement and performance specifications were also missing in many cases.
+    \item A common failure was that end-effectors are not robust against positioning error and thus failing to detach the fruits and/or damaging the fruit and plants.
+    \item The last big critic is that most systems were highly reliant on sensory feedback and did not model the fruit and plant environment. That means they followed the red blob to find the apple.
+\end{itemize}
+\subsubsection*{What is my analysis of the identified problem, idea and evaluation?}
+\begin{itemize}
+    \item The call for common practices is really important. 
+    \item When every researches starts from the beginning, progress will be too slow.
+    \item The methodology used in the review is good.
+    \item The charts shown are black and white but from sufficient resolution. 
+    \item I think the structure was a little lacking, but nevertheless good read.
+\end{itemize}
+\subsubsection*{What are the contributions?}
+\begin{itemize}
+    \item The review showed to following numerical results: \begin{description}
+        \item[Performance indicators] \ \begin{itemize}
+            \item Damage rates: Only 8 of 39 reported damage rates. The rates varied from 0 to 44\%
+            \item Detachment success: 21 of 39 reported, success ranges from 50\% to 94\%, average \textbf{79\%}
+            \item Picking time: Hard to compare, because the papers did not specify how this got measured. 23 of 39 reported the time, from them the average was \textbf{11.5s}.
+        \end{itemize} 
+        \item[Application of design methods] Only 23\% used (and mentioned) formal design processes
+        \item[Manipulator kinematics and actuator selection]  \ \begin{itemize}
+            \item 3 did not report, 7 bought off the shell manipulators, 29 developed custom manipulators.
+            \item 22 reports used electric motors, 5 used pneumatic or hydraulic
+            \item only 3 papers used online collision avoidance
+        \end{itemize} 
+        \item[Method of fruit detachments]  \ \begin{itemize}
+            \item Most common (41\%) method to detachment was combination of gripping and cutting.
+        \end{itemize} 
+        \item[End-effector actuator and sensor selection]  17/39 used force sensors on the end-effectors, but most did not incorporate the readings.
+    \end{description}
+    \item Of the papers with a detachment success over 75\%, 14/15 used electric actuators
+    \item Projects with 6DOF or more achieved on average 82\% detachment success.
+\end{itemize}
+\subsubsection*{What are the future directions of the research?}
+\begin{itemize}
+    \item The authors suggest that researches at least follow some common metrics for better benchmarking. Namely the picking time in seconds starting after the localization of the fruit and stopping after detaching into the storage container. Important is also the detachment success and damage rate.
+    \item They also suggest better requirement analysis and more applications of formal design processes for the whole system.
+    \item For robots to be commercially viable, the authors state that it is important that future robots can work through the whole year that mens they should be able to be easily configurable. This way thy can help with other plant care tasks to.  
+    \item One promising research appraoch are underactuated end-effectors. 
+\end{itemize}
+\subsubsection*{What questions have I left?}
+\begin{itemize}
+    \item Research underactuated effectors. This looks super cool.
+\end{itemize}
+\subsubsection*{What is my main take away from this paper?}
+\begin{itemize}
+    \item The multi disciplinary world of robot research lacks formal standards and thus makes comparing research work harder than necessary. It is important that the field comes together and forms standards and benchmarks.
+\end{itemize}
+
+\subsection*{Summary}
+Nice review paper about manipulators and the lack of proper reporting and standards.
+
+\subsection*{Rating}
+4/5
 \section{Reading Report: \emph{Robot fleets for highly effective agriculture}}
 \cite{ConesaMunoz2015}
 
