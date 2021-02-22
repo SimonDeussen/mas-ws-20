@@ -675,6 +675,37 @@ van Herck, L.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Vasconez%
+, Kantor%
+\BCBL {}\ \BBA {} Cheein%
+}{%
+Vasconez%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2019}}%
+}]{%
+Vasconez2019}
+\APACinsertmetastar {%
+Vasconez2019}%
+\begin{APACrefauthors}%
+Vasconez, J\BPBI P.%
+, Kantor, G\BPBI A.%
+\BCBL {}\ \BBA {} Cheein, F\BPBI A\BPBI A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{mar}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Human{\textendash}robot interaction in agriculture: A
+  survey and current challenges} {Human{\textendash}robot interaction in
+  agriculture: A survey and current challenges}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Biosystems Engineering}{179}{}{35--48}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.biosystemseng.2018.12.005}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Weiss%
 \ \BBA {} Biber%
 }{%
