@@ -63,6 +63,89 @@
 % \subsection*{Rating}
 
 % ================= TEMPLATE =================
+\section{Reading Report: \emph{Monitoring and Mapping with Robot Swarms for Agricultural Applications}}
+\cite{Albani2017}
+
+\subsection*{Abstract}
+Robotics is expected to play a major role in the agricultural domain, and often multi-robot systems and collaborative approaches are mentioned as potential solutions
+to improve efficiency and system robustness. Among the
+multi-robot approaches, swarm robotics stresses aspects
+like flexibility, scalability and robustness in solving complex
+tasks, and is considered very relevant for precision farming
+and large-scale agricultural applications. However, swarm
+robotics research is still confined into the lab, and no application in the field is currently available. In this paper,
+we describe a roadmap to bring swarm robotics to the field
+within the domain of weed control problems. This roadmap
+is implemented within the experiment SAGA, founded within
+the context of the ECORD++ EU Project. Together with the
+experiment concept, we introduce baseline results for the
+target scenario of monitoring and mapping weed in a field
+by means of a swarm of UAVs.
+
+\subsection*{Keywords}
+
+\subsection*{Questions}
+\subsubsection*{What are the motivations for this work?}
+\begin{itemize}
+    \item The research in swarm robotics is already decades old, but there are still no real world applications. The authors want to create a roadmap on how to create such a real world solution.
+    \item Precision agriculture is a field, in which intelligent swarm robotics could excel. Not just because the need for a huge scalability, but also because the International Federation of Robotics mentions agriculture as the second biggest impact market for robotics, as the authors state.
+    \item Redundancy and cooperation in a swarm can create super-linear effects, which maximizes the performance of the group as a whole. In agricultural domains, this is especially interesting, because the scale need multiple robots working cooperatively anyways - and together with those scale effects this will improve performance.
+    \item Swarms also offer the capability to deal with uncertain environment conditions by using the power of collective intelligence.
+    \item The specific use case for the work in this paper are the detection of volunteer potatoes. This is a weed, resulting from left potatoes in a field from the season before, which will create a threat to the current planted crop. Currently the removal is done manually and costs up to 300 Euro per hectare. The authors say, this could be drastically reduced by using automated system.
+\end{itemize}
+\subsubsection*{What is the proposed solution?}
+\begin{itemize}
+    \item This paper showcases the first part of the roadmap to autonomous weed discovery and eradication: A monitoring and mapping approach by using swarms of UAVs.
+    \item UAVsm equipped with cameras, JETSONs and communication, should fly over fields and collectively map the distribution of volunteer potatoes. Ao achieve this goal, the authors propose a strategy, on how the UAVs should move through the field for maximum robustness and scalability.
+    \item The strategy used by the UAVs is inspired by honeybee foraging and decision making. 
+\end{itemize}
+\subsubsection*{What is the work`s evaluation of the solution?}
+\begin{itemize}
+    \item The used strategy did take more time than an optimal sweeping approach - in a sweeping approach, the area would get divided evenly along all UAVs, which then would \emph{sweep} through the allocated area alone. 
+    \item The swarm approach has the big advantage, that failing UAVs, be it total failure or just bad readings, are not worsening the end result. 
+    \item Repeated measurement make the end result quite precise.
+    \item The authors are very pleased with the created strategy and the simulator experiments.
+\end{itemize}
+\subsubsection*{What is my analysis of the identified problem, idea and evaluation?}
+\begin{itemize}
+    \item The problem chosen represents a great variety of monitoring tasks. Spotting only volunteer potators by itself is not especially interesting, but the technologies developed here will be valid for all kinds of monitoring task.
+    \item Utilizing design patterns found in nature are a great way to use tested strategy which will work in an efficient way.
+    \item The experiment and the resulting evaluation of the simulations, are well documented and analyzed.
+\end{itemize}
+\subsubsection*{What are the contributions?}
+\begin{itemize}
+    \item In this single work the authors \emph{only} showcased an algorithm for detecting weeds in a field. This algorithm is inspired by honeybees. It is basically a random walk for each member of the swarm, with a higher probability to visit areas with higher weed density.
+    \item In this paper the algorithm got tested in a 2D grid with random patchy or random uniform distributions of weeds.
+    \item The UAVs will swarm over the field until enough measurements are taken for convergence.
+\end{itemize}
+\subsubsection*{What are the future directions of the research?}
+\begin{itemize}
+    \item The authors already showcased the UAVs which they are going to use in future work: \ \begin{itemize}
+        \item This will be quadcopters with flight time of 30 minutes in a single charge. 
+        \item For mapping and monitoring the environment, it will be using an RGB camera, pointed downwards.
+        \item The quadcopters will be equipped with a Nvidia Jetson for computing the triple-redundant autopilot and the realtime analysis of the images.
+        \item For localisation the quadcopters will have 5 IMUs and RTK-GPS systems.
+        \item For communication inside the swarm, the quadcopters are going to the equipped with radio communication modules based on ultra-wideband broadcasting. This will not be only used for communication but also for self localisation. The localization will be helped by deploying several UWB beacons along the area.
+    \end{itemize}
+    \item Before deploying the UAVs, the algorithm has to be modified for 3D space.
+    \item Another thing which has to be evaluated is, the possibility of flying with higher or lower altitude, for higher and lower resolution images. This could be exploited for areas with low certainty, in which the UAVs could fly lower for higher resolution images. On the other hand the UAVs could then also fly higher in areas were the swarm is already sure that there are no weeds.
+\end{itemize}
+\subsubsection*{What questions have I left?}
+\begin{itemize}
+    \item How will collision avoidance slower the algorithm? It is already slower then deploying the UAVs optimally, but this could slow them down even further.
+    \item 
+\end{itemize}
+\subsubsection*{What is my main take away from this paper?}
+\begin{itemize}
+    \item UAVs swarms are a viable solution for monitoring problems. I have not really thought about the advantages swarms will have in large scales. When deploying the UAVs traditionally the errors produced by only a single sweep could make all data worthless. The swarm approach makes this super robust.
+\end{itemize}
+
+\subsection*{Summary}
+The authors have a great vision for a groundbreaking UAV swarm project. They presented their ideas nicely, but this single paper showed only small part of all the work to be done. I will have to follow up on their work.
+
+\subsection*{Rating}
+4/5
+
 \section{Reading Report: \emph{Human-robot interaction in agriculture: A survey and current challenges}}
 \cite{Vasconez2019}
 

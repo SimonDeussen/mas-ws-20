@@ -1,6 +1,39 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
+Albani%
+, IJsselmuiden%
+, Haken%
+\BCBL {}\ \BBA {} Trianni%
+}{%
+Albani%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2017}}%
+}]{%
+Albani2017}
+\APACinsertmetastar {%
+Albani2017}%
+\begin{APACrefauthors}%
+Albani, D.%
+, IJsselmuiden, J.%
+, Haken, R.%
+\BCBL {}\ \BBA {} Trianni, V.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{aug}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Monitoring and mapping with robot swarms for
+  agricultural applications} {Monitoring and mapping with robot swarms for
+  agricultural applications}.{\BBCQ}
+\newblock
+
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1109/AVSS.2017.8078478}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Arad%
 \ \protect \BOthers {.}}{%
 Arad%

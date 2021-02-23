@@ -557,18 +557,20 @@ There will always be economic analyses for newer technology. Because  this  pape
 }
 
 @Article{Vasconez2019,
-  author    = {Juan P. Vasconez and George A. Kantor and Fernando A. Auat Cheein},
-  journal   = {Biosystems Engineering},
-  title     = {Human{\textendash}robot interaction in agriculture: A survey and current challenges},
-  year      = {2019},
-  month     = {mar},
-  pages     = {35--48},
-  volume    = {179},
-  doi       = {https://doi.org/10.1016/j.biosystemseng.2018.12.005},
-  file      = {:/home/sd/Documents/papers/vasconez2019.pdf:PDF},
-  keywords  = {motivation, glossary, top30, human-robot interaction, agriculture robotics, collaborative robotics, precision agriculture},
-  priority  = {31},
-  publisher = {Elsevier {BV}},
+  author     = {Juan P. Vasconez and George A. Kantor and Fernando A. Auat Cheein},
+  journal    = {Biosystems Engineering},
+  title      = {Human{\textendash}robot interaction in agriculture: A survey and current challenges},
+  year       = {2019},
+  month      = {mar},
+  pages      = {35--48},
+  volume     = {179},
+  doi        = {https://doi.org/10.1016/j.biosystemseng.2018.12.005},
+  file       = {:/home/sd/Documents/papers/vasconez2019.pdf:PDF},
+  keywords   = {motivation, glossary, top30, human-robot interaction, agriculture robotics, collaborative robotics, precision agriculture, read, rank5},
+  priority   = {31},
+  publisher  = {Elsevier {BV}},
+  ranking    = {rank5},
+  readstatus = {read},
 }
 
 @Article{Jones2019,
@@ -1779,8 +1781,9 @@ possibility to simulate them prior to physically test them.},
   booktitle  = {2017 14th {IEEE} International Conference on Advanced Video and Signal Based Surveillance ({AVSS})},
   doi        = {https://doi.org/10.1109/AVSS.2017.8078478},
   file       = {:/home/sd/Documents/papers/albani2017.pdf:PDF},
-  keywords   = {Monitoring, Robustness, glossary, Agriculture, Hardware, Robot sensing systems, Drones, MRS, TOP30, read},
+  keywords   = {Monitoring, Robustness, glossary, Agriculture, Hardware, Robot sensing systems, Drones, MRS, TOP30, read, rank4},
   publisher  = {{IEEE}},
+  ranking    = {rank4},
   readstatus = {read},
 }
 
@@ -2003,6 +2006,18 @@ draws important parallels between robotics and these fields.},
   publisher  = {{MDPI} {AG}},
   ranking    = {rank4},
   readstatus = {read},
+}
+
+@Article{Albani2019,
+  author    = {Dario Albani and Tiziano Manoni and Arikhan Arik and Daniele Nardi and Vito Trianni},
+  title     = {Field Coverage for Weed Mapping: Toward Experiments with a {UAV} Swarm},
+  year      = {2019},
+  pages     = {132--146},
+  booktitle = {Bio-inspired Information and Communication Technologies},
+  doi       = {https://doi.org/10.1007/978-3-030-24202-2_10},
+  file      = {:/home/sd/Documents/papers/10.1007@978-3-030-24202-2.pdf:PDF},
+  keywords  = {Top30, next},
+  publisher = {Springer International Publishing},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
