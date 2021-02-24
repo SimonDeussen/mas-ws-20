@@ -2020,4 +2020,33 @@ draws important parallels between robotics and these fields.},
   publisher = {Springer International Publishing},
 }
 
+@Article{Garcia2007,
+  author    = {E. Garcia and M.A. Jimenez and P.G. De Santos and M. Armada},
+  journal   = {{IEEE} Robotics {\&} Automation Magazine},
+  title     = {The evolution of robotics research},
+  year      = {2007},
+  month     = {mar},
+  number    = {1},
+  pages     = {90--103},
+  volume    = {14},
+  doi       = {https://doi.org/10.1109/MRA.2007.339608},
+  file      = {:/home/sd/Documents/papers/garcia2007.pdf:PDF},
+  keywords  = {field robots, base, review, top30, next},
+  publisher = {Institute of Electrical and Electronics Engineers ({IEEE})},
+}
+
+@Article{Decker2017,
+  author    = {Michael Decker and Martin Fischer and Ingrid Ott},
+  journal   = {Robotics and Autonomous Systems},
+  title     = {Service Robotics and Human Labor: A first technology assessment of substitution and cooperation},
+  year      = {2017},
+  month     = {jan},
+  pages     = {348--354},
+  volume    = {87},
+  doi       = {https://doi.org/10.1016/j.robot.2016.09.017},
+  file      = {:/home/sd/Documents/papers/1-s2.0-S0921889016306285-main.pdf:PDF},
+  keywords  = {field robots, base, top30, next},
+  publisher = {Elsevier {BV}},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
