@@ -64,8 +64,83 @@
 % ================= TEMPLATE =================
 
 
+\section{Reading Report: \emph{Field Coverage for Weed Mapping: Toward Experiments with a UAV Swarm}}
+\cite{Albani2019}
 
+\subsection*{Abstract}
+Precision agriculture represents a very promising domain for
+swarm robotics, as it deals with expansive fields and tasks that can be
+parallelized and executed with a collaborative approach. Weed monitoring and mapping is one such problem, and solutions have been pro-
+posed that exploit swarms of unmanned aerial vehicles (UAVs). With this
+paper, we move one step forward towards the deployment of UAV swarms
+in the field. We present the implementation of a collective behavior for
+weed monitoring and mapping, which takes into account all the processes
+to be run onboard, including machine vision and collision avoidance. We
+present simulation results to evaluate the efficiency of the proposed sys-
+tem once that such processes are considered, and we also run hardware-
+in-the-loop simulations which provide a precise profiling of all the system
+components, a necessary step before final deployment in the field.
 
+\subsection*{Keywords}
+UAV, swarm robotics, coverage, weed detection, mapping, collision avoidance, agricultural robotics
+
+\subsection*{Questions}
+\subsubsection*{What are the motivations for this work?}
+\begin{itemize}
+    \item This paper is the continuation of the previous work \emph{Monitoring  and  Mapping with  Robot  Swarms  for  Agricultural  Applications} from \cite{Albani2017}. The same motivations apply here as well.
+    \item The authors state, that there are already first deployments of UAVs for mapping various environmental conditions in fields. However they are mostly being controlled in a central, not flexible way and thus not reaching full potential of distributed and adaptive control.
+    \item Besides that, the main goal is to improve the mapping and coverage algorithm.
+\end{itemize}
+\subsubsection*{What is the proposed solution?}
+\begin{itemize}
+    \item The authors main goal is to deploy a swarm of UAVs for collaborative mapping of weeds in open fields. By using an adaptive swarm approach, the end result coverage and mapping will be much more robust against failures and perception errors.
+    \item In the previous work, they presented a first draft of a swarm coverage strategy. In this they are going to improve the results and present simulated experiments and additionally analyse hardware-in-the-loop (HIL) runs with the actual hardware used.
+    \item For improving the coverage algorithm, the authors implement a advanced, modified random walk strategy. The area to be covered is split into cells, and for successful coverage, each cell has to be visited by a single UAV at least once. For the mapping to be finished, the foal is, that for each cell at least two different UAVs measure the same amount of the metric used.
+    \item The strategy used, runs on every UAV in the swarm as the main high level control algorithm. Each UAV has to move around and map the needed variables, but also has to avoid collisions with the other drones. The authors added repulsion to other UAVs into the strategy which is the first step of collision avoidance. The second part is a \emph{Collision Avoidance ROS} node running the \emph{Optimal Reciprocal Collision Avoidance} (ORCA) method, which over takes the control if a collision is near. 
+    \item Mapping, measuring and validating every cell at least twice, is being made sure by placing virtual attractor beacons on cells, which are not validated yet.
+    \item For balancing different  parameter, like the repulsion and attraction strenght, the number of drones and other parameters for ORCA, the authors run several simulations presented in the paper.
+    \item The HIL runs showed, that the actual computer vision algorithm and the control strategy are fast enough to be computed on the RaspberryPi 3 located on the UAVs. Although the simulation is using a much simpler model for the detection of weeds, than one capable of delivering real world detection. For the testing of the coverage and mapping, the authors used images of pink tennis ball on artificial grass - this scenario is much simpler than detecting weeds in a field.
+\end{itemize}
+\subsubsection*{What is the work`s evaluation of the solution?}
+\begin{itemize}
+    \item The authors state that the performance of their reinforced random walk strategy is remarkable.
+    \item With the right parameter for the repulsion between the UAVs, the much time consuming ORCA method gets rarely used.
+    \item The result of the simulation display a clear winner for the values of repulsion between the UAVs and attraction towards the beacons. 
+\end{itemize}
+\subsubsection*{What is my analysis of the identified problem, idea and evaluation?}
+\begin{itemize}
+    \item The general approach of using simulation first to detect the correct swarm strategy and their specific parameters is a great way for validating and estimation the performance.
+    \item The video shown of their actual UAV flying is also quite impressive.  I hope that the authors continue to progress further.
+\end{itemize}
+\subsubsection*{What are the contributions?}
+\begin{itemize}
+    \item The authors created a full implementation of the weed coverage and mapping system. The system strategy got evaluated by simulation and HIL simulation.
+    \item The stochastic coverage and mapping algorithm got improved further in respect to their previous works.
+    \item The hardware platform fot integrated into the simulation environment, this is a convenient way of verifying the performance of the actual hardware.
+    \item A proof that the UAVs can fly and be controlled successfully by the system got shown as a video.
+\end{itemize}
+\subsubsection*{What are the future directions of the research?}
+\begin{itemize}
+    \item The authors will continue to develop their system with the goal of having an automated UAV swarm for covering fields and detection all sorts of weed growing their for precise and sustainable deployment of weed eradication measures.
+    \item Collision avoidance testing and richer interaction between the UAV will be tested in the following research.
+    \item But during the next stages, the UAVs will only fly indoors to verify that everything works there, before deploying them to the real fields.
+    \item The onboard classification has to be improved.
+\end{itemize}
+\subsubsection*{What questions have I left?}
+\begin{itemize}
+    \item There are some limiting factors, like the communication between the UAVs, which have not been tested or validated in the research. The simulation contained numbers of at least 25 UAVs, which will be a challenge to run with real UAVs.
+    \item The OpenCV detection of the pink balls already takes 250ms for analyzing a single frame. The actual algorithm used for weeds will be much more sophisticated, so the authors have to find a more powerful hardware solution.
+\end{itemize}
+\subsubsection*{What is my main take away from this paper?}
+\begin{itemize}
+    \item Nice improvements in a cool project. Still not ready to deploy into real world, but they take big steps.
+\end{itemize}
+
+\subsection*{Summary}
+Analysis and formal definition of coverage and mapping algorithm, in a stochastic environment for swarms. The algorithm got validated in simulation. Next steps for the UAV swarms are deployment into an indoor test field.
+
+\subsection*{Rating}
+4/5
 
 
 
@@ -103,7 +178,7 @@ task allocation, multi-robot systems, coordination, utility
 \begin{itemize}
     \item For many problems exist better solution using multiple robots instead of a single system. But as soon as multiple actors are involved, there is a need for coordination, collaboration and cooperation. This emerges in the field of multi-robot task allocation (MRTA).
     \item With more and more research in multi robot systems, the authors recognized a need for a formal taxonomy for comparison of different approaches. 
-    \item The authors say, most reseach efforts in MRS focus heavily on the building and validation of somewhat working systems. Missing here is a methodology to compare the approaches between each other and recommend algorithms for each problem class.
+    \item The authors say, most research efforts in MRS focus heavily on the building and validation of somewhat working systems. Missing here is a methodology to compare the approaches between each other and recommend algorithms for each problem class.
 \end{itemize}
 \subsubsection*{What is the proposed solution?}
 \begin{itemize}
@@ -474,7 +549,7 @@ Distributed robotics, survey, cooperative robotics, multi-robot systems
         \begin{itemize} 
             \item Using MRS to manipulate a object cooperatively is a long standing, but hard to reach goal.
             \item More feasible, than having mutiple robots grip an object, is to push objects around using formation control approaches.
-            \item I think more current reseach (newer than from 2002) will have more progress here.
+            \item I think more current research (newer than from 2002) will have more progress here.
         \end{itemize}
         \item[Motion coordination ] \ 
         \begin{itemize} 
@@ -606,7 +681,7 @@ One of the main problems is the highly dynamic environment and the need to react
 This creates the question on how to define behavior in such a way to allow and strengthen the capabilities of 
 improvisation.
 \subsection*{Summary}
-In-depth review paper with some self citations but besides that it gives many new points to deepen my reseach.
+In-depth review paper with some self citations but besides that it gives many new points to deepen my research.
 
 \subsection*{Rating}
 5/5
@@ -1646,7 +1721,7 @@ future automation projects in high-value crops.
 \subsubsection*{What are the future directions of the research?}
 \begin{itemize}
     \item The authors suggest developing robot-friendly environments.
-    \item One big critic on the current state-of-the-art is that every reseach has to start again from the beginning. Here the authors suggest using similar methodologies and KPIs. Further more sharing of knowledge is needed.
+    \item One big critic on the current state-of-the-art is that every research has to start again from the beginning. Here the authors suggest using similar methodologies and KPIs. Further more sharing of knowledge is needed.
     \item Robot design processes are hard and multi disciplinary, the authors pleed that the research community starts better engineering processes for the robots used in harvesting. 
 \end{itemize}
 \subsubsection*{What is my main take away from this paper?}
@@ -1738,7 +1813,7 @@ robotics, UGV, UAV, multi-robot, environmental monitoring, sensory system, agric
     \item The goal of the duo is to drive trough the whole greenhouse using a \emph{back-and-forth} strategy.
     \item When ever the path is blocked, the UAV starts and continues to monitor the rows. UAV and UGV meet after the blocked row is monitored. 
     \item This allows the UAV to recharge and to be ready for the next blockage.
-    \item Both the UGV and UAV are off-the-shelf commercially available hardware. The UAV uses a RaspberryPie for computation.
+    \item Both the UGV and UAV are off-the-shelf commercially available hardware. The UAV uses a RaspberryPi for computation.
     \item In this paper, they are evaluating the strategic partnership between the two robots, \textbf{but the UAV is tele-operated!}
 \end{itemize}
 \subsubsection*{What is the work`s evaluation of the solution?}
@@ -2502,7 +2577,7 @@ swarm robotics, distributed multi-robot systems, cooperative control, flocking, 
 \subsubsection*{What is the proposed solution?}
 \begin{itemize}
     \item The authors created a uniform platform-agnostic hardware and software toolkit, capable of transforming ordinary mobile robots in fully fledged swarms and achieving a multitude of swarming behaviors using a software layer.
-    \item Each agent will be retrofitted with a RaspberryPie for computation and a XBee for communication. A Python software library runs on the Pie for controlling the behavior, body and networking of the robots.
+    \item Each agent will be retrofitted with a RaspberryPi for computation and a XBee for communication. A Python software library runs on the Pie for controlling the behavior, body and networking of the robots.
 \end{itemize}
 \subsubsection*{What is the work`s evaluation of the solution?}
 \begin{itemize}
@@ -2518,7 +2593,7 @@ swarm robotics, distributed multi-robot systems, cooperative control, flocking, 
 \end{itemize}
 \subsubsection*{What are the contributions?}
 \begin{itemize}
-    \item They provided a general blueprint for a low cost hardware platform enabling swarm behavior on existing off-the-shelf robots. Thus making swarm robot research and prototyping much easier. The hardware is a RaspberryPie for computing and a XBee for network interfacing.
+    \item They provided a general blueprint for a low cost hardware platform enabling swarm behavior on existing off-the-shelf robots. Thus making swarm robot research and prototyping much easier. The hardware is a RaspberryPi for computing and a XBee for network interfacing.
     \item Next to the hardware solution they also presented a python framework for controlling the robot`s body, the behavior and the networking interface.
 \end{itemize}
 \subsubsection*{What are the future directions of the research?}
@@ -2535,7 +2610,7 @@ swarm robotics, distributed multi-robot systems, cooperative control, flocking, 
 \subsubsection*{What is my main take away from this paper?}
 \begin{itemize}
     \item Open source software platform for enabling swarm behavior in off-the-shelf robots.
-    \item Running swarm behavior on RaspberryPies.
+    \item Running swarm behavior on RaspberryPis.
 \end{itemize}
 
 \subsection*{Summary}

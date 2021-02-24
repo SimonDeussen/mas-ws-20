@@ -1,0 +1,28 @@
+\contentsline {section}{\numberline {1}Reading Report: \emph {Field Coverage for Weed Mapping: Toward Experiments with a UAV Swarm}}{3}{section.1}%
+\contentsline {section}{\numberline {2}Reading Report: \emph {A Formal Analysis and Taxonomy of Task Allocation in Multi-Robot Systems }}{6}{section.2}%
+\contentsline {section}{\numberline {3}Reading Report: \emph {A comprehensive taxonomy for multi-robot task allocation}}{9}{section.3}%
+\contentsline {section}{\numberline {4}Reading Report: \emph {A review of key techniques of vision-based control for harvesting robot}}{11}{section.4}%
+\contentsline {section}{\numberline {5}Reading Report: \emph {Advances in Multi-Robot Systems}}{16}{section.5}%
+\contentsline {section}{\numberline {6}Reading Report: \emph {Agricultural robots for field operations: Concepts and components}}{20}{section.6}%
+\contentsline {section}{\numberline {7}Reading Report: \emph {Agricultural robots—system analysis and economic feasibility}}{22}{section.7}%
+\contentsline {section}{\numberline {8}Reading Report: \emph {Analysis of Dynamic Task Allocation in Multi-Robot Systems }}{24}{section.8}%
+\contentsline {section}{\numberline {9}Reading Report: Chapter 56 \emph {Robotics in Agriculture and Forestry} from \emph {Springer Handbook of Robotics}}{27}{section.9}%
+\contentsline {section}{\numberline {10}Reading Report: \emph {Crop design for improved robotic harvesting: A case study of sweet pepper harvesting}}{32}{section.10}%
+\contentsline {section}{\numberline {11}Reading Report: \emph {Development of a sweet pepper harvesting robot}}{37}{section.11}%
+\contentsline {section}{\numberline {12}Reading Report: \emph {Development of a tomato harvesting robot used in greenhouse}}{41}{section.12}%
+\contentsline {section}{\numberline {13}Reading Report: \emph {Field Robots for Intelligent Farms - Inhering Features from Industry}}{45}{section.13}%
+\contentsline {section}{\numberline {14}Reading Report: \emph {Field Test of an Autonomous Cucumber Picking Robot}}{48}{section.14}%
+\contentsline {section}{\numberline {15}Reading Report: \emph {Fleets of robots for environmentally safe pest control in agriculture}}{51}{section.15}%
+\contentsline {section}{\numberline {16}Reading Report: \emph {Harvesting Robots for High-value Crops: State-of-the-art Review and Challenges Ahead}}{54}{section.16}%
+\contentsline {section}{\numberline {17}Reading Report: \emph {Heterogeneous Multi-Robot System for Mapping Environmental Variables of Greenhouses}}{57}{section.17}%
+\contentsline {section}{\numberline {18}Reading Report: \emph {Human-robot interaction in agriculture: A survey and current challenges}}{62}{section.18}%
+\contentsline {section}{\numberline {19}Reading Report: \emph {Monitoring and Mapping with Robot Swarms for Agricultural Applications}}{65}{section.19}%
+\contentsline {section}{\numberline {20}Reading Report: \emph {Multi-robot Task Allocation: A Review of the State-of-the-Art}}{68}{section.20}%
+\contentsline {section}{\numberline {21}Reading Report: \emph {Performance improvements of a sweet pepper harvesting robot in protected cropping environments }}{70}{section.21}%
+\contentsline {section}{\numberline {22}Reading Report: \emph {Plant detection and mapping for agricultural robots using a 3D LIDAR sensor}}{73}{section.22}%
+\contentsline {section}{\numberline {23}Reading Report: \emph {Robot fleets for highly effective agriculture}}{76}{section.23}%
+\contentsline {section}{\numberline {24}Reading Report: \emph {Robotic Manipulation for Specialty Crop Harvesting:A Review of Manipulator and End-Effector Technologies}}{79}{section.24}%
+\contentsline {section}{\numberline {25}Reading Report: \emph {Swarm robotics: a review from the swarm engineering perspective}}{82}{section.25}%
+\contentsline {section}{\numberline {26}Reading Report: \emph {Swarm-enabling Technology for Multi-Robot Systems}}{85}{section.26}%
+\contentsline {section}{\numberline {27}Reading Report: \emph {Using color and 3D geometry features to segment fruit point cloud and improve fruit recognition accuracy}}{88}{section.27}%
+\contentsline {section}{References}{92}{section*.343}%
