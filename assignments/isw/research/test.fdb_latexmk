@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1614169718 "/home/sd/Documents/code/mas-ws-20/assignments/isw/research/test.tex" "/home/sd/Documents/code/mas-ws-20/assignments/isw/research/test.pdf" "test" 1614169995
-  "/home/sd/Documents/code/mas-ws-20/assignments/isw/research/test.aux" 1614169719 32 3985256e7290058c681f74d7a3565a19 ""
-  "/home/sd/Documents/code/mas-ws-20/assignments/isw/research/test.tex" 1614169994 1896 c20cb068de910d1706b4ceef4f746e3a ""
+["pdflatex"] 1614185004 "/home/sd/Documents/code/mas-ws-20/assignments/isw/research/test.tex" "/home/sd/Documents/code/mas-ws-20/assignments/isw/research/test.pdf" "test" 1614185004
+  "/home/sd/Documents/code/mas-ws-20/assignments/isw/research/test.aux" 1614185004 32 3985256e7290058c681f74d7a3565a19 ""
+  "/home/sd/Documents/code/mas-ws-20/assignments/isw/research/test.tex" 1614185004 2610 c310a19ef795bbd04161c8245d5ea4ce ""
   "/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2020/texmf-dist/tex/latex/base/article.cls" 1601675358 20145 aad8c3dd3bc36e260347b84002182bc2 ""
   "/usr/local/texlive/2020/texmf-dist/tex/latex/base/size10.clo" 1601675358 8449 a72d5d4e612221b46000c3d71724e0ef ""
@@ -11,11 +11,11 @@
   "/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1604416775 5022058 744aaa57babb7b0780e2d4c19c2ff31b ""
   "/usr/local/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1604416821 2549316 9220b7fa18909c96f65242a1f041eccd ""
   "/usr/local/texlive/2020/texmf.cnf" 1604416771 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "test.aux" 1614169719 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "test.tex" 1614169994 1896 c20cb068de910d1706b4ceef4f746e3a ""
+  "test.aux" 1614185004 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "test.tex" 1614185004 2610 c310a19ef795bbd04161c8245d5ea4ce ""
   (generated)
+  "test.log"
+  "/home/sd/Documents/code/mas-ws-20/assignments/isw/research/test.pdf"
+  "test.aux"
   "test.pdf"
   "/home/sd/Documents/code/mas-ws-20/assignments/isw/research/test.log"
-  "test.aux"
-  "/home/sd/Documents/code/mas-ws-20/assignments/isw/research/test.pdf"
-  "test.log"
