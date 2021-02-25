@@ -17,45 +17,45 @@ Warning--No journal in Albani2017
 Warning--No journal in Albani2019
 Warning--`others' not consistent with 6th ed. of the APA Manual
 Warning--No journal in Khamis2015
-You've used 27 entries,
+You've used 29 entries,
             6951 wiz_defined-function locations,
-            1483 strings with 17688 characters,
-and the built_in function-call counts, 60103 in all, are:
-= -- 6986
-> -- 609
-< -- 3087
-+ -- 3261
-- -- 56
-* -- 4185
-:= -- 11231
-add.period$ -- 105
-call.type$ -- 27
-change.case$ -- 501
+            1499 strings with 18165 characters,
+and the built_in function-call counts, 64374 in all, are:
+= -- 7530
+> -- 655
+< -- 3239
++ -- 3443
+- -- 60
+* -- 4437
+:= -- 11866
+add.period$ -- 114
+call.type$ -- 29
+change.case$ -- 538
 chr.to.int$ -- 0
-cite$ -- 57
-duplicate$ -- 1829
-empty$ -- 2260
-format.name$ -- 1129
-if$ -- 10889
+cite$ -- 61
+duplicate$ -- 1987
+empty$ -- 2443
+format.name$ -- 1211
+if$ -- 11745
 int.to.chr$ -- 0
-int.to.str$ -- 81
+int.to.str$ -- 87
 missing$ -- 0
-newline$ -- 796
-num.names$ -- 216
-pop$ -- 790
+newline$ -- 855
+num.names$ -- 232
+pop$ -- 887
 preamble$ -- 1
-purify$ -- 150
+purify$ -- 160
 quote$ -- 0
-skip$ -- 3587
+skip$ -- 3880
 stack$ -- 0
-substring$ -- 3469
-swap$ -- 1056
-text.length$ -- 97
+substring$ -- 3685
+swap$ -- 1144
+text.length$ -- 109
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 2160
+type$ -- 2384
 warning$ -- 4
-while$ -- 416
+while$ -- 445
 width$ -- 0
-write$ -- 1067
+write$ -- 1142
 (There were 4 warnings)

@@ -425,6 +425,38 @@ Gerkey, B\BPBI P.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Haidegger%
+\ \protect \BOthers {.}}{%
+Haidegger%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2013}}%
+}]{%
+Haidegger2013}
+\APACinsertmetastar {%
+Haidegger2013}%
+\begin{APACrefauthors}%
+Haidegger, T.%
+, Barreto, M.%
+, Gon{\c{c}}alves, P.%
+, Habib, M\BPBI K.%
+, Ragavan, S\BPBI K\BPBI V.%
+, Li, H.%
+\BDBL {}Prestes, E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2013}{nov}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Applied ontologies and standards for service robots}
+  {Applied ontologies and standards for service robots}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Robotics and Autonomous Systems}{61}{11}{1215--1223}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.robot.2013.05.008}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Henten%
 \ \protect \BOthers {.}}{%
 Henten%
@@ -707,6 +739,36 @@ Siciliano, B.%
 \begin{APACrefURL}
   \url{https://link.springer.com/book/10.1007/978-3-319-32552-1}
   \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Thorpe%
+\ \BBA {} Durrant-Whyte%
+}{%
+Thorpe%
+\ \BBA {} Durrant-Whyte%
+}{%
+{\protect \APACyear {2001}}%
+}]{%
+Thorpe2001}
+\APACinsertmetastar {%
+Thorpe2001}%
+\begin{APACrefauthors}%
+Thorpe, C.%
+\BCBT {}\ \BBA {} Durrant-Whyte, H\BPBI F.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2001}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Field Robots.} {Field robots.}{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {ISRR} {Isrr}\ (\BPGS\ 329--340).
+\newblock
+\APACaddressPublisher{}{Springer Berlin Heidelberg}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1007/3-540-36460-9_22}
+  \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
