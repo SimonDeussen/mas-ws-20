@@ -1,11 +1,9 @@
 % Encoding: UTF-8
 
-@Article{MerriamWebster,
+@Misc{MerriamWebster2020,
   author    = {Merriam-Webster},
-  journal   = {Merriam-Webster.com dictionary},
-  title     = {Agriculture},
+  title   = {Merriam-Webster.com dictionary},
   year      = {2020},
-  timestamp = {2020-12-22},
   url       = {https://www.merriam-webster.com/dictionary/agriculture},
 }
 
@@ -21,6 +19,36 @@
   title  = {Technopedia Dictionary},
   year   = {2020},
   url    = {https://www.techopedia.com/definition/32694/autonomous-robot},
+}
+
+@Misc{Farms2020,
+  author = {Farms},
+  title  = {Farms Dictionary},
+  year   = {2020},
+  url    = {https://www.farms.com/precision-agriculture/crop-scouting/},
+}
+
+@Book{Siciliano2016,
+  author    = {Siciliano, Bruno and Khatib, Oussama},
+  publisher = {Springer},
+  title     = {Springer handbook of robotics},
+  year      = {2016},
+  file      = {:/home/sd/Documents/books/2016_Book_SpringerHandbookOfRobotics.pdf:PDF},
+  url       = {https://link.springer.com/book/10.1007/978-3-319-32552-1},
+}
+
+@Misc{Farms2020,
+  author = {RoboticIndustriesAssociation},
+  title  = {Robotics.org - Service Robots},
+  year   = {2021},
+  url    = {https://www.robotics.org/service-robots/what-are-professional-service-robots},
+}
+
+@Misc{Farms2020,
+  author = {RoboticIndustriesAssociation},
+  title  = {Robotics.org - Service Robots},
+  year   = {2021},
+  url    = {https://ifr.org/service-robots/},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
