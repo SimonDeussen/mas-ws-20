@@ -1,0 +1,33 @@
+
+\renewcommand*{\maketitle}{%
+\begin{titlepage}
+    \newgeometry{left=3cm, bottom=3cm}
+
+    \begin{minipage}{0.475\textwidth}
+        \centering
+	   \includegraphics[height=1.3cm]{images/Logo-HBRS-cyan.png}
+    \end{minipage}
+    \begin{minipage}{0.475\textwidth}
+        \centering
+	   \includegraphics[height=1.3cm]{images/b-it.pdf}
+    \end{minipage}
+    \centering
+    \vfill
+   
+\vfill
+{\huge\bfseries\@title\unskip\strut\par}
+\vspace{2cm}
+{\Large\itshape\@author\unskip\strut\par}
+\vfill
+
+{\normalsize Submitted to Hochschule Bonn-Rhein-Sieg,\\
+Department of Computer Science}
+\vfill
+
+
+{\large \@date\par}
+\end{titlepage}
+\restoregeometry
+}
+
+

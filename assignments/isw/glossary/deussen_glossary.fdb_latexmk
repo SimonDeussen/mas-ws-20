@@ -1,14 +1,14 @@
 # Fdb version 3
-["bibtex deussen_glossary"] 1614285362 "deussen_glossary.aux" "deussen_glossary.bbl" "deussen_glossary" 1614285682
+["bibtex deussen_glossary"] 1614285362 "deussen_glossary.aux" "deussen_glossary.bbl" "deussen_glossary" 1614331885
   "/usr/local/texlive/2020/texmf-dist/bibtex/bst/apacite/apacite.bst" 1374530685 141073 9d7b79dbf9d91133318126032cff8c27 ""
-  "deussen_glossary.aux" 1614285637 4551 2537b62ffa8147fb7a1026e16357f402 "pdflatex"
+  "deussen_glossary.aux" 1614331885 4551 2537b62ffa8147fb7a1026e16357f402 "pdflatex"
   "glossary.bib" 1614285359 16276 d913c9afc3cc75de146f00b2b36472a1 ""
   (generated)
-  "deussen_glossary.blg"
   "deussen_glossary.bbl"
-["pdflatex"] 1614285637 "/home/sd/Documents/code/mas-ws-20/assignments/isw/glossary/deussen_glossary.tex" "/home/sd/Documents/code/mas-ws-20/assignments/isw/glossary/deussen_glossary.pdf" "deussen_glossary" 1614285682
-  "/home/sd/Documents/code/mas-ws-20/assignments/isw/glossary/deussen_glossary.aux" 1614285637 4551 2537b62ffa8147fb7a1026e16357f402 ""
-  "/home/sd/Documents/code/mas-ws-20/assignments/isw/glossary/deussen_glossary.tex" 1614285681 9091 7e61e49c2aed6beb31999baad68a5405 ""
+  "deussen_glossary.blg"
+["pdflatex"] 1614331885 "/home/sd/Documents/code/mas-ws-20/assignments/isw/glossary/deussen_glossary.tex" "/home/sd/Documents/code/mas-ws-20/assignments/isw/glossary/deussen_glossary.pdf" "deussen_glossary" 1614331885
+  "/home/sd/Documents/code/mas-ws-20/assignments/isw/glossary/deussen_glossary.aux" 1614331885 4551 2537b62ffa8147fb7a1026e16357f402 ""
+  "/home/sd/Documents/code/mas-ws-20/assignments/isw/glossary/deussen_glossary.tex" 1614331884 9087 6c1cd87d59e033fa88b9175a59b0791e ""
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -81,14 +81,14 @@
   "/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1604416775 5022058 744aaa57babb7b0780e2d4c19c2ff31b ""
   "/usr/local/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1604416821 2549316 9220b7fa18909c96f65242a1f041eccd ""
   "/usr/local/texlive/2020/texmf.cnf" 1604416771 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "deussen_glossary.aux" 1614285637 4551 2537b62ffa8147fb7a1026e16357f402 "pdflatex"
+  "deussen_glossary.aux" 1614331885 4551 2537b62ffa8147fb7a1026e16357f402 "pdflatex"
   "deussen_glossary.bbl" 1614285363 9000 e45c4b6f27694e8af128900e51b502d4 "bibtex deussen_glossary"
-  "deussen_glossary.out" 1614285637 132 08e4f732386bd104ff355057f1b2d67c "pdflatex"
-  "deussen_glossary.tex" 1614285681 9091 7e61e49c2aed6beb31999baad68a5405 ""
+  "deussen_glossary.out" 1614331885 132 08e4f732386bd104ff355057f1b2d67c "pdflatex"
+  "deussen_glossary.tex" 1614331884 9087 6c1cd87d59e033fa88b9175a59b0791e ""
   (generated)
+  "deussen_glossary.aux"
   "deussen_glossary.pdf"
-  "/home/sd/Documents/code/mas-ws-20/assignments/isw/glossary/deussen_glossary.log"
   "deussen_glossary.out"
   "/home/sd/Documents/code/mas-ws-20/assignments/isw/glossary/deussen_glossary.pdf"
-  "deussen_glossary.aux"
   "deussen_glossary.log"
+  "/home/sd/Documents/code/mas-ws-20/assignments/isw/glossary/deussen_glossary.log"

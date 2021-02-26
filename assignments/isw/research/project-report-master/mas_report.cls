@@ -77,16 +77,7 @@
 \newcommand{\thirdpartylogo}[1]{\def\@thirdpartylogo{#1}}
 \thirdpartylogo{}
 
-\newcommand*{\supervisors}[1]{\gdef\@supervisors{#1}%
-}
-\newcommand*{\@supervisors}{\texttt{\string\supervisors} currently
-not set. Please fix this.}
 
-\newcommand*{\phdsupervisor}[1]{\def\@phdsupervisor{#1}%
-}
-\phdsupervisor{}
-
-\newcommand*{\thephdsupervisor}{\@phdsupervisor}
 
 \newcommand*{\phdproject}[1]{\def\@phdproject{#1}%
 }
@@ -98,8 +89,6 @@ not set. Please fix this.}
 \newcommand*{\subject}[1]{\def\@subject{#1}}
 \subject{}
 
-% Acknowledgements
-\newcommand{\phdack}[1]{This project was conducted under the supervision of \thephdsupervisor, in the context of their PhD project with the working title `` \@phdproject".}
 
 % Colors
 \definecolor{hbrs}{RGB}{1,106,186}
