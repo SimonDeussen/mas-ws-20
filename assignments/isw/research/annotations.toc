@@ -43,4 +43,7 @@
 \contentsline {section}{\numberline {2.27}Reading Report: \emph {Swarm robotics: a review from the swarm engineering perspective}}{93}{section.2.27}%
 \contentsline {section}{\numberline {2.28}Reading Report: \emph {Swarm-enabling Technology for Multi-Robot Systems}}{96}{section.2.28}%
 \contentsline {section}{\numberline {2.29}Reading Report: \emph {Using color and 3D geometry features to segment fruit point cloud and improve fruit recognition accuracy}}{99}{section.2.29}%
-\contentsline {chapter}{References}{102}{chapter*.339}%
+\contentsline {chapter}{\numberline {3}Appendix}{102}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Acronyms}{102}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Glossary}{102}{section.3.2}%
+\contentsline {chapter}{References}{106}{chapter*.339}%

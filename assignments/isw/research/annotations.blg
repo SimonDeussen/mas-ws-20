@@ -1,6 +1,6 @@
 This is BibTeX, Version 0.99d (TeX Live 2020)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
-The top-level auxiliary file: deussen_glossary.aux
+The top-level auxiliary file: annotations.aux
 The style file: apacite.bst
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=200001) to 20 items from 10.
@@ -11,46 +11,51 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Database file #1: glossary.bib
+Database file #1: isw_research.bib
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
-You've used 14 entries,
+Warning--No journal in Albani2017
+Warning--No journal in Albani2019
+Warning--`others' not consistent with 6th ed. of the APA Manual
+Warning--No journal in Khamis2015
+You've used 36 entries,
             6951 wiz_defined-function locations,
-            1372 strings with 13060 characters,
-and the built_in function-call counts, 23892 in all, are:
-= -- 2941
-> -- 214
-< -- 1011
-+ -- 1003
-- -- 40
-* -- 1445
-:= -- 4139
-add.period$ -- 58
-call.type$ -- 14
-change.case$ -- 251
+            1536 strings with 19100 characters,
+and the built_in function-call counts, 73379 in all, are:
+= -- 8648
+> -- 725
+< -- 3580
++ -- 3696
+- -- 86
+* -- 4895
+:= -- 13338
+add.period$ -- 142
+call.type$ -- 36
+change.case$ -- 657
 chr.to.int$ -- 0
-cite$ -- 28
-duplicate$ -- 645
-empty$ -- 1054
-format.name$ -- 343
-if$ -- 4702
+cite$ -- 75
+duplicate$ -- 2206
+empty$ -- 2919
+format.name$ -- 1309
+if$ -- 13655
 int.to.chr$ -- 0
-int.to.str$ -- 42
+int.to.str$ -- 108
 missing$ -- 0
-newline$ -- 364
-num.names$ -- 112
-pop$ -- 689
+newline$ -- 1009
+num.names$ -- 288
+pop$ -- 1372
 preamble$ -- 1
-purify$ -- 68
+purify$ -- 188
 quote$ -- 0
-skip$ -- 1445
+skip$ -- 4368
 stack$ -- 0
-substring$ -- 1109
-swap$ -- 363
-text.length$ -- 52
+substring$ -- 3967
+swap$ -- 1243
+text.length$ -- 129
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 1184
-warning$ -- 0
-while$ -- 130
+type$ -- 2944
+warning$ -- 4
+while$ -- 480
 width$ -- 0
-write$ -- 444
+write$ -- 1310
+(There were 4 warnings)
