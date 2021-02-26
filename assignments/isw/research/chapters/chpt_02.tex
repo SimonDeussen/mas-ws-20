@@ -23,6 +23,55 @@
     I chose this structure because it firstly makes analyzing the paper reported upon and writing the report easier. Secondly the structure let me contain enough important information to capture the quintessence of the paper and lets me go back to it quickly, if I need to reference the deeper knowledge and concrete formulations of original paper.
 
     The summary is just a one or two sentence recap, which captures my \emph{personal} and \emph{spontaneous} opinion after reading the paper. 
+
+    % \section{Reading Report: \emph{TITLE}}
+    % \cite{}
+
+    % \subsection*{Abstract}
+
+    % \subsection*{Keywords}
+
+    % \subsection*{Questions}
+    % \subsubsection*{What are the motivations for this work?}
+    % \begin{itemize}
+    %     \item 
+    % \end{itemize}
+    % \subsubsection*{What is the proposed solution?}
+    % \begin{itemize}
+    %     \item 
+    % \end{itemize}
+    % \subsubsection*{What is the work`s evaluation of the solution?}
+    % \begin{itemize}
+    %     \item 
+    % \end{itemize}
+    % \subsubsection*{What is my analysis of the identified problem, idea and evaluation?}
+    % \begin{itemize}
+    %     \item 
+    % \end{itemize}
+    % \subsubsection*{What are the contributions?}
+    % \begin{itemize}
+    %     \item 
+    % \end{itemize}
+    % \subsubsection*{What are the future directions of the research?}
+    % \begin{itemize}
+    %     \item 
+    % \end{itemize}
+    % \subsubsection*{What questions have I left?}
+    % \begin{itemize}
+    %     \item 
+    % \end{itemize}
+    % \subsubsection*{What is my main take away from this paper?}
+    % \begin{itemize}
+    %     \item 
+    % \end{itemize}
+
+    % \subsection*{Summary}
+
+    % \subsection*{Rating}
+
+    % ================= SORTED FROM HERE ON =================
+
+
     \newpage
 
     \section{Reading Report: \emph{A Formal Analysis and Taxonomy of Task Allocation in Multi-Robot Systems
@@ -113,11 +162,9 @@
     \cite{Korsah2013}
     
     \subsection*{Abstract}
-    Task allocation is an important aspect of many multi-robot systems. The features and complexity of multi-robot task allo-
-    cation (MRTA) problems are dictated by the requirements of the particular domain under consideration. These problems
+    Task allocation is an important aspect of many multi-robot systems. The features and complexity of multi-robot task allocation (MRTA) problems are dictated by the requirements of the particular domain under consideration. These problems
     can range from those involving instantaneous distribution of simple, independent tasks among members of a homogenous
-    team, to those requiring the time-extended scheduling of complex interrelated multi-step tasks for members of a heteroge-
-    nous team related by several constraints. The existing widely used taxonomy for task allocation in multi-robot systems was
+    team, to those requiring the time-extended scheduling of complex interrelated multi-step tasks for members of a heterogenous team related by several constraints. The existing widely used taxonomy for task allocation in multi-robot systems was
     designed for problems with independent tasks and does not deal with problems with interrelated utilities and constraints.
     While that taxonomy was a ground-breaking contribution to the MRTA literature, a survey of recent work in MRTA reveals
     that it is no longer a sufficient taxonomy, due to the increasing importance of interrelated utilities and constraints in
@@ -141,13 +188,13 @@
       \item The authors created a taxonomy for MRTA problems along the degree of interrelatedness of tasks. Following classes are presented: \ 
       \begin{description}
           \item[No Dependencies class (ND)] The utility of an agent only depends on the agent and the task itself. No other dependencies. 
-          \item[In-schedule Dependencies (ID)] The agents effective utility depends on the other task it is assigned to. The schedule how the tasks are executed gets relvant.
+          \item[In-schedule Dependencies (ID)] The agents effective utility depends on the other task it is assigned to. The schedule how the tasks are executed gets relevant.
           \item[Cross-schedule Dependencies (XD)] Here the utility of the agents not only depend on their one schedule but also the schedule of all the other agents. Until here, all task have been elemental, simple or compound tasks.
           \item[Complex Dependencies (CD)] It is not just relevant \emph{who} and \emph{when} each task should be executed, but on the same time the \emph{decomposition} of any given task also depends on the schedule of all other tasks and agents. (Complex tasks)
           \item[Elemental task]  An task, which can not be decomposed any further.
           \item[Simple task]  An task, which is either elemental or can be decomposed into elemental tasks.
           \item[Compound task] A task which can be decomposed in exactly one fixed set of simple subtasks.
-          \item[Comlplex task] This task can be decomposed into multiple different subsets, where at least one subset requirers multi agent comporation.
+          \item[Comlplex task] This task can be decomposed into multiple different subsets, where at least one subset requirers multi agent cooperation.
       \end{description}
     \end{itemize}
     \subsubsection*{What is the work`s evaluation of the solution?}
@@ -165,7 +212,7 @@
     \begin{itemize}
         \item The author created an in-depth taxonomy which highlights a new key dimension, the degree of interrelatedness if tasks and constraints.
         \item Using this new taxonomy the authors showcase relevant mathematical models for each problem class.
-        \item They used many parts of Gerkeys taxonomy and relate all of their new found classes to the standards. 
+        \item They used many parts of Gerkey`s taxonomy and relate all of their new found classes to the standards. 
     \end{itemize}
     \subsubsection*{What are the future directions of the research?}
     \begin{itemize}
@@ -195,11 +242,9 @@
     Although there is a rapid development of agricultural robotic technologies, a lack of access to robust fruit
     recognition and precision picking capabilities has limited the commercial application of harvesting
     robots. On the other hand, recent advances in key techniques in vision-based control have improved this
-    situation. These techniques include vision information acquisition strategies, fruit recognition algo-
-    rithms, and eye-hand coordination methods. In a fruit or vegetable harvesting robot, vision control is
+    situation. These techniques include vision information acquisition strategies, fruit recognition algorithms, and eye-hand coordination methods. In a fruit or vegetable harvesting robot, vision control is
     employed to solve two major problems in detecting objects in tree canopies and picking objects using
-    visual information. This paper presents a review on these key vision control techniques and their poten-
-    tial applications in fruit or vegetable harvesting robots. The challenges and feature trends of applying
+    visual information. This paper presents a review on these key vision control techniques and their potential applications in fruit or vegetable harvesting robots. The challenges and feature trends of applying
     these vision control techniques in harvesting robots are also described and discussed in the review.
     
     
@@ -213,7 +258,7 @@
         \item The authors claim that the recognition and the localization of fruits is the biggest bottleneck in harvesting.
         \item Because of the complex loosely structured nature of the agricultural domain, vision-based control is the only possibility.
         \item Each fruit hangs or lies in a random location which makes it necessary to continually find the fruits. 
-        \item The recognition and localization is the foundation of successful harvesting. So this is the first thing which has to wokr in order to get commercial harvesting robots. 
+        \item The recognition and localization is the foundation of successful harvesting. So this is the first thing which has to work in order to get commercial harvesting robots. 
         \item All in all this papers wants to give an overview over current (2016) techniques to identify fruits in plants.
     \end{itemize}
     \subsubsection*{What is the proposed solution?}
@@ -279,21 +324,21 @@
              \end{itemize}
             \item[Multi feature analysis] \ 
             \begin{itemize} 
-                \item In order to increase detection, reliability and robustness, multiple feautres from an image can be used to detect and localize the fruits.
+                \item In order to increase detection, reliability and robustness, multiple features from an image can be used to detect and localize the fruits.
                 \item Using multiple features increases algorithmic complexity. This needs better processors to compute in an appropriate time.
                 \item Interestingly this review shows \emph{worse} results here, but still in the area of 90\%.
              \end{itemize}
             \item[Pattern recognition ] \ 
             \begin{itemize} 
                 \item The pattern recognition approach uses even more complex algorithms to find the fruits. 
-                \item Examples are statistical models, clustering, artificial neural networks, support vector machines and fuzzy patern recognition.
+                \item Examples are statistical models, clustering, artificial neural networks, support vector machines and fuzzy pattern recognition.
                 \item Here the papers gets worse and worse, no real value besides the pointers to the mentioned papers.
              \end{itemize}
             \item[Open-loop visual control] \ 
             \begin{itemize} 
                 \item In an open-loop control mode, the sensors will first detect the positions and then the manipulator will move to estimated positions.
                 \item Without feedback, this system will fail as soon as wind or the manipulators displace the fruits.
-                \item The authors mentioned system where first the manipulators gets placed fast using open-loop control in the vincinity then uses visual servo for fine positioning for grasping the fruits.
+                \item The authors mentioned system where first the manipulators gets placed fast using open-loop control in the vicinity then uses visual servo for fine positioning for grasping the fruits.
              \end{itemize}
             \item[Visual servo control] \ 
             \begin{itemize} 
@@ -316,7 +361,7 @@
     \begin{itemize}
         \item This review shows some key aspect of the computer vision problems of harvesting. 
         \item The authors created categories of important aspects and showcased work in those.
-        \item The authors \textbf{did not} create a systematic approach to compare the results of papers. For example did they show higher accuray for single feature analysis than multi feature analysis or pattern recognition. Which does not make sense.
+        \item The authors \textbf{did not} create a systematic approach to compare the results of papers. For example did they show higher accuracy for single feature analysis than multi feature analysis or pattern recognition. Which does not make sense.
         \item The authors also did not say anything about computational costs.
     \end{itemize}
     \subsubsection*{What are the future directions of the research?}
@@ -430,7 +475,7 @@
             \item[Object transport and manipulation] \ 
             \begin{itemize} 
                 \item Using MRS to manipulate a object cooperatively is a long standing, but hard to reach goal.
-                \item More feasible, than having mutiple robots grip an object, is to push objects around using formation control approaches.
+                \item More feasible, than having multiple robots grip an object, is to push objects around using formation control approaches.
                 \item I think more current research (newer than from 2002) will have more progress here.
             \end{itemize}
             \item[Motion coordination ] \ 
@@ -475,7 +520,7 @@
     \end{itemize}
     \subsubsection*{What is my main take away from this paper?}
     \begin{itemize}
-        \item This paper is good basis to compare the progress of the last 20 years to. Roboticists in 2002 struggled with the same problems as now. Of course we have stronger computers now, but the problems in control, distribution and communication remain.
+        \item This paper is good basis to compare the progress of the last 20 years to. Roboticist in 2002 struggled with the same problems as now. Of course we have stronger computers now, but the problems in control, distribution and communication remain.
     \end{itemize}
     
     \subsection*{Summary}
@@ -498,22 +543,16 @@
     the required information. Extensive research has been conducted on the application of
     robots and automation to a variety of field operations, and technical feasibility has been
     widely demonstrated. Agricultural robots for field operations must be able to operate in
-    unstructured agricultural environments with the same quality of work achieved by cur-
-    rent methods and means. To assimilate robotic systems, technologies must be developed
-    to overcome continuously changing conditions and variability in produce and environ-
-    ments. Intelligent systems are needed for successful task performance in such environ-
-    ments. The robotic system must be cost-effective, while being inherently safe and
+    unstructured agricultural environments with the same quality of work achieved by current methods and means. To assimilate robotic systems, technologies must be developed
+    to overcome continuously changing conditions and variability in produce and environments. Intelligent systems are needed for successful task performance in such environments. The robotic system must be cost-effective, while being inherently safe and
     reliabled human safety, and preservation of the environment, the crop and the machinery
     are mandatory. Despite much progress in recent years, in most cases the technology is not
     yet commercially available. Information-acquisition systems, including sensors, fusion
-    algorithms and data analysis, need to be adjusted to the dynamic conditions of un-
-    structured agricultural environments. Intensive research is needed on integrating human
+    algorithms and data analysis, need to be adjusted to the dynamic conditions of unstructured agricultural environments. Intensive research is needed on integrating human
     operators into the system control loop for increased system performance and reliability.
-    System sizes should be reduced while improving the integration of all parts and com-
-    ponents. For robots to perform in agricultural environments and execute agricultural
+    System sizes should be reduced while improving the integration of all parts and components. For robots to perform in agricultural environments and execute agricultural
     tasks, research must focus on: fusing complementary sensors for adequate localisation
-    and sensing abilities, developing simple manipulators for each agricultural task, devel-
-    oping path planning, navigation and guidance algorithms suited to environments besides
+    and sensing abilities, developing simple manipulators for each agricultural task, developing path planning, navigation and guidance algorithms suited to environments besides
     open fields and known a-priori, and integrating human operators in this complex and
     highly dynamic situation.
     
@@ -543,8 +582,8 @@
     systems in agriculture, but also explain why it is so hard to create such systems. 
     They propose a categorization of robotic system after the structure of their environment and object of interest. Both 
     can be either structured or unstructured. This categorization creates four different categories. First, a structured 
-    environment and a structured object: This is the industrial domain. Second, a strucutred environment and a unstructured
-    object: the medial domain. Further there is the unstructured enviroment with a structured object: the military, space, underwater
+    environment and a structured object: This is the industrial domain. Second, a structured environment and a unstructured
+    object: the medial domain. Further there is the unstructured environment with a structured object: the military, space, underwater
     and mining domains. The last domain, unstructured in environment and object of interest is the agricultural domain.
     
     The next contribution are guidelines under which circumstances a robot can be commercially successful. These guideline conclude
@@ -769,7 +808,7 @@
     \subsubsection*{What is my main take away from this paper?}
     \begin{itemize}
         \item Being able to precisely communicate between multiple researcher or stakeholders will be a great boost to the speed of work and research to be done in service robotics.
-        \item The authors recommend for the research community to study different ontologies and standards in robotics for a more streamlined ability to work and to do research in servive robotics.
+        \item The authors recommend for the research community to study different ontologies and standards in robotics for a more streamlined ability to work and to do research in service robotics.
     \end{itemize}
     
     \subsection*{Summary}
@@ -851,7 +890,7 @@
         \begin{itemize}
             \item Automated sample taking will enable large scale experiments.
             \item It is hard to model deformable objects like plant parts (leaves, stems, flowers, fruits)
-            \item Proper models will enable individual plant part care, sampling, harvesting, predicting, robotized phenotyping
+            \item Proper models will enable individual plant part care, sampling, harvesting, predicting, robotized phenotyping.
         \end{itemize} 
         \item[Cucumber Harvesting] Automated harvesting can improve efficiency and reduce labour costs. The same system can also be used to cut nonproductive leaves from the plants.
     
@@ -898,7 +937,7 @@
         \item[Plant Probing] \
         \begin{itemize}
             \item System consisting of a robotic arm, time-of-flight camera and a measurement technologies
-            \item image segmentation and model fitting are used to find single leaves from depth informations
+            \item image segmentation and model fitting are used to find single leaves from depth information.
             \item The robot arms first finds position from where it can see the whole plant and then it moves further to enable unobstructed viewing of a single leave.
             \item After selecting a target leave it will take a probe.
         \end{itemize} 
@@ -906,7 +945,7 @@
         \begin{itemize}
             \item Mobile platform mounted on rails in greenhouses
             \item Harvesting contains several subproblems, one of them is finding the ripeness of the crops. In this case a target weight is given. Because cucumbers are mostly water it is possible to determine the weight from 3D data.
-            \item The system has a single camera but it is possible to move it around to capture the needed 3D informations.
+            \item The system has a single camera but it is possible to move it around to capture the needed 3D information.
             \item After identifying the ripe cucumber, it is cut and moved collision free to a storage crate. 
         \end{itemize} 
     
@@ -997,19 +1036,14 @@
     sensing and robotic systems. This paper presents a parallel approach, to ‘design’ the crop
     and its environment to best fit the robot, similar to robotic integration in industrial robot
     deployments.
-    A systematic methodology to select and modify the crop ‘design’ (crop and environ-
-    ment) to improve robotic harvesting is presented. We define crop-dependent robotic fea-
-    tures for successful harvesting (e.g., visibility, reachability), from which associated crop
+    A systematic methodology to select and modify the crop ‘design’ (crop and environment) to improve robotic harvesting is presented. We define crop-dependent robotic features for successful harvesting (e.g., visibility, reachability), from which associated crop
     features are identified (e.g., crop density, internode length). Methods to influence the crop
-    features are derived (e.g., cultivation practices, climate control) along with a methodo-
-    logical approach to evaluate the proposed designs. A case study of crop ‘design’ for robotic
+    features are derived (e.g., cultivation practices, climate control) along with a methodological approach to evaluate the proposed designs. A case study of crop ‘design’ for robotic
     sweet pepper harvesting is presented, with statistical analyses of influential parameters.
-    Since comparison of the multitude of existing crops and possible modifications is impos-
-    sible due to complexity and time limitations, a sequential field experimental setup is
+    Since comparison of the multitude of existing crops and possible modifications is impossible due to complexity and time limitations, a sequential field experimental setup is
     planned. Experiments over three years, 10 cultivars, two climate control conditions, two
     cultivation techniques and two artificial illumination types were performed. Results
-    showed how modifying the crop effects the crops characteristics influencing robotic har-
-    vesting by increased visibility and reachability. The systematic crop ‘design’ approach also
+    showed how modifying the crop effects the crops characteristics influencing robotic harvesting by increased visibility and reachability. The systematic crop ‘design’ approach also
     led to robot design recommendations. The presented ‘engineering’ the crop ‘design’
     framework highlights the importance of close synergy between crop and robot design
     achieved by strong collaboration between robotic and agronomy experts resulting in
@@ -1033,7 +1067,7 @@
     \begin{itemize}
         \item In  this study, the authors they describe experiments run during 3 years in a greenhouse in the Netherlands.
         \item They tested different varieties of sweet peppers and described which conditions are desireable for automatic harvesting and robotic help.
-        \item Overall they authors propose a framework for an engi approach to crop design.
+        \item Overall they authors propose a framework for an engineering approach to crop design.
         \item The authors described following performance indicators which depend in the crop design: \begin{itemize}
             \item Fruit location success
             \item Detachment success
@@ -1048,12 +1082,12 @@
         \end{description}
         \item To modify the crops, the authors propose following methods: \
         \begin{description}
-            \item[Selection of suitable varieties] The openess and fruit density highly depends on an suitable selected crop
+            \item[Selection of suitable varieties] The openness and fruit density highly depends on an suitable selected crop
             \item[Cultivation technique] This strongly impacts many aspects like the visibility and reachability of the fruit. Here the crops are altered by removing leaves and/or young fruits.
             \item[Climate control] \
             \begin{description}
-                \item[Temperature] The authors suggest that higher temperatures in the mornings result in longer internodes and fruit stemps.
-                \item[Humidity] Higher realtive humidity should also result in better characteristics: Better internodes and thus easier fruits to harvest mechanically.
+                \item[Temperature] The authors suggest that higher temperatures in the mornings result in longer internodes and fruit stems.
+                \item[Humidity] Higher relative humidity should also result in better characteristics: Better internodes and thus easier fruits to harvest mechanically.
                 \item[$CO_2$ concentration] Higher $CO_2$ concentration should yield a decrease in leaf surface area and so an improved fruit visibility. Which then results in more harvested fruits. 
             \end{description}
             \item[Additional growing lights] Some research the authors cite, says that an higher amount of blue  light could result in more open plants with longer internodes.
@@ -1061,7 +1095,7 @@
         \item The last category the authors suggested are the crop measures. Those allow to compare the resulting crops in perspective of the robotic harvesting. \
         \begin{description}
             \item[Crop density] This a value between 0-100\% describing how easy it is to look through the crop.  
-            \item[Lenth of internodes] This describes the lenth of an segment between two leaves. A longer internode usually results in an easier approach for
+            \item[Lenth of internodes] This describes the length of an segment between two leaves. A longer internode usually results in an easier approach for
              the robot and thus better harvesting. 
             \item[Position of the fruit on the stem] Since fruits hanging towards the robot are easier to harvest, this value describes the axis between the
              gripper and the fruit to harvest.
@@ -1085,7 +1119,7 @@
     \subsubsection*{What are the contributions?}
     \begin{itemize}
         \item An in-depth methodology for describing and choosing a crop and its environment to grow it in to maximize robotic help in the whole growing process.
-        \item They also have a concrete recommendation on how to culticate red and yellow peppers for optimal robotic conditions.
+        \item They also have a concrete recommendation on how to cultivate red and yellow peppers for optimal robotic conditions.
     \end{itemize}
     \subsubsection*{What are the future directions of the research?}
     \begin{itemize}
@@ -1147,7 +1181,7 @@
      
     \subsubsection*{What are the motivations for this work?}
     \begin{itemize}
-        \item Working in greenhouses is a extrem unfriendly environment with boring and repetitive tasks. Finding skilled
+        \item Working in greenhouses is a extreme unfriendly environment with boring and repetitive tasks. Finding skilled
         labor for this get harder and harder every year. Because of this automated and commercially viable automations are needed.
         \item To make harvesting robots commercially viable it is needed to improve the harvesting performance and speed in real-world conditions.
         \item This papers shows how one current state-of-art robot performs under realistic conditions.
@@ -1239,10 +1273,10 @@
         \item This paper is quite new so I am a bit disappointed in the performance of the state-of-the-art.
         Nevertheless the robot platform and paper is sophisticated and I am sure that with a bit tweaking the performance can improve.
         \item The robots goes to multiple different phases in detection and control modes. Because of this I think the 
-        computations are more effecient but on the other hand I seems like it has no proper world and plant model. 
+        computations are more efficient but on the other hand I seems like it has no proper world and plant model. 
         This results in errors in positioning and the need for occlusion free line of sight to the peppers. 
         \item So the state of the art still relies on simple 2D vision methods for finding its way.  
-        This means we need proper ways to model the plants in 3D in an computational effecient form for better motion planning and detection.
+        This means we need proper ways to model the plants in 3D in an computational efficient form for better motion planning and detection.
     \end{itemize}
     
     \subsection*{Summary}
@@ -1259,7 +1293,7 @@
     \subsection*{Abstract}
     A tomato harvesting robot was developed in this study, which consisted of a four-wheel independent steering system,
     a 5-DOF harvesting system, a navigation system, and a binocular stereo vision system.
-    The four-wheel independent steering system was capable of providing a low-speed steering control of the robot based on Ackerman steering geometry.
+    The four-wheel independent steering system was capable of providing a low-speed steering control of the robot based on  Ackermann steering geometry.
     The proportional-integral-derivative (PID) algorithm was used in the laser navigation control system. The Otsu algorithm and the
     elliptic template method were used for the automatic recognition of ripe tomatoes, and obstacle avoidance strategies were
     proposed based on the C-space method. The maximum average absolute error between the set angle and the actual angle was
@@ -1339,7 +1373,7 @@
     \end{itemize}
     \subsubsection*{What is my main take away from this paper?} 
     \begin{itemize}
-        \item The localisation in a greenhouse for tomatoes works good enough to grap them.  I did not expect for this to work that good.
+        \item The localisation in a greenhouse for tomatoes works good enough to grab them.  I did not expect for this to work that good.
         \item This paper is a good study of a holistic robot system working in the chaotic environment of a greenhouse.
     \end{itemize}
     
@@ -1386,7 +1420,7 @@
         \item For improving the coverage algorithm, the authors implement a advanced, modified random walk strategy. The area to be covered is split into cells, and for successful coverage, each cell has to be visited by a single UAV at least once. For the mapping to be finished, the foal is, that for each cell at least two different UAVs measure the same amount of the metric used.
         \item The strategy used, runs on every UAV in the swarm as the main high level control algorithm. Each UAV has to move around and map the needed variables, but also has to avoid collisions with the other drones. The authors added repulsion to other UAVs into the strategy which is the first step of collision avoidance. The second part is a \emph{Collision Avoidance ROS} node running the \emph{Optimal Reciprocal Collision Avoidance} (ORCA) method, which over takes the control if a collision is near. 
         \item Mapping, measuring and validating every cell at least twice, is being made sure by placing virtual attractor beacons on cells, which are not validated yet.
-        \item For balancing different  parameter, like the repulsion and attraction strenght, the number of drones and other parameters for ORCA, the authors run several simulations presented in the paper.
+        \item For balancing different  parameter, like the repulsion and attraction strength, the number of drones and other parameters for ORCA, the authors run several simulations presented in the paper.
         \item The HIL runs showed, that the actual computer vision algorithm and the control strategy are fast enough to be computed on the RaspberryPi 3 located on the UAVs. Although the simulation is using a much simpler model for the detection of weeds, than one capable of delivering real world detection. For the testing of the coverage and mapping, the authors used images of pink tennis ball on artificial grass - this scenario is much simpler than detecting weeds in a field.
     \end{itemize}
     \subsubsection*{What is the work`s evaluation of the solution?}
@@ -1463,7 +1497,7 @@
             \item Field robot applications are already deployed in environment which are cooperative, constrained and structured for automation. Example are cargo container handling, mining haulage and high altitude UAVs. These areas profit from progress in industrial robots, which also work in a completely structured environment.
             \item Localization and navigation is already possible by using RTK-GPS system, landmark navigation or beacon supported navigation.
             \item Because the processing speed for navigational and image based information increased, it is also possible to motion plan fast moving vehicles, at least on structured environments. Driving on rough terrain is not a completely solved problem.
-            \item Safety, is another important element of field robotics, for which concepts exists. They are also not completely figured out, because field robots should be active for 24 hours a day for a whole year and this makes extensive testing highly complicated. The main focis here is the sensor and software integrity which worsen over time.
+            \item Safety, is another important element of field robotics, for which concepts exists. They are also not completely figured out, because field robots should be active for 24 hours a day for a whole year and this makes extensive testing highly complicated. The main focus here is the sensor and software integrity which worsen over time.
         \end{itemize}
         \item The next points are categorized under mostly understood: \ \begin{itemize}
             \item As soon as the environments become less structured and the interactions become more complicated, the state-of-the-art is not able to understand and describe things fully.
@@ -1533,7 +1567,7 @@
      
     \subsubsection*{What are the motivations for this work?}
     \begin{itemize}
-        \item In order to keep up with the ever growing demand of food, the agricultural sector has do apdapt novel methods to increase efficiency, safety and environmental sustainability.
+        \item In order to keep up with the ever growing demand of food, the agricultural sector has do adapt novel methods to increase efficiency, safety and environmental sustainability.
         \item Qualitative human labor is hard to find and makes up to 40\% of costs in the growing process, which gives incentives to automate this part.
         \item The industrial sector has moved to a concept of \emph{intelligent factories}, which ideas and methods should be applied to agriculture - if applicable.
         \item The authors want to highlight the similarities and differences between industrial automation and agricultural automation, to look for transferable technologies and methods.\end{itemize}
@@ -1559,7 +1593,7 @@
     \end{itemize}
     \subsubsection*{What is the work`s evaluation of the solution?}
     \begin{itemize}
-        \item It is mentioned, that there are several problems which make the adoption from industrial technologies quite hard to achieve. While in an automated smart factory, the produced products are getting moved around in a strictly designed and controlled fashoin with for example conveyer belts towards the machines, a general strong difference is, that in farming, the machines are moved to the stationary products.
+        \item It is mentioned, that there are several problems which make the adoption from industrial technologies quite hard to achieve. While in an automated smart factory, the produced products are getting moved around in a strictly designed and controlled fashion with for example conveyer belts towards the machines, a general strong difference is, that in farming, the machines are moved to the stationary products.
         \item Another part hindering the adaption, is the lack of supporting infrastructure in farming areas. 
         \item One crucial point is, that agriculture is a seasonal business. Which means that the expensive robot system have to be reconfigurable for multiple tasks, otherwise they can only be used in a fraction of a year, during the harvest season for example.
         \item But all in all, the authors believe strongly that the research community will overcome the current technical limitations and that farming is also going to be automated through autonomous robots.
@@ -1583,11 +1617,11 @@
     \end{itemize}
     \subsubsection*{What questions have I left?}
     \begin{itemize}
-        \item How to improve and adapt the hyper-redundant manipulators for agricultural usecases. The math of course seems super hard, but this might the way for better grasping mechanism.
+        \item How to improve and adapt the hyper-redundant manipulators for agricultural use case. The math of course seems super hard, but this might the way for better grasping mechanism.
     \end{itemize}
     \subsubsection*{What is my main take away from this paper?}
     \begin{itemize}
-        \item For supporting robots in the agricultural context, one has to adapt the already established ideas of modern smart factories. There are of course many key differences, but the ideas of appliying IOT, AI and big data are important  - and not just buzz words in this context.
+        \item For supporting robots in the agricultural context, one has to adapt the already established ideas of modern smart factories. There are of course many key differences, but the ideas of applying IOT, AI and big data are important  - and not just buzz words in this context.
     \end{itemize}
     
     \subsection*{Summary}
@@ -1640,7 +1674,7 @@
         \item Removed leaves before hand to lessen occlusion errors.
         \item They also removed cucumbers growing too close to each other.
         \item The systems moves along a rail in 33cm steps. At each step the cameras look for cucumbers and if found and big enough proceed with the harvesting.
-        \item The harvesting does not take additional images. All informations come from the initial 2 pictures. Even if multiple cucumbers are found, the initial information and processing has to be enough.
+        \item The harvesting does not take additional images. All information come from the initial 2 pictures. Even if multiple cucumbers are found, the initial information and processing has to be enough.
         \item Because the range of the system is around 1m, the 33cm step allow up to 3 harvest attempts for each cucumber.
     \end{itemize}
     \subsubsection*{What is the work`s evaluation of the solution?}
@@ -1723,7 +1757,7 @@
     \end{itemize}
     \subsubsection*{What is the work`s evaluation of the solution?}
     \begin{itemize}
-        \item After several experiments, the authors showd that their approach could lessen the usage of pesticides by 75\%.
+        \item After several experiments, the authors showed that their approach could lessen the usage of pesticides by 75\%.
         \item The perception system was able to map the crop rows with 100\% accuracy.
         \item Inter-row weed patches got detected with accuracies above 85\%.
         \item The system could apply pesticides with a precision of 0.5m.
@@ -1775,8 +1809,7 @@
     \subsection*{Abstract}
     This review article analyzes state-of-the-art and future perspectives for harvesting robots in high-value crops.
     The objectives were to characterize the crop environment relevant for robotic harvesting, to perform a literature
-    review on the state-of-the-art of harvesting robots using quantitative measures, and to reflect on the crop en-
-    vironment and literature review to formulate challenges and directions for future research and development.
+    review on the state-of-the-art of harvesting robots using quantitative measures, and to reflect on the crop environment and literature review to formulate challenges and directions for future research and development.
     Harvesting robots were reviewed regarding the crop harvested in a production environment, performance indicators, design process techniques used, hardware design decisions, and algorithm characteristics. On average,
     localization success was 85\%, detachment success was 75\%, harvest success was 66\%, fruit damage was 5\%,
     peduncle damage was 45\%, and cycle time was 33 s. A kiwi harvesting robot achieved the shortest cycle time
@@ -1846,7 +1879,7 @@
     \begin{itemize}
         \item The authors suggest developing robot-friendly environments.
         \item One big critic on the current state-of-the-art is that every research has to start again from the beginning. Here the authors suggest using similar methodologies and KPIs. Further more sharing of knowledge is needed.
-        \item Robot design processes are hard and multi disciplinary, the authors pleed that the research community starts better engineering processes for the robots used in harvesting. 
+        \item Robot design processes are hard and multi disciplinary, the authors plead that the research community starts better engineering processes for the robots used in harvesting. 
     \end{itemize}
     \subsubsection*{What is my main take away from this paper?}
     \begin{itemize}
@@ -1855,7 +1888,7 @@
     \end{itemize}
     
     \subsection*{Summary}
-    Great, detailled review of many papers. Reference this for methods on how to validate and design experiments with robots.
+    Great, detailed review of many papers. Reference this for methods on how to validate and design experiments with robots.
     \subsection*{Rating}
     7/5
     
@@ -1959,7 +1992,7 @@
     \begin{itemize}
         \item Build a platform from off-the-shelf hardware for mobile monitoring of temperature, humidity, luminosity and $CO_2$ concentration.
         \item The authors contribute a simulation system build in \emph{Unity3D 5.2.1} for simulating the behavior of the dual robot system. 
-        \item The robot system consists of a UAV sitting on top the UGV which gets deployed as soon as the way is blocked which happends often in real world greenhouses.
+        \item The robot system consists of a UAV sitting on top the UGV which gets deployed as soon as the way is blocked which happens often in real world greenhouses.
         \item But they do not provide algorithms for flying the UAV. This is done manually by hand.
         \item Navigation algorithm for the UGV using SLAM and ACML.
     \end{itemize}
@@ -2034,7 +2067,7 @@
     \end{itemize}
     \subsubsection*{What are the contributions?}
     \begin{itemize}
-        \item The authos made a review over the small research are human-robot interactions. They reviewed seventeen papers.
+        \item The authors made a review over the small research are human-robot interactions. They reviewed seventeen papers.
         \item The paper contains following sections: \ \begin{itemize}
             \item Robotics in agriculture
             \item Human robot interactions \ \begin{itemize}
@@ -2117,7 +2150,7 @@
     \end{itemize}
     \subsubsection*{What is my analysis of the identified problem, idea and evaluation?}
     \begin{itemize}
-        \item The problem chosen represents a great variety of monitoring tasks. Spotting only volunteer potators by itself is not especially interesting, but the technologies developed here will be valid for all kinds of monitoring task.
+        \item The problem chosen represents a great variety of monitoring tasks. Spotting only volunteer potatoes by itself is not especially interesting, but the technologies developed here will be valid for all kinds of monitoring task.
         \item Utilizing design patterns found in nature are a great way to use tested strategy which will work in an efficient way.
         \item The experiment and the resulting evaluation of the simulations, are well documented and analyzed.
     \end{itemize}
@@ -2165,8 +2198,7 @@
     aiming to perform some collective behavior. By this collective behavior, some goals
     that are impossible for a single robot to achieve become feasible and attainable.
     There are several foreseen benefits of MRS compared to single robot systems such
-    as the increased ability to resolve task complexity, increasing performance, relia-
-    bility and simplicity in design. These benefits have attracted many researchers from
+    as the increased ability to resolve task complexity, increasing performance, reliability and simplicity in design. These benefits have attracted many researchers from
     academia and industry to investigate how to design and develop robust versatile MRS
     by solving a number of challenging problems such as complex task allocation, group
     formation, cooperative object detection and tracking, communication relaying and
@@ -2210,7 +2242,7 @@
     \end{itemize}
     \subsubsection*{What is the work`s evaluation of the solution?}
     \begin{itemize}
-        \item The authors claim to have cpatures the current (2015) state-of-the-art of MRTA.
+        \item The authors claim to have captures the current (2015) state-of-the-art of MRTA.
     \end{itemize}
     \subsubsection*{What is my analysis of the identified problem, idea and evaluation?}
     \begin{itemize}
@@ -2269,15 +2301,15 @@
      
     \subsubsection*{What are the motivations for this work?}
     \begin{itemize}
-        \item For growing and harvesting crops, one of the biggest costs is associated with labor hire. Together with high cost of inouts like energy, water and agrochemicals, the author state that the profit margins of farmers stand under tremendous pressure. To combat the high labor costs utilizing robots is a viable solution.
+        \item For growing and harvesting crops, one of the biggest costs is associated with labor hire. Together with high cost of inputs like energy, water and agrochemicals, the author state that the profit margins of farmers stand under tremendous pressure. To combat the high labor costs utilizing robots is a viable solution.
         \item Using robots in farming can also lower the risks associated with food safety.
         \item Another important aspect of using robots for plant care, is that they will be able to optimal schedule care and harvest activity - an efficiency boost.
     \end{itemize}
     \subsubsection*{What is the proposed solution?}
     \begin{itemize}
         \item The authors propose a autonomous harvester, called 'Harvey', for sweet peppers or other high value crops.
-        \item The plattforms consists of following parts: \ \begin{itemize}
-            \item Wheeled, mobile plattform
+        \item The platforms consists of following parts: \ \begin{itemize}
+            \item Wheeled, mobile platform
             \item Custom water-cooled linux computer with Intel i7 and Nvidia 1070
             \item Custom designed harvesting tool with: \ \begin{itemize}
                 \item RGB-D camera
@@ -2406,7 +2438,7 @@
     This paper describes a supervisor system for monitoring the operation of automated
     agricultural vehicles. The system analyses all of the information provided by the sensors and
     subsystems on the vehicles in real time and notifies the user when a failure or potentially
-    dangerous situation is detected. In some situations, it is even able to execute a neutralising
+    dangerous situation is detected. In some situations, it is even able to execute a neutralizing
     protocol to remedy the failure. The system is based on a distributed and multi-level architecture
     that divides the supervision into different subsystems, allowing for better management of the
     detection and repair of failures. The proposed supervision system was developed to perform
@@ -2438,7 +2470,7 @@
     \subsubsection*{What is the work`s evaluation of the solution?}
     \begin{itemize}
         \item The authors are satisfied with the results of the experiments. They underline how well suited a distributed supervision approach is towards a fleet of autonomous vehicles, which is distributed as well.
-        \item The supervision system is able to preform the requiered three functions, namely fault detection, fault diagnosis and fault recovery.
+        \item The supervision system is able to preform the required three functions, namely fault detection, fault diagnosis and fault recovery.
         \item In both experiments the supervision system accomplished the task with high performance.
     \end{itemize}
     \subsubsection*{What is my analysis of the identified problem, idea and evaluation?}
@@ -2556,7 +2588,7 @@
         \item The authors suggest that researches at least follow some common metrics for better benchmarking. Namely the picking time in seconds starting after the localization of the fruit and stopping after detaching into the storage container. Important is also the detachment success and damage rate.
         \item They also suggest better requirement analysis and more applications of formal design processes for the whole system.
         \item For robots to be commercially viable, the authors state that it is important that future robots can work through the whole year that mens they should be able to be easily configurable. This way thy can help with other plant care tasks to.  
-        \item One promising research appraoch are underactuated end-effectors. 
+        \item One promising research approach are underactuated end-effectors. 
     \end{itemize}
     \subsubsection*{What questions have I left?}
     \begin{itemize}
@@ -2586,12 +2618,10 @@
     point of view of swarm engineering: we focus mainly on ideas and concepts that contribute
     to the advancement of swarm robotics as an engineering field and that could be relevant
     to tackle real-world applications. Swarm engineering is an emerging discipline that aims at
-    defining systematic and well founded procedures for modeling, designing, realizing, ver-
-    ifying, validating, operating, and maintaining a swarm robotics system. We propose two
+    defining systematic and well founded procedures for modeling, designing, realizing, verifying, validating, operating, and maintaining a swarm robotics system. We propose two
     taxonomies: in the first taxonomy, we classify works that deal with design and analysis
     methods; in the second taxonomy, we classify works according to the collective behavior
-    studied. We conclude with a discussion of the current limits of swarm robotics as an engi-
-    neering discipline and with suggestions for future research directions.
+    studied. We conclude with a discussion of the current limits of swarm robotics as an engineering discipline and with suggestions for future research directions.
     
     \subsection*{Keywords}
     Swarm robotics review, swarm engineering
@@ -2605,7 +2635,7 @@
     \end{itemize}
     \subsubsection*{What is the proposed solution?}
     \begin{itemize}
-        \item Two taxonomies have been proposed for analyzing the swarm robotics literature: The \emph{methods} taxonomy next to the \emph{collective behaviour} taxonomy.
+        \item Two taxonomies have been proposed for analyzing the swarm robotics literature: The \emph{methods} taxonomy next to the \emph{collective behavior} taxonomy.
     \end{itemize}
     \subsubsection*{What is the work`s evaluation of the solution?}
     \begin{itemize}
@@ -2645,7 +2675,7 @@
     \end{itemize}
     \subsubsection*{What questions have I left?}
     \begin{itemize}
-        \item No hybrid models have benn mentioned. There are some points about safety and human-swarm-robot-interaction, and the need for high safety standards, because there might not be direct communication towards the swarm. This is in my opinion completely irrelevant - even if the robots organize themselves for a task in swarm, there is always going to be a direct communication channel. A robots behavior is not going to be solely governed only by interaction and local sensing. Those are important abilities but are not singular.    
+        \item No hybrid models have been mentioned. There are some points about safety and human-swarm-robot-interaction, and the need for high safety standards, because there might not be direct communication towards the swarm. This is in my opinion completely irrelevant - even if the robots organize themselves for a task in swarm, there is always going to be a direct communication channel. A robots behavior is not going to be solely governed only by interaction and local sensing. Those are important abilities but are not singular.    
     \end{itemize}
     \subsubsection*{What is my main take away from this paper?}
     \begin{itemize}
@@ -2715,7 +2745,7 @@
     \subsubsection*{What is my analysis of the identified problem, idea and evaluation?}
     \begin{itemize}
         \item Supporting the swarm robotic community with proper tools for rapid development is a great idea. Together with a low cost hardware system the authors make it easy too deploy distributed multi-robot systems and robot swarms.
-        \item Some limitation were visible in their networking approach. Their idea is, that each robot broadcasts relevant data to all other robots with 0,1 Hz into a range of around 300m. When using aroung 50 units, they realized that the single units were not able to read all messages. This means that this approach is not going to scale very well with many robots in the broadcast range. A solution would be to decrease either the range or the frequency.
+        \item Some limitation were visible in their networking approach. Their idea is, that each robot broadcasts relevant data to all other robots with 0,1 Hz into a range of around 300m. When using around 50 units, they realized that the single units were not able to read all messages. This means that this approach is not going to scale very well with many robots in the broadcast range. A solution would be to decrease either the range or the frequency.
     \end{itemize}
     \subsubsection*{What are the contributions?}
     \begin{itemize}
@@ -2751,8 +2781,7 @@
     \subsection*{Abstract}
     Fruit image segmentation is an essential step to distinguish fruits from the background. In order to improve the
     fruits recognition accuracy for harvesting robots in three-dimensional (3D) space, a method with the fusion of
-    color and 3D geometry features for fruit point cloud segmentation was proposed in this study. The local de-
-    scriptor was applied to obtain the candidate regions, and the global descriptor was used to obtain the final
+    color and 3D geometry features for fruit point cloud segmentation was proposed in this study. The local descriptor was applied to obtain the candidate regions, and the global descriptor was used to obtain the final
     segmented results. Firstly, the hue, saturation, value (HSV) color features and normal orientation features of
     pixels were fused to obtain the preliminary segmentation results. Then, the pre-processed color image and depth
     image were converted to a point cloud, and it was clustered into multiple regions by the Euclidean clustering
