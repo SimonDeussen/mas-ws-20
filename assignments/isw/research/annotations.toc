@@ -1,34 +1,44 @@
-\contentsline {chapter}{\numberline {1}Reports}{3}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Reading Report: \emph {A Formal Analysis and Taxonomy of Task Allocation in Multi-Robot Systems }}{4}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Reading Report: \emph {A comprehensive taxonomy for multi-robot task allocation}}{7}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Reading Report: \emph {A review of key techniques of vision-based control for harvesting robot}}{10}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Reading Report: \emph {Advances in Multi-Robot Systems}}{15}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Reading Report: \emph {Agricultural robots for field operations: Concepts and components}}{19}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Reading Report: \emph {Agricultural robots—system analysis and economic feasibility}}{22}{section.1.6}%
-\contentsline {section}{\numberline {1.7}Reading Report: \emph {Analysis of Dynamic Task Allocation in Multi-Robot Systems }}{24}{section.1.7}%
-\contentsline {section}{\numberline {1.8}Reading Report: \emph {Applied ontologies and standards for service robots}}{27}{section.1.8}%
-\contentsline {section}{\numberline {1.9}Reading Report: Chapter 56 \emph {Robotics in Agriculture and Forestry} from \emph {Springer Handbook of Robotics}}{30}{section.1.9}%
-\contentsline {section}{\numberline {1.10}Reading Report: \emph {Crop design for improved robotic harvesting: A case study of sweet pepper harvesting}}{35}{section.1.10}%
-\contentsline {section}{\numberline {1.11}Reading Report: \emph {Development of a sweet pepper harvesting robot}}{39}{section.1.11}%
-\contentsline {section}{\numberline {1.12}Reading Report: \emph {Development of a tomato harvesting robot used in greenhouse}}{43}{section.1.12}%
-\contentsline {section}{\numberline {1.13}Reading Report: \emph {Field Coverage for Weed Mapping: Toward Experiments with a UAV Swarm}}{46}{section.1.13}%
-\contentsline {section}{\numberline {1.14}Reading Report: \emph {Field Robots}}{49}{section.1.14}%
-\contentsline {section}{\numberline {1.15}Reading Report: \emph {Field Robots for Intelligent Farms - Inhering Features from Industry}}{52}{section.1.15}%
-\contentsline {section}{\numberline {1.16}Reading Report: \emph {Field Test of an Autonomous Cucumber Picking Robot}}{55}{section.1.16}%
-\contentsline {section}{\numberline {1.17}Reading Report: \emph {Fleets of robots for environmentally safe pest control in agriculture}}{58}{section.1.17}%
-\contentsline {section}{\numberline {1.18}Reading Report: \emph {Harvesting Robots for High-value Crops: State-of-the-art Review and Challenges Ahead}}{61}{section.1.18}%
-\contentsline {section}{\numberline {1.19}Reading Report: \emph {Heterogeneous Multi-Robot System for Mapping Environmental Variables of Greenhouses}}{64}{section.1.19}%
-\contentsline {section}{\numberline {1.20}Reading Report: \emph {Human-robot interaction in agriculture: A survey and current challenges}}{68}{section.1.20}%
-\contentsline {section}{\numberline {1.21}Reading Report: \emph {Monitoring and Mapping with Robot Swarms for Agricultural Applications}}{71}{section.1.21}%
-\contentsline {section}{\numberline {1.22}Reading Report: \emph {Multi-robot Task Allocation: A Review of the State-of-the-Art}}{74}{section.1.22}%
-\contentsline {section}{\numberline {1.23}Reading Report: \emph {Performance improvements of a sweet pepper harvesting robot in protected cropping environments }}{77}{section.1.23}%
-\contentsline {section}{\numberline {1.24}Reading Report: \emph {Plant detection and mapping for agricultural robots using a 3D LIDAR sensor}}{80}{section.1.24}%
-\contentsline {section}{\numberline {1.25}Reading Report: \emph {Robot fleets for highly effective agriculture}}{82}{section.1.25}%
-\contentsline {section}{\numberline {1.26}Reading Report: \emph {Robotic Manipulation for Specialty Crop Harvesting:A Review of Manipulator and End-Effector Technologies}}{85}{section.1.26}%
-\contentsline {section}{\numberline {1.27}Reading Report: \emph {Swarm robotics: a review from the swarm engineering perspective}}{88}{section.1.27}%
-\contentsline {section}{\numberline {1.28}Reading Report: \emph {Swarm-enabling Technology for Multi-Robot Systems}}{91}{section.1.28}%
-\contentsline {section}{\numberline {1.29}Reading Report: \emph {Using color and 3D geometry features to segment fruit point cloud and improve fruit recognition accuracy}}{94}{section.1.29}%
-\contentsline {chapter}{\numberline {2}Appendix}{97}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Acronyms}{97}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Glossary}{97}{section.2.2}%
-\contentsline {chapter}{References}{101}{chapter*.339}%
+\contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Motivation}{3}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Description of the subject}{4}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Agricultural robots in the bigger field of robotic research.}{4}{section.2.1}%
+\contentsline {section}{\numberline {2.2}What makes the usage of robots in agriculture so hard?}{4}{section.2.2}%
+\contentsline {chapter}{\numberline {3}Description of the chosen papers}{5}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Reports}{8}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Reading Report: \emph {A Formal Analysis and Taxonomy of Task Allocation in Multi-Robot Systems}}{9}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Reading Report: \emph {A comprehensive taxonomy for multi-robot task allocation}}{12}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Reading Report: \emph {A review of key techniques of vision-based control for harvesting robot}}{15}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Reading Report: \emph {Advances in Multi-Robot Systems}}{19}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Reading Report: \emph {Agricultural robots for field operations: Concepts and components}}{23}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Reading Report: \emph {Agricultural robots—system analysis and economic feasibility}}{25}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Reading Report: \emph {Analysis of Dynamic Task Allocation in Multi-Robot Systems}}{27}{section.4.7}%
+\contentsline {section}{\numberline {4.8}Reading Report: \emph {Applied ontologies and standards for service robots}}{30}{section.4.8}%
+\contentsline {section}{\numberline {4.9}Reading Report: Chapter 56 \emph {Robotics in Agriculture and Forestry} from \emph {Springer Handbook of Robotics}}{33}{section.4.9}%
+\contentsline {section}{\numberline {4.10}Reading Report: \emph {Crop design for improved robotic harvesting: A case study of sweet pepper harvesting}}{38}{section.4.10}%
+\contentsline {section}{\numberline {4.11}Reading Report: \emph {Development of a sweet pepper harvesting robot}}{42}{section.4.11}%
+\contentsline {section}{\numberline {4.12}Reading Report: \emph {Development of a tomato harvesting robot used in greenhouse}}{46}{section.4.12}%
+\contentsline {section}{\numberline {4.13}Reading Report: \emph {Field Coverage for Weed Mapping: Toward Experiments with a UAV Swarm}}{49}{section.4.13}%
+\contentsline {section}{\numberline {4.14}Reading Report: \emph {Field Robots}}{52}{section.4.14}%
+\contentsline {section}{\numberline {4.15}Reading Report: \emph {Field Robots for Intelligent Farms - Inhering Features from Industry}}{55}{section.4.15}%
+\contentsline {section}{\numberline {4.16}Reading Report: \emph {Field Test of an Autonomous Cucumber Picking Robot}}{58}{section.4.16}%
+\contentsline {section}{\numberline {4.17}Reading Report: \emph {Fleets of robots for environmentally safe pest control in agriculture}}{61}{section.4.17}%
+\contentsline {section}{\numberline {4.18}Reading Report: \emph {Harvesting Robots for High-value Crops: State-of-the-art Review and Challenges Ahead}}{64}{section.4.18}%
+\contentsline {section}{\numberline {4.19}Reading Report: \emph {Heterogeneous Multi-Robot System for Mapping Environmental Variables of Greenhouses}}{67}{section.4.19}%
+\contentsline {section}{\numberline {4.20}Reading Report: \emph {Human-robot interaction in agriculture: A survey and current challenges}}{71}{section.4.20}%
+\contentsline {section}{\numberline {4.21}Reading Report: \emph {Monitoring and Mapping with Robot Swarms for Agricultural Applications}}{74}{section.4.21}%
+\contentsline {section}{\numberline {4.22}Reading Report: \emph {Multi-robot Task Allocation: A Review of the State-of-the-Art}}{77}{section.4.22}%
+\contentsline {section}{\numberline {4.23}Reading Report: \emph {Performance improvements of a sweet pepper harvesting robot in protected cropping environments}}{80}{section.4.23}%
+\contentsline {section}{\numberline {4.24}Reading Report: \emph {Plant detection and mapping for agricultural robots using a 3D LIDAR sensor}}{83}{section.4.24}%
+\contentsline {section}{\numberline {4.25}Reading Report: \emph {Robot fleets for highly effective agriculture}}{85}{section.4.25}%
+\contentsline {section}{\numberline {4.26}Reading Report: \emph {Robotic Manipulation for Specialty Crop Harvesting:A Review of Manipulator and End-Effector Technologies}}{88}{section.4.26}%
+\contentsline {section}{\numberline {4.27}Reading Report: \emph {Swarm robotics: a review from the swarm engineering perspective}}{91}{section.4.27}%
+\contentsline {section}{\numberline {4.28}Reading Report: \emph {Swarm-enabling Technology for Multi-Robot Systems}}{94}{section.4.28}%
+\contentsline {section}{\numberline {4.29}Reading Report: \emph {Using color and 3D geometry features to segment fruit point cloud and improve fruit recognition accuracy}}{97}{section.4.29}%
+\contentsline {chapter}{\numberline {5}Conclusions}{100}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Limitations of previous work}{100}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Lessons learned}{100}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Future work}{100}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Appendix}{101}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Acronyms}{101}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Glossary}{101}{section.6.2}%
+\contentsline {chapter}{References}{105}{chapter*.312}%

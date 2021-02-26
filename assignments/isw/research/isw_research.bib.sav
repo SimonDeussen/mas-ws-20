@@ -1515,7 +1515,7 @@ possibility to simulate them prior to physically test them.},
   volume       = {27},
   abstractnote = {&lt;p&gt; Pathfinding for a single agent is the problem of planning a route from an initial location to a goal location in an environment, going around obstacles. Pathfinding for multiple agents also aims to plan such routes for each agent, subject to different constraints, such as restrictions on the length of each path or on the total length of paths, no self-intersecting paths, no intersection of paths/plans, no crossing/meeting each other. It also has variations for finding optimal solutions, e.g., with respect to the maximum path length, or the sum of plan lengths. These problems are important for many real-life applications, such as motion planning, vehicle routing, environmental monitoring, patrolling, computer games. Motivated by such applications, we introduce a formal framework that is general enough to address all these problems: we use the expressive high-level representation formalism and efficient solvers of the declarative programming paradigm Answer Set Programming. We also introduce heuristics to improve the computational efficiency and/or solution quality. We show the applicability and usefulness of our framework by experiments, with randomly generated problem instances on a grid, on a real-world road network, and on a real computer game terrain. &lt;/p&gt;},
   file         = {:/home/sd/Documents/papers/8592-Article Text-12120-1-2-20201228.pdf:PDF},
-  keywords     = {Pathfinding, Multiple Agents, Answer Set Programming, Logic Programming, Knowledge Representation and Reasoning, mrs, TOP30},
+  keywords     = {Pathfinding, Multiple Agents, Answer Set Programming, Logic Programming, Knowledge Representation and Reasoning, mrs,},
   url          = {https://ojs.aaai.org/index.php/AAAI/article/view/8592},
 }
 
@@ -1529,7 +1529,7 @@ possibility to simulate them prior to physically test them.},
   volume    = {112},
   doi       = {https://doi.org/10.1016/j.robot.2018.11.005},
   file      = {:/home/sd/Documents/papers/228b178b501e992a95df402289f3053c.pdf:PDF},
-  keywords  = {Multi-robot system, Path planning, Indirect communication, Distributed control, mrs, TOP30},
+  keywords  = {Multi-robot system, Path planning, Indirect communication, Distributed control, mrs,},
   publisher = {Elsevier {BV}},
 }
 
@@ -1559,7 +1559,7 @@ possibility to simulate them prior to physically test them.},
   volume    = {10},
   doi       = {10.6025/ijwa/2018/10/2/51-63},
   file      = {:/home/sd/Documents/papers/ijwav10n2_2.pdf:PDF},
-  keywords  = {Multi-Agent, Swarm, PID, ACO, Surveillance, IoT, ZigBee, mrs, TOP30},
+  keywords  = {Multi-Agent, Swarm, PID, ACO, Surveillance, IoT, ZigBee, mrs,},
   publisher = {Digital Information Research Foundation},
 }
 
@@ -1591,7 +1591,7 @@ possibility to simulate them prior to physically test them.},
   comment   = {751},
   doi       = {https://doi.org/10.1162/rest_a_00754},
   file      = {:/home/sd/Documents/papers/graetz2018.pdf:PDF},
-  keywords  = {work, basis, TOP30},
+  keywords  = {work, basis,},
   publisher = {{MIT} Press - Journals},
 }
 
@@ -1647,7 +1647,7 @@ possibility to simulate them prior to physically test them.},
   abstract  = {This paper presents a Tracking-Error Learning Control (TELC) algorithm for precise mobile robot path tracking in off-road terrain. In traditional tracking error-based control approaches, feedback and feedforward controllers are designed based on the nominal model which cannot capture the uncertainties, disturbances and changing working conditions so that they cannot ensure precise path tracking performance in the outdoor environment. In TELC algorithm, the feedforward control actions are updated by using the tracking error dynamics and the plant-model mismatch problem is thus discarded. Therefore, the feedforward controller gradually eliminates the feedback controller from the control of the system once the mobile robot has been on-track. In addition to the proof of the stability, it is proven that the cost functions do not have local minima so that the coefficients in TELC algorithm guarantee that the global minimum is reached. The experimental results show that the TELC algorithm results in better path tracking performance than the traditional tracking error-based control method. The mobile robot controlled by TELC algorithm can track a target path precisely with less than 10 cm error in off-road terrain.},
   doi       = {https://doi.org/10.1007/s10846-016-0442-0},
   file      = {:/home/sd/Documents/papers/Kayacan-Chowdhary2019_Article_TrackingErrorLearningControlFo.pdf:PDF},
-  keywords  = {Learning control, Mobile robot, Path tracking, Tracking error, TOP30},
+  keywords  = {Learning control, Mobile robot, Path tracking, Tracking error,},
   publisher = {Springer Science and Business Media {LLC}},
 }
 
@@ -1663,7 +1663,7 @@ possibility to simulate them prior to physically test them.},
   abstract  = {A 3D time‐of‐flight camera was applied to develop a crop plant recognition system for broccoli and green bean plants under weedy conditions. The developed system overcame the previously unsolved problems caused by occluded canopy and illumination variation. An efficient noise filter was developed to remove the sparse noise points in 3D point cloud space. Both 2D and 3D features including the gradient of amplitude and depth image, surface curvature, amplitude percentile index, normal direction, and neighbor point count in 3D space were extracted and found effective for recognizing these two types of plants. Separate segmentation algorithms were developed for each of the broccoli and green bean plant in accordance with their 3D geometry and 2D amplitude characteristics. Under the experimental condition where the crops were heavily infested by various types of weed plants, detection rates over 88.3% and 91.2% were achieved for broccoli and green bean plant leaves, respectively. Additionally, the crop plants were segmented out with nearly complete shape. Moreover, the algorithms were computationally optimized, resulting in an image processing speed of over 30 frames per second.},
   doi       = {https://doi.org/10.1002/rob.21763},
   file      = {:/home/sd/Documents/papers/li22017.pdf:PDF},
-  keywords  = {3D point cloud, machine vision, plant recognition, robotic weed control, top30},
+  keywords  = {3D point cloud, machine vision, plant recognition, robotic weed control,},
   publisher = {Wiley},
 }
 
@@ -1676,7 +1676,7 @@ possibility to simulate them prior to physically test them.},
   abstract  = {Green shoot thinning in vineyards is an essential, perennial operation for main-taining canopy health and optimizing yield and quality of wine grapes. Use of me-chanized thinning system, which is essential to reduce labor dependency andassociated cost, causes high variability in shoot removal efficiency due to difficultyin precisely positioning the thinning end‐effector along cordon trajectories. Auto-mated/robotic solution for precise positioning of the thinning end‐effector couldsignificantly improve the performance and efficiency of mechanical green shootthinning. This study presents: (i) a machine vision‐based cordon detection systemthat can estimate cordon trajectories at different shoot growth stages in a vineyard;and (ii) evaluation of an integrated green shoot thinning system capable of auto-matically positioning the thinning end‐effector following vine cordon trajectories.The developed machine vision system uses deep learning‐based techniques thatcould accurately estimate cordon trajectories with root mean square error(RMSE) of 7.3, 10.3, and 16.1 pixels for canopy images captured in 2–4 weeks ofshoot growth, respectively. Then, a control strategy was presented for theintegrated system, which receives the computed cordon trajectories from machinevision system to automatically position the thinning end‐effector to cordon trajec-tories. Field evaluations in a research vineyard showed that the integrated systemcan achieve an RMSE of 1.47 cm in following the cordon trajectories at 6.6 cm·s−1forward speed. Future work will incorporate additional sensing system to detectindividual shoot on cordon and integrating it with an existing system to achievehigher level of precision in green shoot thinning.},
   doi       = {https://doi.org/10.1002/rob.22013},
   file      = {:/home/sd/Documents/papers/rob.22013.pdf:PDF},
-  keywords  = {cordon trajectories estimation, Faster R‐CNN, FCN, grapevine canopy detection, skeletonequation fitting, TOP30},
+  keywords  = {cordon trajectories estimation, Faster R‐CNN, FCN, grapevine canopy detection, skeletonequation fitting,},
   publisher = {Wiley},
 }
 
@@ -1706,7 +1706,7 @@ possibility to simulate them prior to physically test them.},
   abstract  = {We present a data processing pipeline to online estimate ego‐motion and build a map of the traversed environment, leveraging data from a 3D laser scanner, a camera, and an inertial measurement unit (IMU). Different from traditional methods that use a Kalman filter or factor‐graph optimization, the proposed method employs a sequential, multilayer processing pipeline, solving for motion from coarse to fine. Starting with IMU mechanization for motion prediction, a visual–inertial coupled method estimates motion; then, a scan matching method further refines the motion estimates and registers maps. The resulting system enables high‐frequency, low‐latency ego‐motion estimation, along with dense, accurate 3D map registration. Further, the method is capable of handling sensor degradation by automatic reconfiguration bypassing failure modules. Therefore, it can operate in the presence of highly dynamic motion as well as in the dark, texture‐less, and structure‐less environments. During experiments, the method demonstrates 0.22% of relative position drift over 9.3 km of navigation and robustness w.r.t. running, jumping, and even highway speed driving (up to 33 m/s).},
   doi       = {https://doi.org/10.1002/rob.21809},
   file      = {:/home/sd/Documents/papers/zhang2018.pdf:PDF},
-  keywords  = {mapping, ego‐motion estimation, 3D laser scanner, vision, inertial sensor, TOP30},
+  keywords  = {mapping, ego‐motion estimation, 3D laser scanner, vision, inertial sensor,},
   publisher = {Wiley},
 }
 
@@ -1752,7 +1752,7 @@ possibility to simulate them prior to physically test them.},
   abstract  = {This part of our review of the research, developments and innovation in agricultural robotsfor field operations, focuses on characteristics, performance measures, agricultural tasks andoperations. The application of robots to a variety of field operations has been widelydemonstrated. A key feature of agricultural robots is that they must operate in unstructuredenvironments without impairing the quality of work currently achieved. Designs, de-velopments and evaluations of agricultural robots are diverse in terms of objectives, struc-tures, methods, techniques, and sensors. Standardisation of terms, system-performancemeasures and methodologies, and adequacy of technological requirements are vital forcomparing robot performance and technical progress. Factors limiting commercialisationand assimilation of agricultural autonomous robot systems are unique to each system and toeach task. However, some common gaps need to be filled to suit unstructured, dynamic en-vironments; e.g. poor detection performance, inappropriate decision-making and low actionsuccess rate. Research and development of versatile and adaptive algorithms, integrated intomulti-sensor platforms, is required. Cycle time must be reduced and production rateincreased to justify economic use. Improved wholeness or integration of all sub-systems willenable sustainable performance and complete task operation. Research must focus on eachof these gaps and factors that limit commercialisation of agricultural robotics. Researchneeds to focus on the field use of autonomous or humanerobot systems, the latter being areasonable step toward fully autonomous robots. More robust, reliable information-acquisition systems, including sensor-fusion algorithms and data analysis, should besuited to the dynamic conditions of unstructured agricultural environments.},
   doi       = {https://doi.org/10.1016/j.biosystemseng.2016.11.004},
   file      = {:/home/sd/Documents/papers/bechar2017.pdf:PDF},
-  keywords  = {Agricultural robots, Robotics, Field operations, Autonomous, TOP30},
+  keywords  = {Agricultural robots, Robotics, Field operations, Autonomous, m},
   publisher = {Elsevier {BV}},
 }
 
@@ -1768,7 +1768,7 @@ possibility to simulate them prior to physically test them.},
   abstract  = {henotypic studies require large datasets for accurate inference and prediction. Collectingplant data in a farm can be very labor intensive and costly. This paper presents the design, architecture(hardware and software) and deployment of a multi-robot system for row crop field data collection.The proposed system has been deployed in a soybean research farm at Iowa State University},
   doi       = {https://doi.org/10.3390/robotics7040061},
   file      = {:/home/sd/Documents/papers/gao2018.pdf:PDF},
-  keywords  = {field robotics; multi-robot system; crop monitoring; agricultural robotics; modular robots;optimal path planning, mrs, top30},
+  keywords  = {field robotics; multi-robot system; crop monitoring; agricultural robotics; modular robots;optimal path planning, mrs,},
   publisher = {{MDPI} {AG}},
 }
 
@@ -1798,7 +1798,7 @@ possibility to simulate them prior to physically test them.},
   abstract  = {A multi-robot tractor system for conducting agriculture field work was developed in order to reduce total work time and to improve work efficiency. The robot tractors can form a spatial pattern, I-pattern, V-pattern or W-pattern, during the work process. The safety zones of each robot were defined as a circle and a rectangle. The robots can coordinate to turn to the next lands without collision or deadlock. The efficiency of the system depends on the number of robots, the spatial pattern, the setting distance between each robot, and the field length. Three simulations were carried out to determine the usefulness of the system. The simulation results showed that the efficiency range of three robots using the I-pattern is from 83.2% to 89.8% at a field length of 100 m. The efficiency range of seven robots using the W-pattern is from 59.4% to 65.8% at a field length of 100 m. However, the minimum efficiency of seven robots using the W-pattern is 84.9% at a field length of 500 m. The efficiency would be higher than 85% if the field length was larger than 500 m. Thus, the newly developed multi-robot tractor system is more effective in a large field.},
   doi       = {https://doi.org/10.1016/j.compag.2017.08.017},
   file      = {:/home/sd/Documents/papers/zhang2017.pdf:PDF},
-  keywords  = {Formation control, Safety zone, Work efficiency, Headland turn coordination, MRS, TOP30},
+  keywords  = {Formation control, Safety zone, Work efficiency, Headland turn coordination, MRS,},
   publisher = {Elsevier {BV}},
 }
 
@@ -1811,7 +1811,7 @@ possibility to simulate them prior to physically test them.},
   booktitle = {Springer Tracts in Advanced Robotics},
   doi       = {https://doi.org/10.1007/978-3-319-07488-7_30},
   file      = {:/home/sd/Documents/papers/field-and-service-robotics-2015.pdf:PDF},
-  keywords  = {Inertia Measurement Unit Stereo Match Real Robot Path Planner Real Time Kinematic, TOP30},
+  keywords  = {Inertia Measurement Unit Stereo Match Real Robot Path Planner Real Time Kinematic, maybe},
   publisher = {Springer International Publishing},
 }
 
@@ -1827,7 +1827,7 @@ possibility to simulate them prior to physically test them.},
   comment   = {81},
   doi       = {https://doi.org/10.1007/s10846-013-9834-6},
   file      = {:/home/sd/Documents/papers/Hameed2014_Article_IntelligentCoveragePathPlannin.pdf:PDF},
-  keywords  = {Route planning, DEM, Optimization, Genetic algorithm, base, top30},
+  keywords  = {Route planning, DEM, Optimization, Genetic algorithm, base,},
   publisher = {Springer Science and Business Media {LLC}},
 }
 
@@ -1843,7 +1843,7 @@ possibility to simulate them prior to physically test them.},
   abstract  = {Field operations should be done in a manner that minimizes time and travels over the field surface and is coordinated with topographic land features. Automated path planning can help to find the best coverage path so that the field operation costs can be minimized. Intelligent algorithms are desired for both two‐dimensional (2D) and three‐dimensional (3D) terrain field coverage path planning. The algorithm of generating an optimized full coverage pattern for a given 2D planar field by using boustrophedon paths has been investigated and reported before. However, a great proportion of farms have rolling terrains, which have a considerable influence on the design of coverage paths. Coverage path planning in 3D space has a great potential to further optimize field operations. This work addressed four critical tasks: terrain modeling and representation, coverage cost analysis, terrain decomposition, and the development of optimized path searching algorithm. The developed algorithms and methods have been successfully implemented and tested using 3D terrain maps of farm fields with various topographic features. Each field was decomposed into subregions based on its terrain features. A recommended “seed curve” based on a customized cost function was searched for each subregion, and parallel coverage paths were generated by offsetting the found “seed curve” toward its two sides until the whole region was completely covered. Compared with the 2D planning results, the experimental results of 3D coverage path planning showed its superiority in reducing both headland turning cost and soil erosion cost. On the tested fields, on average the 3D planning algorithm saved 10.3% on headland turning cost, 24.7% on soil erosion cost, 81.2% on skipped area cost, and 22.0% on the weighted sum of these costs, where their corresponding weights were 1, 1, and 0.5, respectively. © 2011 Wiley Periodicals, Inc.},
   doi       = {https://doi.org/10.1002/rob.20388},
   file      = {:/home/sd/Documents/papers/rob.20388.pdf:PDF},
-  keywords  = {3D, Terrain, Modelling, Base, TOP30},
+  keywords  = {3D, Terrain, Modelling, Base,},
   publisher = {Wiley},
 }
 
@@ -1860,7 +1860,7 @@ possibility to simulate them prior to physically test them.},
   comment   = {24},
   doi       = {https://doi.org/10.1109/TMECH.2014.2350433},
   file      = {:/home/sd/Documents/papers/ko2015.pdf:PDF},
-  keywords  = {Agricultural robot , autonomous driving , distributed control , 4WS , front-wheel-steering (FWS) , global algorithm , path pattern entities , rear-wheel-steering (RWS) , system-of-systems, Top30},
+  keywords  = {Agricultural robot , autonomous driving , distributed control , 4WS , front-wheel-steering (FWS) , global algorithm , path pattern entities , rear-wheel-steering (RWS) , system-of-systems,},
   publisher = {Institute of Electrical and Electronics Engineers ({IEEE})},
 }
 
@@ -1917,8 +1917,9 @@ draws important parallels between robotics and these fields.},
   comment   = {169},
   doi       = {https://doi.org/10.1177%2F0278364913496484},
   file      = {:/home/sd/Documents/papers/0278364913496484.pdf:PDF},
-  keywords  = {MRTA, mindmap, glossary, multi-robot coordination, task allocation, taxonomy, MRS, top30, basis},
+  keywords  = {MRTA, mindmap, glossary, multi-robot coordination, task allocation, taxonomy, MRS, top30, basis, rank5},
   publisher = {{SAGE} Publications},
+  ranking   = {rank5},
 }
 
 @Article{Brambilla2013,
@@ -2032,7 +2033,7 @@ draws important parallels between robotics and these fields.},
   volume     = {14},
   doi        = {https://doi.org/10.1109/MRA.2007.339608},
   file       = {:/home/sd/Documents/papers/garcia2007.pdf:PDF},
-  keywords   = {field robots, base, review, top30, next, read},
+  keywords   = {field robots, base, review, , next, read},
   publisher  = {Institute of Electrical and Electronics Engineers ({IEEE})},
   readstatus = {read},
 }
@@ -2047,7 +2048,7 @@ draws important parallels between robotics and these fields.},
   volume    = {87},
   doi       = {https://doi.org/10.1016/j.robot.2016.09.017},
   file      = {:/home/sd/Documents/papers/1-s2.0-S0921889016306285-main.pdf:PDF},
-  keywords  = {field robots, base, top30, next},
+  keywords  = {field robots, base, , next},
   publisher = {Elsevier {BV}},
 }
 
