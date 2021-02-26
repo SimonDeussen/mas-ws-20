@@ -1,10 +1,52 @@
 %!TEX root = ../annotations.tex
-\definecolor{lightgray}{gray}{0.94}
+\definecolor{lightgray}{gray}{0.96}
 \newcommand*\rot{\rotatebox{90}}
 \begin{document}
     \chapter{Introduction}
 
-        \section{Motivation}
+    This report focuses on the problems of agricultural robots and tries to find possible ways to exploit the advantages of multi-robot-systems. 
+
+    Growing world population will demand more and more food 
+
+    Work on fields is shitty manual labor, 
+    
+    in more and more western it hard to find workers 
+
+    Conventional agricultural machines was agrochemicals by spaying everything, which heightens the environmental impact
+
+    Even though there are already fully automated factories and assembly lines, automations and robotics lack behind in the areas of agriculture.
+
+    Because the there are no systems which are producing adequate results. 
+
+    The environment in which robots would have to work on fields are highly dynamic, unstructured, dirty, dust, highly stochastic 
+
+    There are some system which are able to do some task in open field tests, but even here is the performance too bad
+
+    In agriculture are many different tasks which need to be done, planting, scouting, plant care such as pruning, weed removal, and finally harvesting. 
+    
+    Harvesting, what all is needed, localization, accessing the fruit, detaching the fruit, putting the fruit somewhere. This works okay with current technology as long as no leaves come between the cameras and the fruit. 
+
+    Most vision system work by exploiting some kind of shortcut, which is not robust and versatile enough for messy conditions in the real world environments.
+
+    Most popular research topic is harvesting - even a robot fully capable of harvesting would not be used most of the year, because of the seasonality of the growth cycles.
+
+    All in all many problems hindering the adaption of automation in agriculture. 
+
+
+
+
+    
+    ight in my title we have two different fields of robotics, one is specific to a usage domain, the other is defined by using multiple instances of robotic systems. Firstly and foremost, the content of this report is going to be about agricultural robots, their problems and why we have not been able to use them on a commercial scale in the real world.
+    Secondly I will evaluate ways on how robots can work together and if we could use some of the ways to make them better workers in the agricultural domain.
+
+    When using robots as autonomous field and service workers, we have multiple problems which needs to be tackled for the successful execution of a given task in an uncontrolled environment. In the case of agricultural robots, we have several cases of tasks which are related to taking care of the plant or animal, and the extraction of a part of this plant or this animal at the end of its harvesting cycle. (This report focuses on the exploitation of plant based agriculture)
+
+    For the tasks we have the domains of plant care - which includes the removal of weeds or leaves, the application of fertilizer or herbicides, and scouting - and the domain of harvesting.
+    All of this specific usages, have to somehow interact with the plants itself which call for a model of the plants and fruits to take care off. Here lies one the fundamental problems - it just t0o computational expensive and too complex  to create proper 3D models of the plants.  Many current approaches try to exploit some kind of attribute - like a tomato is red - to identify their object of interest. All of those approaches lag proper plant modeling which will let those fail long before commercialization.
+
+    The environment comes mainly in the form of greenhouses, orchards, yards and open fields. They form a somewhat structured environment but it gets chaotic quite fast due to dirt and the ever growing plants itself. They all also have the disadvantage of not having existing stucture to support robots. While greenhouses might have power access, internet or at least local networking is almost never given which contraints robots to themselves without building expensive network systems.
+
+    \section{Motivation}
     
 
     \chapter{Description of the subject}
@@ -15,51 +57,50 @@
     \chapter{Description of the chosen papers}
 
     \begin{table}[]
-        \begin{tabular}{@{}llll@{}}
-        \toprule
-        Main topic            & Review paper                                                                                                & Broad use case                                                                                                               & Specific use case                                                                                                                     \\ \midrule
-        Agricultural robotics & \begin{tabular}[c]{@{}l@{}}\hyperref[sec:Davidson2020]{Davidson2020}\\ \hyperref[sec:Bechar2016]{Bechar2016}\\ \hyperref[sec:Siciliano2016]{Siciliano2016}\\ \hyperref[sec:Zhao2016]{Zhao2016}\\ \hyperref[sec:Pedersen2006]{Pedersen2006}\end{tabular} & \begin{tabular}[c]{@{}l@{}}\hyperref[sec:deSantos2020]{deSantos2020}\\ \hyperref[sec:Vasconez2019]{Vasconez2019}\\ \hyperref[sec:deSantos2016]{deSantos2016}\\ \hyperref[sec:Roldan2016]{Roldan2016} \\ \hyperref[sec:ConesaMunoz2015]{ConesaMunoz2015}\\ \hyperref[sec:Bac2014]{Bac2014}\end{tabular} & \begin{tabular}[c]{@{}l@{}}\hyperref[sec:Arad2020]{Arad2020}\\ \hyperref[sec:Herck2020]{Herck2020}\\ \hyperref[sec:Lehnert2020]{Lehnert2020}\\ \hyperref[sec:Wu2020]{Wu2020}\\ \hyperref[sec:Albani2017]{Albani2017}\\ \hyperref[sec:Lili2017]{Lili2017}\\ \hyperref[sec:Weiss2011]{Weiss2011}\\ \hyperref[sec:Henten2003]{Henten2003}\end{tabular} \\
-        Multi-robot systems   & \begin{tabular}[c]{@{}l@{}}\hyperref[sec:Khamis2015]{Khamis2015}\\ \hyperref[sec:Korsah2013]{Korsah2013}\\ \hyperref[sec:Lerman2006]{Lerman2006}\\ \hyperref[sec:Arai2002]{Arai2002}\\ \hyperref[sec:Gerkey2004]{Gerkey2004} \\ \hyperref[sec:Brambilla2013]{Brambilla2013}\end{tabular}        &  \hyperref[sec:Chamanbaz2017]{Chamanbaz2017}                                                                                                                      &                                                                                                                                      \\
-        Field and service robotics & \begin{tabular}[c]{@{}l@{}} \hyperref[sec:Haidegger2013]{Haidegger2013} \\ \hyperref[sec:Thorpe2001]{Thorpe2001} \end{tabular}                                                                                               &                                                                                                                &                                                                                                                                      \\ \bottomrule
+    \begin{tabular}{@{}llll@{}}
+    \toprule
+    Main topic            & Review paper                                                                                                & Broad use case                                                                                                               & Specific use case                                                                                                                     \\ \midrule
+    Agricultural robotics & \begin{tabular}[c]{@{}l@{}}\hyperref[sec:Davidson2020]{Davidson2020}\\ \hyperref[sec:Bechar2016]{Bechar2016}\\ \hyperref[sec:Siciliano2016]{Siciliano2016}\\ \hyperref[sec:Zhao2016]{Zhao2016}\\ \hyperref[sec:Pedersen2006]{Pedersen2006}\end{tabular} & \begin{tabular}[c]{@{}l@{}}\hyperref[sec:deSantos2020]{deSantos2020}\\ \hyperref[sec:Vasconez2019]{Vasconez2019}\\ \hyperref[sec:deSantos2016]{deSantos2016}\\ \hyperref[sec:Roldan2016]{Roldan2016} \\ \hyperref[sec:ConesaMunoz2015]{ConesaMunoz2015}\\ \hyperref[sec:Bac2014]{Bac2014}\end{tabular} & \begin{tabular}[c]{@{}l@{}}\hyperref[sec:Arad2020]{Arad2020}\\ \hyperref[sec:Herck2020]{Herck2020}\\ \hyperref[sec:Lehnert2020]{Lehnert2020}\\ \hyperref[sec:Wu2020]{Wu2020}\\ \hyperref[sec:Albani2017]{Albani2017}\\ \hyperref[sec:Lili2017]{Lili2017}\\ \hyperref[sec:Weiss2011]{Weiss2011}\\ \hyperref[sec:Henten2003]{Henten2003}\end{tabular} \\
+    Multi-robot systems   & \begin{tabular}[c]{@{}l@{}}\hyperref[sec:Khamis2015]{Khamis2015}\\ \hyperref[sec:Korsah2013]{Korsah2013}\\ \hyperref[sec:Lerman2006]{Lerman2006}\\ \hyperref[sec:Arai2002]{Arai2002}\\ \hyperref[sec:Gerkey2004]{Gerkey2004} \\ \hyperref[sec:Brambilla2013]{Brambilla2013}\end{tabular}        &  \hyperref[sec:Chamanbaz2017]{Chamanbaz2017}                                                                                                                      &                                                                                                                                      \\
+    Field and service robotics & \begin{tabular}[c]{@{}l@{}} \hyperref[sec:Haidegger2013]{Haidegger2013} \\ \hyperref[sec:Thorpe2001]{Thorpe2001} \end{tabular}                                                                                               &                                                                                                                &                                                                                                                                      \\ \bottomrule
     \end{tabular}
     \label{table_topics}
     \end{table}
 
-    % Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
 \begin{table}[]
     \rowcolors{1}{}{lightgray}
     \begin{tabular}{@{}lllllllllllllll@{}}
     \toprule
     Paper           & \rot{Review} & \rot{Agriculture} & \rot{MRS} & \rot{Swarm} & \rot{Field robotis} & \rot{Harvesting} & \rot{Scouting} & \rot{Weeding} & \rot{Communication} & \rot{Vision system} & \rot{Manipulation} & \rot{Simulation} & \rot{Lab experiment} & \rot{Field experiment} \\ \midrule
-    Albani2017      &        &  \checkmark          &  \checkmark  &  \checkmark    &  \checkmark            &            &  \checkmark       &  \checkmark      &  \checkmark            &  \checkmark            &              &  \checkmark         &                &                  \\
-    Albani2019      &        &  \checkmark          &  \checkmark  &  \checkmark    &  \checkmark            &            &  \checkmark       &  \checkmark      &  \checkmark            &  \checkmark            &              &  \checkmark         &  \checkmark             &                  \\
-    Arad2020        &        &  \checkmark          &     &       &  \checkmark            &  \checkmark         &          &         &               &  \checkmark            &  \checkmark           &            &                &  \checkmark               \\
-    Arai2002        &  \checkmark     &             &  \checkmark  &       &  \checkmark            &            &          &         &               &               &              &            &                &                  \\
-    Bac2014         &  \checkmark     &  \checkmark          &     &       &  \checkmark            &  \checkmark         &          &         &               &  \checkmark            &  \checkmark           &            &                &                  \\
-    Bechar2016      &  \checkmark     &  \checkmark          &     &       &  \checkmark            &  \checkmark         &  \checkmark       &  \checkmark      &               &  \checkmark            &  \checkmark           &            &                &                  \\
-    Brambilla2013   &  \checkmark     &             &  \checkmark  &  \checkmark    &               &            &          &         &  \checkmark            &               &              &            &                &                  \\
-    Chamanbaz2017   &        &             &  \checkmark  &  \checkmark    &  \checkmark            &            &          &         &  \checkmark            &  \checkmark            &              &  \checkmark         &  \checkmark             &  \checkmark               \\
-    ConesaMunoz2015 &        &  \checkmark          &  \checkmark  &       &  \checkmark            &            &          &  \checkmark      &  \checkmark            &  \checkmark            &              &            &  \checkmark             &  \checkmark               \\
-    Davidson2020    &  \checkmark     &  \checkmark          &     &       &  \checkmark            &            &          &         &               &               &  \checkmark           &            &                &                  \\
-    Gerkey2004      &  \checkmark     &             &  \checkmark  &       &               &            &          &         &  \checkmark            &               &              &            &                &                  \\
-    Haidegger2014   &  \checkmark     &             &     &       &  \checkmark            &            &          &         &               &               &              &            &                &                  \\
-    Henten2003      &        &  \checkmark          &     &       &  \checkmark            &  \checkmark         &          &         &               &  \checkmark            &  \checkmark           &            &                &  \checkmark               \\
-    Khamis2015      &  \checkmark     &             &  \checkmark  &       &               &            &          &         &  \checkmark            &               &              &            &                &                  \\
-    Korsah2013      &  \checkmark     &             &  \checkmark  &       &               &            &          &         &  \checkmark            &               &              &            &                &                  \\
-    Lehnert2020     &        &  \checkmark          &     &       &  \checkmark            &  \checkmark         &          &         &               &  \checkmark            &  \checkmark           &            &  \checkmark             &  \checkmark               \\
-    Lerman2006      &        &             &  \checkmark  &       &               &            &          &         &  \checkmark            &               &              &            &                &                  \\
-    Lili2017        &        &  \checkmark          &     &       &  \checkmark            &  \checkmark         &          &         &               &  \checkmark            &              &            &                &  \checkmark               \\
-    Pedersen2006    &  \checkmark     &  \checkmark          &     &       &  \checkmark            &  \checkmark         &  \checkmark       &  \checkmark      &               &               &              &            &                &                  \\
-    Roldan2016      &        &  \checkmark          &  \checkmark  &       &  \checkmark            &            &  \checkmark       &         &               &  \checkmark            &              &            &                &  \checkmark               \\
-    Siciliano2016   &  \checkmark     &  \checkmark          &     &       &  \checkmark            &  \checkmark         &  \checkmark       &  \checkmark      &               &  \checkmark            &  \checkmark           &            &                &  \checkmark               \\
-    Thorpe2001      &  \checkmark     &             &     &       &  \checkmark            &            &          &         &               &               &              &            &                &                  \\
-    Vasconez2019    &  \checkmark     &  \checkmark          &     &       &  \checkmark            &            &          &         &  \checkmark            &               &              &            &                &                  \\
-    Weiss2011       &        &  \checkmark          &     &       &  \checkmark            &            &  \checkmark       &         &               &  \checkmark            &              &  \checkmark         &  \checkmark             &                  \\
-    Wu2020          &        &  \checkmark          &     &       &  \checkmark            &  \checkmark         &          &         &               &  \checkmark            &              &            &                &  \checkmark               \\
-    Zhao2016        &  \checkmark     &  \checkmark          &     &       &  \checkmark            &  \checkmark         &          &         &               &  \checkmark            &              &            &                &                  \\
-    deSantos2016    &        &  \checkmark          &     &       &  \checkmark            &            &  \checkmark       &  \checkmark      &               &  \checkmark            &              &  \checkmark         &                &                  \\
-    deSantos2020    &  \checkmark     &  \checkmark          &     &       &  \checkmark            &  \checkmark         &  \checkmark       &  \checkmark      &  \checkmark            &  \checkmark            &  \checkmark           &            &                &                  \\ \bottomrule
+    \hyperref[sec:Albani2017]{Albani2017}      &        &  \checkmark          &  \checkmark  &  \checkmark    &  \checkmark            &            &  \checkmark       &  \checkmark      &  \checkmark            &  \checkmark            &              &  \checkmark         &                &                  \\
+    \hyperref[sec:Albani2019]{Albani2019}      &        &  \checkmark          &  \checkmark  &  \checkmark    &  \checkmark            &            &  \checkmark       &  \checkmark      &  \checkmark            &  \checkmark            &              &  \checkmark         &  \checkmark             &                  \\
+    \hyperref[sec:Arad2020]{Arad2020}        &        &  \checkmark          &     &       &  \checkmark            &  \checkmark         &          &         &               &  \checkmark            &  \checkmark           &            &                &  \checkmark               \\
+    \hyperref[sec:Arai2002]{Arai2002}        &  \checkmark     &             &  \checkmark  &       &  \checkmark            &            &          &         &               &               &              &            &                &                  \\
+    \hyperref[sec:Bac2014]{Bac2014}         &  \checkmark     &  \checkmark          &     &       &  \checkmark            &  \checkmark         &          &         &               &  \checkmark            &  \checkmark           &            &                &                  \\
+    \hyperref[sec:Bechar2016]{Bechar2016}      &  \checkmark     &  \checkmark          &     &       &  \checkmark            &  \checkmark         &  \checkmark       &  \checkmark      &               &  \checkmark            &  \checkmark           &            &                &                  \\
+    \hyperref[sec:Brambilla2013]{Brambilla2013}   &  \checkmark     &             &  \checkmark  &  \checkmark    &               &            &          &         &  \checkmark            &               &              &            &                &                  \\
+    \hyperref[sec:Chamanbaz2017]{Chamanbaz2017}   &        &             &  \checkmark  &  \checkmark    &  \checkmark            &            &          &         &  \checkmark            &  \checkmark            &              &  \checkmark         &  \checkmark             &  \checkmark               \\
+    \hyperref[sec:ConesaMunoz2015]{ConesaMunoz2015} &        &  \checkmark          &  \checkmark  &       &  \checkmark            &            &          &  \checkmark      &  \checkmark            &  \checkmark            &              &            &  \checkmark             &  \checkmark               \\
+    \hyperref[sec:Davidson2020]{Davidson2020}    &  \checkmark     &  \checkmark          &     &       &  \checkmark            &            &          &         &               &               &  \checkmark           &            &                &                  \\
+    \hyperref[sec:Gerkey2004]{Gerkey2004}      &  \checkmark     &             &  \checkmark  &       &               &            &          &         &  \checkmark            &               &              &            &                &                  \\
+    \hyperref[sec:Haidegger2013]{Haidegger2013}   &  \checkmark     &             &     &       &  \checkmark            &            &          &         &               &               &              &            &                &                  \\
+    \hyperref[sec:Henten2003]{Henten2003}      &        &  \checkmark          &     &       &  \checkmark            &  \checkmark         &          &         &               &  \checkmark            &  \checkmark           &            &                &  \checkmark               \\
+    \hyperref[sec:Herck2020]{Herck2020}      &        &  \checkmark          &     &       &  \checkmark            &  \checkmark         &          &         &               &  \checkmark            &  \checkmark           &            &                &  \checkmark               \\
+    \hyperref[sec:Khamis2015]{Khamis2015}      &  \checkmark     &             &  \checkmark  &       &               &            &          &         &  \checkmark            &               &              &            &                &                  \\
+    \hyperref[sec:Korsah2013]{Korsah2013}      &  \checkmark     &             &  \checkmark  &       &               &            &          &         &  \checkmark            &               &              &            &                &                  \\
+    \hyperref[sec:Lehnert2020]{Lehnert2020}     &        &  \checkmark          &     &       &  \checkmark            &  \checkmark         &          &         &               &  \checkmark            &  \checkmark           &            &  \checkmark             &  \checkmark               \\
+    \hyperref[sec:Lerman2006]{Lerman2006}      &        &             &  \checkmark  &       &               &            &          &         &  \checkmark            &               &              &            &                &                  \\
+    \hyperref[sec:Lili2017]{Lili2017}        &        &  \checkmark          &     &       &  \checkmark            &  \checkmark         &          &         &               &  \checkmark            &              &            &                &  \checkmark               \\
+    \hyperref[sec:Pedersen2006]{Pedersen2006}    &  \checkmark     &  \checkmark          &     &       &  \checkmark            &  \checkmark         &  \checkmark       &  \checkmark      &               &               &              &            &                &                  \\
+    \hyperref[sec:Roldan2016]{Roldan2016}      &        &  \checkmark          &  \checkmark  &       &  \checkmark            &            &  \checkmark       &         &               &  \checkmark            &              &            &                &  \checkmark               \\
+    \hyperref[sec:Siciliano2016]{Siciliano2016}   &  \checkmark     &  \checkmark          &     &       &  \checkmark            &  \checkmark         &  \checkmark       &  \checkmark      &               &  \checkmark            &  \checkmark           &            &                &  \checkmark               \\
+    \hyperref[sec:Thorpe2001]{Thorpe2001}      &  \checkmark     &             &     &       &  \checkmark            &            &          &         &               &               &              &            &                &                  \\
+    \hyperref[sec:Vasconez2019]{Vasconez2019}    &  \checkmark     &  \checkmark          &     &       &  \checkmark            &            &          &         &  \checkmark            &               &              &            &                &                  \\
+    \hyperref[sec:Weiss2011]{Weiss2011}       &        &  \checkmark          &     &       &  \checkmark            &            &  \checkmark       &         &               &  \checkmark            &              &  \checkmark         &  \checkmark             &                  \\
+    \hyperref[sec:Wu2020]{Wu2020}          &        &  \checkmark          &     &       &  \checkmark            &  \checkmark         &          &         &               &  \checkmark            &              &            &                &  \checkmark               \\
+    \hyperref[sec:Zhao2016]{Zhao2016}        &  \checkmark     &  \checkmark          &     &       &  \checkmark            &  \checkmark         &          &         &               &  \checkmark            &              &            &                &                  \\
+    \hyperref[sec:deSantos2016]{deSantos2016}    &        &  \checkmark          &     &       &  \checkmark            &            &  \checkmark       &  \checkmark      &               &  \checkmark            &              &  \checkmark         &                &                  \\
+    \hyperref[sec:deSantos2020]{deSantos2020}    &  \checkmark     &  \checkmark          &     &       &  \checkmark            &  \checkmark         &  \checkmark       &  \checkmark      &  \checkmark            &  \checkmark            &  \checkmark           &            &                &                  \\ \bottomrule
     \end{tabular}
     \end{table}
 
