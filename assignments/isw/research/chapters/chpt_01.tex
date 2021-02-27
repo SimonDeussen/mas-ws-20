@@ -70,10 +70,13 @@
     \hyperref[sec:Arai2002]{Arai2002}        &  \checkmark     &             &  \checkmark  &       &  \checkmark            &            &          &         &               &               &              &            &                &                  \\
     \hyperref[sec:Bac2014]{Bac2014}         &  \checkmark     &  \checkmark          &     &       &  \checkmark            &  \checkmark         &          &         &               &  \checkmark            &  \checkmark           &            &                &                  \\
     \hyperref[sec:Bechar2016]{Bechar2016}      &  \checkmark     &  \checkmark          &     &       &  \checkmark            &  \checkmark         &  \checkmark       &  \checkmark      &               &  \checkmark            &  \checkmark           &            &                &                  \\
+    \hyperref[sec:Bechar2017]{Bechar2017}      &  \checkmark     &  \checkmark          &  \checkmark     &       &  \checkmark            &  \checkmark         &  \checkmark       &  \checkmark      &               &  \checkmark            &  \checkmark           &            &     \checkmark       &        \checkmark            \\
     \hyperref[sec:Brambilla2013]{Brambilla2013}   &  \checkmark     &             &  \checkmark  &  \checkmark    &               &            &          &         &  \checkmark            &               &              &            &                &                  \\
     \hyperref[sec:Chamanbaz2017]{Chamanbaz2017}   &        &             &  \checkmark  &  \checkmark    &  \checkmark            &            &          &         &  \checkmark            &  \checkmark            &              &  \checkmark         &  \checkmark             &  \checkmark               \\
     \hyperref[sec:ConesaMunoz2015]{ConesaMunoz2015} &        &  \checkmark          &  \checkmark  &       &  \checkmark            &            &          &  \checkmark      &  \checkmark            &  \checkmark            &              &            &  \checkmark             &  \checkmark               \\
     \hyperref[sec:Davidson2020]{Davidson2020}    &  \checkmark     &  \checkmark          &     &       &  \checkmark            &            &          &         &               &               &  \checkmark           &            &                &                  \\
+    \hyperref[sec:deSantos2016]{deSantos2016}    &        &  \checkmark          &     &       &  \checkmark            &            &  \checkmark       &  \checkmark      &               &  \checkmark            &              &  \checkmark         &                &                  \\
+    \hyperref[sec:deSantos2020]{deSantos2020}    &  \checkmark     &  \checkmark          &     &       &  \checkmark            &  \checkmark         &  \checkmark       &  \checkmark      &  \checkmark            &  \checkmark            &  \checkmark           &            &                &                  \\ 
     \hyperref[sec:Gerkey2004]{Gerkey2004}      &  \checkmark     &             &  \checkmark  &       &               &            &          &         &  \checkmark            &               &              &            &                &                  \\
     \hyperref[sec:Haidegger2013]{Haidegger2013}   &  \checkmark     &             &     &       &  \checkmark            &            &          &         &               &               &              &            &                &                  \\
     \hyperref[sec:Henten2003]{Henten2003}      &        &  \checkmark          &     &       &  \checkmark            &  \checkmark         &          &         &               &  \checkmark            &  \checkmark           &            &                &  \checkmark               \\
@@ -90,11 +93,48 @@
     \hyperref[sec:Vasconez2019]{Vasconez2019}    &  \checkmark     &  \checkmark          &     &       &  \checkmark            &            &          &         &  \checkmark            &               &              &            &                &                  \\
     \hyperref[sec:Weiss2011]{Weiss2011}       &        &  \checkmark          &     &       &  \checkmark            &            &  \checkmark       &         &               &  \checkmark            &              &  \checkmark         &  \checkmark             &                  \\
     \hyperref[sec:Wu2020]{Wu2020}          &        &  \checkmark          &     &       &  \checkmark            &  \checkmark         &          &         &               &  \checkmark            &              &            &                &  \checkmark               \\
-    \hyperref[sec:Zhao2016]{Zhao2016}        &  \checkmark     &  \checkmark          &     &       &  \checkmark            &  \checkmark         &          &         &               &  \checkmark            &              &            &                &                  \\
-    \hyperref[sec:deSantos2016]{deSantos2016}    &        &  \checkmark          &     &       &  \checkmark            &            &  \checkmark       &  \checkmark      &               &  \checkmark            &              &  \checkmark         &                &                  \\
-    \hyperref[sec:deSantos2020]{deSantos2020}    &  \checkmark     &  \checkmark          &     &       &  \checkmark            &  \checkmark         &  \checkmark       &  \checkmark      &  \checkmark            &  \checkmark            &  \checkmark           &            &                &                  \\ \bottomrule
+    \hyperref[sec:Zhao2016]{Zhao2016}        &  \checkmark     &  \checkmark          &     &       &  \checkmark            &  \checkmark         &          &         &               &  \checkmark            &              &            &                &                  \\ \bottomrule
     \end{tabular}
     \end{table}
+
+
+    \begin{tikzpicture}
+        \path [
+          mindmap,
+          text = white,
+          level 1 concept/.append style =
+            {font=\Large\bfseries, sibling angle=90},
+          level 2 concept/.append style =
+            {font=\normalsize\bfseries},
+          level 3 concept/.append style =
+            {font=\small\bfseries},
+          tex/.style     = {concept, ball color=blue,
+            font=\Huge\bfseries},
+          engines/.style = {concept, ball color=green!50!black},
+          formats/.style = {concept, ball color=blue!50!black},
+          systems/.style = {concept, ball color=red!90!black},
+          editors/.style = {concept, ball color=orange!90!black}
+        ]
+        node [tex] {\TeX} [clockwise from=0]
+          child[concept color=green!50!black, nodes={engines}] {
+            node {Engines} [clockwise from=90]
+              child { node {\TeX} }
+              child { node {pdf\TeX} }
+              child { node {\XeTeX} }
+              child { node {Lua\TeX} }}
+          child [concept color=blue, nodes={formats}] {
+            node {Formats} [clockwise from=300]
+              child { node {\LaTeX} }
+              child { node {Con\TeX t} }}
+          child [concept color=red, nodes={systems}] {
+            node {Systems} [clockwise from=210]
+              child { node {\TeX Live} [clockwise from=300]
+                child { node {Mac \TeX} }}
+              child { node {MiK\TeX} [clockwise from=60]
+                child { node {Pro \TeX t} }}}
+          child [concept color=orange, nodes={editors}] {
+            node {Editors} };
+      \end{tikzpicture}
 
     
 
