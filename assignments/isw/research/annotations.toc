@@ -3,7 +3,7 @@
 \contentsline {section}{\numberline {2.1}What are the task of agricultural robots and what makes the usage of robots in agriculture so hard?}{4}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Agricultural robots in the bigger field of robotic research.}{6}{section.2.2}%
 \contentsline {section}{\numberline {2.3}What are multi-robot systems, and what are their advantages?}{7}{section.2.3}%
-\contentsline {chapter}{\numberline {3}Description of the chosen papers}{9}{chapter.3}%
+\contentsline {chapter}{\numberline {3}Description of the reviewed papers}{9}{chapter.3}%
 \contentsline {chapter}{\numberline {4}Reports}{12}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Reading Report: \emph {A Formal Analysis and Taxonomy of Task Allocation in Multi-Robot Systems}}{13}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Reading Report: \emph {A comprehensive taxonomy for multi-robot task allocation}}{16}{section.4.2}%
@@ -53,6 +53,6 @@
 \contentsline {subsection}{\numberline {6.3.8}List of top research labs/researchers}{113}{subsection.6.3.8}%
 \contentsline {subsection}{\numberline {6.3.9}Link collection of online literature search}{114}{subsection.6.3.9}%
 \contentsline {subsection}{\numberline {6.3.10}Figures}{114}{subsection.6.3.10}%
-\contentsline {subsubsection}{Mindmaps}{114}{section*.324}%
-\contentsline {subsubsection}{Tables}{114}{section*.325}%
-\contentsline {chapter}{References}{115}{chapter*.326}%
+\contentsline {subsubsection}{Mindmaps}{114}{section*.323}%
+\contentsline {subsubsection}{Tables}{114}{section*.324}%
+\contentsline {chapter}{References}{115}{chapter*.325}%

@@ -12,6 +12,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: isw_research.bib
+Warning--I didn't find a database entry for "Farinelli2004"
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
 Warning--No journal in Albani2017
 Warning--No journal in Albani2019
@@ -19,7 +20,7 @@ Warning--`others' not consistent with 6th ed. of the APA Manual
 Warning--No journal in Khamis2015
 You've used 38 entries,
             6951 wiz_defined-function locations,
-            1548 strings with 19527 characters,
+            1550 strings with 19553 characters,
 and the built_in function-call counts, 77446 in all, are:
 = -- 9136
 > -- 749
@@ -58,4 +59,4 @@ warning$ -- 4
 while$ -- 494
 width$ -- 0
 write$ -- 1367
-(There were 4 warnings)
+(There were 5 warnings)

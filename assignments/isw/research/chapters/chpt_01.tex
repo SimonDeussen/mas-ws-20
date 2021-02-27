@@ -181,23 +181,94 @@
         \end{description}
 
         The MRTA problem is of central nature in the research of MRS. Finding an optimal solution for the question of who is doing what is a non trivial problem. Refer to \cite{Gerkey2004} for more in-depth explanation. There are two big organization approaches in MRS, first a centralized approach, where one central agent assigns the tasks to the robots, or a decentralized approach, in which the robots negotiate the task allocate themselves. A special case of the later approach is swarm robotics, here the robots only communicate with small subset of the whole group. This approach has very interesting characteristics, especially a great scalability, much higher robustness and flexibility \cite{Albani2017}.
+        For a better distinguishing between different types of coordination in MRS, \cite{Farinelli2004} proposed a following taxonmy, which I recreated as mind map: 
 
-    \chapter{Description of the chosen papers}
+        \vspace{10px}
+        \hrule
+        \vspace{10px}
 
-    The biggest focus in this work lies at understanding the problems agricultural robots face, and second how MRS can help.
+        \begin{tikzpicture}[ align=flush center, level distance=1cm, sibling distance=3.5cm]
+            \node[label=above:\textbf{Categorization cooperation in MRS}]{\hypertarget{fig:mrs_mindmap}{Cooperation}}
+                child { node {Unaware}}
+                child { node {Aware}
+                    child {node {Not coordinated}}
+                    child {node {Weakly coordinated}}
+                    child {node {Strongly coordinated}
+                        child {node {Not centralized}}
+                        child {node {Weakly centralized}}
+                        child {node {Strongly centralized}}
+                    }
+                }
+            ;
+        \end{tikzpicture}
 
-    \begin{table}[]
-    \begin{tabular}{@{}llll@{}}
-    \toprule
-    Main topic            & Review paper                                                                                                & Broad use case                                                                                                               & Specific use case                                                                                                                     \\ \midrule
-    Agricultural robotics & \begin{tabular}[c]{@{}l@{}}\hyperref[sec:Davidson2020]{Davidson2020}\\ \hyperref[sec:Bechar2016]{Bechar2016}\\ \hyperref[sec:Siciliano2016]{Siciliano2016}\\ \hyperref[sec:Zhao2016]{Zhao2016}\\ \hyperref[sec:Pedersen2006]{Pedersen2006}\end{tabular} & \begin{tabular}[c]{@{}l@{}}\hyperref[sec:deSantos2020]{deSantos2020}\\ \hyperref[sec:Vasconez2019]{Vasconez2019}\\ \hyperref[sec:deSantos2016]{deSantos2016}\\ \hyperref[sec:Roldan2016]{Roldan2016} \\ \hyperref[sec:ConesaMunoz2015]{ConesaMunoz2015}\\ \hyperref[sec:Bac2014]{Bac2014}\end{tabular} & \begin{tabular}[c]{@{}l@{}}\hyperref[sec:Arad2020]{Arad2020}\\ \hyperref[sec:Herck2020]{Herck2020}\\ \hyperref[sec:Lehnert2020]{Lehnert2020}\\ \hyperref[sec:Wu2020]{Wu2020}\\ \hyperref[sec:Albani2017]{Albani2017}\\ \hyperref[sec:Lili2017]{Lili2017}\\ \hyperref[sec:Weiss2011]{Weiss2011}\\ \hyperref[sec:Henten2003]{Henten2003}\end{tabular} \\
-    Multi-robot systems   & \begin{tabular}[c]{@{}l@{}}\hyperref[sec:Khamis2015]{Khamis2015}\\ \hyperref[sec:Korsah2013]{Korsah2013}\\ \hyperref[sec:Lerman2006]{Lerman2006}\\ \hyperref[sec:Arai2002]{Arai2002}\\ \hyperref[sec:Gerkey2004]{Gerkey2004} \\ \hyperref[sec:Brambilla2013]{Brambilla2013}\end{tabular}        &  \hyperref[sec:Chamanbaz2017]{Chamanbaz2017}                                                                                                                      &                                                                                                                                      \\
-    Field and service robotics & \begin{tabular}[c]{@{}l@{}} \hyperref[sec:Haidegger2013]{Haidegger2013} \\ \hyperref[sec:Thorpe2001]{Thorpe2001} \end{tabular}                                                                                               &                                                                                                                &                                                                                                                                      \\ \bottomrule
-    \end{tabular}
-    \label{table:paper_types}
-    \end{table}
+        \vspace{10px}
+        \hrule
+        \vspace{10px}
+
+
+
+    \chapter{Description of the reviewed papers}
+
+    The biggest focus in this work lies at understanding the problems agricultural robots face, and second how MRS can help. In this section I will give a short overview over the topic I have found particularly interesting. 
+    
+    For convenient access to the papers presented here, refer to the table \hyperref[table:main_topics]{\emph{Main topics and categories of my papers}}. Because I needed to save space, the papers are only referred by a key composed of their main author`s name and the year published - but each key is hyper linked to the reading report for more information, including the full citation.
+
+    My first goal was to get a overview over the topics of agricultural robots, so I searched for review papers, some older and some more current to get a feel for the progress and change in the field: 
+    \hyperref[sec:]{Reading Report:} 
+    \begin{itemize}
+        \item \hyperref[sec:Bac2014]{Reading report:} \cite{Bac2014}
+        \item \hyperref[sec:Bechar2016]{Reading report:} \cite{Bechar2016}
+        \item \hyperref[sec:Davidson2020]{Reading report:} \cite{Davidson2020}
+        \item \hyperref[sec:Haidegger2013]{Reading report:} \cite{Haidegger2013}
+        \item \hyperref[sec:Pedersen2006]{Reading report:} \cite{Pedersen2006}
+        \item \hyperref[sec:Roldan2016]{Reading report:} \cite{Roldan2016}
+        \item \hyperref[sec:Siciliano2016]{Reading report:} \cite{Siciliano2016}
+        \item \hyperref[sec:Thorpe2001]{Reading report:} \cite{Thorpe2001}
+        \item \hyperref[sec:Zhao2016]{Reading report:} \cite{Zhao2016}
+    \end{itemize}
+    After this, I changed my focus on harvesting robots, because harvesting is one of the most important and surely most fascinating topics of agricultural robotics: 
+    \begin{itemize}
+        \item \hyperref[sec:Arad2020]{Reading report:} \cite{Arad2020}
+        \item \hyperref[sec:Henten2003]{Reading report:} \cite{Henten2003}
+        \item \hyperref[sec:Herck2020]{Reading report:} \cite{Herck2020}
+        \item \hyperref[sec:Lehnert2020]{Reading report:} \cite{Lehnert2020}
+        \item \hyperref[sec:Lili2017]{Reading report:} \cite{Lili2017}
+        \item \hyperref[sec:Wu2020]{Reading report:} \cite{Wu2020}
+        \item \hyperref[sec:Weiss2011]{Reading report:} \cite{Weiss2011}
+    \end{itemize}
+    With the topics acquired so far, I took a turn into investigating MRS systems and looked for groundwork papers and reviews: 
+    \begin{itemize}
+        \item \hyperref[sec:Arai2002]{Reading Report:} \cite{Arai2002}
+        \item \hyperref[sec:Brambilla2013]{Reading Report:} \cite{Brambilla2013}
+        \item \hyperref[sec:Chamanbaz2017]{Reading Report:} \cite{Chamanbaz2017}
+        \item \hyperref[sec:Gerkey2004]{Reading Report:} \cite{Gerkey2004}
+        \item \hyperref[sec:Lerman2006]{Reading Report:} \cite{Lerman2006}
+        \item \hyperref[sec:Khamis2015]{Reading Report:} \cite{Khamis2015}
+        \item \hyperref[sec:Korsah2013]{Reading Report:} \cite{Korsah2013}
+    \end{itemize}
+    The next goal for me, was to find papers which connect the two topics: 
+    \begin{itemize}
+        \item \hyperref[sec:Albani2017]{Reading Report:} \cite{Albani2017}
+        \item \hyperref[sec:Albani2019]{Reading Report:} \cite{Albani2019}
+        \item \hyperref[sec:Bechar2017]{Reading Report:} \cite{Bechar2017}
+        \item \hyperref[sec:ConesaMunoz2015]{Reading Report:} \cite{ConesaMunoz2015}
+        \item \hyperref[sec:deSantos2016]{Reading Report:} \cite{deSantos2016}
+        \item \hyperref[sec:deSantos2020]{Reading Report:} \cite{deSantos2020}
+        \item \hyperref[sec:Vasconez2019]{Reading Report:} \cite{Vasconez2019}
+    \end{itemize}
+
+    All in all I am quite happy with the papers I have found and reviewed. They contain a great knowledge basis and also cutting edge research. I think my favorite paper so far was \emph{Development of a sweet pepper harvesting robot} \cite{Arad2020}. They not only had a good end result, but also described the software created detailed but also the newly, custom developed manipulator. I also liked their error analysis in particular. It was quite hard to compare between many of the papers, because every research group is using different methodologies, but if one of them is a great example on how to do it, then it is this one.
+   
+
+
+
+
+
 
 \begin{table}[]
+    \centering
+    \captionof{table}{Main topics and categories of my papers} \label{table:main_topics} 
     \rowcolors{1}{}{lightgray}
     \begin{tabular}{@{}lllllllllllllll@{}}
     \toprule
@@ -209,7 +280,7 @@
     \hyperref[sec:Bac2014]{Bac2014}         &  \checkmark     &  \checkmark          &     &       &  \checkmark            &  \checkmark         &          &         &               &  \checkmark            &  \checkmark           &            &                &                  \\
     \hyperref[sec:Bechar2016]{Bechar2016}      &  \checkmark     &  \checkmark          &     &       &  \checkmark            &  \checkmark         &  \checkmark       &  \checkmark      &               &  \checkmark            &  \checkmark           &            &                &                  \\
     \hyperref[sec:Bechar2017]{Bechar2017}      &  \checkmark     &  \checkmark          &  \checkmark     &       &  \checkmark            &  \checkmark         &  \checkmark       &  \checkmark      &               &  \checkmark            &  \checkmark           &            &     \checkmark       &        \checkmark            \\
-    \hyperref[sec:Brambilla2013]{Brambilla2013}   &  \checkmark     &             &  \checkmark  &  \checkmark    &               &            &          &         &  \checkmark            &               &              &            &                &                  \\
+    \hyperref[sec:Brambilla2013]{Brambilla2013}   &  \checkmark  &             &  \checkmark  &  \checkmark    &               &            &          &         &  \checkmark            &               &              &            &                &                  \\
     \hyperref[sec:Chamanbaz2017]{Chamanbaz2017}   &        &             &  \checkmark  &  \checkmark    &  \checkmark            &            &          &         &  \checkmark            &  \checkmark            &              &  \checkmark         &  \checkmark             &  \checkmark               \\
     \hyperref[sec:ConesaMunoz2015]{ConesaMunoz2015} &        &  \checkmark          &  \checkmark  &       &  \checkmark            &            &          &  \checkmark      &  \checkmark            &  \checkmark            &              &            &  \checkmark             &  \checkmark               \\
     \hyperref[sec:Davidson2020]{Davidson2020}    &  \checkmark     &  \checkmark          &     &       &  \checkmark            &            &          &         &               &               &  \checkmark           &            &                &                  \\
@@ -233,10 +304,11 @@
     \hyperref[sec:Wu2020]{Wu2020}          &        &  \checkmark          &     &       &  \checkmark            &  \checkmark         &          &         &               &  \checkmark            &              &            &                &  \checkmark               \\
     \hyperref[sec:Zhao2016]{Zhao2016}        &  \checkmark     &  \checkmark          &     &       &  \checkmark            &  \checkmark         &          &         &               &  \checkmark            &              &            &                &                  \\ \bottomrule
     \end{tabular}
-    \label{table:main_topics}
+    \bigskip
+    \centering
+
+    \small Each papers key is hyper linked to the reading report for convenient access to more information.
     \end{table}
-
-
 
 
 \end{document}
