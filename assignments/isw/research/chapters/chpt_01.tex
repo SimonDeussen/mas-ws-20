@@ -171,15 +171,16 @@
 
         \section{What are multi-robot systems, and what are their advantages?}
 
-        Multi-robot systems (MRS) are teams of robots that perform together, trying to achieve a collective goal. When multiple robots work together, the collective can reach goals, which are impossible to reach for a single robot.
+        Multi-robot systems (MRS) are teams of robots that perform together, trying to achieve a collective goal. When multiple robots work together, the collective can reach goals, which are impossible to reach for a single robot. Another benefit is, that MRS compared to single robots are more robust, more flexible and achieve higher performance. \cite{Albani2017}
+        There are two main types of teams in MRS, namely homogeneous teams and heterogeneous teams. Homogenous teams are groups where each member is the same type of robot. These type of group is great to use, when the tasks to be done are easily distributed over the robots. Examples are teams of UAVs for scouting tasks, where each member of the team is responsible for a distinct part of the total area. 
+        In heterogeneous teams, the members of the group can be of different robot types. This makes specialization between the robots possible. To come back to the UAV example, we could add UGVs to the group with some kind of manipulator for plant care. Now the UAVs can scout the area and deploy the UGV to positions where they are needed. 
+        With the second example, it is possible to show some of the challenges associated with MRS: \ \begin{description}
+            \item[Multi robot task allocation (MRTA)] The MRTA is the problem to be solved, for answering the question: Who is doing what?
+            \item[Communication] When deploying multiple robots, it has to be deinfed, who is talking with whom? Are all data shared with everyone, or is this transfered to a communication hub first?
+            \item[Self organization] How can the individual robot organize them selves?  
+        \end{description}
 
-        Multi-robot systems (MRS) are a group of robots that are designed
-aiming to perform some collective behavior. By this collective behavior, some goals
-that are impossible for a single robot to achieve become feasible and attainable.
-There are several foreseen benefits of MRS compared to single robot systems such
-as the increased ability to resolve task complexity, increasing performance, relia-
-bility and simplicity in design
-
+        The MRTA problem is of central nature in the research of MRS. Finding an optimal solution for the question of who is doing what is a non trivial problem. Refer to \cite{Gerkey2004} for more in-depth explanation. There are two big organization approaches in MRS, first a centralized approach, where one central agent assigns the tasks to the robots, or a decentralized approach, in which the robots negotiate the task allocate themselves. A special case of the later approach is swarm robotics, here the robots only communicate with small subset of the whole group. This approach has very interesting characteristics, especially a great scalability, much higher robustness and flexibility \cite{Albani2017}.
 
     \chapter{Description of the chosen papers}
 
