@@ -38,15 +38,51 @@
     % It is Nevertheless an exiting field like all of field robots because of the need for automation here and the future potential in it. \cite{Thorpe2001}
 
 
-    \section{Motivation}
-    
 
     \chapter{Description of the subject}
         \section{Agricultural robots in the bigger field of robotic research.}
 
+        One could divide the types of robotic applications into two main groups. First the group of \emph{industrial robots}, and second the group of \emph{service robots}. 
+        Industrial robots are robots, which are used in the modern factories in highly automated scenarios. The \emph{International Standardization Organization} (ISO) defines them as "fixed in place or mobile for use in industrial automation application". 
+        
+        Service Robots on the other hand are defined by ISO as:
+        \begin{displayquote}
+            "Robot that performs useful tasks for humans or equipment excluding industrial automation applications."
+        \end{displayquote} 
+
+        Since this definition is still ambiguous, the ISO splits the field of service robots further into the two subfields of \emph{personal} and \emph{professional service robots}. \emph{Personal service robots} are robots used in non-commercial tasks by layman. Examples are robot vacuums, and general domestic servant robots. \emph{Professional service robots} in the other hand are the big field of robots used in commercial tasks by professionals.
+        Now in the field of professional service robots, exists the category of \emph{field robots}. Field robots are defined by the Robotic Industries Association as:
+        \begin{displayquote}
+            "Field robots are non-factory mobile robots that operate in dynamic, unstructured environments. These types of robots aren’t programmed to repeat the same task over and over – they’re adaptive, responsive robots that work under variable conditions, sometimes even in unexplored territory. They often perform tasks that are too laborious or dangerous for humans. For this reason, as the underlying technology steadily advances their capabilities, field robots are becoming highly desirable to a number of different industries."
+        \end{displayquote}
+
+        Agricultural robots are a specific subfield of field robotics. They are indented to work in agricultural industry for the production of crops. 
+
+        The field of agricultural robots is a subfield of field robotic. 
+
+        \begin{tikzpicture}[text width=8cm, align=flush center, level distance=1cm, sibling distance=5cm]
+            \node[label=above:\textbf{Categorization of agricultural robots}]{Types of robots}
+                child { node {Industrial robots}}
+                child { node {Service robots}
+                    child {node {Personal service robots}}
+                    child {node {Professional service robots}
+                        child {node {Field robots}
+                            child {node {\textbf{Agricultural robots}}}
+                        }
+                    }
+                }
+            ;
+        \label{fig:category_mindmap}
+        \end{tikzpicture}
+
         \section{What makes the usage of robots in agriculture so hard?}
 
+        \section{Can system with multiple robots help with the existing limitations?}
+
+
     \chapter{Description of the chosen papers}
+
+    The biggest focus in this work lies at understanding the problems agricultural robots face, and second how MRS can help.
 
     \begin{table}[]
     \begin{tabular}{@{}llll@{}}
@@ -98,45 +134,7 @@
     \end{table}
 
 
-    \begin{tikzpicture}
-        \path [
-          mindmap,
-          text = white,
-          level 1 concept/.append style =
-            {font=\Large\bfseries, sibling angle=90},
-          level 2 concept/.append style =
-            {font=\normalsize\bfseries},
-          level 3 concept/.append style =
-            {font=\small\bfseries},
-          tex/.style     = {concept, ball color=blue,
-            font=\Huge\bfseries},
-          engines/.style = {concept, ball color=green!50!black},
-          formats/.style = {concept, ball color=blue!50!black},
-          systems/.style = {concept, ball color=red!90!black},
-          editors/.style = {concept, ball color=orange!90!black}
-        ]
-        node [tex] {\TeX} [clockwise from=0]
-          child[concept color=green!50!black, nodes={engines}] {
-            node {Engines} [clockwise from=90]
-              child { node {\TeX} }
-              child { node {pdf\TeX} }
-              child { node {\XeTeX} }
-              child { node {Lua\TeX} }}
-          child [concept color=blue, nodes={formats}] {
-            node {Formats} [clockwise from=300]
-              child { node {\LaTeX} }
-              child { node {Con\TeX t} }}
-          child [concept color=red, nodes={systems}] {
-            node {Systems} [clockwise from=210]
-              child { node {\TeX Live} [clockwise from=300]
-                child { node {Mac \TeX} }}
-              child { node {MiK\TeX} [clockwise from=60]
-                child { node {Pro \TeX t} }}}
-          child [concept color=orange, nodes={editors}] {
-            node {Editors} };
-      \end{tikzpicture}
 
-    
 
 \end{document}
 
