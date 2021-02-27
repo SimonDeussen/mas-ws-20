@@ -449,6 +449,38 @@ FAO.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Farinelli%
+, Iocchi%
+\BCBL {}\ \BBA {} Nardi%
+}{%
+Farinelli%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2004}}%
+}]{%
+Farinelli2004}
+\APACinsertmetastar {%
+Farinelli2004}%
+\begin{APACrefauthors}%
+Farinelli, A.%
+, Iocchi, L.%
+\BCBL {}\ \BBA {} Nardi, D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2004}{oct}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Multirobot Systems: A Classification Focused on
+  Coordination} {Multirobot systems: A classification focused on
+  coordination}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{{IEEE} Transactions on Systems, Man and Cybernetics,
+  Part B (Cybernetics)}{34}{5}{2015--2028}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1109/TSMCB.2004.832155}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Farms%
 }{%
 Farms%

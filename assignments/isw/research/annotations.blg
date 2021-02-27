@@ -12,51 +12,50 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: isw_research.bib
-Warning--I didn't find a database entry for "Farinelli2004"
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
 Warning--No journal in Albani2017
 Warning--No journal in Albani2019
 Warning--`others' not consistent with 6th ed. of the APA Manual
 Warning--No journal in Khamis2015
-You've used 38 entries,
+You've used 39 entries,
             6951 wiz_defined-function locations,
-            1550 strings with 19553 characters,
-and the built_in function-call counts, 77446 in all, are:
-= -- 9136
-> -- 749
-< -- 3822
-+ -- 3924
-- -- 92
-* -- 5181
-:= -- 14208
-add.period$ -- 150
-call.type$ -- 38
-change.case$ -- 693
+            1557 strings with 19836 characters,
+and the built_in function-call counts, 79420 in all, are:
+= -- 9366
+> -- 768
+< -- 3922
++ -- 4018
+- -- 94
+* -- 5320
+:= -- 14577
+add.period$ -- 154
+call.type$ -- 39
+change.case$ -- 712
 chr.to.int$ -- 0
-cite$ -- 79
-duplicate$ -- 2283
-empty$ -- 3062
-format.name$ -- 1347
-if$ -- 14376
+cite$ -- 81
+duplicate$ -- 2338
+empty$ -- 3141
+format.name$ -- 1379
+if$ -- 14742
 int.to.chr$ -- 0
-int.to.str$ -- 114
+int.to.str$ -- 117
 missing$ -- 0
-newline$ -- 1058
-num.names$ -- 304
-pop$ -- 1463
+newline$ -- 1086
+num.names$ -- 312
+pop$ -- 1488
 preamble$ -- 1
-purify$ -- 198
+purify$ -- 204
 quote$ -- 0
-skip$ -- 4570
+skip$ -- 4692
 stack$ -- 0
-substring$ -- 4206
-swap$ -- 1286
-text.length$ -- 136
+substring$ -- 4306
+swap$ -- 1322
+text.length$ -- 140
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 3104
+type$ -- 3184
 warning$ -- 4
-while$ -- 494
+while$ -- 508
 width$ -- 0
-write$ -- 1367
-(There were 5 warnings)
+write$ -- 1404
+(There were 4 warnings)
