@@ -617,6 +617,28 @@ IGIGlobal.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+InternationalFederationOfRobotics%
+}{%
+InternationalFederationOfRobotics%
+}{%
+{\protect \APACyear {2021}}%
+}]{%
+InternationalFederationOfRobotics2021}
+\APACinsertmetastar {%
+InternationalFederationOfRobotics2021}%
+\begin{APACrefauthors}%
+InternationalFederationOfRobotics.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+\APACrefbtitle {IFR - Service Robots.} {Ifr - service robots.}
+\newblock
+\begin{APACrefURL} \url{https://ifr.org/service-robots/} \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Khamis%
 , Hussein%
 \BCBL {}\ \BBA {} Elmogy%
