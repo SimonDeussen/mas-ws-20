@@ -2,49 +2,41 @@
 \definecolor{lightgray}{gray}{0.96}
 \newcommand*\rot{\rotatebox{90}}
 \begin{document}
-    \chapter{Introduction}
+    \chapter{Introduction to agricultural robots}
 
-    This report focuses on the problems of agricultural robots and tries to find possible ways to exploit the advantages of multi-robot-systems. 
+    This report focuses on the problems in the development and deployment of agricultural robots and tries evaluate if system of multiple robots are able to bring advantages into this area.
 
-    Growing world population will demand more and more food 
-
-    Work on fields is shitty manual labor, 
+    The global population is growing, at the same time the amount of arable land remains the same. Until 2050, the global population will surpass 9.1 billion people - which are going to mostly live in cities and are dependant on farmers fulfilling their steady demands to high quality foods. Even today, there are millions of people malnourished, with more even more people dependant on the limited food sources, this will get worse. \cite{FAO2021}
     
-    in more and more western it hard to find workers 
+    Following the neede of more people, it will be important to grow even more food than currently obtainable. Because the existing land is limited, it is important to increase the efficiency of farming. 
 
-    Conventional agricultural machines was agrochemicals by spaying everything, which heightens the environmental impact
+    Not just the higher demand pressures farmers, but also another problem: Farming is highly dependant on human labour. Working in fields is demanding on the body and often detrimental for the health of the workers. Because of this, the available workforce shrinks by following other sectors of work instead. This makes quality work harder and harder to find for the farmers. \cite{Vasconez2019}
 
-    Even though there are already fully automated factories and assembly lines, automations and robotics lack behind in the areas of agriculture.
+    Big scale conventional farming can of course produce high amounts of foods, but not without a hefty environmental footprint. Usage of pesticides and herbicides - often distributed blind over whole fields - is not sustainable and should be reduced if possible. \cite{ConesaMunoz2015}
 
-    Because the there are no systems which are producing adequate results. 
+    Those three points make already a convincing argument for automating the process of farming by robots - but why are our fields and greenhouses still taken care of by humans? 
 
-    The environment in which robots would have to work on fields are highly dynamic, unstructured, dirty, dust, highly stochastic 
-
-    There are some system which are able to do some task in open field tests, but even here is the performance too bad
-
-    In agriculture are many different tasks which need to be done, planting, scouting, plant care such as pruning, weed removal, and finally harvesting. 
-    
-    Harvesting, what all is needed, localization, accessing the fruit, detaching the fruit, putting the fruit somewhere. This works okay with current technology as long as no leaves come between the cameras and the fruit. 
-
-    Most vision system work by exploiting some kind of shortcut, which is not robust and versatile enough for messy conditions in the real world environments.
-
-    Most popular research topic is harvesting - even a robot fully capable of harvesting would not be used most of the year, because of the seasonality of the growth cycles.
-
-    All in all many problems hindering the adaption of automation in agriculture. 
-
-
-
+    In contrast to modern industry, were factories work with minimal human labour and completely automated assembly lines, it seems that in agriculture some problem arise which still hinders the use of autonomous robots. 
 
     
-    ight in my title we have two different fields of robotics, one is specific to a usage domain, the other is defined by using multiple instances of robotic systems. Firstly and foremost, the content of this report is going to be about agricultural robots, their problems and why we have not been able to use them on a commercial scale in the real world.
-    Secondly I will evaluate ways on how robots can work together and if we could use some of the ways to make them better workers in the agricultural domain.
 
-    When using robots as autonomous field and service workers, we have multiple problems which needs to be tackled for the successful execution of a given task in an uncontrolled environment. In the case of agricultural robots, we have several cases of tasks which are related to taking care of the plant or animal, and the extraction of a part of this plant or this animal at the end of its harvesting cycle. (This report focuses on the exploitation of plant based agriculture)
+    % Even though there are already fully automated factories and assembly lines, automations and robotics lack behind in the areas of agriculture. 
+    % Because the there are no systems which are producing adequate results. 
 
-    For the tasks we have the domains of plant care - which includes the removal of weeds or leaves, the application of fertilizer or herbicides, and scouting - and the domain of harvesting.
-    All of this specific usages, have to somehow interact with the plants itself which call for a model of the plants and fruits to take care off. Here lies one the fundamental problems - it just t0o computational expensive and too complex  to create proper 3D models of the plants.  Many current approaches try to exploit some kind of attribute - like a tomato is red - to identify their object of interest. All of those approaches lag proper plant modeling which will let those fail long before commercialization.
+    % The environment in which robots would have to work on fields are highly dynamic, unstructured, dirty, dust, highly stochastic \cite{Bechar2016}
 
-    The environment comes mainly in the form of greenhouses, orchards, yards and open fields. They form a somewhat structured environment but it gets chaotic quite fast due to dirt and the ever growing plants itself. They all also have the disadvantage of not having existing stucture to support robots. While greenhouses might have power access, internet or at least local networking is almost never given which contraints robots to themselves without building expensive network systems.
+    % There are some system which are able to do some task in open field tests, but even here is the performance too bad \cite{Bac2014}
+
+    % In agriculture are many different tasks which need to be done, planting, scouting, plant care such as pruning, weed removal, and finally harvesting. 
+    
+    % Harvesting, what all is needed, sensing, processing the data, planning how to access the fruit, moving to the fruit and detaching it.  putting the fruit somewhere. This works okay with current technology as long as no leaves come between the cameras and the fruit. 
+   
+    % Most popular research topic is harvesting - even a robot fully capable of harvesting would not be used most of the year, because of the seasonality of the growth cycles.
+
+    % All in all many problems hindering the adaption of automation in agriculture. 
+
+    % It is Nevertheless an exiting field like all of field robots because of the need for automation here and the future potential in it. \cite{Thorpe2001}
+
 
     \section{Motivation}
     

@@ -1757,22 +1757,6 @@ possibility to simulate them prior to physically test them.},
   publisher = {Elsevier {BV}},
 }
 
-@Article{Gao2018a,
-  author    = {Tianshuang Gao and Hamid Emadi and Homagni Saha and Jiaoping Zhang and Alec Lofquist and Arti Singh and Baskar Ganapathysubramanian and Soumik Sarkar and Asheesh Singh and Sourabh Bhattacharya},
-  journal   = {Robotics},
-  title     = {A Novel Multirobot System for Plant Phenotyping},
-  year      = {2018},
-  month     = {sep},
-  number    = {4},
-  pages     = {61},
-  volume    = {7},
-  abstract  = {henotypic studies require large datasets for accurate inference and prediction. Collectingplant data in a farm can be very labor intensive and costly. This paper presents the design, architecture(hardware and software) and deployment of a multi-robot system for row crop field data collection.The proposed system has been deployed in a soybean research farm at Iowa State University},
-  doi       = {https://doi.org/10.3390/robotics7040061},
-  file      = {:/home/sd/Documents/papers/gao2018.pdf:PDF},
-  keywords  = {field robotics; multi-robot system; crop monitoring; agricultural robotics; modular robots;optimal path planning, mrs,},
-  publisher = {{MDPI} {AG}},
-}
-
 @Article{Albani2017,
   author     = {Dario Albani and Joris IJsselmuiden and Ramon Haken and Vito Trianni},
   title      = {Monitoring and mapping with robot swarms for agricultural applications},
@@ -2118,7 +2102,7 @@ draws important parallels between robotics and these fields.},
   url    = {https://www.techopedia.com/definition/32694/autonomous-robot},
 }
 
-@Misc{IFR2021,
+@Misc{InternationalFederationOfRobotics2021,
   author = {InternationalFederationOfRobotics},
   title  = {IFR - Service Robots},
   year   = {2021},
@@ -2137,6 +2121,27 @@ draws important parallels between robotics and these fields.},
   title  = {Farms Dictionary},
   year   = {2020},
   url    = {https://www.farms.com/precision-agriculture/crop-scouting/},
+}
+
+@Misc{FAO2021,
+  author = {FAO},
+  title  = {Migration agriculture and rural development: Addressingthe root causes of migration and harnessing its potential fordevelopment.},
+  year   = {2021},
+  url    = {www.fao.org/3/a-i6064e.pdf.},
+}
+
+@Article{Shamshiri2018a,
+  author    = {Redmond Ramin Shamshiri and and Cornelia Weltzien and Ibrahim A. Hameed and Ian J. Yule and Tony E. Grift and Siva K. Balasundram and Lenka Pitonakova and Desa Ahmad and Girish Chowdhary and and and and and and},
+  journal   = {International Journal of Agricultural and Biological Engineering},
+  title     = {Research and development in agricultural robotics: A perspective of digital farming},
+  year      = {2018},
+  number    = {4},
+  pages     = {1--11},
+  volume    = {11},
+  doi       = {http://dx.doi.org/10.25165/j.ijabe.20181104.4278},
+  file      = {:/home/sd/Documents/papers/4278-13703-4-PB(1).pdf:PDF},
+  keywords  = {top100, examples, review},
+  publisher = {International Journal of Agricultural and Biological Engineering ({IJABE})},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

@@ -194,6 +194,36 @@ Bechar, A.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Bechar%
+\ \BBA {} Vigneault%
+}{%
+Bechar%
+\ \BBA {} Vigneault%
+}{%
+{\protect \APACyear {2017}}%
+}]{%
+Bechar2017}
+\APACinsertmetastar {%
+Bechar2017}%
+\begin{APACrefauthors}%
+Bechar, A.%
+\BCBT {}\ \BBA {} Vigneault, C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{jan}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Agricultural robots for field operations. Part 2:
+  Operations and systems} {Agricultural robots for field operations. part 2:
+  Operations and systems}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Biosystems Engineering}{153}{}{110--128}.
+\newblock
+\begin{APACrefDOI} \doi{https://doi.org/10.1016/j.biosystemseng.2016.11.004}
+  \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Brambilla%
 , Ferrante%
 , Birattari%
@@ -394,6 +424,31 @@ de Santos, P\BPBI G.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+FAO%
+}{%
+FAO%
+}{%
+{\protect \APACyear {2021}}%
+}]{%
+FAO2021}
+\APACinsertmetastar {%
+FAO2021}%
+\begin{APACrefauthors}%
+FAO.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+\APACrefbtitle {Migration agriculture and rural development: Addressingthe root
+  causes of migration and harnessing its potential fordevelopment.} {Migration
+  agriculture and rural development: Addressingthe root causes of migration and
+  harnessing its potential fordevelopment.}
+\newblock
+\begin{APACrefURL} \url{www.fao.org/3/a-i6064e.pdf.} \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Farms%
 }{%
 Farms%
@@ -559,28 +614,6 @@ IGIGlobal.%
 \begin{APACrefURL}
   \url{https://www.igi-global.com/dictionary/multi-robot-systems/52100}
   \end{APACrefURL}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-InternationalFederationOfRobotics%
-}{%
-InternationalFederationOfRobotics%
-}{%
-{\protect \APACyear {2021}}%
-}]{%
-IFR2021}
-\APACinsertmetastar {%
-IFR2021}%
-\begin{APACrefauthors}%
-InternationalFederationOfRobotics.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2021}{}{}.
-\newblock
-\APACrefbtitle {IFR - Service Robots.} {Ifr - service robots.}
-\newblock
-\begin{APACrefURL} \url{https://ifr.org/service-robots/} \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
