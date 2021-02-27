@@ -39,29 +39,78 @@
 
 
 
-    \chapter{Description of the subject}
+    \chapter{Description of the agricultural robots and multi-robot systems.}
+
+    \section{What are the task of agricultural robots and what makes the usage of robots in agriculture so hard?}
+
+    Robots especially agribosts are super complex
+
+    multiple sub tasks have to done beofre the task is done subsystem mworkings togheter
+        
+    Robots in agriculture have multiple tasks. They are all about plant care and finally harvesting the produce. Following tasks are typical for agricultural robots: 
+    \begin{description}
+        \item[Scouting] Scouting is the process of monitoring the plant health, the ripeness, the estimated yield, different climate parameters like temperature and humidity and also weeds or other diseases.
+        \item[Pruning] Pruning is a type of plant care were for examples leaves get removed for a more effective grow process.
+        \item[Weeding] The thermal, mechanical or chemical process of removing weeds.
+        \item[Application of chemicals] The delivery of different chemicals like fertilizers, herbicides and pesticides to plants or parts of the field.
+        \item[Harvesting] Harvesting is the final stage in the growth cycle. Now the ripe fruit has to be detached and collected. Harvesting is no problem for bulk produce like wheat or corn, but for high value crops like sweet pepper or tomatoes, is harvesting the hardest part to automate.
+    \end{description}
+
+    To achieve any of those task, the robots also have to be able to do many supporting task like self-localization, navigation, path and task planning and ensuring safety during operation. Important are also the systems for mobility, including steering, obstacle avoidance and control
+
+    Agricultural have to work in a variety of different environments, the most notable are open field, greenhouses, orchards, vineyards and forests.
+
+    Before coming to the problem of agricultural robots, one should have a look about the advantages agricultural robots will bring if deployed properly. Utilizing robots will be the most cost effective method for all task to be done. Human labor is the biggest factor in crop costs and along side saving in the use of agrochemicals shows big potential for cost savings. At the same time the use of robots will improve the quality of the growing crops as well as uniformity. Not just this, but the robots will increase each production and profits. Having an automated workforce, which needs to capture all kinds of data for working properly has another benefit: The aggregated data will help the farmers make smarter, faster and better decisions. In comparison to conventional methods, robots will reduce environmental strain and thus increase the sustainability of farming. \cite{Bechar2016}
+
+    \begin{tikzpicture}[grow cyclic, text width=2.7cm, align=flush center,
+        level 1/.style={level distance=5cm,sibling angle=90},
+        level 2/.style={level distance=3cm,sibling angle=45}]
+                child{node {Fertilizers}}
+    \node{\hypertarget{fic:mindmap_agribots}{\textbf{\huge Agricultural robots}}}
+        child { node {\textbf{Primary tasks}}
+            child { node {Scouting}}
+            child { node {Pruning}}
+            child { node {Weeding}}
+            child { node {Harvesting}
+                child { node {Sensing and detection in 3D}}
+                child { node {Action planning}}
+                child { node {Manipulation}}
+            }
+            child { node {Application of chemicals}}
+        }
+        child { node {\textbf{Secondary tasks}}
+            child { node {Self-localization \& navigation}}
+            child { node {Mobility}
+                child { node {Steering}}
+                child { node {Obstacle avoidance}}
+                child { node {Control}}
+            }
+            child { node {Path planning}}
+            child { node {Logistics}}
+            child { node {Safety}}
+        }
+        child { node {\textbf{Environment types}}
+            child { node {Open fields}}
+            child { node {Greenhouses}}
+            child { node {Orchards}}
+            child { node {Vineyards}}
+            child { node {Forests}}
+        }
+        child { node {\textbf{Motivation}}
+            child { node {Higher efficiency and higher yield}}
+            child { node {Cost reduction}}
+            child { node {Lessen usage of chemicals}}
+            child { node {Higher quality}}
+            child { node {Compensate lack of workforce}}
+        }
+        ;
+
+    \end{tikzpicture}
+
         \section{Agricultural robots in the bigger field of robotic research.}
 
-        One could divide the types of robotic applications into two main groups. First the group of \emph{industrial robots}, and second the group of \emph{service robots}. 
-        Industrial robots are robots, which are used in the modern factories in highly automated scenarios. The \emph{International Standardization Organization} (ISO) defines them as "fixed in place or mobile for use in industrial automation application". 
-        
-        Service Robots on the other hand are defined by ISO as:
-        \begin{displayquote}
-            "Robot that performs useful tasks for humans or equipment excluding industrial automation applications."
-        \end{displayquote} 
-
-        Since this definition is still ambiguous, the ISO splits the field of service robots further into the two subfields of \emph{personal} and \emph{professional service robots}. \emph{Personal service robots} are robots used in non-commercial tasks by layman. Examples are robot vacuums, and general domestic servant robots. \emph{Professional service robots} in the other hand are the big field of robots used in commercial tasks by professionals.
-        Now in the field of professional service robots, exists the category of \emph{field robots}. Field robots are defined by the Robotic Industries Association as:
-        \begin{displayquote}
-            "Field robots are non-factory mobile robots that operate in dynamic, unstructured environments. These types of robots aren’t programmed to repeat the same task over and over – they’re adaptive, responsive robots that work under variable conditions, sometimes even in unexplored territory. They often perform tasks that are too laborious or dangerous for humans. For this reason, as the underlying technology steadily advances their capabilities, field robots are becoming highly desirable to a number of different industries."
-        \end{displayquote}
-
-        Agricultural robots are a specific subfield of field robotics. They are indented to work in agricultural industry for the production of crops. 
-
-        The field of agricultural robots is a subfield of field robotic. 
-
-        \begin{tikzpicture}[text width=8cm, align=flush center, level distance=1cm, sibling distance=5cm]
-            \node[label=above:\textbf{Categorization of agricultural robots}]{Types of robots}
+        \begin{tikzpicture}[text width=8cm, align=flush center, level distance=1cm, sibling distance=4cm]
+            \node[label=above:\textbf{Categorization of agricultural robots}]{\hypertarget{fig:category_mindmap}{Types of robots}}
                 child { node {Industrial robots}}
                 child { node {Service robots}
                     child {node {Personal service robots}}
@@ -72,11 +121,27 @@
                     }
                 }
             ;
-        \label{fig:category_mindmap}
         \end{tikzpicture}
 
-        \section{What makes the usage of robots in agriculture so hard?}
+        One could divide the types of robotic applications into two main groups. First the group of \emph{industrial robots}, and second the group of \emph{service robots}. 
+        Industrial robots are robots, which are used in the modern factories in highly automated scenarios. The \emph{International Standardization Organization} (ISO) defines them as "fixed in place or mobile for use in industrial automation application". 
+        
+        Service Robots on the other hand are defined by ISO as:
+        \begin{displayquote}
+            "Robot that performs useful tasks for humans or equipment excluding industrial automation applications."
+        \end{displayquote} 
 
+        Since this definition is still ambiguous, the ISO splits the field of service robots further into the two subfields of \emph{personal} and \emph{professional service robots}. \emph{Personal service robots} are robots used in non-commercial tasks by layman. Examples are robot vacuums, and general domestic servant robots. \emph{Professional service robots} in the other hand are the big field of robots used in commercial tasks by professionals.
+        Now in the field of professional service robots, exists the category of \emph{field robots}. Field robots are defined by the \emph{Robotic Industries Association} as:
+        \begin{displayquote}
+            "Field robots are non-factory mobile robots that operate in dynamic, unstructured environments. These types of robots aren’t programmed to repeat the same task over and over – they’re adaptive, responsive robots that work under variable conditions, sometimes even in unexplored territory. They often perform tasks that are too laborious or dangerous for humans. For this reason, as the underlying technology steadily advances their capabilities, field robots are becoming highly desirable to a number of different industries."
+        \end{displayquote}
+
+        Agricultural robots are a specific subfield of field robotics. Agricultural robots are deployed in agricultural industries and are mainly used for farming crops. For a better clarification of the positioning of agricultural robots in the field of robotics, refer to the figure \hyperlink{fig:category_mindmap}{\emph{Categorization of agricultural robots.}}
+
+
+
+       
         \section{Can system with multiple robots help with the existing limitations?}
 
 
