@@ -3,12 +3,26 @@
 \begin{document}
     \chapter{Conclusions}
 
-    \cite{deSantos2016} presents a strongly coordinated approach utilizing a heterogeneous team of UAV scouts and UGV controlled from a base station and human operator.\cite{Albani2017} tries a swarm robotics approach for more efficient behaviour of UAV scouts. Both works are about weeds scouting, mapping and eradication.
-            
-    \section{Limitations of previous work}
+    My first goal is finding the reasons for the slow adaption of autonomous robots in agriculture, my second goal is answering the question if a multi-robot approach is viable in agriculture.
+    
+    For the first question, it boils mostly down to economic feasibility. With current technologies, it is possible to automate some tasks of agricultural work, but even in this single tasks, human labour is still more cost effective. The reasons for this are (i) a slow cycle time and (ii)  a low ration of successful actions. Resulting from these to measures comes a low production rate, in which humans can easily excel. Even unlearned labourers can quickly pick up the pace and are much faster and more productive then \emph{current} solution. \cite{Bechar2017}
 
-    \section{Lessons learned}
+    The reasons behind the lack of performance is the highly stochastic, dynamic and unstructured environment as well as objects \footnote{Consult \hyperref[table:objects_and_tasks]{Table 2.1} for comparison with other robotics domains}. Sofar robotic system struggle to work in such dynamic and stochastic task environments. 
+    One proposed solution by \cite{Herck2020} is designing the whole greenhouse around the needs of robots for a better harvesting performance. By pruning and forming the growing plants, the authors got the plants to grow their fruits in an more accessible way. This improved the performance of the evaluated robot system immensely. This system was also using state-of-the-art machine learning algorithms for detection and localization of the fruits. The system however, was not modelling the rest of the plant. That means as soon as some leaves or other plant parts come between the fruits and the camera or manipulator, the robot failed to harvest the fruit. 
+    All of the other current harvest research papers had similar limitations. Which shows that there is a lack of modelling capabilities for stochastic, unknown and dynamic systems. In my opinion, it will be necessary to great efficient models of the plants, which allow the robots to understand the physical nature of the plants. Robots should be able to simply move leaves out of the way for accessing and sensing. But sofar this is not possible through a lack of understanding in the modelling of highly complex 3D geometry.
 
-    \section{Future work} 
+    In other domains is more progress. For weed scouting and eradication are multiple research projects which utilize MRS \cite{ConesaMunoz2015,Albani2019, deSantos2016}. They are using heterogeneous fleets of aerial and ground-based autonomous vehicles for scouting and manipulations. UAVs are autonomous flying over the fields and analyze the distribution of weeds and disease and then the UGV are able to precisely apply measures against. Using this approach saves up to 80\% of needed agrochemicals.
+    Other MRS approaches is a scouting system, where a mobile platform is able to deploy an UAV dynamically if the path is blocked. The UAV is then able to continue th scouting mission and meets after the blockage with the UGV, researches and waits for the next deployment \cite{Roldan2016}.
+
+    Agriculture is a field were farming automations can scale in two directions. One possibility is to scale up vertically, meaning into the directions of single, huge machines. This approach works for bulk crops like corn or wheat, but for many high-value crops this approach will not work. Here the automations have to scale horizontally into multiple small machines for effective distributed work. Hence my conclusion, that the only economic viable way for deploying agricultural robots, is by using multi-robot systems.
+
+    This will bring advantages faster working, redundancy, robustness - all characteristics needed for large scale farming. Further the systems will need characteristics such as centralized main control but also local interaction. \cite{Albani2019} described swarm behavior for mapping weeds, one of the remarkable characteristics was, that the members of the swarm react to  uncertainty and resemble areas with unclear readings for finding values with smaller errors. Combined with a central coordinator evaluating which next strategic steps to take the combinations of local and distributed coordination with central control will be a valuable approach to managing fleets of robots.
+
+    I would like to end my conclusion and report with this quote from \cite{Thorpe2001}: 
+    \begin{displayquote}[][]
+        "Indeed, in the next few years there is a very good chance that substantial commercially available field robotics systems will go into operation. Consequently, there is a high degree of excitement in the area about the future prospects and opportunities in field robotics."
+    \end{displayquote}
+
+    Unfortunately, this quote still holds up, already twenty years after the authors wrote that. I am quite excited about the future of research in field robotics myself and hope that now, we are only a couple of years away from successful machines \emph{for real.}
 
  \end{document}

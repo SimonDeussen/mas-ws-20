@@ -51,7 +51,7 @@
         \item[Scouting] Scouting is the process of monitoring the plant health, the ripeness, the estimated yield, different climate parameters like temperature and humidity and also weeds or other diseases.
         \item[Pruning] Pruning is a type of plant care were for examples leaves get removed for a more effective grow process.
         \item[Weeding] The thermal, mechanical or chemical process of removing weeds.
-        \item[Application of chemicals] The delivery of different chemicals like fertilizers, herbicides and pesticides to plants or parts of the field.
+        \item[Application of chemicals] The delivery of different agrochemicals like fertilizers, herbicides and pesticides to plants or parts of the field.
         \item[Harvesting] Harvesting is the final stage in the growth cycle. Now the ripe fruit has to be detached and collected. Harvesting is no problem for bulk produce like wheat or corn, but for high value crops like sweet pepper or tomatoes, is harvesting the hardest part to automate.
     \end{description}
 
@@ -61,7 +61,7 @@
 
     Before coming to the problem of agricultural robots, one should have a look about the advantages agricultural robots will bring if deployed properly. Utilizing robots will be the most cost effective method for all task to be done. Human labor is the biggest factor in crop costs and along side saving in the use of agrochemicals shows big potential for cost savings. At the same time the use of robots will improve the quality of the growing crops as well as uniformity. Not just this, but the robots will increase each production and profits. Having an automated workforce, which needs to capture all kinds of data for working properly has another benefit: The aggregated data will help the farmers make smarter, faster and better decisions. In comparison to conventional methods, robots will reduce environmental strain and thus increase the sustainability of farming. \cite{Bechar2016}
 
-    In the mind map \hyperlink{fig:mindmap_agribots}{\emph{Agricultural robots}} I show the most important points for more convenient access and reminding.
+    In the mind map \hyperlink{fig:mindmap_agribots}{\emph{Agricultural robots}} I showcase the most important points for more convenient access and reminding.
 
     \vspace{10px}
     \hrule
@@ -81,7 +81,7 @@
                 child { node {\footnotesize Action planning}}
                 child { node {\footnotesize Manipulation}}
             }
-            child { node {\footnotesize Application of chemicals}}
+            child { node {\footnotesize Application of agrochemicals}}
         }
         child { node {\textbf{Secondary tasks}}
             child { node {\footnotesize Self-localization \& navigation}}
@@ -104,7 +104,7 @@
         child { node {\textbf{Motivation}}
             child { node {\footnotesize  Higher efficiency and higher yield}}
             child { node {\footnotesize Cost reduction}}
-            child { node {\footnotesize Lessen usage of chemicals}}
+            child { node {\footnotesize Lessen usage of agrochemicals}}
             child { node {\footnotesize Higher quality}}
             child { node {\footnotesize Compensate lack of workforce}}
         }
@@ -117,16 +117,16 @@
 
     Robots working in the agricultural domain have to master a multitude of difficult tasks in a ever changing environment. \cite{Bechar2016} have compared the complexity of the domain of agriculture robots to other robotics domains by creating four groups along the axis of structured and unstructured objects as well as structured and unstructured environments: 
     \begin{table}[h]
+        \captionof{table}{Classification of objects and environments} \label{table:objects_and_tasks} 
         \begin{tabular}{@{}lll@{}}
         \toprule
-                             & \textbf{Structured environmen} & \textbf{Unstructured environment}                      \\ \midrule
+                             & \textbf{Structured environment} & \textbf{Unstructured environment}                      \\ \midrule
         \textbf{Structured objects}   & Industrial domain      & Military, underwater \& mining domain \\
         \textbf{Unstructured objects} & Medical domain         & Agricultural domain                           \\ \bottomrule
         \end{tabular}
-        \label{table:objects_and_tasks}
         \end{table}
 
-    Compared to other robotics domains, robots in agriculture have to combat an unstructured environment \textbf{and} unstructured objects. Every plant and every fruit is different from each other, every meter of ground is complex and rough to navigate. Plants grow wild and the exposed environment will worsen the conditions additionally. For reliable and robust robots should be able to work in all kinds of weather conditions, from dusty, glaring sunshine to rain - and even in the night. Compared to a robot working in a highly engineering assembly in perfect lighting and climate control, we can see that the problems here are orders of magnitude harder to solve. 
+    Compared to other robotics domains, robots in agriculture have to combat an unstructured environment \textbf{and} unstructured objects. Every plant and every fruit is different from each other, every meter of ground is complex and rough to navigate - every process is highly stochastic. Plants grow wild and the exposed environment will worsen the conditions additionally. For reliable and robust robots should be able to work in all kinds of weather conditions, from dusty, glaring sunshine to rain - and even in the night. Compared to a robot working in a highly engineering assembly in perfect lighting and climate control, we can see that the problems here are orders of magnitude harder to solve. 
     Because of this, robots in agriculture are so far behind their counterparts in the industrial domain. There are many existing robot projects like \cite{Arad2020, Chamanbaz2017, ConesaMunoz2015, Herck2020, Lehnert2020, Wu2020} which show successful harvesting of a couple of crops. But none of those robot system can to more than one specific task. They can navigate through the fields and harvest with varying performance, but struggle to reach economic viability - even after decades of intensive review. For a detailed review of actual performance, refer to \cite{Bac2014, Bechar2017}.
 
         \section{Agricultural robots in the bigger field of robotic research.}
@@ -206,6 +206,8 @@
         \hrule
         \vspace{10px}
 
+        The reviewed work present in my reports are either strongly coordinated and strongly centralized or weakly coordinated and not centralized approaches. For the first category, the authors implemented hard oversight and mission planning \cite{deSantos2016}, the second approach is about swarms, which are only coordinating locally \cite{Albani2019}
+
 
 
     \chapter{Description of the reviewed papers}
@@ -215,7 +217,6 @@
     For convenient access to the papers presented here, refer to the table \hyperref[table:main_topics]{\emph{Main topics and categories of my papers}}. Because I needed to save space, the papers are only referred by a key composed of their main author`s name and the year published - but each key is hyper linked to the reading report for more information, including the full citation.
 
     My first goal was to get a overview over the topics of agricultural robots, so I searched for review papers, some older and some more current to get a feel for the progress and change in the field: 
-    \hyperref[sec:]{Reading Report:} 
     \begin{itemize}
         \item \hyperref[sec:Bac2014]{Reading report:} \cite{Bac2014}
         \item \hyperref[sec:Bechar2016]{Reading report:} \cite{Bechar2016}
@@ -261,11 +262,6 @@
     All in all I am quite happy with the papers I have found and reviewed. They contain a great knowledge basis and also cutting edge research. I think my favorite paper so far was \emph{Development of a sweet pepper harvesting robot} \cite{Arad2020}. They not only had a good end result, but also described the software created detailed but also the newly, custom developed manipulator. I also liked their error analysis in particular. It was quite hard to compare between many of the papers, because every research group is using different methodologies, but if one of them is a great example on how to do it, then it is this one.
    
 
-
-
-
-
-
 \begin{table}[]
     \centering
     \captionof{table}{Main topics and categories of my papers} \label{table:main_topics} 
@@ -310,7 +306,31 @@
     \small Each papers key is hyper linked to the reading report for convenient access to more information.
     \end{table}
 
+    \section{Methods used for finding research}
+
+    In the beginning of my research, I mostly used \href{https://scholar.google.com}{Google Scholar} and looked up combinations of the my base keywords. The combination are presented in my \hyperref[sec:keywords]{appendix}. My base keywords were:
+    \begin{itemize}
+        \item Review
+        \item Agriculture
+        \item MRS
+        \item Swarm
+        \item Field robotics
+        \item Harvesting
+        \item Scouting
+        \item Weeding
+        \item Communication
+        \item Vision system
+        \item Manipulation
+        \item Simulation
+        \item Lab experiment
+        \item Field experiment
+    \end{itemize}
+
+    After finding the first round of papers, I started to look trough journal checking the authors on citeseerX for credibility. My most used journals are \emph{Biosystems Engineering}, \emph{Computers and Electronics in Agriculture} and \emph{Precision Agriculture}.
+     Another method I used, have been the reviewed papers referenced in review papers. This speed up my finding process immensely. Especially for research in the domain of harvesting robots was this essential, because the review authors already included important performance metrics.
+        
+
+
 
 \end{document}
-
 
