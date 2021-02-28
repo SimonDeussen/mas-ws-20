@@ -1,5 +1,5 @@
 \contentsline {chapter}{\numberline {1}Introduction to agricultural robots}{3}{chapter.1}%
-\contentsline {chapter}{\numberline {2}Description of the agricultural robots and multi-robot systems.}{4}{chapter.2}%
+\contentsline {chapter}{\numberline {2}Description of agricultural robots and multi-robot systems.}{4}{chapter.2}%
 \contentsline {section}{\numberline {2.1}What are the task of agricultural robots and what makes the usage of robots in agriculture so hard?}{4}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Agricultural robots in the bigger field of robotic research.}{6}{section.2.2}%
 \contentsline {section}{\numberline {2.3}What are multi-robot systems, and what are their advantages?}{7}{section.2.3}%
