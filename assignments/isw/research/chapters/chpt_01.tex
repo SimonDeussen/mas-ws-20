@@ -6,9 +6,9 @@
 
     This report focuses on the problems in the development and deployment of agricultural robots and tries evaluate if system of multiple robots are able to bring advantages into this area.
 
-    The global population is growing, at the same time the amount of arable land remains the same. Until 2050, the global population will surpass 9.1 billion people - which are going to mostly live in cities and are dependant on farmers fulfilling their steady demands to high quality foods. Even today, there are millions of people malnourished, with more even more people dependant on the limited food sources, this will get worse. \cite{FAO2021}
+    The global population is growing, at the same time the amount of arable land remains the same. Until 2050, the global population will surpass 9.1 billion people - which are going to mostly live in cities and are dependant on farmers fulfilling their steady demands to high quality foods. Even today are millions of people malnourished. With more people dependant on the limited food sources, this situation will get worse \cite{FAO2021}
     
-    Following the needs of more people, it will be important to grow even more food than currently obtainable. Because the existing land is limited, it is important to increase the efficiency of farming. 
+    Following the needs of more people, it will be important to grow even more food than currently obtainable. Because the existing land is limited, it is important to increase the efficiency and output of farming. 
 
     Not just the higher demand pressures farmers, but also another problem: Farming is highly dependant on human labour. Working in fields is demanding on the body and often detrimental for the health of the workers. Because of this, the available workforce shrinks by following other sectors of work instead. This makes quality work harder and harder to find for the farmers. \cite{Vasconez2019}
 
@@ -176,12 +176,12 @@
         In heterogeneous teams, the members of the group can be of different robot types. This makes specialization between the robots possible. To come back to the UAV example, we could add UGVs to the group with some kind of manipulator for plant care. Now the UAVs can scout the area and deploy the UGV to positions where they are needed. 
         With the second example, it is possible to show some of the challenges associated with MRS: \ \begin{description}
             \item[Multi robot task allocation (MRTA)] The MRTA is the problem to be solved, for answering the question: Who is doing what?
-            \item[Communication] When deploying multiple robots, it has to be deinfed, who is talking with whom? Are all data shared with everyone, or is this transfered to a communication hub first?
+            \item[Communication] When deploying multiple robots, it has to be defined, who is talking with whom? Are all data shared with everyone, or is this transferred to a communication hub first?
             \item[Self organization] How can the individual robot organize them selves?  
         \end{description}
 
         The MRTA problem is of central nature in the research of MRS. Finding an optimal solution for the question of who is doing what is a non trivial problem. Refer to \cite{Gerkey2004} for more in-depth explanation. There are two big organization approaches in MRS, first a centralized approach, where one central agent assigns the tasks to the robots, or a decentralized approach, in which the robots negotiate the task allocate themselves. A special case of the later approach is swarm robotics, here the robots only communicate with small subset of the whole group. This approach has very interesting characteristics, especially a great scalability, much higher robustness and flexibility \cite{Albani2017}.
-        For a better distinguishing between different types of coordination in MRS, \cite{Farinelli2004} proposed a following taxonmy, which I recreated as mind map: 
+        For a better distinguishing between different types of coordination in MRS, \cite{Farinelli2004} proposed a following taxonomy, which I recreated as mind map: 
 
         \vspace{10px}
         \hrule
